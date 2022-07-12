@@ -12,24 +12,14 @@ public class ScreenSwitcher : MonoBehaviour
 
     public void LoadScene(int index)
     {
-        StartCoroutine(LoadAsynchronously(index));
+        StartCoroutine(FakeLoadingScreen(index));
     }
 
-    IEnumerator LoadAsynchronously(int sceneIndex)
+    IEnumerator FakeLoadingScreen(int sceneIndex)
     {
-        //AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
-
-        loadingScreen.SetActive(true);
-        yield return new WaitForSeconds(2f);
+        loadingScreen.SetActive(true);//Enable Fake Loading Screen
+        yield return new WaitForSeconds(2f);//Delay Before LoadScene
         SceneManager.LoadScene(sceneIndex);
-        /*while (!operation.isDone)
-        {
-            float progress = Mathf.Clamp01(operation.progress / 0.9f);
-            slider.value = progress;
-            //progressText.text = progress * 100 + "%";
-
-            yield return null;
-        }*/
     }
 
     public void OnClick_Settings()
