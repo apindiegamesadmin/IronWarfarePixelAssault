@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Bullet
+  - SpeedUp
+  - DamageUp
   layers:
   - Default
   - TransparentFX
@@ -74,4 +76,7 @@ TagManager:
     locked: 0
   - name: UI
     uniqueID: 1337076293
+    locked: 0
+  - name: PowerUp
+    uniqueID: 2279825881
     locked: 0
