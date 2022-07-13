@@ -142,7 +142,6 @@ GameObject:
   - component: {fileID: 1857313326595114056}
   - component: {fileID: 1857313326595114063}
   - component: {fileID: 6355945056473972071}
-  - component: {fileID: 7312071743403381244}
   m_Layer: 11
   m_Name: soldier_v0.01
   m_TagString: Untagged
@@ -249,10 +248,22 @@ MonoBehaviour:
   OnDead:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7312071743403381244}
-        m_TargetAssemblyTypeName: DestroyUtil, Assembly-CSharp
-        m_MethodName: DestroyHelper
+      - m_Target: {fileID: 1857313326595114056}
+        m_TargetAssemblyTypeName: Soldier, Assembly-CSharp
+        m_MethodName: DeadAnimation
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8273467602681246589}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -294,18 +305,6 @@ MonoBehaviour:
   OnHeal:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &7312071743403381244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1857313326595114058}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 242bfaac70c74d24499bd34e618bede4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1857313326645764699
 GameObject:
   m_ObjectHideFlags: 0

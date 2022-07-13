@@ -8,7 +8,7 @@ public class Soldier : MonoBehaviour
     private Rigidbody2D m_body;
     public GameObject target;
     public float speed;
-    private float destroy = 1.0f;
+    private float destroy = 4.0f;
     private float combatRange = 5.0f;
     
 
@@ -73,7 +73,7 @@ public class Soldier : MonoBehaviour
  
 
 
-    void OnTriggerEnter2D(Collider2D collision)
+    /*void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.transform.tag =="Player")
         {
@@ -86,6 +86,21 @@ public class Soldier : MonoBehaviour
             m_Ani.Play("Soldier_Machine_die2");
             Destroy(gameObject, destroy/2.5f);
         }
+    }*/
+
+    public void DeadAnimation()
+    {
+        int random = Random.Range(0, 2);//Randomize int for Random Death Animation
+        switch (random)
+        {
+            case 0:
+                m_Ani.Play("Soldier_Machine_die");
+                break;
+            case 1:
+                m_Ani.Play("Soldier_Machine_die2");
+                break;
+        }
+        Destroy(gameObject, destroy);//Delay before destroy
     }
 
 
