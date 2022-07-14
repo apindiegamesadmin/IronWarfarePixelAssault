@@ -13,6 +13,7 @@ public class Soldier : MonoBehaviour
     private float combatRange = 5.0f;
     private float timer;
     public GameObject bullet;
+    public GameObject blood;//Blood Object Reference
     public Transform barrel;
     
 
@@ -105,6 +106,11 @@ public class Soldier : MonoBehaviour
           alive = false;
           healthBar.SetActive(false);
           m_Ani.Play("Soldier_Machine_die2");
+          if(blood != null)
+          {
+               blood.SetActive(true);//Spawn Blood Animation
+               Destroy(blood, 1f);//Delay Before Destroying Blood
+          }
           Destroy(gameObject, destroy / 2.5f);
           
 
@@ -123,6 +129,7 @@ public class Soldier : MonoBehaviour
         {
            healthBar.SetActive(true);
            m_Ani.Play("Soldier_Machine_die2");
+            
             slider.value = 0.0f;
         }
 
