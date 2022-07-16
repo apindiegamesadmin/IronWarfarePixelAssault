@@ -59,7 +59,7 @@ Material:
     - _FaceUVSpeedY: 0
     - _GlowInner: 0.28
     - _GlowOffset: 1
-    - _GlowOuter: 0.5
+    - _GlowOuter: 0.549
     - _GlowPower: 1
     - _GradientScale: 10
     - _LightAngle: 3.1416
@@ -72,7 +72,7 @@ Material:
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
     - _ScaleRatioA: 0.9
-    - _ScaleRatioB: 0.4875
+    - _ScaleRatioB: 0.47207874
     - _ScaleRatioC: 0.73125
     - _ScaleX: 1
     - _ScaleY: 1
@@ -98,13 +98,13 @@ Material:
     - _ClipRect: {r: -32767, g: -32767, b: 32767, a: 32767}
     - _EnvMatrixRotation: {r: 0, g: 0, b: 0, a: 0}
     - _FaceColor: {r: 1, g: 1, b: 1, a: 1}
-    - _GlowColor: {r: 0.052860655, g: 0.72305536, b: 0.22322798, a: 1}
+    - _GlowColor: {r: 1, g: 0.08733623, b: 0.056768537, a: 1}
     - _MaskCoord: {r: 0, g: 0, b: 32767, a: 32767}
-    - _OutlineColor: {r: 0.024067787, g: 0.355, b: 0.108305074, a: 1}
+    - _OutlineColor: {r: 0.116970696, g: 0.11953845, b: 0.116970696, a: 1}
     - _ReflectFaceColor: {r: 0, g: 0, b: 0, a: 1}
     - _ReflectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
-    - _UnderlayColor: {r: 0.018, g: 0.27, b: 0.08324999, a: 1}
+    - _UnderlayColor: {r: 0.2831488, g: 0.2874409, b: 0.2831488, a: 1}
   m_BuildTextureStacks: []
 --- !u!28 &-870003180526189090
 Texture2D:
@@ -163,11 +163,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
-  m_Name: GAMERIA SDF 1
+  m_Name: Iron
   m_EditorClassIdentifier: 
-  hashCode: 312373908
+  hashCode: -1936195195
   material: {fileID: -8551532068936609057}
-  materialHashCode: 2087323828
+  materialHashCode: 233328645
   m_Version: 1.1.0
   m_SourceFontFileGUID: 103e1a5c0b35b6d4b842324ee3d89515
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 103e1a5c0b35b6d4b842324ee3d89515, type: 3}
