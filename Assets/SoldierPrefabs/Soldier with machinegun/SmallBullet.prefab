@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6050679244346278280}
   - component: {fileID: 6050679244346278283}
   - component: {fileID: 6050679244346278282}
+  - component: {fileID: 1269169690668901972}
   m_Layer: 6
   m_Name: SmallBullet
   m_TagString: Bullet
@@ -75,8 +76,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1180159871
-  m_SortingLayer: 8
-  m_SortingOrder: 0
+  m_SortingLayer: 9
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 397b8aaabcf26f74db77ad1c3351a6b4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -175,6 +176,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1269169690668901972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6050679244346278285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2edcd7cab25e994b90439cc129493d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6050679244827568917
 GameObject:
   m_ObjectHideFlags: 0
