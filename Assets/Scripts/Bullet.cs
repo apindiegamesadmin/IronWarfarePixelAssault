@@ -37,7 +37,8 @@ public class Bullet : MonoBehaviour
     private void DisableObject()
     {
         rb2d.velocity = Vector2.zero;
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+        //Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
