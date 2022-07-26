@@ -41,14 +41,10 @@ public class MachineGun_Soldier : MonoBehaviour
 
      void Start()
     {
-        
         health = slider.maxValue;
         healthBar.SetActive(false);
         m_body = GetComponent<Rigidbody2D>();
         m_Ani = GetComponentInChildren<Animator>();
-        
-        
-       
     }
 
 
@@ -95,9 +91,6 @@ public class MachineGun_Soldier : MonoBehaviour
         m_Ani.SetBool("idle", away);
         m_Ani.SetBool("walk", found);
         m_Ani.SetBool("shoot", shoot);
-        
-
-
 
         if (shoot && alive)
         {
@@ -105,13 +98,11 @@ public class MachineGun_Soldier : MonoBehaviour
             if(timer>=0.2f)
             {
                 timer = 0;
-                 Rigidbody2D newBullet = Instantiate(bullet);
-                 newBullet.transform.position = barrel.position;
-                 newBullet.transform.localRotation = barrel.rotation;
+                Rigidbody2D newBullet = Instantiate(bullet);
+                newBullet.transform.position = barrel.position;
+                newBullet.transform.localRotation = barrel.rotation;
                 newBullet.AddForce(barrel.up * 100, ForceMode2D.Force);
-
                 newBullet.GetComponent<Bullet>().Initialize(BulletData);
-                
             }
         }
         playerHealth = target.GetComponentInChildren<Damagable>().Health;
@@ -122,7 +113,6 @@ public class MachineGun_Soldier : MonoBehaviour
             m_Ani.SetBool("shoot", false);
             m_Ani.SetBool("idle", true);
         }
-
 
 
         if (slider.value<=0)
@@ -136,16 +126,8 @@ public class MachineGun_Soldier : MonoBehaviour
                Destroy(blood, 1f);//Delay Before Destroying Blood
           }
           Destroy(gameObject, destroy / 2.5f);
-          
-
         }
-
-       
-
     }
-
-
-
 
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -160,24 +142,7 @@ public class MachineGun_Soldier : MonoBehaviour
         if(collision.transform.tag =="Bullet")
         {
            healthBar.SetActive(true);
-           int rand = Random.Range(0, 3);
-            switch (rand)
-            {
-                case 0:
-                    m_Ani.Play("Soldier_Machine_diehard1");
-                    break;
-                case 1:
-                    m_Ani.Play("Soldier_Machine_diehard2");
-                    break;
-                case 2:
-                    m_Ani.Play("Soldier_Machine_diehard3");
-                    break;
-            }
-
-            Destroy(gameObject, destroy / 2.5f);
-
-            //slider.value = slider.value - 0.5f;
-
+           slider.value = slider.value - 0.5f;
         }
     }
 
@@ -196,7 +161,6 @@ public class MachineGun_Soldier : MonoBehaviour
         }
         Destroy(gameObject, destroy);//Delay before destroy
     } */
-
 
 }
 

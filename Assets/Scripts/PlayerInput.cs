@@ -29,9 +29,10 @@ public class PlayerInput : MonoBehaviour
 
     private void GetShootingInput()
     {
-        if (Input.GetMouseButtonDown(0))
+        //Changed to Getmousebutton 0 instead to backup the fix
+        if (Input.GetMouseButton(0))
         {
-            OnShoot?.Invoke();
+            StartCoroutine(delayShoot());
         }
     }
 
@@ -52,5 +53,12 @@ public class PlayerInput : MonoBehaviour
     {
         Vector2 movementVector = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         OnMoveBody?.Invoke(movementVector.normalized);
+    }
+
+    //Not a good fix but it'll do @ Xavier
+    IEnumerator delayShoot()
+    {
+        yield return new WaitForSeconds(.13f);
+        OnShoot?.Invoke();
     }
 }
