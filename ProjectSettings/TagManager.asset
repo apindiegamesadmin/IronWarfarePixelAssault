@@ -56,6 +56,9 @@ TagManager:
   - name: Obstacles
     uniqueID: 975947165
     locked: 0
+  - name: City
+    uniqueID: 1025541795
+    locked: 0
   - name: Enemies
     uniqueID: 2823942235
     locked: 0

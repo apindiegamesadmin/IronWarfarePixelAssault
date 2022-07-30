@@ -11,7 +11,7 @@ public class PowerUpIcon : MonoBehaviour
     {
 
 
-        transform.Rotate(Vector2.up * speed * Time.deltaTime);
+        transform.Rotate(0,0,speed*Time.deltaTime);
     }
 
 
