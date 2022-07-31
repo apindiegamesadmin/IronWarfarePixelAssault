@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfe351fde25198646bbc3c3dfcb7014b, type: 3}
   m_Name: EnemyTankMovementData
   m_EditorClassIdentifier: 
-  maxSpeed: 50
-  rotationSpeed: 150
-  acceleration: 70
+  maxSpeed: 70
+  rotationSpeed: 160
+  acceleration: 75
   deacceleration: 50

@@ -1,6 +1,4 @@
-﻿ using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class MachineGun_Soldier : MonoBehaviour
@@ -20,7 +18,7 @@ public class MachineGun_Soldier : MonoBehaviour
     public Damagable damagable;
 
     private Animator m_Ani;
-   
+
     private Vector2 movement;
     private Vector3 lookDir;
 
@@ -36,10 +34,10 @@ public class MachineGun_Soldier : MonoBehaviour
     [SerializeField] private bool found;
     [SerializeField] private bool shoot;
     [SerializeField] private int playerHealth;
-    
 
+    private bool[] isFalse = new bool[5];
 
-     void Start()
+    void Start()
     {
         health = slider.maxValue;
         healthBar.SetActive(false);
@@ -50,22 +48,22 @@ public class MachineGun_Soldier : MonoBehaviour
 
     void Update()
     {
-        
-        if(slider.value>0.5f)
+
+        if (slider.value > 0.5f)
         {
             alive = true;
         }
         checkDistacne = Vector2.Distance(target.transform.position, transform.position); // check the ditance between Player and Enemy
 
 
-        if(alive && checkDistacne>combatRange)
+        if (alive && checkDistacne > combatRange)
         {
             away = true; found = false; shoot = false;
             speed = 0.0f;
             Debug.Log("Away");
         }
 
-        if( alive && checkDistacne<=combatRange)
+        if (alive && checkDistacne <= combatRange)
         {
             away = false; found = true; shoot = false;
             speed = 1.0f;
@@ -76,8 +74,8 @@ public class MachineGun_Soldier : MonoBehaviour
 
             m_body.MovePosition(transform.position + (lookDir * speed * Time.deltaTime));
             movement = lookDir;
-            Debug.Log("We found target and star moving");
-            
+            Debug.Log("We found target and start moving");
+
         }
 
         if (alive && checkDistacne <= combatRange / 2)
@@ -95,7 +93,7 @@ public class MachineGun_Soldier : MonoBehaviour
         if (shoot && alive)
         {
             timer = timer + Time.deltaTime;
-            if(timer>=0.2f)
+            if (timer >= 0.2f)
             {
                 timer = 0;
                 Rigidbody2D newBullet = Instantiate(bullet);
@@ -107,7 +105,7 @@ public class MachineGun_Soldier : MonoBehaviour
         }
         playerHealth = target.GetComponentInChildren<Damagable>().Health;
 
-        if(playerHealth<0)
+        if (playerHealth < 0)
         {
             timer = 0; shoot = false;
             m_Ani.SetBool("shoot", false);
@@ -115,56 +113,52 @@ public class MachineGun_Soldier : MonoBehaviour
         }
 
 
-        if (slider.value<=0)
+        if (slider.value <= 0)
         {
-          alive = false;
-          healthBar.SetActive(false);
-          m_Ani.Play("Soldier_Machine_die2");
-          if(blood != null)
-          {
-               blood.SetActive(true);//Spawn Blood Animation
-               Destroy(blood, 1f);//Delay Before Destroying Blood
-          }
-          Destroy(gameObject, destroy / 2.5f);
+            alive = false;
+            healthBar.SetActive(false);
+            m_Ani.Play("Soldier_Machine_die2");
+            if (blood != null)
+            {
+                blood.SetActive(true);//Spawn Blood Animation
+                Destroy(blood, 1f);//Delay Before Destroying Blood
+            }
+            Destroy(gameObject, destroy / 2.5f);
         }
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.transform.tag =="Player")
+        if (collision.transform.tag == "Player")
         {
-           healthBar.SetActive(true);
-           m_Ani.Play("Soldier_Machine_die2");
-            
+            healthBar.SetActive(true);
+            m_Ani.Play("Soldier_Machine_die2");
+
             slider.value = 0.0f;
         }
 
-        if(collision.transform.tag =="Bullet")
+        if (collision.transform.tag == "Bullet")
         {
-            //healthBar.SetActive(true);
-            //slider.value = slider.value - 0.5f;
-            m_Ani.Play("Soldier_Machine_diehard");
-            GetComponent<BodyPartsSpawner>().SpawnBodyParts();
-
-            Destroy(gameObject, destroy / 2.5f);
+            healthBar.SetActive(true);
+            slider.value = slider.value - 0.5f;
         }
     }
 
-   /* public void DeadAnimation()
-    {
-        lookDir = transform.position;
-        int random = Random.Range(0, 2);//Randomize int for Random Death Animation
-        switch (random)
-        {
-            case 0:
-                m_Ani.Play("Soldier_Machine_die");
-                break;
-            case 1:
-                m_Ani.Play("Soldier_Machine_die2");
-                break;
-        }
-        Destroy(gameObject, destroy);//Delay before destroy
-    } */
+    /* public void DeadAnimation()
+     {
+         lookDir = transform.position;
+         int random = Random.Range(0, 2);//Randomize int for Random Death Animation
+         switch (random)
+         {
+             case 0:
+                 m_Ani.Play("Soldier_Machine_die");
+                 break;
+             case 1:
+                 m_Ani.Play("Soldier_Machine_die2");
+                 break;
+         }
+         Destroy(gameObject, destroy);//Delay before destroy
+     } */
 
 }
 
