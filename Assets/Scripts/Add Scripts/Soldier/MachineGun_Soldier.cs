@@ -141,8 +141,12 @@ public class MachineGun_Soldier : MonoBehaviour
 
         if(collision.transform.tag =="Bullet")
         {
-           healthBar.SetActive(true);
-           slider.value = slider.value - 0.5f;
+            //healthBar.SetActive(true);
+            //slider.value = slider.value - 0.5f;
+            m_Ani.Play("Soldier_Machine_diehard");
+            GetComponent<BodyPartsSpawner>().SpawnBodyParts();
+
+            Destroy(gameObject, destroy / 2.5f);
         }
     }
 
