@@ -38,6 +38,7 @@ public class Bullet : MonoBehaviour
     {
         rb2d.velocity = Vector2.zero;
         gameObject.SetActive(false);
+        //Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

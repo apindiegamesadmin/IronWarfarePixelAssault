@@ -17,6 +17,17 @@ public class UIManager : MonoBehaviour
         pop.SetActive(false);//Disable Object
     }
 
+    public void PopUp(GameObject pop)
+    {
+        StartCoroutine(DelayPopBack(pop));//Disable Object After Animation End
+    }
+
+    IEnumerator DelayPopBack(GameObject pop)
+    {
+        yield return new WaitForSeconds(0.4f);//Delay
+        pop.SetActive(true);
+    }
+
     public void OpenUrl(string url)
     {
         Application.OpenURL(url);//URL for Website
