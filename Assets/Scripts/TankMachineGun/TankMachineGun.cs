@@ -1,35 +1,38 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TankMachineGun : MonoBehaviour
 {
+    #region Variables
     public AudioSource machineGunSFX;
     public Transform barrel;
     public bool fire;
     public Rigidbody2D bullet;
     private float timer;
-
+    public Animator animator;
     public BulletData BulletData;
     public Damagable damagable;
+    public UnityEvent OnShoot;
+    #endregion
 
     void Update()
     {
         if (Input.GetMouseButtonDown(1))
         {
             fire = true;
+            animator.SetBool("IsShooting", true);
             machineGunSFX.Play();
         }
 
         else if (Input.GetMouseButtonUp(1))
         {
             fire = false;
+            animator.SetBool("IsShooting", false);
             machineGunSFX.Stop();
         }
 
         if (fire)
         {
-            //Rigidbody2D newBullet = Instantiate(bullet, gunPoint.transform.position, gunPoint.transform.rotation);
-            //newBullet.AddForce(gunPoint.transform.forward * 1000, ForceMode2D.Impulse);
-
             timer += Time.deltaTime;
             if (timer >= 0.2f)
             {
