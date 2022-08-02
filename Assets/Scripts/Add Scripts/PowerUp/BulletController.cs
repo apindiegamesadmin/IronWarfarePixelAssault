@@ -8,8 +8,16 @@ public class BulletController : MonoBehaviour
     public Turret turret;
     public TurretData turretData;
     public TurretData[] turretDatas;
-    public float timer;
+    public Transform leftBarrel;
+    public Transform rightBarrel;
+    public Transform midBarrel;
+    public int barrelsInTurret;
+    public float skillTimer;
+    public float iconTimer;
     public bool damageUp;
+
+    public GameObject tripleShootIcon;
+
 
      void Awake()
     {
@@ -18,35 +26,61 @@ public class BulletController : MonoBehaviour
 
         if (turretDatas == null || turretDatas.Length == 0)
             turretDatas = GetComponentsInChildren<TurretData>();
-       
+        tripleShootIcon.SetActive(false);
+
     }
+
+
 
     void Update()
     {
+        if(turret.turretBarrels.Count==1)
+        {
+            tripleShootIcon.SetActive(false);
+        }
+
+
         if (damageUp)
         {
-            timer += Time.deltaTime;
-            if (timer > 10.0f)
+            tripleShootIcon.SetActive(true);
+            turret.turretBarrels.Add(leftBarrel);
+            turret.turretBarrels.Add(midBarrel);
+            turret.turretBarrels.Add(rightBarrel);
+
+            turret.bulletPoolCount = 3;
+
+
+            skillTimer += Time.deltaTime;
+            
+
+            if (skillTimer >5.0f)
             {
                 damageUp = false;
-                timer = 0;
+                skillTimer = 0;
+              
 
             }
+
+            
         }
+
 
         if (!damageUp)
         {
             turret.turretData = turretDatas[0];
+            turret.turretBarrels.Remove(leftBarrel);
+            turret.turretBarrels.Remove(midBarrel);
+            turret.turretBarrels.Remove(rightBarrel);
+            turret.bulletPoolCount = 1;
         }
 
-        if (damageUp && timer > 0.5)
+        if (damageUp && skillTimer > 0.5)
         {
             turret.turretData = turretDatas[1];
         }
 
-
-
-
+       
+        
     }
 
 

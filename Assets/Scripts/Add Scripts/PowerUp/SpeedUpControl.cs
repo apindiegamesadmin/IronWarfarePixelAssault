@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SpeedUpControl : MonoBehaviour
 {
@@ -10,7 +11,12 @@ public class SpeedUpControl : MonoBehaviour
     public TankMovementData movementData;
     public TankMovementData[] tankMovementDatas;
     public float timer;
-    public bool speedUp;
+    public static bool speedUp;
+
+    [Header("IconActive")]
+    public GameObject speedUp_Icon;
+    //Fill up
+
 
 
    
@@ -19,10 +25,10 @@ public class SpeedUpControl : MonoBehaviour
         if (tankmovement == null)
             tankmovement = GetComponentInChildren<TankMover>();
 
+
         if (tankMovementDatas == null || tankMovementDatas.Length == 0)
-        
             tankMovementDatas = GetComponents<TankMovementData>();
-        
+        speedUp_Icon.SetActive(false);
 
     }
   
@@ -43,15 +49,14 @@ public class SpeedUpControl : MonoBehaviour
         if (!speedUp)
         {
             tankmovement.movementData = tankMovementDatas[0];
+            speedUp_Icon.SetActive(false);
         }    
   
         if (speedUp && timer > 0.5)
         {
             tankmovement.movementData = tankMovementDatas[1];
+            speedUp_Icon.SetActive(true);
         }
-
-
-
 
     }
 

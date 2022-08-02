@@ -16,7 +16,7 @@ public class Turret : MonoBehaviour
 
     private ObjectPool bulletPool;
     [SerializeField]
-    private int bulletPoolCount = 10;
+    public int bulletPoolCount = 10;
 
     public UnityEvent OnShoot, OnCantShoot;
     public UnityEvent<float> OnReloading;

@@ -59,8 +59,13 @@ TagManager:
   - name: Obstacles
     uniqueID: 975947165
     locked: 0
+<<<<<<< HEAD
+  - name: City
+    uniqueID: 1025541795
+=======
   - name: Bleeding
     uniqueID: 2640423243
+>>>>>>> 5728483fef99731944f74d192c2afaeac410f6a6
     locked: 0
   - name: Enemies
     uniqueID: 2823942235
