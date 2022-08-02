@@ -53,6 +53,9 @@ TagManager:
   - name: DetailsBottom
     uniqueID: 2760931655
     locked: 0
+  - name: TutorialPlayer
+    uniqueID: 95297101
+    locked: 0
   - name: Obstacles
     uniqueID: 975947165
     locked: 0

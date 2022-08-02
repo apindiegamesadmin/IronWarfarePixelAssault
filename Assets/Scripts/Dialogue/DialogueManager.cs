@@ -5,47 +5,44 @@ using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
+    [Header("Stage 1")]
+    public Dialogue[] dialogue;
+
     private Queue<string> _sentences;
     public TextMeshProUGUI conversationTMPro;
-    public GameObject startButton;
     public GameObject nextButton;
-    public GameObject welcomeTextField;
     public GameObject conversationTextField;
     public GameObject dialoguePanel;
     public Animator animator;
 
+    int dialogueIndex;
+
     private void Awake()
     {
-        startButton.SetActive(true);
-        welcomeTextField.SetActive(true);
+        animator = GetComponent<Animator>();
 
-        nextButton.SetActive(false);
-        conversationTextField.SetActive(false);
+        nextButton.SetActive(true);
+        nextButton.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "START";
+        conversationTextField.SetActive(true);
     }
 
     void Start()
     {
         _sentences = new Queue<string>();
+        StartDialogue(dialogue[dialogueIndex]);
     }
 
     /// <summary>
     /// To start show the dialogue or sentences to the player
     /// </summary>
     /// <param name="dialogue"></param>
+    /// 
     public void StartDialogue(Dialogue dialogue)
     {
-        startButton.SetActive(false);
-        welcomeTextField.SetActive(false);
-
-        nextButton.SetActive(true);
-        conversationTextField.SetActive(true);
-        animator.SetBool("IsConversationOpen", true);
-        Debug.Log("Starting dialogue..");
-
         _sentences.Clear();
 
         // To Enqueue the dialogue sentences from dialogue class to this.sentences array
-        foreach(string sentence in dialogue.sentences)
+        foreach (string sentence in dialogue.sentences)
         {
             _sentences.Enqueue(sentence);
         }
@@ -58,7 +55,8 @@ public class DialogueManager : MonoBehaviour
     /// </summary>
     public void DisplayNextSentence()
     {
-        if(_sentences.Count == 0)
+        nextButton.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "NEXT";
+        if (_sentences.Count == 0)
         {
             StopAllCoroutines();
             StartCoroutine(CloseDialogue());
@@ -90,10 +88,12 @@ public class DialogueManager : MonoBehaviour
     /// To wait for closing the dialogue text field and animation
     /// </summary>
     /// <returns></returns>
+    /// 
     IEnumerator CloseDialogue()
     {
-        animator.SetBool("IsConversationOpen", false);
-        yield return new WaitForSeconds(0.6f);
+        animator.Play("Dialogue_Close");
+        yield return new WaitForSeconds(0.4f);
+        dialogueIndex++;
         EndSentence();
     }
 
@@ -104,8 +104,6 @@ public class DialogueManager : MonoBehaviour
     /// </summary>
     public void EndSentence()
     {
-        Debug.Log("End Sentence");
-
         dialoguePanel.SetActive(false);
     }
 }

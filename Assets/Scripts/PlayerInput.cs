@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.EventSystems;
 
 public class PlayerInput : MonoBehaviour
 {
@@ -30,7 +31,7 @@ public class PlayerInput : MonoBehaviour
     private void GetShootingInput()
     {
         //Changed to Getmousebutton 0 instead to backup the fix
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && !EventSystem.current.IsPointerOverGameObject())
         {
             StartCoroutine(delayShoot());
         }

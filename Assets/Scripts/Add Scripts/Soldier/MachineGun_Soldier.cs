@@ -35,6 +35,8 @@ public class MachineGun_Soldier : MonoBehaviour
     [SerializeField] private bool shoot;
     [SerializeField] private int playerHealth;
 
+    bool dead;
+
     private bool[] isFalse = new bool[5];
 
     void Start()
@@ -48,6 +50,8 @@ public class MachineGun_Soldier : MonoBehaviour
 
     void Update()
     {
+        if (dead)
+            return;
 
         if (slider.value > 0.5f)
         {
@@ -129,6 +133,8 @@ public class MachineGun_Soldier : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+        if (dead)
+            return;
         if (collision.transform.tag == "Player")
         {
             healthBar.SetActive(true);
@@ -139,8 +145,12 @@ public class MachineGun_Soldier : MonoBehaviour
 
         if (collision.transform.tag == "Bullet")
         {
-            healthBar.SetActive(true);
-            slider.value = slider.value - 0.5f;
+            //healthBar.SetActive(true);
+            //slider.value = slider.value - 0.5f;
+            dead = true;
+            m_Ani.Play("Soldier_Machine_diehard");
+            GetComponent<BodyPartsSpawner>().SpawnBodyParts();
+            Destroy(gameObject, destroy / 2.5f);
         }
     }
 
