@@ -64,7 +64,6 @@ public class MachineGun_Soldier : MonoBehaviour
         {
             away = true; found = false; shoot = false;
             speed = 0.0f;
-            Debug.Log("Away");
         }
 
         if (alive && checkDistacne <= combatRange)
@@ -78,7 +77,6 @@ public class MachineGun_Soldier : MonoBehaviour
 
             m_body.MovePosition(transform.position + (lookDir * speed * Time.deltaTime));
             movement = lookDir;
-            Debug.Log("We found target and start moving");
 
         }
 
@@ -87,7 +85,6 @@ public class MachineGun_Soldier : MonoBehaviour
             speed = 0.0f;
             m_body.MovePosition(transform.position + (lookDir * speed * Time.deltaTime));
             away = false; found = false; shoot = true;
-            Debug.Log("We start Shooting");
         }
 
         m_Ani.SetBool("idle", away);

@@ -4,9 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Bullet
-  - SpeedUp
   - DamageUp
+  - SpeedUp
+  - Bullet
+  - TutorialTrigger
   layers:
   - Default
   - TransparentFX
@@ -14,12 +15,12 @@ TagManager:
   - 
   - Water
   - UI
-  - Bullet
-  - Agent
-  - Hittable
-  - ObstaclesMovement
-  - Player
-  - Enemy
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -44,53 +45,33 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Ocean
-    uniqueID: 4052322297
-    locked: 0
   - name: Ground
-    uniqueID: 3286568179
+    uniqueID: 1617767819
     locked: 0
-  - name: DetailsBottom
-    uniqueID: 2760931655
-    locked: 0
-  - name: TutorialPlayer
-    uniqueID: 95297101
+  - name: Detail_Bottom
+    uniqueID: 99907677
     locked: 0
   - name: Obstacles
-    uniqueID: 975947165
+    uniqueID: 1743009269
     locked: 0
-<<<<<<< HEAD
-  - name: City
-    uniqueID: 1025541795
-=======
-  - name: Bleeding
-    uniqueID: 2640423243
->>>>>>> 5728483fef99731944f74d192c2afaeac410f6a6
-    locked: 0
-  - name: Enemies
-    uniqueID: 2823942235
+  - name: Enemy
+    uniqueID: 772340489
     locked: 0
   - name: Player
-    uniqueID: 297575681
+    uniqueID: 2251879423
     locked: 0
-  - name: Items
-    uniqueID: 784727535
+  - name: Item
+    uniqueID: 3250547105
     locked: 0
-  - name: Bullets
-    uniqueID: 1180159871
+  - name: Bullet
+    uniqueID: 1769476287
     locked: 0
-  - name: DetailsTop
-    uniqueID: 973470441
+  - name: Special_Effects
+    uniqueID: 646852589
     locked: 0
-  - name: Planes
-    uniqueID: 968911171
-    locked: 0
-  - name: SpecialEffects
-    uniqueID: 1476806939
+  - name: Detail_Top
+    uniqueID: 1250980913
     locked: 0
   - name: UI
-    uniqueID: 1337076293
-    locked: 0
-  - name: PowerUp
-    uniqueID: 2279825881
+    uniqueID: 1585582841
     locked: 0

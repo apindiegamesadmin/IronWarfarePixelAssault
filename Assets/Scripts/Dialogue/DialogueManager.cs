@@ -5,7 +5,6 @@ using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
-    [Header("Stage 1")]
     public Dialogue[] dialogue;
 
     private Queue<string> _sentences;

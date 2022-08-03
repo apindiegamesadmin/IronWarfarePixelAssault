@@ -86,17 +86,8 @@ public class BulletController : MonoBehaviour
 
 
 
-    void OnCollisionStay2D(Collision2D collision)
-    {
-
-        Debug.Log(collision.transform.name);
-        Debug.Log("Power Up Collision Work");
-    }
-
     void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.transform.name);
-        Debug.Log("Power Up Trigger Work");
 
         if (collision.transform.tag == "DamageUp")
         {

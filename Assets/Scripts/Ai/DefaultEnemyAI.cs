@@ -11,6 +11,8 @@ public class DefaultEnemyAI : MonoBehaviour
     private TankController tank;
     [SerializeField]
     private AIDetector detector;
+    [SerializeField] bool tutorial;
+    bool alreadyTriggered;
 
     private void Awake()
     {
@@ -20,9 +22,17 @@ public class DefaultEnemyAI : MonoBehaviour
 
     private void Update()
     {
-        if (detector.TargetVisible)
+        if (detector.TargetVisible && !tutorial)//Can't Shoot Back In Tutorial
         {
             shootBehaviour.PerformAction(tank, detector);
+        }
+        else if(detector.TargetVisible && tutorial)//Trigger Tutorial Dialogue For Step 2
+        {
+            if (!alreadyTriggered)
+            {
+                FindObjectOfType<TutorialManager>().TutorialDialogueTrigger(2);
+                alreadyTriggered = true;
+            }
         }
         else
         {

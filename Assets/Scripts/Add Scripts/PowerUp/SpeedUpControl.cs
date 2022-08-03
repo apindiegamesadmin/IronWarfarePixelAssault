@@ -66,18 +66,10 @@ public class SpeedUpControl : MonoBehaviour
 
 
 
-    void OnCollisionStay2D(Collision2D collision)
-    {
-        
-        Debug.Log(collision.transform.name);
-        Debug.Log("Power Up Collision Work");
-    }
+
 
      void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.transform.name);
-        Debug.Log("Power Up Trigger Work");
-
         if(collision.transform.tag == "SpeedUp")
         {
             Destroy(collision.transform.gameObject, 0.5f);
