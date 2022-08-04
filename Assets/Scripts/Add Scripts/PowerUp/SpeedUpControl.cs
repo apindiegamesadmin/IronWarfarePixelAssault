@@ -12,6 +12,7 @@ public class SpeedUpControl : MonoBehaviour
     public TankMovementData[] tankMovementDatas;
     public float timer;
     public static bool speedUp;
+    public bool tutorial;
 
     [Header("IconActive")]
     public GameObject speedUp_Icon;
@@ -42,7 +43,6 @@ public class SpeedUpControl : MonoBehaviour
             {
                 speedUp = false;
                 timer = 0;
-
             }
         }
 
@@ -72,8 +72,13 @@ public class SpeedUpControl : MonoBehaviour
     {
         if(collision.transform.tag == "SpeedUp")
         {
-            Destroy(collision.transform.gameObject, 0.5f);
+            Destroy(collision.transform.gameObject);
             speedUp = true;
+            if (tutorial)
+            {
+                tutorial = false;
+                FindObjectOfType<TutorialManager>().completeStep = true;
+            }
         }
     }
 }

@@ -8,6 +8,7 @@ TagManager:
   - SpeedUp
   - Bullet
   - TutorialTrigger
+  - HealthPack
   layers:
   - Default
   - TransparentFX

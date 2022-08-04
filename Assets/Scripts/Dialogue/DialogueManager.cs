@@ -6,6 +6,7 @@ using TMPro;
 public class DialogueManager : MonoBehaviour
 {
     public Dialogue[] dialogue;
+    [SerializeField] TankController playerTank;
 
     private Queue<string> _sentences;
     public TextMeshProUGUI conversationTMPro;
@@ -38,6 +39,7 @@ public class DialogueManager : MonoBehaviour
     /// 
     public void StartDialogue(Dialogue dialogue)
     {
+        playerTank.canMove = false;
         _sentences.Clear();
 
         // To Enqueue the dialogue sentences from dialogue class to this.sentences array
@@ -103,6 +105,7 @@ public class DialogueManager : MonoBehaviour
     /// </summary>
     public void EndSentence()
     {
+        playerTank.canMove = true;
         dialoguePanel.SetActive(false);
     }
 }

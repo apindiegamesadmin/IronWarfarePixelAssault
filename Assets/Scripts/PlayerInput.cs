@@ -14,9 +14,6 @@ public class PlayerInput : MonoBehaviour
     public UnityEvent<Vector2> OnMoveBody = new UnityEvent<Vector2>();
     public UnityEvent<Vector2> OnMoveTurret = new UnityEvent<Vector2>();
 
-    int count;
-    bool W, A, S, D;
-
     private void Awake()
     {
         if (mainCamera == null)
@@ -26,38 +23,6 @@ public class PlayerInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(count < 4 && FindObjectOfType<TutorialManager>().tutorialIndex == 0)//Check for tutorial Movement //Not an efficient method,will fix later
-        {
-            if (Input.GetKeyDown(KeyCode.W))
-            {
-                if (W)
-                    return;
-                count++;
-            }
-            else if (Input.GetKeyDown(KeyCode.A))
-            {
-                if (A)
-                    return;
-                count++;
-            }
-            else if (Input.GetKeyDown(KeyCode.S))
-            {
-                if (S)
-                    return;
-                count++;
-            }
-            else if (Input.GetKeyDown(KeyCode.D))
-            {
-                if (D)
-                    return;
-                count++;
-            }
-            if(count == 4)
-            {
-                FindObjectOfType<TutorialManager>().completeStep = true;
-            }
-        }
-
         GetBodyMovement();
         GetTurretMovement();
         GetShootingInput();

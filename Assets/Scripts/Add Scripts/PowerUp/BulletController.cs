@@ -15,6 +15,7 @@ public class BulletController : MonoBehaviour
     public float skillTimer;
     public float iconTimer;
     public bool damageUp;
+    public bool tutorial;
 
     public GameObject tripleShootIcon;
 
@@ -53,15 +54,13 @@ public class BulletController : MonoBehaviour
             skillTimer += Time.deltaTime;
             
 
-            if (skillTimer >5.0f)
+            if (skillTimer > 5.0f)
             {
                 damageUp = false;
                 skillTimer = 0;
-              
-
             }
 
-            
+
         }
 
 
@@ -91,8 +90,14 @@ public class BulletController : MonoBehaviour
 
         if (collision.transform.tag == "DamageUp")
         {
-            Destroy(collision.transform.gameObject, 0.5f);
+            Destroy(collision.transform.gameObject);
             damageUp = true;
+
+            if (tutorial)
+            {
+                tutorial = false;
+                FindObjectOfType<TutorialManager>().completeStep = true;
+            }
         }
     }
 
