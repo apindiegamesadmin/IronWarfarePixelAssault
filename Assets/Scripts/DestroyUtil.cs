@@ -8,4 +8,10 @@ public class DestroyUtil : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+    //Destroy the game object once it has been disabled in the hiearchy
+    private void OnDisable()
+    {
+        Destroy(gameObject);
+    }
 }
