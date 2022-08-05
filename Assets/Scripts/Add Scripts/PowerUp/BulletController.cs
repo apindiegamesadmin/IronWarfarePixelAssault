@@ -4,19 +4,15 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
-
     public Turret turret;
     public TurretData turretData;
     public TurretData[] turretDatas;
-    public Transform leftBarrel;
-    public Transform rightBarrel;
-    public Transform midBarrel;
-    public int barrelsInTurret;
+    public Transform[] barrels;
     public float skillTimer;
-    public float iconTimer;
     public bool damageUp;
+    public bool tutorial;
 
-    public GameObject tripleShootIcon;
+    //public GameObject tripleShootIcon;
 
 
      void Awake()
@@ -26,7 +22,7 @@ public class BulletController : MonoBehaviour
 
         if (turretDatas == null || turretDatas.Length == 0)
             turretDatas = GetComponentsInChildren<TurretData>();
-        tripleShootIcon.SetActive(false);
+        //tripleShootIcon.SetActive(false);
 
     }
 
@@ -36,41 +32,30 @@ public class BulletController : MonoBehaviour
     {
         if(turret.turretBarrels.Count==1)
         {
-            tripleShootIcon.SetActive(false);
+            //tripleShootIcon.SetActive(false);
         }
 
 
         if (damageUp)
         {
-            tripleShootIcon.SetActive(true);
-            turret.turretBarrels.Add(leftBarrel);
-            turret.turretBarrels.Add(midBarrel);
-            turret.turretBarrels.Add(rightBarrel);
-
-            turret.bulletPoolCount = 3;
-
-
+            //tripleShootIcon.SetActive(true);
             skillTimer += Time.deltaTime;
-            
 
-            if (skillTimer >5.0f)
+            if (skillTimer > 5.0f)
             {
                 damageUp = false;
                 skillTimer = 0;
-              
-
             }
-
-            
         }
 
 
         if (!damageUp)
         {
             turret.turretData = turretDatas[0];
-            turret.turretBarrels.Remove(leftBarrel);
-            turret.turretBarrels.Remove(midBarrel);
-            turret.turretBarrels.Remove(rightBarrel);
+            foreach (Transform barrel in barrels)
+            {
+                turret.turretBarrels.Remove(barrel);
+            }
             turret.bulletPoolCount = 1;
         }
 
@@ -78,9 +63,6 @@ public class BulletController : MonoBehaviour
         {
             turret.turretData = turretDatas[1];
         }
-
-       
-        
     }
 
 
@@ -91,8 +73,21 @@ public class BulletController : MonoBehaviour
 
         if (collision.transform.tag == "DamageUp")
         {
-            Destroy(collision.transform.gameObject, 0.5f);
+            Destroy(collision.transform.gameObject);
             damageUp = true;
+
+            foreach (Transform barrel in barrels)
+            {
+                turret.turretBarrels.Add(barrel);
+            }
+
+            turret.bulletPoolCount = 3;
+
+            if (tutorial)
+            {
+                tutorial = false;
+                FindObjectOfType<TutorialManager>().completeStep = true;
+            }
         }
     }
 

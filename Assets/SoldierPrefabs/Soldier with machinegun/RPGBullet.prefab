@@ -73,6 +73,7 @@ GameObject:
   - component: {fileID: 5030131742564837564}
   - component: {fileID: 1005384561229908434}
   - component: {fileID: 7079112486673792758}
+  - component: {fileID: 8610619301114959650}
   m_Layer: 6
   m_Name: RPGBullet
   m_TagString: Bullet
@@ -134,8 +135,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1180159871
-  m_SortingLayer: 8
+  m_SortingLayerID: 1769476287
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d7b9b16865a7a9d41881c342cb837fb3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -235,3 +236,15 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8610619301114959650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1701039071309444893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 242bfaac70c74d24499bd34e618bede4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

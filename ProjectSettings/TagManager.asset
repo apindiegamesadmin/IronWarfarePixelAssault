@@ -8,6 +8,8 @@ TagManager:
   - SpeedUp
   - Bullet
   - TutorialTrigger
+  - HealthPack
+  - Shield
   layers:
   - Default
   - TransparentFX
