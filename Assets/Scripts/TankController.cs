@@ -10,8 +10,11 @@ public class TankController : MonoBehaviour
     public bool canShoot = true;
     public bool canMove = true;
 
+    Animator animator;
+
     private void Awake()
     {
+        animator = GetComponent<Animator>();
         if (tankMover == null)
             tankMover = GetComponentInChildren<TankMover>();
         if (aimTurret == null || aimTurret.Length == 0)
@@ -57,5 +60,9 @@ public class TankController : MonoBehaviour
         }
     }
 
-    
+    public void DestroyAnimation(GameObject obj)
+    {
+        animator.Play("DestroyAnimation");
+        Destroy(obj, 2f);
+    }
 }

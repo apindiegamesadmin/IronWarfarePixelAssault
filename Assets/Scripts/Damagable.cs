@@ -24,6 +24,8 @@ public class Damagable : MonoBehaviour
     public UnityEvent OnDead;
     public UnityEvent<float> OnHealthChange;
     public UnityEvent OnHit, OnHeal;
+    public int shieldPoint;
+    public bool shield;
 
 
     private void Start()
@@ -33,14 +35,25 @@ public class Damagable : MonoBehaviour
 
     internal void Hit(int damagePoints)
     {
-        Health -= damagePoints;
-        if (Health <= 0)
+        if (shield)
         {
-            OnDead?.Invoke();
+            shieldPoint -= damagePoints;
+            if(shieldPoint <= 0)
+            {
+                shield = false;
+            }
         }
         else
         {
-            OnHit?.Invoke();
+            Health -= damagePoints;
+            if (Health <= 0)
+            {
+                OnDead?.Invoke();
+            }
+            else
+            {
+                OnHit?.Invoke();
+            }
         }
     }
 

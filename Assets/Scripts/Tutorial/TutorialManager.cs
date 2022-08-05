@@ -9,6 +9,7 @@ public class TutorialManager : MonoBehaviour
     [SerializeField] DefaultEnemyAI step2EnemyAIPatrol;
     [SerializeField] AIDetector step3SpeedPowerUps;
     [SerializeField] AIDetector step3BulletPowerUps;
+    [SerializeField] AIDetector step3ShieldPowerUps;
     [SerializeField] AIDetector step4HealthPack;
     [SerializeField] GameObject dialogueUI;
 
@@ -34,6 +35,7 @@ public class TutorialManager : MonoBehaviour
         playerTank.transform.GetComponent<SpeedUpControl>().tutorial = true;// Turn On tutorial mode on power ups
         playerTank.transform.GetComponent<BulletController>().tutorial = true;
         playerTank.transform.GetComponent<HealthPackControl>().tutorial = true;
+        playerTank.transform.GetComponent<ShieldController>().tutorial = true;
     }
 
     
@@ -167,14 +169,34 @@ public class TutorialManager : MonoBehaviour
                 doOnce = false;
             }
         }
-        else if(tutorialIndex == 5)
+        else if (tutorialIndex == 5)// Step 3 C Shield Power Up
+        {
+            if (step3ShieldPowerUps.TargetVisible)
+            {
+                if (!doOnce)
+                {
+                    dialogueUI.SetActive(true);
+                    dialogueManager.StartDialogue(dialogueManager.dialogue[6]);
+                    doOnce = true;
+                }
+            }
+            if (completeStep)//Show Complete Text
+            {
+                dialogueUI.SetActive(true);
+                dialogueManager.StartDialogue(dialogueManager.dialogue[1]);
+                tutorialIndex++;
+                completeStep = false;
+                doOnce = false;
+            }
+        }
+        else if(tutorialIndex == 6)// Step 4 Health Pack
         {
             if (step4HealthPack.TargetVisible)
             {
                 if (!doOnce)
                 {
                     dialogueUI.SetActive(true);
-                    dialogueManager.StartDialogue(dialogueManager.dialogue[6]);
+                    dialogueManager.StartDialogue(dialogueManager.dialogue[7]);
                     doOnce = true;
                 }
             }
