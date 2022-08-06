@@ -186,6 +186,7 @@ GameObject:
   - component: {fileID: 1270300021066236585}
   - component: {fileID: 4666292401590987496}
   - component: {fileID: 1270300021066236584}
+  - component: {fileID: 7057568731150553389}
   m_Layer: 11
   m_Name: GunSoldier
   m_TagString: Untagged
@@ -272,11 +273,28 @@ MonoBehaviour:
   healthBar: {fileID: 1270300022670657801}
   slider: {fileID: 1270300021030422243}
   health: 0
-  alive: 0
   away: 0
   found: 0
   shoot: 0
   playerHealth: 0
+  turretData: {fileID: 11400000, guid: 6c1b01c512c9b3d45b3f703fb137186d, type: 2}
+  bulletPoolCount: 10
+--- !u!114 &7057568731150553389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1270300021066236590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c48793954bede384e96bc089d48042ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToPool: {fileID: 0}
+  poolSize: 10
+  spawnedObjectsParent: {fileID: 0}
+  alwaysDestroy: 0
 --- !u!1 &1270300021586293478
 GameObject:
   m_ObjectHideFlags: 0

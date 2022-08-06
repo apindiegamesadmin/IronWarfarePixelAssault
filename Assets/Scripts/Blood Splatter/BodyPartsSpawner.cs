@@ -14,17 +14,18 @@ public class BodyPartsSpawner : MonoBehaviour
 
     }
 
-    public void SpawnBodyParts()
+    public void SpawnBodyParts(Vector2 dir,Vector2 pos)
     {
         for (int i = 0; i < bodyPartsPrefabs.Length; i++)
         {
-            dirX = Random.Range(-1f, 1f);
-            dirY = Random.Range(0, 1f);
-            torque = Random.Range(5, 15);
+            //dirX = Random.Range(-1f, 1f);
+            //dirY = Random.Range(0, 1f);
+            //torque = Random.Range(5, 15);
             GameObject bodyPart = Instantiate(bodyPartsPrefabs[i],transform.position,Quaternion.identity);
             rb = bodyPart.GetComponent<Rigidbody2D>();
 
-            rb.AddForce(new Vector2(dirX, dirY), ForceMode2D.Impulse);
+            float randomValue = Random.Range(0f, 1f);
+            rb.AddForceAtPosition((new Vector2(dir.x - randomValue,dir.y)) * 50f, pos);
 
             StartCoroutine(StopSimulating(rb));
             rb.AddTorque(torque, ForceMode2D.Force);

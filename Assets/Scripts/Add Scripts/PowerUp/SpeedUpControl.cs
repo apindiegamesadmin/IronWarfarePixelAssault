@@ -10,7 +10,8 @@ public class SpeedUpControl : MonoBehaviour
     public TankMover tankmovement;  
     public TankMovementData movementData;
     public TankMovementData[] tankMovementDatas;
-    public float timer;
+    public float duration = 10f;
+    float timer;
     public static bool speedUp;
     public bool tutorial;
 
@@ -39,7 +40,7 @@ public class SpeedUpControl : MonoBehaviour
         if (speedUp)
         {
             timer += Time.deltaTime;
-            if (timer > 10.0f)
+            if (timer > duration)
             {
                 speedUp = false;
                 timer = 0;

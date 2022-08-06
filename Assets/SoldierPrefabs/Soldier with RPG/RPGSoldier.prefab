@@ -277,6 +277,9 @@ GameObject:
   - component: {fileID: 4172191967725510779}
   - component: {fileID: 4172191968403641453}
   - component: {fileID: 7675054750919967443}
+  - component: {fileID: -2720486778945160563}
+  - component: {fileID: -3366627863500594975}
+  - component: {fileID: -8345835460128550897}
   m_Layer: 11
   m_Name: RPGSoldier
   m_TagString: Untagged
@@ -340,6 +343,70 @@ CapsuleCollider2D:
   m_Offset: {x: -0.010816097, y: -0.002403736}
   m_Size: {x: 0.22839642, y: 0.26450825}
   m_Direction: 0
+--- !u!114 &-2720486778945160563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4172191968403641450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f93ad23e829df4b368d99466c51a0a1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkDistacne: 0
+  target: {fileID: 0}
+  speed: 0.25
+  blood: {fileID: 0}
+  barrel: {fileID: 0}
+  BulletData: {fileID: 11400000, guid: 0e345e567a5a742089ecce543c2aa013, type: 2}
+  damagable: {fileID: 0}
+  healthBar: {fileID: 0}
+  slider: {fileID: 0}
+  away: 0
+  found: 0
+  shoot: 0
+  playerHealth: 0
+  turretData: {fileID: 0}
+  bulletPoolCount: 10
+--- !u!114 &-3366627863500594975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4172191968403641450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fe8a5dc32e554b4abc413f96042707a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bodyPartsPrefabs:
+  - {fileID: 3751531424598165166, guid: 215ea31b5f3103d4aad0df0138248c56, type: 3}
+  - {fileID: 856296980736843613, guid: 8549b1df0c54802428dfa045d6687379, type: 3}
+  - {fileID: 8053709391600892966, guid: e2400d274fff41e4e98326533c88db86, type: 3}
+  - {fileID: 1615224764913229566, guid: 38f90a67ae291eb45b5dd7787c26404b, type: 3}
+  - {fileID: 5034663374652995803, guid: 72f3524241785034bacb9bda819c830d, type: 3}
+  - {fileID: 1659007633200338752, guid: b3d4d3b6a02e39b46bc79b7386db3e05, type: 3}
+  - {fileID: 3556060073319245538, guid: 255b7937fe4cd6e429966bb12f4cde3f, type: 3}
+  - {fileID: 7413836672536420769, guid: 6a02241b12dcdfd439a5348b229ccbfd, type: 3}
+--- !u!114 &-8345835460128550897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4172191968403641450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c48793954bede384e96bc089d48042ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToPool: {fileID: 0}
+  poolSize: 10
+  spawnedObjectsParent: {fileID: 0}
+  alwaysDestroy: 0
 --- !u!1 &4172191968564891686
 GameObject:
   m_ObjectHideFlags: 0

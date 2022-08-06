@@ -12,6 +12,7 @@ public class Bullet : MonoBehaviour
     private Rigidbody2D rb2d;
 
     public UnityEvent OnHit = new UnityEvent();
+    public Vector2 direction;
 
     private void Awake()
     {

@@ -12,7 +12,7 @@ public class RPG_Soldier : MonoBehaviour
     private float destroy = 4.0f;
     private float combatRange = 5.0f;
     private float timer;
-    public Rigidbody2D bullet;
+    //public Rigidbody2D bullet;
     public GameObject blood;//Blood Object Reference
     public Transform barrel;
 
@@ -27,8 +27,8 @@ public class RPG_Soldier : MonoBehaviour
     [Header("..Soldier Health..")]
     [SerializeField] private GameObject healthBar;
     [SerializeField] private Slider slider;
-    [SerializeField] private float health;
-    [SerializeField] private bool alive;
+    //[SerializeField] private float health;
+    //[SerializeField] private bool alive;
 
 
     [Header("..Check Player's Conditions..")]
@@ -37,12 +37,21 @@ public class RPG_Soldier : MonoBehaviour
     [SerializeField] private bool shoot;
     [SerializeField] private int playerHealth;
 
+    public TurretData turretData;
+    public int bulletPoolCount = 10;
+    private ObjectPool bulletPool;
 
+    bool dead;
+
+    private void Awake()
+    {
+        bulletPool = GetComponent<ObjectPool>();
+    }
 
     void Start()
     {
-
-        health = slider.maxValue;
+        bulletPool.Initialize(turretData.bulletPrefab, bulletPoolCount);
+        //health = slider.maxValue;
         healthBar.SetActive(false);
         m_body = GetComponent<Rigidbody2D>();
         m_Ani = GetComponentInChildren<Animator>();
@@ -54,21 +63,22 @@ public class RPG_Soldier : MonoBehaviour
 
     void Update()
     {
+        if (dead)
+            return;
 
-        if (slider.value > 0.5f)
+        if (target.activeInHierarchy)
         {
-            alive = true;
+            checkDistacne = Vector2.Distance(target.transform.position, transform.position); // check the ditance between Player and Enemy
         }
-        checkDistacne = Vector2.Distance(target.transform.position, transform.position); // check the ditance between Player and Enemy
 
 
-        if (alive && checkDistacne > combatRange)
+        if (checkDistacne > combatRange)
         {
             away = true; found = false; shoot = false;
             speed = 0.0f;
         }
 
-        if (alive && checkDistacne <= combatRange)
+        if (checkDistacne <= combatRange)
         {
             away = false; found = true; shoot = false;
             speed = 1.0f;
@@ -82,7 +92,7 @@ public class RPG_Soldier : MonoBehaviour
 
         }
 
-        if (alive && checkDistacne <= combatRange / 2)
+        if (checkDistacne <= combatRange / 2)
         {
             speed = 0.0f;
             m_body.MovePosition(transform.position + (lookDir * speed * Time.deltaTime));
@@ -96,19 +106,20 @@ public class RPG_Soldier : MonoBehaviour
 
 
 
-        if (shoot && alive)
+        if (shoot)
         {
             timer = timer + Time.deltaTime;
             if (timer >=1f)
             {
                 timer = 0;
                 m_Ani.SetBool("shoot", shoot);
-                Rigidbody2D newBullet = Instantiate(bullet);
-                newBullet.transform.position = barrel.position;
-                newBullet.transform.localRotation = barrel.rotation;
-                newBullet.AddForce(barrel.up * 100, ForceMode2D.Force);
+                var hit = Physics2D.Raycast(barrel.position, barrel.up);
 
-                newBullet.GetComponent<Bullet>().Initialize(BulletData);
+                GameObject bullet = bulletPool.CreateObject();
+                bullet.transform.position = barrel.position;
+                bullet.transform.localRotation = barrel.rotation;
+                bullet.GetComponent<Bullet>().Initialize(BulletData);
+                bullet.GetComponent<Bullet>().direction = barrel.up;
 
             }
         }
@@ -125,7 +136,6 @@ public class RPG_Soldier : MonoBehaviour
 
         if (slider.value <= 0)
         {
-            alive = false;
             healthBar.SetActive(false);
             m_Ani.Play("Soldier_RPG_die1");
             if (blood != null)
@@ -157,11 +167,12 @@ public class RPG_Soldier : MonoBehaviour
 
         if (collision.transform.tag == "Bullet")
         {
-            healthBar.SetActive(true);
-
-
-            slider.value = slider.value - 0.5f;
-
+            //healthBar.SetActive(true);
+            //slider.value = slider.value - 0.5f;
+            dead = true;
+            m_Ani.Play("Soldier_RPG_diehard");
+            GetComponent<BodyPartsSpawner>().SpawnBodyParts(collision.GetComponent<Bullet>().direction, collision.transform.position);
+            Destroy(gameObject, destroy / 2.5f);
         }
     }
 

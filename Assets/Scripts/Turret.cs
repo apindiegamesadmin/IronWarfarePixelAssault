@@ -61,6 +61,7 @@ public class Turret : MonoBehaviour
                 bullet.transform.position = barrel.position;
                 bullet.transform.localRotation = barrel.rotation;
                 bullet.GetComponent<Bullet>().Initialize(turretData.bulletData);
+                bullet.GetComponent<Bullet>().direction = barrel.up;
 
                 foreach (var collider in tankColliders)
                 {

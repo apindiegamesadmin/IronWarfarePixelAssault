@@ -8,8 +8,9 @@ public class BulletController : MonoBehaviour
     public TurretData turretData;
     public TurretData[] turretDatas;
     public Transform[] barrels;
-    public float skillTimer;
-    public bool damageUp;
+    public float duration = 10f;
+    float skillTimer;
+    bool damageUp;
     public bool tutorial;
 
     //public GameObject tripleShootIcon;
@@ -41,7 +42,7 @@ public class BulletController : MonoBehaviour
             //tripleShootIcon.SetActive(true);
             skillTimer += Time.deltaTime;
 
-            if (skillTimer > 5.0f)
+            if (skillTimer > duration)
             {
                 damageUp = false;
                 skillTimer = 0;
