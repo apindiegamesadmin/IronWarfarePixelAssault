@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8895264861689223041}
   - component: {fileID: 8895264861689223040}
   - component: {fileID: 8895264861689223043}
-  - component: {fileID: 1504840646004414846}
+  - component: {fileID: 5718181798067081737}
   m_Layer: 11
   m_Name: SpeedUp_Icon
   m_TagString: SpeedUp
@@ -98,8 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54892c7123edb4d37858df54f0cd470b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
---- !u!61 &1504840646004414846
+  speed: 100
+--- !u!61 &5718181798067081737
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

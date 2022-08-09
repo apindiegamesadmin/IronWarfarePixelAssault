@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7381821783379089985}
   - component: {fileID: 7381821783379089984}
   - component: {fileID: 7381821783379089987}
-  - component: {fileID: 1664387142853029523}
+  - component: {fileID: -799756196271758729}
   m_Layer: 11
   m_Name: HeathPack
   m_TagString: HealthPack
@@ -29,7 +29,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.636, y: 2.07, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 1
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -98,8 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54892c7123edb4d37858df54f0cd470b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
---- !u!61 &1664387142853029523
+  speed: 100
+--- !u!61 &-799756196271758729
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

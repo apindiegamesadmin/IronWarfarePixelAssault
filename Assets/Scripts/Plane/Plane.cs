@@ -1,21 +1,52 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Plane : MonoBehaviour
 {
-    public Rigidbody2D rigidbody2D;
-    public Transform StartingPoint;
-    public Transform EndPoint;
-    private float _speed = 0.01f;
+    [SerializeField] GameObject airDropPrefab;
+    [SerializeField] Transform StartingPoint;
+    [SerializeField] Transform EndingPoint;
+    [SerializeField] float speed = 1f;
 
     // Start is called before the first frame update
-    void Start()
+    IEnumerator Start()
     {
         transform.position = StartingPoint.position;
+        StartCoroutine(MoveToEndPoint());
+        StartCoroutine(DelayDrop());
+
+        yield return new WaitForSeconds(20f);
+        Destroy(transform.parent.gameObject);
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator DelayDrop()
     {
-        transform.position = new Vector3(transform.position.x + _speed, transform.position.y + _speed, 0);
+        float delay = Random.Range(2, 4);
+        yield return new WaitForSeconds(delay);
+        SpawnAirDrop();
+    }
+
+    void SpawnAirDrop()
+    {
+        Instantiate(airDropPrefab,transform.position,Quaternion.identity);
+    }
+
+    IEnumerator MoveToEndPoint()
+    {
+        float AngleRad = Mathf.Atan2(EndingPoint.position.y - transform.position.y, EndingPoint.position.x - transform.position.x);
+        // Get Angle in Degrees
+        float AngleDeg = (180 / Mathf.PI) * AngleRad;
+        // Rotate Object
+        this.transform.rotation = Quaternion.Euler(0, 0, AngleDeg);
+
+        float playerDistance = Vector2.Distance(transform.position, EndingPoint.position);
+        while (playerDistance > 0)
+        {
+            playerDistance = Vector2.Distance(transform.position, EndingPoint.position);
+            transform.position = Vector2.MoveTowards(transform.position, EndingPoint.position, speed * Time.deltaTime);
+            yield return null;
+        }
+        //Destroy(transform.parent.gameObject);
     }
 }

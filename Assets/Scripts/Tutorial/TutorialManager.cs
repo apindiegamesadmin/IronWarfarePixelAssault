@@ -28,7 +28,11 @@ public class TutorialManager : MonoBehaviour
         dialogueUI.SetActive(true);//Show Dialogue
 
         playerTank.canShoot = false;//Disable Shoot Function Of Player
-                                    //Here we need to Disable player machine guns
+        TankMachineGun[] machineGuns = playerTank.GetComponentsInChildren<TankMachineGun>();
+        foreach (TankMachineGun machineGun in machineGuns)
+        {
+            machineGun.canShoot = false;//Disable player machine guns
+        }
 
         step2EnemyAIStatic.canShoot = false;//Disable Shoot Function Of Enemy
         step2EnemyAIPatrol.canShoot = false;
@@ -97,7 +101,11 @@ public class TutorialManager : MonoBehaviour
             {
                 dialogueUI.SetActive(true);
                 dialogueManager.StartDialogue(dialogueManager.dialogue[3]);//Show appropiate dialogue
-                //Here we need to enable player machine guns
+                TankMachineGun[] machineGuns = playerTank.GetComponentsInChildren<TankMachineGun>();
+                foreach (TankMachineGun machineGun in machineGuns)
+                {
+                    machineGun.canShoot = true;//Enable player machine guns
+                }
                 tutorialIndex = 2;
                 step2 = true;
             }

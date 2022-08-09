@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3687532938600111975}
   - component: {fileID: 3687532938600111968}
   - component: {fileID: 3687532938600111969}
-  - component: {fileID: 8917832288372423503}
+  - component: {fileID: 4459293720569331566}
   m_Layer: 11
   m_Name: 'BulletPowerUp_Icon '
   m_TagString: DamageUp
@@ -28,8 +28,8 @@ Transform:
   m_GameObject: {fileID: 3687532938600111971}
   m_LocalRotation: {x: -0, y: -0, z: -0.5735764, w: 0.8191521}
   m_LocalPosition: {x: -0.04, y: 0.79, z: 0}
-  m_LocalScale: {x: 0.90000004, y: 0.90000004, z: 0.90000004}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -98,8 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54892c7123edb4d37858df54f0cd470b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
---- !u!61 &8917832288372423503
+  speed: 100
+--- !u!61 &4459293720569331566
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -123,5 +123,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6, y: 0.6}
+  m_Size: {x: 0.59375, y: 0.59375}
   m_EdgeRadius: 0

@@ -6,6 +6,7 @@ public class TankMachineGun : MonoBehaviour
     #region Variables
     public AudioSource machineGunSFX;
     public Transform barrel;
+    public bool canShoot;
     public bool fire;
     public Rigidbody2D bullet;
     private float timer;
@@ -17,6 +18,9 @@ public class TankMachineGun : MonoBehaviour
 
     void Update()
     {
+        if (!canShoot)
+            return;
+
         if (Input.GetMouseButtonDown(1))
         {
             fire = true;
