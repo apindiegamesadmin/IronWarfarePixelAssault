@@ -9,7 +9,8 @@ public class TankController : MonoBehaviour
     public Turret[] turrets;
     public bool canShoot = true;
     public bool canMove = true;
-
+    public static int playerScore = 0;
+    public static string PLAYERSCORE = "PlayerScore";
 
     private void Awake()
     {
@@ -20,10 +21,15 @@ public class TankController : MonoBehaviour
             aimTurret = GetComponentsInChildren<AimTurret>();
         }
 
-        if(turrets == null || turrets.Length == 0)
+        if (turrets == null || turrets.Length == 0)
         {
             turrets = GetComponentsInChildren<Turret>();
         }
+    }
+
+    private void Start()
+    {
+        playerScore = PlayerPrefs.GetInt(PLAYERSCORE, playerScore);
     }
 
     public void HandleShoot()
@@ -52,7 +58,7 @@ public class TankController : MonoBehaviour
 
     public void HandleTurretMovement(Vector2 pointerPosition)
     {
-        foreach(AimTurret turrent in aimTurret)
+        foreach (AimTurret turrent in aimTurret)
         {
             turrent.Aim(pointerPosition);
         }

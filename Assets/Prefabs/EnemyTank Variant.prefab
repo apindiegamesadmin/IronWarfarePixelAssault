@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyTank Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 8560743578084633653, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 8560743578084633657, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
       propertyPath: aimTurret.Array.size
       value: 0
