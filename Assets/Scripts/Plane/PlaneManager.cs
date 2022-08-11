@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class PlaneManager : MonoBehaviour
 {
-    [SerializeField] Transform playerTransform;
+    Transform playerTransform;
     [SerializeField] float timeToSpawn;
     [SerializeField] float timeBetweenWaves;
     [SerializeField] GameObject planePrefab;
     void Start()
     {
-        
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
 

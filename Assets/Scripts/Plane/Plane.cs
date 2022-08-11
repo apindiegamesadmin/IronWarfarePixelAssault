@@ -44,6 +44,7 @@ public class Plane : MonoBehaviour
         while (playerDistance > 0)
         {
             playerDistance = Vector2.Distance(transform.position, EndingPoint.position);
+            transform.GetChild(0).transform.position = new Vector2(transform.position.x, transform.position.y - 1);
             transform.position = Vector2.MoveTowards(transform.position, EndingPoint.position, speed * Time.deltaTime);
             yield return null;
         }

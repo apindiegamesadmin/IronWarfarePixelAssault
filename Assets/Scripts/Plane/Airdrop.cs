@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Airdrop : MonoBehaviour
 {
+    [SerializeField] Transform shadow;
     [SerializeField] GameObject[] powerUps;
     [SerializeField]float speed = 1f;
     void Start()
@@ -32,21 +33,24 @@ public class Airdrop : MonoBehaviour
                 targetPos = new Vector2(transform.position.x - posX, transform.position.y - posY);
                 break;
         }
-        Debug.Log(targetPos);
         float playerDistance = Vector2.Distance(transform.position, targetPos);
+        float distance = playerDistance;
         while (playerDistance > 0)
         {
+
             playerDistance = Vector2.Distance(transform.position, targetPos);
             transform.position = Vector2.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
-            if(transform.localScale.x > 0.5f)
-            {
-                transform.localScale = new Vector2(transform.localScale.x - 0.001f, transform.localScale.y - 0.001f);
-            }
+
+            float scale = Mathf.Lerp(0.5f, 1, Mathf.InverseLerp(0, distance, playerDistance));
+            transform.localScale = new Vector2(scale, scale);
+            float Ypos = Mathf.Lerp(0, 1, Mathf.InverseLerp(0, distance, playerDistance));
+            shadow.localPosition = new Vector2(0, -Ypos);
+
             yield return null;
         }
-        int randomIndex = Random.Range(0, powerUps.Length);
-        GameObject powerUp = Instantiate(powerUps[randomIndex],transform.position,Quaternion.identity);
-        powerUp.GetComponent<PowerUpIcon>().airDrop = true;
+        int randomIndex1 = Random.Range(0, powerUps.Length);
+        GameObject powerUp1 = Instantiate(powerUps[randomIndex1], transform.position, Quaternion.identity);
+        powerUp1.GetComponent<PowerUpIcon>().airDrop = true;
         Destroy(this.gameObject);
     }
 }
