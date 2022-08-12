@@ -7,6 +7,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1544738123922197318, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
+      propertyPath: m_SortingLayer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1544738123922197318, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 646852589
+      objectReference: {fileID: 0}
     - target: {fileID: 8560743578084633653, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
       propertyPath: m_Name
       value: EnemyTank Variant

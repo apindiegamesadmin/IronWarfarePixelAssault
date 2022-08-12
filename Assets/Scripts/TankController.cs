@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class TankController : MonoBehaviour
 {
     public TankMover tankMover;
     public AimTurret[] aimTurret;
-    public Turret[] turrets;
+    public List<Turret> turrets;
     public bool canShoot = true;
     public bool canMove = true;
 
@@ -20,9 +21,10 @@ public class TankController : MonoBehaviour
             aimTurret = GetComponentsInChildren<AimTurret>();
         }
 
-        if(turrets == null || turrets.Length == 0)
+        if(turrets == null || turrets.Count == 0)
         {
-            turrets = GetComponentsInChildren<Turret>();
+            Turret[] turrent = GetComponentsInChildren<Turret>();
+            turrets = turrent.ToList<Turret>();
         }
     }
 
