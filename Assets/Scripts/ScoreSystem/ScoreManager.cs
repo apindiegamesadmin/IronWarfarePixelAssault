@@ -14,8 +14,8 @@ public class ScoreManager : MonoBehaviour
 
     private void Awake()
     {
-        playerScore = TankController.playerScore;
-        PLAYERSCORE = TankController.PLAYERSCORE;
+        //playerScore = TankController.playerScore;
+        //PLAYERSCORE = TankController.PLAYERSCORE;
         damagable = GetComponent<Damagable>();
     }
 
