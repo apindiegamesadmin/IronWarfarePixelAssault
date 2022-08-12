@@ -313,7 +313,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -370,7 +370,7 @@ GameObject:
   - component: {fileID: 6973335318088316578}
   m_Layer: 11
   m_Name: StaticEnemyBig
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -382,7 +382,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6973335318088316601}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -18.95, y: 0.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -408,6 +408,7 @@ MonoBehaviour:
   patrolBehaviour: {fileID: 6973335318088316583}
   tank: {fileID: 1588536379443229433}
   detector: {fileID: 0}
+  canShoot: 1
 --- !u!114 &6973335318088316580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -461,15 +462,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1107469716883483827, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.175
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1107469718418671483, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.139
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 1107469718418671483, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.177
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1107469718418671484, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}
       propertyPath: m_Sprite
@@ -477,7 +478,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 3876c728d31f6f34b862617f2f8c2e26, type: 3}
     - target: {fileID: 1107469718418671484, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}
       propertyPath: m_SortingLayer
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1107469718418671484, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}
       propertyPath: m_SortingLayerID
@@ -485,7 +486,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1107469718807039974, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}
       propertyPath: m_SortingLayer
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1107469718807039974, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}
       propertyPath: m_SortingLayerID
@@ -610,6 +611,10 @@ PrefabInstance:
     - target: {fileID: 5545509583890138715, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}
       propertyPath: OnHealthChange.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760446005466674180, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}
+      propertyPath: viewRadius
+      value: 2.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}

@@ -8,15 +8,15 @@ public class BulletController : MonoBehaviour
     public TurretData turretData;
     public TurretData[] turretDatas;
     public Transform[] barrels;
-    public float duration = 10f;
-    float skillTimer;
-    bool damageUp;
+    public float skillTimer;
+    public bool damageUp;
     public bool tutorial;
+    public bool isHomingMissleActive = false;
 
     //public GameObject tripleShootIcon;
 
 
-     void Awake()
+    void Awake()
     {
         if (turret == null)
             turret = GetComponentInChildren<Turret>();
@@ -31,7 +31,7 @@ public class BulletController : MonoBehaviour
 
     void Update()
     {
-        if(turret.turretBarrels.Count==1)
+        if (turret.turretBarrels.Count == 1)
         {
             //tripleShootIcon.SetActive(false);
         }
@@ -42,13 +42,12 @@ public class BulletController : MonoBehaviour
             //tripleShootIcon.SetActive(true);
             skillTimer += Time.deltaTime;
 
-            if (skillTimer > duration)
+            if (skillTimer > 5.0f)
             {
                 damageUp = false;
                 skillTimer = 0;
             }
         }
-
 
         if (!damageUp)
         {
@@ -64,13 +63,22 @@ public class BulletController : MonoBehaviour
         {
             turret.turretData = turretDatas[1];
         }
+
+        if (isHomingMissleActive)
+        {
+            this.turretData = turretDatas[2];
+        }
     }
 
-
-
-
-    void OnTriggerEnter2D(Collider2D collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.transform.tag == "HomingMissle")
+        {
+            Destroy(collision.transform.gameObject);
+            isHomingMissleActive = true;
+            // damageUp = false;
+            Debug.Log("Homing missle is active");
+        }
 
         if (collision.transform.tag == "DamageUp")
         {
@@ -90,6 +98,8 @@ public class BulletController : MonoBehaviour
                 FindObjectOfType<TutorialManager>().completeStep = true;
             }
         }
+
+
     }
 
 }
