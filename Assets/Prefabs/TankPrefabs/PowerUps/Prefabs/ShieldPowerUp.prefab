@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2835698020627125630}
   - component: {fileID: 2835698020627125631}
   - component: {fileID: 8049149485143535953}
-  m_Layer: 11
+  m_Layer: 13
   m_Name: ShieldPowerUp
   m_TagString: Shield
   m_Icon: {fileID: 0}
@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
+  airDrop: 0
 --- !u!61 &8049149485143535953
 BoxCollider2D:
   m_ObjectHideFlags: 0

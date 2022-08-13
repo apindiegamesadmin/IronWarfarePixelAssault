@@ -26,7 +26,7 @@ public class HealthPackControl : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
 
-        if (collision.transform.tag == "HealthPack")
+        if (collision.transform.tag == "HealthPack" && collision.gameObject.layer == LayerMask.NameToLayer("Items"))
         {
             HealPlayer();
             Destroy(collision.transform.gameObject);

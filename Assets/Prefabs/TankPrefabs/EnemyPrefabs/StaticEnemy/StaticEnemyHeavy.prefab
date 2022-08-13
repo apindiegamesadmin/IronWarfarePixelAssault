@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5580840399477807980}
   - component: {fileID: 8218133820222394068}
   - component: {fileID: 3088260834219067281}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: MuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 168953547441750633}
   - component: {fileID: 168953547441750634}
   - component: {fileID: 168953547441750639}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: StaticEnemyHeavy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -172,6 +172,7 @@ MonoBehaviour:
   tank: {fileID: 8400867752317257268}
   detector: {fileID: 0}
   canShoot: 1
+  boss: 0
 --- !u!114 &168953547441750633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,7 +225,7 @@ GameObject:
   - component: {fileID: 3853490412753501221}
   - component: {fileID: 6581323933642187008}
   - component: {fileID: 8597917856949801191}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: MuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -340,7 +341,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9106342513074577123}
   - component: {fileID: 2805037237505744239}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: SoundFeedback
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -468,7 +469,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5815926556227418965}
   - component: {fileID: 4735660068550745454}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: SoundFeedback
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -597,7 +598,7 @@ GameObject:
   - component: {fileID: 6627347545092293429}
   - component: {fileID: 1615305801610755153}
   - component: {fileID: 8442761594605935771}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -670,7 +671,7 @@ GameObject:
   - component: {fileID: 2258432643637389353}
   - component: {fileID: 2969378952354680258}
   - component: {fileID: 4309786923405975672}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: HealthFillPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -747,7 +748,7 @@ GameObject:
   - component: {fileID: 1177917902454280723}
   - component: {fileID: 5747598837953900741}
   - component: {fileID: 1400245353396796953}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: HealthFill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -821,7 +822,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4278774015070589617}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -855,7 +856,7 @@ GameObject:
   - component: {fileID: 5794684390894277850}
   - component: {fileID: 3301906703212337267}
   - component: {fileID: 6551040151755919643}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -982,7 +983,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5612536256133765243}
   - component: {fileID: 3017211369535249643}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: TankTurretParent (1)
   m_TagString: Untagged
   m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
@@ -1030,7 +1031,7 @@ GameObject:
   - component: {fileID: 6304369475190895622}
   - component: {fileID: 5342060566093794773}
   - component: {fileID: 3573477307149855005}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: TankTurret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1181,7 +1182,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9132490854455517184}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1215,7 +1216,7 @@ GameObject:
   - component: {fileID: 6527052204403445500}
   - component: {fileID: 2246683599422828679}
   - component: {fileID: 8492620377054145365}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: TankTurret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1374,7 +1375,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1107469716883483827, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.81649655
+      objectReference: {fileID: 0}
+    - target: {fileID: 1107469716883483827, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.57735026
       objectReference: {fileID: 0}
     - target: {fileID: 1107469718418671483, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}
       propertyPath: m_LocalPosition.x

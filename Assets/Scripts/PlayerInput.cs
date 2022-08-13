@@ -18,6 +18,8 @@ public class PlayerInput : MonoBehaviour
     {
         if (mainCamera == null)
             mainCamera = Camera.main;
+
+        //Cursor.visible = false;
     }
 
     // Update is called once per frame

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4723790276668221448}
   - component: {fileID: 1525998871258318363}
   - component: {fileID: 5654084033584737525}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: ImpactFeedback
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 5149417576530530993}
   - component: {fileID: 148072112116373427}
   - component: {fileID: -1444703407443350831}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: HMBullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -236,6 +236,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  direction: {x: 0, y: 0}
 --- !u!114 &-1444703407443350831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,11 +251,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rb: {fileID: 5149417576530530992}
   bulletData: {fileID: 11400000, guid: cd62c17b01a84c44fb9eb05a3b071307, type: 2}
-  OnHit:
-    m_PersistentCalls:
-      m_Calls: []
-  spriteRenderer: {fileID: 5149417576530530999, guid: 4bb7991dcac39784eaa7aaf916dbb7f2, type: 3}
-  sprite: {fileID: 21300000, guid: 7a132ec2a34f4d34ba7354cadec7f378, type: 3}
-  bullet: {fileID: 5149417576530530998, guid: 4bb7991dcac39784eaa7aaf916dbb7f2, type: 3}
-  bulletController: {fileID: 0}
-  isActive: 0
+  target: {fileID: 0}
+  turretData: {fileID: 0}

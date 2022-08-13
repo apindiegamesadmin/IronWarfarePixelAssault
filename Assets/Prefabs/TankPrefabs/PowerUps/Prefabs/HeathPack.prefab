@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7381821783379089984}
   - component: {fileID: 7381821783379089987}
   - component: {fileID: -799756196271758729}
-  m_Layer: 11
+  m_Layer: 13
   m_Name: HeathPack
   m_TagString: HealthPack
   m_Icon: {fileID: 0}
@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 100
+  airDrop: 0
 --- !u!61 &-799756196271758729
 BoxCollider2D:
   m_ObjectHideFlags: 0

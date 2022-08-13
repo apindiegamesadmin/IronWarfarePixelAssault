@@ -931,6 +931,14 @@ PrefabInstance:
       propertyPath: MaxHealth
       value: 60
       objectReference: {fileID: 0}
+    - target: {fileID: 1646958841755428217, guid: 1bc84e9af9a0a6d47bd8effb1f57bb82, type: 3}
+      propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 7800531567953241429}
+    - target: {fileID: 1646958841755428217, guid: 1bc84e9af9a0a6d47bd8effb1f57bb82, type: 3}
+      propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: DestroyHelper
+      objectReference: {fileID: 0}
     - target: {fileID: 2575475115017167553, guid: 1bc84e9af9a0a6d47bd8effb1f57bb82, type: 3}
       propertyPath: m_Name
       value: PatrollingEnemyHeavy
@@ -1102,3 +1110,14 @@ MonoBehaviour:
   waitTime: 0.5
   isWaiting: 0
   currentPatrolTarget: {x: 0, y: 0}
+--- !u!114 &7800531567953241429 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2575475115017167578, guid: 1bc84e9af9a0a6d47bd8effb1f57bb82, type: 3}
+  m_PrefabInstance: {fileID: 5763731046665684879}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7800531567953241422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 242bfaac70c74d24499bd34e618bede4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

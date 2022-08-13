@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8270495449413347038}
   - component: {fileID: 3269032157366486024}
   - component: {fileID: 8210297859959114452}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: HealthFill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 3671743340087943191}
   - component: {fileID: 5714161359578197182}
   - component: {fileID: 4068867652983170518}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -216,7 +216,7 @@ GameObject:
   - component: {fileID: 4136394247560542200}
   - component: {fileID: 8427578286040336540}
   - component: {fileID: 1708213557064378454}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -289,7 +289,7 @@ GameObject:
   - component: {fileID: 9064036702938406116}
   - component: {fileID: 5452495415260182799}
   - component: {fileID: 6435940198103946421}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: HealthFillPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -368,7 +368,7 @@ GameObject:
   - component: {fileID: 6973335318088316580}
   - component: {fileID: 6973335318088316583}
   - component: {fileID: 6973335318088316578}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: StaticEnemyBig
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -409,6 +409,7 @@ MonoBehaviour:
   tank: {fileID: 1588536379443229433}
   detector: {fileID: 0}
   canShoot: 1
+  boss: 0
 --- !u!114 &6973335318088316580
 MonoBehaviour:
   m_ObjectHideFlags: 0

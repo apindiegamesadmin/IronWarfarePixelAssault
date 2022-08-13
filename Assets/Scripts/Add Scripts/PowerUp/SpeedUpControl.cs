@@ -71,7 +71,7 @@ public class SpeedUpControl : MonoBehaviour
 
      void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.transform.tag == "SpeedUp")
+        if(collision.transform.tag == "SpeedUp" && collision.gameObject.layer == LayerMask.NameToLayer("Items"))
         {
             Destroy(collision.transform.gameObject);
             speedUp = true;

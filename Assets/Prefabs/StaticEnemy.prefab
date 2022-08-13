@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 13346978}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 112935664}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 116703152}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: Point_1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 581071805}
   - component: {fileID: 581071806}
   - component: {fileID: 581071807}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: TankCircleBig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 772340489
-  m_SortingLayer: 5
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 448d4ef246e270049ad433e45a80db5c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -201,7 +201,7 @@ GameObject:
   m_Component:
   - component: {fileID: 649510474}
   - component: {fileID: 649510475}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: TankCircleSmall (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -262,7 +262,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 772340489
-  m_SortingLayer: 5
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: ff5a06b1be5a81648ab7cf1fe5e4e108, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -284,7 +284,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 838194520}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: TankCircles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -321,7 +321,7 @@ GameObject:
   m_Component:
   - component: {fileID: 909832530}
   - component: {fileID: 909832531}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: TankMachineGun (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -383,7 +383,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 772340489
-  m_SortingLayer: 5
+  m_SortingLayer: 4
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 887634d85a3b2334495dada88e8c551e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -406,7 +406,7 @@ GameObject:
   m_Component:
   - component: {fileID: 972513626}
   - component: {fileID: 972513627}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: TankMachineGun (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -468,7 +468,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 772340489
-  m_SortingLayer: 5
+  m_SortingLayer: 4
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 887634d85a3b2334495dada88e8c551e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -491,7 +491,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1206353822}
   - component: {fileID: 1206353823}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: TankCircleSmall (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -552,7 +552,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 772340489
-  m_SortingLayer: 5
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: ff5a06b1be5a81648ab7cf1fe5e4e108, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -574,7 +574,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1236755474}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -605,7 +605,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1320761758}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: Point_1
   m_TagString: Untagged
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
@@ -636,7 +636,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1374341318}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: TankMachineGuns
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -672,7 +672,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1402308168}
   - component: {fileID: 1402308169}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: TankMachineGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -734,7 +734,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 772340489
-  m_SortingLayer: 5
+  m_SortingLayer: 4
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 887634d85a3b2334495dada88e8c551e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -756,7 +756,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1491678493}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: Point_1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
@@ -788,7 +788,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1500427111}
   - component: {fileID: 1500427112}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: TankCircleSmall (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -849,7 +849,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 772340489
-  m_SortingLayer: 5
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: ff5a06b1be5a81648ab7cf1fe5e4e108, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -871,7 +871,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1511426808}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -903,7 +903,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1590027375}
   - component: {fileID: 1590027376}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: TankCircleSmall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -964,7 +964,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 772340489
-  m_SortingLayer: 5
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: ff5a06b1be5a81648ab7cf1fe5e4e108, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -987,7 +987,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1916702015}
   - component: {fileID: 1916702000}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: TankPath
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1042,7 +1042,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2079178436}
   - component: {fileID: 2079178437}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: TankMachineGun (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1104,7 +1104,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 772340489
-  m_SortingLayer: 5
+  m_SortingLayer: 4
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 887634d85a3b2334495dada88e8c551e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1126,7 +1126,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1993376225076188277}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: MachineGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1161,7 +1161,7 @@ GameObject:
   - component: {fileID: 8799123109437416320}
   - component: {fileID: 4003535910520544484}
   - component: {fileID: 6111213530322975790}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1234,7 +1234,7 @@ GameObject:
   - component: {fileID: 4517746105531566236}
   - component: {fileID: 635157971007270263}
   - component: {fileID: 1885498601242001613}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: HealthFillPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1313,7 +1313,7 @@ GameObject:
   - component: {fileID: 2575475115017167580}
   - component: {fileID: 2575475115017167578}
   - component: {fileID: 333765749}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: StaticEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1354,6 +1354,8 @@ MonoBehaviour:
   patrolBehaviour: {fileID: 333765749}
   tank: {fileID: 6156475758695786113}
   detector: {fileID: 0}
+  canShoot: 1
+  boss: 0
 --- !u!114 &2575475115017167580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1407,7 +1409,7 @@ GameObject:
   - component: {fileID: 3584052441817445030}
   - component: {fileID: 7937101845431488624}
   - component: {fileID: 3642137873737670316}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: HealthFill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1484,7 +1486,7 @@ GameObject:
   - component: {fileID: 8182768269459666031}
   - component: {fileID: 880286624784185542}
   - component: {fileID: 8866508962405659054}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1658,7 +1660,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 887634d85a3b2334495dada88e8c551e, type: 3}
     - target: {fileID: 1107469718418671484, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}
       propertyPath: m_SortingLayer
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1107469718418671484, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}
       propertyPath: m_SortingOrder
@@ -1682,7 +1684,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 887634d85a3b2334495dada88e8c551e, type: 3}
     - target: {fileID: 1107469718807039974, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}
       propertyPath: m_SortingLayer
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1107469718807039974, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}
       propertyPath: m_SortingLayerID

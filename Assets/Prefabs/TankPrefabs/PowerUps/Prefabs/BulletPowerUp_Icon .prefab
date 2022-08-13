@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3687532938600111968}
   - component: {fileID: 3687532938600111969}
   - component: {fileID: 4459293720569331566}
-  m_Layer: 11
+  m_Layer: 13
   m_Name: 'BulletPowerUp_Icon '
   m_TagString: DamageUp
   m_Icon: {fileID: 0}
@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 100
+  airDrop: 0
 --- !u!61 &4459293720569331566
 BoxCollider2D:
   m_ObjectHideFlags: 0

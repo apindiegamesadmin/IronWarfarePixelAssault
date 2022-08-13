@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76a646b08abc8c346aa05416b99365a1, type: 3}
   m_Name: TankMachineGunBulletData
   m_EditorClassIdentifier: 
-  speed: 30
+  speed: 20
   damage: 1
   maxDistance: 5

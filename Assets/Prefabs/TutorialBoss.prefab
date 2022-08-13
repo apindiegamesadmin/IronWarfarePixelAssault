@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 487121805495878600}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 487121805499643622}
   - component: {fileID: 487121805499643545}
   - component: {fileID: 487121805499643544}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: MuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,7 +161,7 @@ GameObject:
   - component: {fileID: 487121805643740310}
   - component: {fileID: 487121805643740297}
   - component: {fileID: 487121805643740296}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: MuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -277,7 +277,7 @@ GameObject:
   m_Component:
   - component: {fileID: 487121805671750396}
   - component: {fileID: 487121805671750397}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: SoundFeedback
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -407,7 +407,7 @@ GameObject:
   - component: {fileID: 487121805748585511}
   - component: {fileID: 487121805748585510}
   - component: {fileID: 487121805748585689}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: TankTurret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -558,7 +558,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 487121805885025960}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: Back Guns
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -594,7 +594,7 @@ GameObject:
   - component: {fileID: 487121805935168720}
   - component: {fileID: 487121805935168723}
   - component: {fileID: 487121805935168722}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: TankTurret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -745,7 +745,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 487121806233351315}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: Front Guns
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -778,7 +778,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 487121806830346555}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: TankTurretParent (3)
   m_TagString: Untagged
   m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
@@ -810,7 +810,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 487121806860609452}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -842,7 +842,7 @@ GameObject:
   m_Component:
   - component: {fileID: 487121806939603481}
   - component: {fileID: 487121806939603558}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: SoundFeedback
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -972,7 +972,7 @@ GameObject:
   - component: {fileID: 487121807062383717}
   - component: {fileID: 487121807062383716}
   - component: {fileID: 487121807062383719}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: MuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1087,7 +1087,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 487121807075804601}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: TankTurretParent (2)
   m_TagString: Untagged
   m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
@@ -1122,7 +1122,7 @@ GameObject:
   - component: {fileID: 487121807153029140}
   - component: {fileID: 487121807153029143}
   - component: {fileID: 487121807153029142}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: TankTurret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1273,7 +1273,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 487121807401540270}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: TankTurretParent (4)
   m_TagString: Untagged
   m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
@@ -1305,7 +1305,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 487121807457047000}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1337,7 +1337,7 @@ GameObject:
   m_Component:
   - component: {fileID: 487121807478768510}
   - component: {fileID: 487121807478768511}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: SoundFeedback
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1464,7 +1464,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1900851325506266195}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: TankTurretParent (1)
   m_TagString: Untagged
   m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
@@ -1496,7 +1496,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7846351935229619865}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1529,7 +1529,7 @@ GameObject:
   - component: {fileID: 5177551739081420347}
   - component: {fileID: 1747686344383761645}
   - component: {fileID: 4966413150441194033}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: HealthFill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1606,7 +1606,7 @@ GameObject:
   - component: {fileID: 569792248921336050}
   - component: {fileID: 8813596622103045211}
   - component: {fileID: 966986974588087603}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1735,7 +1735,7 @@ GameObject:
   - component: {fileID: 942988096538866388}
   - component: {fileID: 5237483077679189167}
   - component: {fileID: 2475094081659033469}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: TankTurret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1887,7 +1887,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3018167717038531275}
   - component: {fileID: 8174010551412646215}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: SoundFeedback
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2017,7 +2017,7 @@ GameObject:
   - component: {fileID: 7131675227522629645}
   - component: {fileID: 925237896623938856}
   - component: {fileID: 2365345778844576975}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: MuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2136,7 +2136,7 @@ GameObject:
   - component: {fileID: 6186445688725175873}
   - component: {fileID: 6186445688725175874}
   - component: {fileID: 6186445688725175879}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: TutorialBoss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2177,6 +2177,7 @@ MonoBehaviour:
   tank: {fileID: 2528618902328228380}
   detector: {fileID: 0}
   canShoot: 1
+  boss: 0
 --- !u!114 &6186445688725175873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2228,7 +2229,7 @@ GameObject:
   - component: {fileID: 5248106775506064385}
   - component: {fileID: 9130995073518170602}
   - component: {fileID: 7804146170087316560}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: HealthFillPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2305,7 +2306,7 @@ GameObject:
   - component: {fileID: 899458451505397533}
   - component: {fileID: 4749096221067034745}
   - component: {fileID: 2497284720454738099}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}

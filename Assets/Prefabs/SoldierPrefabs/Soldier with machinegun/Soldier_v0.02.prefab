@@ -71,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1654544053
-  m_SortingLayer: 5
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 563cf9ec92f07204d9728d9154235ea9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -248,7 +248,6 @@ MonoBehaviour:
   checkDistacne: 0
   target: {fileID: 0}
   speed: 0.5
-  bullet: {fileID: 892520585863938308, guid: be4d82780bb9d4b9f8f84c36b2c51967, type: 3}
   blood: {fileID: 8087821370399922432}
   barrel: {fileID: 6402252440077233126}
   BulletData: {fileID: 11400000, guid: 786e6d615c455204a8f78f3c33d99b97, type: 2}
@@ -256,11 +255,12 @@ MonoBehaviour:
   healthBar: {fileID: 1270300022670657801}
   slider: {fileID: 1270300021030422243}
   health: 0
-  alive: 0
   away: 0
   found: 0
   shoot: 0
   playerHealth: 0
+  turretData: {fileID: 0}
+  bulletPoolCount: 10
 --- !u!61 &1270300021066236591
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -625,8 +625,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1471025061
-  m_SortingLayer: 6
+  m_SortingLayerID: 772340489
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 52ec6a17f9637fa41a16394a6ec24c33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

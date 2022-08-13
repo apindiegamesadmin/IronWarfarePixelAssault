@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4723790276668221448}
   - component: {fileID: 1525998871258318363}
   - component: {fileID: 5654084033584737525}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: ImpactFeedback
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 5149417576530530992}
   - component: {fileID: 5149417576530530993}
   - component: {fileID: 148072112116373427}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Bullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -235,3 +235,4 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  direction: {x: 0, y: 0}

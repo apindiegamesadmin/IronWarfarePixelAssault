@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8895264861689223040}
   - component: {fileID: 8895264861689223043}
   - component: {fileID: 5718181798067081737}
-  m_Layer: 11
+  m_Layer: 13
   m_Name: SpeedUp_Icon
   m_TagString: SpeedUp
   m_Icon: {fileID: 0}
@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 100
+  airDrop: 0
 --- !u!61 &5718181798067081737
 BoxCollider2D:
   m_ObjectHideFlags: 0

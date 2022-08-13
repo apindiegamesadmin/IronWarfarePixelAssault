@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9105954965143730029}
   - component: {fileID: 2841214352498148676}
   - component: {fileID: 4633623976247012328}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HomingMissleBullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -151,6 +151,7 @@ MonoBehaviour:
   OnHit:
     m_PersistentCalls:
       m_Calls: []
+  direction: {x: 0, y: 0}
 --- !u!114 &4633623976247012328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,7 +166,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rb: {fileID: 9105954965143730028}
   bulletData: {fileID: 11400000, guid: cd62c17b01a84c44fb9eb05a3b071307, type: 2}
-  OnHit:
-    m_PersistentCalls:
-      m_Calls: []
-  _target: {fileID: 0}
+  target: {fileID: 0}
+  turretData: {fileID: 0}

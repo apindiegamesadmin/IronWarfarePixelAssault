@@ -20,13 +20,13 @@ TagManager:
   - Water
   - UI
   - Post Processing
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Bullet
+  - Agent
+  - Hittable
+  - ObstaclesMovement
+  - Player
+  - Enemy
+  - Items
   - 
   - 
   - 
