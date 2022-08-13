@@ -10,12 +10,17 @@ public class ScoreManager : MonoBehaviour
     public int playerScore = 0;
     public Damagable damagable;
     public string PLAYERSCORE;
-    public TextMeshPro scoreText;
+    public TextMeshProUGUI scoreText;
 
     private void Awake()
     {
+<<<<<<< HEAD
         //playerScore = TankController.playerScore;
         //PLAYERSCORE = TankController.PLAYERSCORE;
+=======
+        // playerScore = TankController.playerScore;
+        // PLAYERSCORE = TankController.PLAYERSCORE;
+>>>>>>> b52eb4c7 (1. Added LifeController scripts and scoremanager scripts in mission 1 scene)
         damagable = GetComponent<Damagable>();
     }
 
