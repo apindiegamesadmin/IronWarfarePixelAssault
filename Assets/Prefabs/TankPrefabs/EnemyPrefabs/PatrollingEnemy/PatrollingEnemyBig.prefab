@@ -522,6 +522,18 @@ PrefabInstance:
       propertyPath: patrolDelay
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2575475115464202022, guid: 1bc84e9af9a0a6d47bd8effb1f57bb82, type: 3}
+      propertyPath: viewRadius
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2575475115464202022, guid: 1bc84e9af9a0a6d47bd8effb1f57bb82, type: 3}
+      propertyPath: playerLayerMask.m_Bits
+      value: 2176
+      objectReference: {fileID: 0}
+    - target: {fileID: 2575475115464202022, guid: 1bc84e9af9a0a6d47bd8effb1f57bb82, type: 3}
+      propertyPath: visibilityLayer.m_Bits
+      value: 2688
+      objectReference: {fileID: 0}
     - target: {fileID: 4003535910520544484, guid: 1bc84e9af9a0a6d47bd8effb1f57bb82, type: 3}
       propertyPath: m_SortingLayerID
       value: 1585582841

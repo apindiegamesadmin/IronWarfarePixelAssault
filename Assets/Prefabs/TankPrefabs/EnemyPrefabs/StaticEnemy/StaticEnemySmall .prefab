@@ -741,6 +741,14 @@ PrefabInstance:
       propertyPath: viewRadius
       value: 2.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8760446005466674180, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}
+      propertyPath: playerLayerMask.m_Bits
+      value: 2176
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760446005466674180, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}
+      propertyPath: visibilityLayer.m_Bits
+      value: 2688
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}
 --- !u!114 &56019407347751843 stripped

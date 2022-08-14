@@ -1513,10 +1513,10 @@ MonoBehaviour:
   target: {fileID: 0}
   playerLayerMask:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 2176
   visibilityLayer:
     serializedVersion: 2
-    m_Bits: 3328
+    m_Bits: 2688
   <TargetVisible>k__BackingField: 0
 --- !u!1 &7018616268708239073
 GameObject:

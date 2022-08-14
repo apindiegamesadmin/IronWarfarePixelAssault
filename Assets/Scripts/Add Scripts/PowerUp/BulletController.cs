@@ -72,7 +72,7 @@ public class BulletController : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.transform.tag == "HomingMissle" && collision.gameObject.layer == LayerMask.NameToLayer("Items"))
+        if (collision.transform.tag == "HomingMissle")
         {
             Destroy(collision.transform.gameObject);
             isHomingMissleActive = true;
@@ -80,7 +80,7 @@ public class BulletController : MonoBehaviour
             Debug.Log("Homing missle is active");
         }
 
-        if (collision.transform.tag == "DamageUp" && collision.gameObject.layer == LayerMask.NameToLayer("Items"))
+        if (collision.transform.tag == "DamageUp")
         {
             Destroy(collision.transform.gameObject);
             damageUp = true;

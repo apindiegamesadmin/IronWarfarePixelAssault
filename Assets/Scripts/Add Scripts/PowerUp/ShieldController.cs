@@ -50,7 +50,7 @@ public class ShieldController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.transform.tag == "Shield" && collision.gameObject.layer == LayerMask.NameToLayer("Items"))
+        if (collision.transform.tag == "Shield")
         {
             if (!shield)
             {
