@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3637660860696428627
 RectTransform:
   m_ObjectHideFlags: 0
@@ -94,24 +94,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - sentences:
-    - PLACEHOLDER
-    - Okay? Good! Now, press W, A, S, and D to drive the tank. See if you can move
-      around without hitting any obstacles.
+    - Welcome to the testing grounds of Iron Warfare Pixel Warfare! My name is General
+      Ajex and I'm here to guide you through the fundamentals of progressing through
+      hell.
+    - Alright? Good! Now, see if you can figure out the controls to drive the tank.
+      Try moving around without hitting any obstacles.
   - sentences:
     - Good! Now, proceed to the next area.
   - sentences:
-    - "So this is a \u201CPLACEHOLDER\u201D medium tank. You can approach it to destroy
-      it by shooting it with your main cannon. Press mouse 0 (or the left button
-      on your mouse) to fire your main cannon"
+    - So this is a Grizzly medium tank. You can approach to destroy it by shooting
+      with your main cannon. Press mouse 0 (or the left button on your mouse) to
+      fire your main cannon.
   - sentences:
-    - Good! Now, hold down space to fire your machine gun at incoming enemy infantry.
-      It is much quicker to switch to your secondary instead of reloading, *winks*.
+    - Good! Now, hold down the other mouse button to fire your machine gun at enemy
+      infantry. It's faster to switch to your secondary instead of reloading, *winks*.
   - sentences:
-    - PLACEHOLDER "Speed Power Up"
+    - This is a "Speed Power Up". See what it does to your tank.
   - sentences:
-    - PLACEHOLDER "Bullet Power Up"
+    - 'This is a "Bullet Power Up". '
   - sentences:
-    - PLACEHOLDER "Shield Power Up"
+    - This is a "Shield Power Up"
   - sentences:
     - PLACEHOLDER "Health Pack Restore Your Health"
   - sentences:
@@ -421,7 +423,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: I will teach you how to play the game...
+  m_text: 'Welcome,
+
+    I will teach you how to play the game...'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 69b7edced98401d4fbafa251d3f836bb, type: 2}
   m_sharedMaterial: {fileID: -2679430281527235703, guid: 69b7edced98401d4fbafa251d3f836bb, type: 2}
