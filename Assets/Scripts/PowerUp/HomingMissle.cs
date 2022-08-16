@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class HomingMissle : MonoBehaviour
 {
@@ -13,11 +10,12 @@ public class HomingMissle : MonoBehaviour
     private float _timer = 0f;
     public Transform target;
     [SerializeField] float range;
-    public TurretData turretData;
+    public Damagable enemyDamagable;
 
     // Start is called before the first frame update
     void Awake()
     {
+        enemyDamagable = GameObject.Find("EnemyTank").GetComponent<Damagable>();
         target = GameObject.FindGameObjectWithTag("Enemy").transform;
         // bulletData = GetComponent<BulletData>();
         // _speed = bulletData.speed;
@@ -27,7 +25,7 @@ public class HomingMissle : MonoBehaviour
     void Update()
     {
         _timer += Time.deltaTime;
-        if (_timer >= 5.0f)
+        if (_timer >= 15.0f)
         {
             _timer = 0f;
             DisableGameObject();
@@ -44,6 +42,7 @@ public class HomingMissle : MonoBehaviour
             Debug.Log(collider.transform.name);
             if (collider.transform.tag == "Enemy")
             {
+                enemyDamagable = collider.GetComponent<Damagable>();
                 target = collider.transform;
                 Vector2 direction = (Vector2)target.transform.position - _rb.position;
                 direction.Normalize();
@@ -59,9 +58,19 @@ public class HomingMissle : MonoBehaviour
         Destroy(this.gameObject);
     }
 
+    private void OnTriggerEnter2D(Collider2D collider2D)
+    {
+        if (collider2D.transform.tag == "Enemy")
+        {
+            Debug.Log("Enemy is dead");
+            enemyDamagable.Health -= bulletData.damage;
+        }
+    }
+
+    // To draw Gizmoz lines in scene view
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.blue;
+        Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, range);
     }
 }

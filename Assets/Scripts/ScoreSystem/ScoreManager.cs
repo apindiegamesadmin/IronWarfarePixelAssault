@@ -14,13 +14,6 @@ public class ScoreManager : MonoBehaviour
 
     private void Awake()
     {
-<<<<<<< HEAD
-        //playerScore = TankController.playerScore;
-        //PLAYERSCORE = TankController.PLAYERSCORE;
-=======
-        // playerScore = TankController.playerScore;
-        // PLAYERSCORE = TankController.PLAYERSCORE;
->>>>>>> b52eb4c7 (1. Added LifeController scripts and scoremanager scripts in mission 1 scene)
         damagable = GetComponent<Damagable>();
     }
 
@@ -28,16 +21,16 @@ public class ScoreManager : MonoBehaviour
     {
         scoreText.text = playerScore.ToString();
         health = damagable.Health;
-        playerScore = PlayerPrefs.GetInt(PLAYERSCORE, playerScore);
+        playerScore = PlayerPrefs.GetInt(PLAYERSCORE, 0);
     }
 
     void Update()
     {
-        if (health <= 0)
-        {
-            Score();
-            Debug.Log("Score plus one");
-        }
+        // if (health <= 0)
+        // {
+        //     Score();
+        //     Debug.Log("Score plus one");
+        // }
     }
 
     public void Score()
