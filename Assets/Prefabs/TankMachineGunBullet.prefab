@@ -73,7 +73,6 @@ GameObject:
   - component: {fileID: 6536445959273282843}
   - component: {fileID: 2842174254464249947}
   - component: {fileID: 7039643439597585121}
-  - component: {fileID: -5573182913056928807}
   m_Layer: 7
   m_Name: TankMachineGunBullet
   m_TagString: Bullet
@@ -237,15 +236,3 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   direction: {x: 0, y: 0}
---- !u!114 &-5573182913056928807
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3392503756108347251}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 242bfaac70c74d24499bd34e618bede4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

@@ -276,7 +276,6 @@ GameObject:
   - component: {fileID: 426138988131236424}
   - component: {fileID: 2057508169336685624}
   - component: {fileID: 2989752046074660664}
-  - component: {fileID: 3593274795302634660}
   m_Layer: 12
   m_Name: EnemyTank
   m_TagString: Untagged
@@ -445,18 +444,6 @@ MonoBehaviour:
       m_Calls: []
   shieldPoint: 0
   shield: 0
---- !u!114 &3593274795302634660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1057458961468710292}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 242bfaac70c74d24499bd34e618bede4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1225395119477340452
 GameObject:
   m_ObjectHideFlags: 0

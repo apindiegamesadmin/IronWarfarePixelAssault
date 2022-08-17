@@ -7,10 +7,6 @@ public class TutorialManager : MonoBehaviour
     [SerializeField] TankController playerTank;
     [SerializeField] DefaultEnemyAI step2EnemyAIStatic;
     [SerializeField] DefaultEnemyAI step2EnemyAIPatrol;
-    [SerializeField] AIDetector step3SpeedPowerUps;
-    [SerializeField] AIDetector step3BulletPowerUps;
-    [SerializeField] AIDetector step3ShieldPowerUps;
-    [SerializeField] AIDetector step4HealthPack;
     [SerializeField] AIDetector step5BossBattle;
     [SerializeField] GameObject dialogueUI;
 
@@ -110,46 +106,6 @@ public class TutorialManager : MonoBehaviour
                 step2 = true;
             }
         }
-        if (step3SpeedPowerUps.TargetVisible)// Check if player found speed power up
-        {
-            if (!step3)
-            {
-                dialogueUI.SetActive(true);
-                dialogueManager.StartDialogue(dialogueManager.dialogue[4]);//Show appropiate dialogue
-                tutorialIndex = 3;
-                step3 = true;
-            }
-        }
-        if (step3BulletPowerUps.TargetVisible)// Check if player found bullet power up
-        {
-            if (!step4)
-            {
-                dialogueUI.SetActive(true);
-                dialogueManager.StartDialogue(dialogueManager.dialogue[5]);//Show appropiate dialogue
-                tutorialIndex = 4;
-                step4 = true;
-            }
-        }
-        if (step3ShieldPowerUps.TargetVisible)// Check if player found shield power up
-        {
-            if (!step5)
-            {
-                dialogueUI.SetActive(true);
-                dialogueManager.StartDialogue(dialogueManager.dialogue[6]);//Show appropiate dialogue
-                tutorialIndex = 5;
-                step5 = true;
-            }
-        }
-        if (step4HealthPack.TargetVisible)// Check if player found healthpack
-        {
-            if (!step6)
-            {
-                dialogueUI.SetActive(true);
-                dialogueManager.StartDialogue(dialogueManager.dialogue[7]);//Show appropiate dialogue
-                tutorialIndex = 6;
-                step6 = true;
-            }
-        }
         if (step5BossBattle.TargetVisible)// check if player reach Boss 
         {
             if (!step7)
@@ -203,6 +159,49 @@ public class TutorialManager : MonoBehaviour
             dialogueUI.SetActive(true);
             dialogueManager.StartDialogue(dialogueManager.dialogue[8]);// Show Completion Dialogue
             completeStep = false;
+        }
+    }
+
+    public void TutorialPowerUpCheck(int index)
+    {
+        switch (index)
+        {
+            case 0:
+                if (!step3)// check if the player found speed power up
+                {
+                    dialogueUI.SetActive(true);
+                    dialogueManager.StartDialogue(dialogueManager.dialogue[4]);//Show appropiate dialogue
+                    tutorialIndex = 3;
+                    step3 = true;
+                }
+                break;
+            case 1:
+                if (!step4)// check if the player found bullet power up
+                {
+                    dialogueUI.SetActive(true);
+                    dialogueManager.StartDialogue(dialogueManager.dialogue[5]);//Show appropiate dialogue
+                    tutorialIndex = 4;
+                    step4 = true;
+                }
+                break;
+            case 2:
+                if (!step5)// check if the player found shield power up
+                {
+                    dialogueUI.SetActive(true);
+                    dialogueManager.StartDialogue(dialogueManager.dialogue[6]);//Show appropiate dialogue
+                    tutorialIndex = 5;
+                    step5 = true;
+                }
+                break;
+            case 3:
+                if (!step6)// check if the player found healthpack
+                {
+                    dialogueUI.SetActive(true);
+                    dialogueManager.StartDialogue(dialogueManager.dialogue[7]);//Show appropiate dialogue
+                    tutorialIndex = 6;
+                    step6 = true;
+                }
+                break;
         }
     }
 

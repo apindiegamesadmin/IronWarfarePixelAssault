@@ -12,17 +12,15 @@ public class PauseMenu : MonoBehaviour
     [SerializeField]
     private GameObject gameUiPanel;
 
-    //@Xavier - Refactored to work while pausing
-    //[SerializeField]
-    //private GameObject player;
+    UIManager uiManager;
 
     private void Start()
     {
         gameUiPanel.SetActive(true);
-        //player = GameObject.FindWithTag("Player");
+        uiManager = FindObjectOfType<UIManager>();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
@@ -42,30 +40,25 @@ public class PauseMenu : MonoBehaviour
         _pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         isGamePaused = true;
-        //player.GetComponent<PlayerInput>().enabled = false;
         gameUiPanel.SetActive(false);
     }
 
     public void Resume()
     {
-        _pauseMenu.SetActive(false);
+        uiManager.PopDown(_pauseMenu);
         Time.timeScale = 1.0f;
         isGamePaused = false;
-        //player.GetComponent<PlayerInput>().enabled = true;
         gameUiPanel.SetActive(true);
     }
 
     public void Restart()
     {
-        //_pauseMenu.SetActive(false);
         Time.timeScale = 1.0f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        //gameUiPanel.SetActive(true);
     }
 
     public void MainMenu()
     {
-        //_pauseMenu.SetActive(false);
         SceneManager.LoadScene("MainMenu");
     }
 }

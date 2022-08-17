@@ -13,7 +13,7 @@ public class BulletController : MonoBehaviour
     public bool tutorial;
     public bool isHomingMissleActive = false;
 
-    //public GameObject tripleShootIcon;
+    public GameObject tripleShootIcon;
 
 
     void Awake()
@@ -23,7 +23,7 @@ public class BulletController : MonoBehaviour
 
         if (turretDatas == null || turretDatas.Length == 0)
             turretDatas = GetComponentsInChildren<TurretData>();
-        //tripleShootIcon.SetActive(false);
+        tripleShootIcon.SetActive(false);
 
     }
 
@@ -33,13 +33,13 @@ public class BulletController : MonoBehaviour
     {
         if (turret.turretBarrels.Count == 1)
         {
-            //tripleShootIcon.SetActive(false);
+            tripleShootIcon.SetActive(false);
         }
 
 
         if (damageUp)
         {
-            //tripleShootIcon.SetActive(true);
+            tripleShootIcon.SetActive(true);
             skillTimer += Time.deltaTime;
 
             if (skillTimer > 5.0f)

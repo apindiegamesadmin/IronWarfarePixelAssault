@@ -16,7 +16,7 @@ public class SpeedUpControl : MonoBehaviour
     public bool tutorial;
 
     //[Header("IconActive")]
-    //public GameObject speedUp_Icon;
+    public GameObject speedUp_Icon;
     //Fill up
 
 
@@ -30,7 +30,7 @@ public class SpeedUpControl : MonoBehaviour
 
         if (tankMovementDatas == null || tankMovementDatas.Length == 0)
             tankMovementDatas = GetComponents<TankMovementData>();
-        //speedUp_Icon.SetActive(false);
+        speedUp_Icon.SetActive(false);
 
     }
   
@@ -50,13 +50,13 @@ public class SpeedUpControl : MonoBehaviour
         if (!speedUp)
         {
             tankmovement.movementData = tankMovementDatas[0];
-            //speedUp_Icon.SetActive(false);
+            speedUp_Icon.SetActive(false);
         }    
   
         if (speedUp && timer > 0.5)
         {
             tankmovement.movementData = tankMovementDatas[1];
-            //speedUp_Icon.SetActive(true);
+            speedUp_Icon.SetActive(true);
         }
 
     }

@@ -8,6 +8,7 @@ public class ShieldController : MonoBehaviour
     [SerializeField] int shieldPoint;
     [SerializeField] GameObject shieldPrefab;
     [SerializeField] Damagable playerDamagable;
+    [SerializeField] GameObject shieldIcon;
     public bool tutorial;
 
     float skillTimer;
@@ -16,6 +17,7 @@ public class ShieldController : MonoBehaviour
     void Start()
     {
         playerDamagable = GetComponent<Damagable>();
+        shieldIcon.SetActive(false);
     }
 
     private void Update()
@@ -25,6 +27,7 @@ public class ShieldController : MonoBehaviour
             if (Time.time > skillTimer)
             {
                 Destroy(shieldObj);
+                shieldIcon.SetActive(false);
                 shield = false;
                 playerDamagable.shield = false;
             }
@@ -33,6 +36,7 @@ public class ShieldController : MonoBehaviour
 
     void ShieldPlayer()
     {
+        shieldIcon.SetActive(true);
         shield = true;
         skillTimer = Time.time + duration;
         shieldObj = Instantiate(shieldPrefab, transform.position, Quaternion.identity);

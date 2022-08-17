@@ -1,20 +1,40 @@
 using UnityEngine;
 using UnityEngine.Events;
+using System.Collections.Generic;
 
 public class TankMachineGun : MonoBehaviour
 {
     #region Variables
-    public AudioSource machineGunSFX;
-    public Transform barrel;
+
+    public List<Transform> turretBarrels;
+    public TurretData turretData;
+
     public bool canShoot;
-    public bool fire;
-    public Rigidbody2D bullet;
-    private float timer;
-    public Animator animator;
-    public BulletData BulletData;
-    public Damagable damagable;
-    public UnityEvent OnShoot;
+    bool fire;
+
+    float timer;
+    Animator animator;
+
+    AudioSource machineGunSFX;
+    Collider2D[] tankColliders;
+
+    ObjectPool bulletPool;
+    [SerializeField]
+    public int bulletPoolCount = 10;
     #endregion
+
+    private void Awake()
+    {
+        machineGunSFX = GetComponent<AudioSource>();
+        animator = GetComponent<Animator>();
+        tankColliders = GetComponentsInParent<Collider2D>();
+        bulletPool = GetComponent<ObjectPool>();
+    }
+
+    private void Start()
+    {
+        bulletPool.Initialize(turretData.bulletPrefab, bulletPoolCount);
+    }
 
     void Update()
     {
@@ -41,11 +61,23 @@ public class TankMachineGun : MonoBehaviour
             if (timer >= 0.2f)
             {
                 timer = 0.0f;
-                Rigidbody2D newBullet = Instantiate(bullet);
-                newBullet.transform.position = barrel.position;
-                newBullet.transform.localRotation = barrel.rotation;
-                newBullet.AddForce(barrel.up * 100, ForceMode2D.Force);
-                newBullet.GetComponent<Bullet>().Initialize(BulletData);
+
+                foreach (var barrel in turretBarrels)
+                {
+                    var hit = Physics2D.Raycast(barrel.position, barrel.up);
+
+                    GameObject bullet = bulletPool.CreateObject();
+                    bullet.transform.position = barrel.position;
+                    bullet.transform.localRotation = barrel.rotation;
+                    bullet.GetComponent<Bullet>().Initialize(turretData.bulletData);
+                    bullet.GetComponent<Bullet>().direction = barrel.up;
+
+                    foreach (var collider in tankColliders)
+                    {
+                        Physics2D.IgnoreCollision(bullet.GetComponent<Collider2D>(), collider);
+                    }
+
+                }
             }
         }
     }
