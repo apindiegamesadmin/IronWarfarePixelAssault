@@ -7,7 +7,7 @@ public class PowerUpCheck : MonoBehaviour
     [SerializeField] int stepIndex;
     AIDetector aiDetector;
     TutorialManager tutorialManager;
-    void Start()
+    void Awake()
     {
         aiDetector = GetComponent<AIDetector>();
         tutorialManager = FindObjectOfType<TutorialManager>();
