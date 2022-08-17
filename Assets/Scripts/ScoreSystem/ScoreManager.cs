@@ -10,12 +10,10 @@ public class ScoreManager : MonoBehaviour
     public int playerScore = 0;
     public Damagable damagable;
     public string PLAYERSCORE;
-    public TextMeshPro scoreText;
+    public TextMeshProUGUI scoreText;
 
     private void Awake()
     {
-        //playerScore = TankController.playerScore;
-        //PLAYERSCORE = TankController.PLAYERSCORE;
         damagable = GetComponent<Damagable>();
     }
 
@@ -23,16 +21,16 @@ public class ScoreManager : MonoBehaviour
     {
         scoreText.text = playerScore.ToString();
         health = damagable.Health;
-        playerScore = PlayerPrefs.GetInt(PLAYERSCORE, playerScore);
+        playerScore = PlayerPrefs.GetInt(PLAYERSCORE, 0);
     }
 
     void Update()
     {
-        if (health <= 0)
-        {
-            Score();
-            Debug.Log("Score plus one");
-        }
+        // if (health <= 0)
+        // {
+        //     Score();
+        //     Debug.Log("Score plus one");
+        // }
     }
 
     public void Score()

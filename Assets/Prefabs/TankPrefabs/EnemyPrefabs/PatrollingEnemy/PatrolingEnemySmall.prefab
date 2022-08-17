@@ -19,6 +19,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1268981789515230098, guid: 1bc84e9af9a0a6d47bd8effb1f57bb82, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1646958841755428217, guid: 1bc84e9af9a0a6d47bd8effb1f57bb82, type: 3}
       propertyPath: MaxHealth
       value: 10
@@ -110,6 +114,10 @@ PrefabInstance:
     - target: {fileID: 2575475115464202022, guid: 1bc84e9af9a0a6d47bd8effb1f57bb82, type: 3}
       propertyPath: visibilityLayer.m_Bits
       value: 2688
+      objectReference: {fileID: 0}
+    - target: {fileID: 3786640475977030955, guid: 1bc84e9af9a0a6d47bd8effb1f57bb82, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4003535910520544484, guid: 1bc84e9af9a0a6d47bd8effb1f57bb82, type: 3}
       propertyPath: m_SortingLayerID

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51667462e8230ed4dba41481b6545889, type: 3}
   m_Name: HomingMissleTurretData
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 9105954965143730031, guid: 99e56bb303361274680d10a3b5711e24, type: 3}
+  bulletPrefab: {fileID: 6765290963820123760, guid: 02661321fb0559647b1a46cb33896d91, type: 3}
   reloadDelay: 2
   bulletData: {fileID: 11400000, guid: cd62c17b01a84c44fb9eb05a3b071307, type: 2}
