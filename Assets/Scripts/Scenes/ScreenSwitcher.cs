@@ -9,10 +9,11 @@ public class ScreenSwitcher : MonoBehaviour
     public GameObject mainMenuPanel;
     public GameObject settingsMenuPanel;
     public GameObject loadingScreen;
+    public MissionLock missionLock;
 
     public void LoadScene(int index)
     {
-        StartCoroutine(FakeLoadingScreen(index));
+        missionLock.IsLock(index);
     }
 
     IEnumerator FakeLoadingScreen(int sceneIndex)
@@ -32,6 +33,11 @@ public class ScreenSwitcher : MonoBehaviour
     {
         mainMenuPanel.SetActive(true);
         settingsMenuPanel.SetActive(false);
+    }
+
+    public void LoadSceneIndex(int index)
+    {
+        StartCoroutine(FakeLoadingScreen(index));
     }
 
 }

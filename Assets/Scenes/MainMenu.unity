@@ -5601,7 +5601,7 @@ GameObject:
   - component: {fileID: 94923635}
   - component: {fileID: 94923634}
   m_Layer: 5
-  m_Name: Mission 4 Details (3)
+  m_Name: Mission 2 Details
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5622,7 +5622,7 @@ RectTransform:
   - {fileID: 2074261056}
   - {fileID: 1790080387}
   m_Father: {fileID: 2146464140}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -6495,7 +6495,7 @@ GameObject:
   - component: {fileID: 181853565}
   - component: {fileID: 181853564}
   m_Layer: 5
-  m_Name: Mission 3 Details (2)
+  m_Name: Mission 5 Details
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6516,7 +6516,7 @@ RectTransform:
   - {fileID: 923499018}
   - {fileID: 1205993831}
   m_Father: {fileID: 2146464140}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -23437,7 +23437,7 @@ GameObject:
   - component: {fileID: 506651250}
   - component: {fileID: 506651249}
   m_Layer: 5
-  m_Name: Mission 5 Details (4)
+  m_Name: Mission 1 Details
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23458,7 +23458,7 @@ RectTransform:
   - {fileID: 424992448}
   - {fileID: 2129176927}
   m_Father: {fileID: 2146464140}
-  m_RootOrder: 6
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -23807,7 +23807,7 @@ GameObject:
   - component: {fileID: 557874132}
   - component: {fileID: 557874131}
   m_Layer: 5
-  m_Name: Mission 2 Details (1)
+  m_Name: Mission 3 Details
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23828,7 +23828,7 @@ RectTransform:
   - {fileID: 700509741}
   - {fileID: 725136408}
   m_Father: {fileID: 2146464140}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -35539,7 +35539,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -35899,7 +35899,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -41658,7 +41658,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -49547,7 +49547,19 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: ScreenSwitcher, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -62083,7 +62095,7 @@ GameObject:
   - component: {fileID: 1715756841}
   - component: {fileID: 1715756843}
   m_Layer: 5
-  m_Name: Mission 1 Details
+  m_Name: Mission 4 Details
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62104,7 +62116,7 @@ RectTransform:
   - {fileID: 1170522456}
   - {fileID: 1282474985}
   m_Father: {fileID: 2146464140}
-  m_RootOrder: 2
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -68316,6 +68328,7 @@ MonoBehaviour:
   mainMenuPanel: {fileID: 203112658}
   settingsMenuPanel: {fileID: 212278732}
   loadingScreen: {fileID: 1582735072}
+  missionLock: {fileID: 2146464145}
 --- !u!114 &1946741000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74338,6 +74351,7 @@ GameObject:
   - component: {fileID: 2146464143}
   - component: {fileID: 2146464142}
   - component: {fileID: 2146464144}
+  - component: {fileID: 2146464145}
   m_Layer: 5
   m_Name: LevelSelection
   m_TagString: Untagged
@@ -74359,11 +74373,11 @@ RectTransform:
   m_Children:
   - {fileID: 187588009}
   - {fileID: 669002140}
-  - {fileID: 1715756840}
-  - {fileID: 557874130}
-  - {fileID: 181853563}
-  - {fileID: 94923633}
   - {fileID: 506651248}
+  - {fileID: 94923633}
+  - {fileID: 557874130}
+  - {fileID: 1715756840}
+  - {fileID: 181853563}
   m_Father: {fileID: 31503513}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -74430,3 +74444,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2146464145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146464139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b931a404ee789004589fba65afc98a7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _screenSwitcher: {fileID: 1946740999}
