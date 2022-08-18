@@ -12,6 +12,8 @@ TagManager:
   - Shield
   - Enemy
   - HomingMissle
+  - Trigger
+  - TutorialBossTrigger
   layers:
   - Default
   - TransparentFX

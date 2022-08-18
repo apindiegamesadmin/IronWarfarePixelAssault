@@ -6,29 +6,23 @@ using TMPro;
 public class DialogueManager : MonoBehaviour
 {
     public Dialogue[] dialogue;
-    [SerializeField] TankController playerTank;
-
-    private Queue<string> _sentences;
     public TextMeshProUGUI conversationTMPro;
-    public GameObject nextButton;
-    public GameObject conversationTextField;
-    public GameObject dialoguePanel;
-    public Animator animator;
 
     int dialogueIndex;
+    TankController playerTank;
+    Queue<string> _sentences;
+    Animator animator;
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
-
-        nextButton.SetActive(true);
-        nextButton.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "START";
-        conversationTextField.SetActive(true);
+        _sentences = new Queue<string>();
+        playerTank = GameObject.FindGameObjectWithTag("Player").GetComponent<TankController>();
     }
 
-    void Start()
+    IEnumerator Start()
     {
-        _sentences = new Queue<string>();
+        yield return new WaitForSeconds(0.3f);
         StartDialogue(dialogue[dialogueIndex]);
     }
 
@@ -56,7 +50,6 @@ public class DialogueManager : MonoBehaviour
     /// </summary>
     public void DisplayNextSentence()
     {
-        nextButton.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "NEXT";
         if (_sentences.Count == 0)
         {
             StopAllCoroutines();
@@ -106,6 +99,6 @@ public class DialogueManager : MonoBehaviour
     public void EndSentence()
     {
         playerTank.canMove = true;
-        dialoguePanel.SetActive(false);
+        this.gameObject.SetActive(false);
     }
 }
