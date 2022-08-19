@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class TutorialManager : MonoBehaviour
 {
-    [SerializeField] TankController playerTank;
-    [SerializeField] DefaultEnemyAI step2EnemyAIStatic;
-    [SerializeField] DefaultEnemyAI step2EnemyAIPatrol;
-    [SerializeField] AIDetector step5BossBattle;
+    TankController playerTank;
+    [SerializeField] DefaultEnemyAI enemyAIStatic;
+    [SerializeField] DefaultEnemyAI enemyAIPatrol;
+    [SerializeField] AIDetector bossBattle;
     [SerializeField] GameObject dialogueUI;
 
     public int tutorialIndex;
@@ -18,25 +18,30 @@ public class TutorialManager : MonoBehaviour
     bool step1, step2, step3, step4, step5, step6, step7;
 
     DialogueManager dialogueManager;
-    void Start()
+    void Awake()
     {
-        dialogueManager = dialogueUI.GetComponent<DialogueManager>();
-        dialogueUI.SetActive(true);//Show Dialogue
+        playerTank = GameObject.FindGameObjectWithTag("Player").GetComponent<TankController>();
 
         playerTank.canShoot = false;//Disable Shoot Function Of Player
-        TankMachineGun[] machineGuns = playerTank.GetComponentsInChildren<TankMachineGun>();
-        foreach (TankMachineGun machineGun in machineGuns)
-        {
-            machineGun.canShoot = false;//Disable player machine guns
-        }
-
-        step2EnemyAIStatic.canShoot = false;//Disable Shoot Function Of Enemy
-        step2EnemyAIPatrol.canShoot = false;
+        TankMachineGun machineGun = playerTank.GetComponentInChildren<TankMachineGun>();
+        machineGun.canShoot = false;//Disable player machine guns
 
         playerTank.transform.GetComponent<SpeedUpControl>().tutorial = true;// Turn On tutorial mode on power ups
         playerTank.transform.GetComponent<BulletController>().tutorial = true;
         playerTank.transform.GetComponent<HealthPackControl>().tutorial = true;
         playerTank.transform.GetComponent<ShieldController>().tutorial = true;
+
+        enemyAIStatic = GameObject.FindGameObjectWithTag("StaticEnemy").GetComponent<DefaultEnemyAI>();//Get staic enemy reference
+        enemyAIStatic.canShoot = false;//Disable Shoot Function Of Enemy
+        enemyAIPatrol = GameObject.FindGameObjectWithTag("PatrolEnemy").GetComponent<DefaultEnemyAI>();//Get patrol enemy reference
+        enemyAIPatrol.canShoot = false;
+
+        bossBattle = GameObject.FindGameObjectWithTag("Boss").GetComponent<AIDetector>();//Get Boss Trigger Reference
+
+
+        dialogueUI = GameObject.FindGameObjectWithTag("Dialogue");//Get Dialogue UI reference
+        dialogueManager = dialogueUI.GetComponent<DialogueManager>();
+        dialogueUI.SetActive(true);//Show Dialogue
     }
 
     
@@ -80,7 +85,7 @@ public class TutorialManager : MonoBehaviour
         }
 
         //Check Tutorial Step Triggererd?
-        if (step2EnemyAIStatic.detector.TargetVisible)// check if player reach static enemy range
+        if (enemyAIStatic.detector.TargetVisible)// check if player reach static enemy range
         {
             if (!step1)//We don't want to trigger multiple times because that can cause the dialogue error.
             {
@@ -91,22 +96,19 @@ public class TutorialManager : MonoBehaviour
                 step1 = true;
             }
         }
-        if (step2EnemyAIPatrol.detector.TargetVisible)// Check if player reach patrolling enemy range
+        if (enemyAIPatrol.detector.TargetVisible)// Check if player reach patrolling enemy range
         {
             if (!step2)
             {
                 dialogueUI.SetActive(true);
                 dialogueManager.StartDialogue(dialogueManager.dialogue[3]);//Show appropiate dialogue
-                TankMachineGun[] machineGuns = playerTank.GetComponentsInChildren<TankMachineGun>();
-                foreach (TankMachineGun machineGun in machineGuns)
-                {
-                    machineGun.canShoot = true;//Enable player machine guns
-                }
+                TankMachineGun machineGun = playerTank.GetComponentInChildren<TankMachineGun>();
+                machineGun.canShoot = true;//Enable player machine guns
                 tutorialIndex = 2;
                 step2 = true;
             }
         }
-        if (step5BossBattle.TargetVisible)// check if player reach Boss 
+        if (bossBattle.TargetVisible)// check if player reach Boss 
         {
             if (!step7)
             {

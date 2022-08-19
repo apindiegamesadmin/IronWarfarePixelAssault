@@ -7,7 +7,7 @@ public class ShieldController : MonoBehaviour
     [SerializeField] int duration;
     [SerializeField] int shieldPoint;
     [SerializeField] GameObject shieldPrefab;
-    [SerializeField] Damagable playerDamagable;
+    Damagable playerDamagable;
     [SerializeField] GameObject shieldIcon;
     public bool tutorial;
 

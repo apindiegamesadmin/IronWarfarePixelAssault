@@ -10,7 +10,7 @@ public class TutorialBossTrigger : MonoBehaviour
     [SerializeField] GameObject blocks;
     void Start()
     {
-        director = GetComponent<PlayableDirector>();
+        director = GetComponentInParent<PlayableDirector>();
     }
 
     public void PlayCutScene()

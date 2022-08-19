@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
-    public Turret turret;
+    Turret turret;
     public TurretData turretData;
     public TurretData[] turretDatas;
     public Transform[] barrels;

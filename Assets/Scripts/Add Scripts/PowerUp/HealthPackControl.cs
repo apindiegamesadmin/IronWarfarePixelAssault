@@ -5,7 +5,7 @@ using UnityEngine;
 public class HealthPackControl : MonoBehaviour
 {
     [SerializeField] int hpPoint;
-    [SerializeField] Damagable playerDamagable;
+    Damagable playerDamagable;
     public bool tutorial;
     void Start()
     {
