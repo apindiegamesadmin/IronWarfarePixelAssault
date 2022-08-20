@@ -106,7 +106,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
-  m_ConstrainProportionsScale: 1
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 527249440093171913}
   m_RootOrder: 0
@@ -453,7 +453,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4911797683857134107}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -528,7 +528,7 @@ MonoBehaviour:
   - sentences:
     - Good! Now, proceed to the next area.
   - sentences:
-    - So this is a Grizzly medium tank. You can approach to destroy it by shooting
+    - So this is a "Grizzly" medium tank. You can approach to destroy it by shooting
       with your main cannon. Press mouse 0 (or the left button on your mouse) to
       fire your main cannon.
   - sentences:
@@ -537,15 +537,17 @@ MonoBehaviour:
   - sentences:
     - This is a "Speed Power Up". See what it does to your tank.
   - sentences:
-    - 'This is a "Bullet Power Up". '
+    - 'This is a "Bullet Power Up". Use it wisely to destroy your enemies. '
   - sentences:
-    - This is a "Shield Power Up"
+    - This is a "Shield Power Up". Use it wisely to deflect attacks from your enemies.
   - sentences:
-    - PLACEHOLDER "Health Pack Restore Your Health"
+    - 'This is a "Health Pack". One of the ways to survive in this war is to stay
+      alive. '
   - sentences:
-    - PLACEHOLDER "Destroy all enemies"
+    - 'Now that you have learnt the basics, your mission is to make your way to the
+      randevous point located at the "South" of the map. '
   - sentences:
-    - PLACEHOLDER "Kill the boss"
+    - Your new mission is to "Kill the enemy boss tank". Give it hell!
   conversationTMPro: {fileID: 9111889572076960815}
 --- !u!95 &2628250889632266242
 Animator:
