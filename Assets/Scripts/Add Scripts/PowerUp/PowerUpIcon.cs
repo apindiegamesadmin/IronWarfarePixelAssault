@@ -11,14 +11,12 @@ public class PowerUpIcon : MonoBehaviour
     {
         if (airDrop)
         {
-            yield return new WaitForSeconds(5);
+            yield return new WaitForSeconds(20);
             Destroy(this.gameObject);
         }
     }
     void Update()
     {
-        transform.Rotate(0,0,speed*Time.deltaTime);
+        transform.Rotate(0,0,speed * Time.deltaTime);
     }
-
-
 }

@@ -8,7 +8,7 @@ public class DialogueManager : MonoBehaviour
     public Dialogue[] dialogue;
     public TextMeshProUGUI conversationTMPro;
 
-    int dialogueIndex;
+    public int dialogueIndex;
     TankController playerTank;
     Queue<string> _sentences;
     Animator animator;
@@ -20,9 +20,9 @@ public class DialogueManager : MonoBehaviour
         playerTank = GameObject.FindGameObjectWithTag("Player").GetComponent<TankController>();
     }
 
-    IEnumerator Start()
+    void Start()
     {
-        yield return new WaitForSeconds(0.3f);
+        //yield return new WaitForSeconds(0.3f);
         StartDialogue(dialogue[dialogueIndex]);
     }
 

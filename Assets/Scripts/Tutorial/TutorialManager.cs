@@ -9,6 +9,7 @@ public class TutorialManager : MonoBehaviour
     [SerializeField] DefaultEnemyAI enemyAIPatrol;
     [SerializeField] AIDetector bossBattle;
     [SerializeField] GameObject dialogueUI;
+    [SerializeField] GameObject planeManager;
 
     public int tutorialIndex;
     public bool completeStep;
@@ -31,19 +32,17 @@ public class TutorialManager : MonoBehaviour
         playerTank.transform.GetComponent<HealthPackControl>().tutorial = true;
         playerTank.transform.GetComponent<ShieldController>().tutorial = true;
 
-        enemyAIStatic = GameObject.FindGameObjectWithTag("StaticEnemy").GetComponent<DefaultEnemyAI>();//Get staic enemy reference
+        //enemyAIStatic = GameObject.FindGameObjectWithTag("StaticEnemy").GetComponent<DefaultEnemyAI>();//Get staic enemy reference
         enemyAIStatic.canShoot = false;//Disable Shoot Function Of Enemy
-        enemyAIPatrol = GameObject.FindGameObjectWithTag("PatrolEnemy").GetComponent<DefaultEnemyAI>();//Get patrol enemy reference
+        //enemyAIPatrol = GameObject.FindGameObjectWithTag("PatrolEnemy").GetComponent<DefaultEnemyAI>();//Get patrol enemy reference
         enemyAIPatrol.canShoot = false;
 
-        bossBattle = GameObject.FindGameObjectWithTag("Boss").GetComponent<AIDetector>();//Get Boss Trigger Reference
+       //bossBattle = GameObject.FindGameObjectWithTag("Boss").GetComponent<AIDetector>();//Get Boss Trigger Reference
 
 
-        dialogueUI = GameObject.FindGameObjectWithTag("Dialogue");//Get Dialogue UI reference
+        //dialogueUI = GameObject.FindGameObjectWithTag("Dialogue");//Get Dialogue UI reference
         dialogueManager = dialogueUI.GetComponent<DialogueManager>();
-        dialogueUI.SetActive(true);//Show Dialogue
     }
-
     
     void Update()
     {
@@ -158,6 +157,7 @@ public class TutorialManager : MonoBehaviour
         }
         else if(tutorialIndex == 6 && completeStep)// Step 4 Health Pack
         {
+            planeManager.SetActive(true); // Start Spawning Planes
             dialogueUI.SetActive(true);
             dialogueManager.StartDialogue(dialogueManager.dialogue[8]);// Show Completion Dialogue
             completeStep = false;

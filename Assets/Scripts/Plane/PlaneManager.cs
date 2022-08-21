@@ -25,10 +25,10 @@ public class PlaneManager : MonoBehaviour
 
     void SpawnPlane()
     {
-        GameObject plane = Instantiate(planePrefab, playerTransform.position,Quaternion.identity);
+        GameObject plane = Instantiate(planePrefab, playerTransform.position,Quaternion.identity);//Spawn plane
         plane.transform.SetParent(this.transform);
 
-        int randomIndex = Random.Range(-90, 180);
+        int randomIndex = Random.Range(-90, 180);// Randomize plane's rotation
         plane.transform.Rotate(0,0,randomIndex);
     }
 }
