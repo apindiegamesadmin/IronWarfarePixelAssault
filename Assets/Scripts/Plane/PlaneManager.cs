@@ -19,8 +19,13 @@ public class PlaneManager : MonoBehaviour
         if(Time.time > timeToSpawn)
         {
             SpawnPlane();
-            timeToSpawn = Time.time + timeBetweenWaves;
+            ResetTimeToSpawn();
         }
+    }
+
+    public void ResetTimeToSpawn()
+    {
+        timeToSpawn = Time.time + timeBetweenWaves;
     }
 
     void SpawnPlane()

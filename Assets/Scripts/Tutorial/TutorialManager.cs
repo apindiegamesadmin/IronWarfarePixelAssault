@@ -158,6 +158,8 @@ public class TutorialManager : MonoBehaviour
         else if(tutorialIndex == 6 && completeStep)// Step 4 Health Pack
         {
             planeManager.SetActive(true); // Start Spawning Planes
+            planeManager.GetComponent<PlaneManager>().ResetTimeToSpawn();// Reset the spawn time
+
             dialogueUI.SetActive(true);
             dialogueManager.StartDialogue(dialogueManager.dialogue[8]);// Show Completion Dialogue
             completeStep = false;

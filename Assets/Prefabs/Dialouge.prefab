@@ -548,7 +548,9 @@ MonoBehaviour:
       randevous point located at the "South" of the map. '
   - sentences:
     - Your new mission is to "Kill the enemy boss tank". Give it hell!
+  nextButton: {fileID: 7913306268028568607}
   conversationTMPro: {fileID: 9111889572076960815}
+  dialogueIndex: 0
 --- !u!95 &2628250889632266242
 Animator:
   serializedVersion: 4

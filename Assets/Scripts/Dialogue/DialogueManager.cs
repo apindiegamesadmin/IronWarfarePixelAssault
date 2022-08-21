@@ -6,6 +6,7 @@ using TMPro;
 public class DialogueManager : MonoBehaviour
 {
     public Dialogue[] dialogue;
+    [SerializeField] GameObject nextButton;
     public TextMeshProUGUI conversationTMPro;
 
     public int dialogueIndex;
@@ -18,6 +19,7 @@ public class DialogueManager : MonoBehaviour
         animator = GetComponent<Animator>();
         _sentences = new Queue<string>();
         playerTank = GameObject.FindGameObjectWithTag("Player").GetComponent<TankController>();
+        nextButton.SetActive(false);
     }
 
     void Start()
@@ -33,6 +35,7 @@ public class DialogueManager : MonoBehaviour
     /// 
     public void StartDialogue(Dialogue dialogue)
     {
+        nextButton.SetActive(false);
         playerTank.canMove = false;
         _sentences.Clear();
 
@@ -50,6 +53,7 @@ public class DialogueManager : MonoBehaviour
     /// </summary>
     public void DisplayNextSentence()
     {
+        nextButton.SetActive(false);
         if (_sentences.Count == 0)
         {
             StopAllCoroutines();
@@ -76,6 +80,7 @@ public class DialogueManager : MonoBehaviour
             conversationTMPro.text += letter;
             yield return null;
         }
+        nextButton.SetActive(true);
     }
 
     /// <summary>
@@ -86,7 +91,7 @@ public class DialogueManager : MonoBehaviour
     IEnumerator CloseDialogue()
     {
         animator.Play("Dialogue_Close");
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(0.3f);
         dialogueIndex++;
         EndSentence();
     }
