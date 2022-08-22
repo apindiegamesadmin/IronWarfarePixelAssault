@@ -15,7 +15,8 @@ public class HomingMissle : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        enemyDamagable = GameObject.Find("EnemyTank").GetComponent<Damagable>();
+        // enemyDamagable = GameObject.Find("EnemyTank").GetComponent<Damagable>();
+        enemyDamagable = GameObject.FindWithTag("Enemy").GetComponent<Damagable>();
         target = GameObject.FindGameObjectWithTag("Enemy").transform;
         // bulletData = GetComponent<BulletData>();
         // _speed = bulletData.speed;
@@ -25,7 +26,7 @@ public class HomingMissle : MonoBehaviour
     void Update()
     {
         _timer += Time.deltaTime;
-        if (_timer >= 15.0f)
+        if (_timer >= 5.0f)
         {
             _timer = 0f;
             DisableGameObject();

@@ -5,6 +5,7 @@ using UnityEngine;
 public class BulletController : MonoBehaviour
 {
     Turret turret;
+    ObjectPool objectPool;
     public TurretData turretData;
     public TurretData[] turretDatas;
     public Transform[] barrels;
@@ -13,6 +14,7 @@ public class BulletController : MonoBehaviour
     public bool damageUp;
     public bool tutorial;
     public bool isHomingMissleActive = false;
+
 
     public GameObject tripleShootIcon;
 
@@ -24,6 +26,9 @@ public class BulletController : MonoBehaviour
 
         if (turretDatas == null || turretDatas.Length == 0)
             turretDatas = GetComponentsInChildren<TurretData>();
+
+        objectPool = GetComponentInChildren<ObjectPool>();
+
         tripleShootIcon.SetActive(false);
 
     }
@@ -67,7 +72,7 @@ public class BulletController : MonoBehaviour
 
         if (isHomingMissleActive)
         {
-            this.turretData = turretDatas[2];
+            turret.turretData = turretDatas[2];
         }
     }
 
@@ -76,9 +81,11 @@ public class BulletController : MonoBehaviour
         if (collision.transform.tag == "HomingMissle")
         {
             Destroy(collision.transform.gameObject);
+            turret.turretData = turretDatas[2];
+
             isHomingMissleActive = true;
             // damageUp = false;
-            Debug.Log("Homing missle is active");
+            Debug.Log("Homing missile is active");
         }
 
         if (collision.transform.tag == "DamageUp")
