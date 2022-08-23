@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: HomingMissleBulletData
   m_EditorClassIdentifier: 
   speed: 10
-  damage: 3
+  damage: 10
   maxDistance: 80

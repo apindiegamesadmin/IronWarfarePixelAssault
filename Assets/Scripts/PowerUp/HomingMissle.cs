@@ -64,6 +64,7 @@ public class HomingMissle : MonoBehaviour
         if (collider2D.transform.tag == "Enemy")
         {
             Debug.Log("Enemy is dead");
+            Destroy(this.gameObject);
             enemyDamagable.Health -= bulletData.damage;
         }
     }
