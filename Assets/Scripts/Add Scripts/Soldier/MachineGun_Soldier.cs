@@ -161,22 +161,5 @@ public class MachineGun_Soldier : MonoBehaviour
             Destroy(gameObject, destroy / 2.5f);
         }
     }
-
-    /* public void DeadAnimation()
-     {
-         lookDir = transform.position;
-         int random = Random.Range(0, 2);//Randomize int for Random Death Animation
-         switch (random)
-         {
-             case 0:
-                 m_Ani.Play("Soldier_Machine_die");
-                 break;
-             case 1:
-                 m_Ani.Play("Soldier_Machine_die2");
-                 break;
-         }
-         Destroy(gameObject, destroy);//Delay before destroy
-     } */
-
 }
 
