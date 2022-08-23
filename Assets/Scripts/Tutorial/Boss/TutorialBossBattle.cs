@@ -6,11 +6,18 @@ using UnityEngine;
 public class TutorialBossBattle : MonoBehaviour
 {
     [SerializeField] TankController bossTankController;
+    [SerializeField] PatrolPath bossPath;
     Damagable bossDamagable;
+    Transform playerTank;
 
     private void Awake()
     {
         bossDamagable = bossTankController.GetComponent<Damagable>();
+        playerTank = GameObject.FindGameObjectWithTag("Player").transform;
+        for (int i = 0; i < 2; i++)
+        {
+            bossPath.patrolPoints.Add(playerTank);
+        }
     }
 
     void Start()
@@ -22,13 +29,9 @@ public class TutorialBossBattle : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-
-    }
-
     public void CheckBossHealth()
     {
+        Debug.Log("Boss Check Health");
         if (bossDamagable.Health <= ((20.0f / 100) * bossDamagable.MaxHealth)) // If the boss health is less than or equal to the 20% of Max Health
         {
             Debug.Log("Stage 4");// Rampage
@@ -49,6 +52,14 @@ public class TutorialBossBattle : MonoBehaviour
             for (int i = 3; i < length; i++)
             {
                 bossTankController.turrets.RemoveAt(3);// Only main cannon and front guns active, Remove other guns
+            }
+        }
+        else
+        {
+            int length = bossTankController.turrets.Count;
+            for (int i = 1; i < length; i++)
+            {
+                bossTankController.turrets.RemoveAt(1);// Only main cannon active, Remove other guns
             }
         }
     }

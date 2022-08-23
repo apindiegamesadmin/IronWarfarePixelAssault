@@ -9,8 +9,6 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] GameObject nextButton;
     public TextMeshProUGUI conversationTMPro;
 
-    public int dialogueIndex;
-    TankController playerTank;
     Queue<string> _sentences;
     Animator animator;
 
@@ -18,14 +16,13 @@ public class DialogueManager : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         _sentences = new Queue<string>();
-        playerTank = GameObject.FindGameObjectWithTag("Player").GetComponent<TankController>();
         nextButton.SetActive(false);
     }
 
     void Start()
     {
         //yield return new WaitForSeconds(0.3f);
-        StartDialogue(dialogue[dialogueIndex]);
+        StartDialogue(dialogue[0]);
     }
 
     /// <summary>
@@ -35,8 +32,8 @@ public class DialogueManager : MonoBehaviour
     /// 
     public void StartDialogue(Dialogue dialogue)
     {
+        Time.timeScale = 0;
         nextButton.SetActive(false);
-        playerTank.canMove = false;
         _sentences.Clear();
 
         // To Enqueue the dialogue sentences from dialogue class to this.sentences array
@@ -75,6 +72,8 @@ public class DialogueManager : MonoBehaviour
     {
         conversationTMPro.text = "";
 
+        yield return new WaitForSecondsRealtime(0.3f);
+
         foreach(char letter in sentence.ToCharArray())
         {
             conversationTMPro.text += letter;
@@ -91,8 +90,7 @@ public class DialogueManager : MonoBehaviour
     IEnumerator CloseDialogue()
     {
         animator.Play("Dialogue_Close");
-        yield return new WaitForSeconds(0.3f);
-        dialogueIndex++;
+        yield return new WaitForSecondsRealtime(0.4f);
         EndSentence();
     }
 
@@ -103,7 +101,7 @@ public class DialogueManager : MonoBehaviour
     /// </summary>
     public void EndSentence()
     {
-        playerTank.canMove = true;
+        Time.timeScale = 1;
         this.gameObject.SetActive(false);
     }
 }
