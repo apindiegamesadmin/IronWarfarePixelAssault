@@ -22,7 +22,7 @@ public class Plane : MonoBehaviour
 
     IEnumerator DelayDrop()
     {
-        float delay = Random.Range(2, 4);
+        float delay = Random.Range(6, 10);
         yield return new WaitForSeconds(delay);
         SpawnAirDrop();
     }

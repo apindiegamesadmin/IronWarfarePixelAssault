@@ -5,7 +5,7 @@ public class MachineGun_Soldier : MonoBehaviour
 {
     public float checkDistacne;
     private Rigidbody2D m_body;
-    public GameObject target;
+    public Transform target;
     public float speed;
     private float destroy = 4.0f;
     private float combatRange = 5.0f;
@@ -50,6 +50,7 @@ public class MachineGun_Soldier : MonoBehaviour
 
     void Start()
     {
+        target = GameObject.FindGameObjectWithTag("Player").transform;
         bulletPool.Initialize(turretData.bulletPrefab, bulletPoolCount);
 
         health = slider.maxValue;
@@ -64,7 +65,7 @@ public class MachineGun_Soldier : MonoBehaviour
         if (dead)
             return;
 
-        if(target.activeInHierarchy)
+        if(target.gameObject.activeInHierarchy)
         {
             checkDistacne = Vector2.Distance(target.transform.position, transform.position); // check the ditance between Player and Enemy
         }
@@ -150,11 +151,13 @@ public class MachineGun_Soldier : MonoBehaviour
 
             slider.value = 0.0f;
         }
-
-        if (collision.transform.tag == "Bullet")
+        else if(collision.transform.tag == "MachineGunBullet")
         {
-            //healthBar.SetActive(true);
-            //slider.value = slider.value - 0.5f;
+            healthBar.SetActive(true);
+            slider.value = slider.value - 0.5f;
+        }
+        else if (collision.transform.tag == "Bullet")
+        {
             dead = true;
             m_Ani.Play("Soldier_Machine_diehard");
             GetComponent<BodyPartsSpawner>().SpawnBodyParts(collision.GetComponent<Bullet>().direction,collision.transform.position);

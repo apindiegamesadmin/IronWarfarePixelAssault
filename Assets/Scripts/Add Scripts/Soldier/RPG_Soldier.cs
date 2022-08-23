@@ -7,7 +7,7 @@ public class RPG_Soldier : MonoBehaviour
 {
     public float checkDistacne;
     private Rigidbody2D m_body;
-    public GameObject target;
+    public Transform target;
     public float speed;
     private float destroy = 4.0f;
     private float combatRange = 5.0f;
@@ -50,6 +50,8 @@ public class RPG_Soldier : MonoBehaviour
 
     void Start()
     {
+        target = GameObject.FindGameObjectWithTag("Player").transform;
+
         bulletPool.Initialize(turretData.bulletPrefab, bulletPoolCount);
         //health = slider.maxValue;
         healthBar.SetActive(false);
@@ -66,7 +68,7 @@ public class RPG_Soldier : MonoBehaviour
         if (dead)
             return;
 
-        if (target.activeInHierarchy)
+        if (target.gameObject.activeInHierarchy)
         {
             checkDistacne = Vector2.Distance(target.transform.position, transform.position); // check the ditance between Player and Enemy
         }

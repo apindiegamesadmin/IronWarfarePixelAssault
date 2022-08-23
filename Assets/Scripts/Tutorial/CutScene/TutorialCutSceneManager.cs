@@ -8,6 +8,7 @@ public class TutorialCutSceneManager : MonoBehaviour
     [SerializeField] GameObject tutorialManager;
     [SerializeField] GameObject gameUI;
     [SerializeField] GameObject blocks;
+    [SerializeField] DialogueManager dialogueManager;
 
     PlayableDirector director;
 
@@ -25,6 +26,7 @@ public class TutorialCutSceneManager : MonoBehaviour
     {
         Time.timeScale = 1;
         gameUI.SetActive(true);
+        dialogueManager.StartDialogue(dialogueManager.dialogue[0]);
         tutorialManager.SetActive(true);
         blocks.SetActive(true);
         director.Stop();

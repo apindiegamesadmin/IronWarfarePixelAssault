@@ -21,8 +21,7 @@ public class DialogueManager : MonoBehaviour
 
     void Start()
     {
-        //yield return new WaitForSeconds(0.3f);
-        StartDialogue(dialogue[0]);
+
     }
 
     /// <summary>

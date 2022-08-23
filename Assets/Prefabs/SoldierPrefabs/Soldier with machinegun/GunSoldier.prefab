@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9138361121071089162}
   - component: {fileID: 4915356596402806839}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: Bleeding
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1270300021030422172}
   - component: {fileID: 1270300021030422243}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,7 +187,8 @@ GameObject:
   - component: {fileID: 4666292401590987496}
   - component: {fileID: 1270300021066236584}
   - component: {fileID: 7057568731150553389}
-  m_Layer: 11
+  - component: {fileID: 2141190777}
+  m_Layer: 12
   m_Name: GunSoldier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -265,7 +266,6 @@ MonoBehaviour:
   checkDistacne: 0
   target: {fileID: 0}
   speed: 0.5
-  bullet: {fileID: 6050679244346278280, guid: be4d82780bb9d4b9f8f84c36b2c51967, type: 3}
   blood: {fileID: 8087821370399922432}
   barrel: {fileID: 6402252440077233126}
   BulletData: {fileID: 11400000, guid: 064c9767f67094521a7e3948a18187cc, type: 2}
@@ -277,7 +277,7 @@ MonoBehaviour:
   found: 0
   shoot: 0
   playerHealth: 0
-  turretData: {fileID: 11400000, guid: 6c1b01c512c9b3d45b3f703fb137186d, type: 2}
+  turretData: {fileID: 11400000, guid: 730f35cd3c4e5ce4d8a3ea622dbeef5a, type: 2}
   bulletPoolCount: 10
 --- !u!114 &7057568731150553389
 MonoBehaviour:
@@ -295,6 +295,27 @@ MonoBehaviour:
   poolSize: 10
   spawnedObjectsParent: {fileID: 0}
   alwaysDestroy: 0
+--- !u!114 &2141190777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1270300021066236590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fe8a5dc32e554b4abc413f96042707a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bodyPartsPrefabs:
+  - {fileID: 3751531424598165166, guid: 215ea31b5f3103d4aad0df0138248c56, type: 3}
+  - {fileID: 856296980736843613, guid: 8549b1df0c54802428dfa045d6687379, type: 3}
+  - {fileID: 8053709391600892966, guid: e2400d274fff41e4e98326533c88db86, type: 3}
+  - {fileID: 1615224764913229566, guid: 38f90a67ae291eb45b5dd7787c26404b, type: 3}
+  - {fileID: 5034663374652995803, guid: 72f3524241785034bacb9bda819c830d, type: 3}
+  - {fileID: 1659007633200338752, guid: b3d4d3b6a02e39b46bc79b7386db3e05, type: 3}
+  - {fileID: 3556060073319245538, guid: 255b7937fe4cd6e429966bb12f4cde3f, type: 3}
+  - {fileID: 7413836672536420769, guid: 6a02241b12dcdfd439a5348b229ccbfd, type: 3}
 --- !u!1 &1270300021586293478
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,7 +327,7 @@ GameObject:
   - component: {fileID: 1270300021586293479}
   - component: {fileID: 1270300021586293473}
   - component: {fileID: 1270300021586293472}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -380,7 +401,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6402252440077233126}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -413,7 +434,7 @@ GameObject:
   - component: {fileID: 1270300021910988161}
   - component: {fileID: 1270300021910988163}
   - component: {fileID: 1270300021910988162}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Filler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -489,7 +510,7 @@ GameObject:
   - component: {fileID: 1270300022670657802}
   - component: {fileID: 1270300022670657796}
   - component: {fileID: 1270300022670657803}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -572,7 +593,7 @@ GameObject:
   - component: {fileID: 6402252440077233122}
   - component: {fileID: 6402252440077233052}
   - component: {fileID: 6402252440077233123}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: Soldier_Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -721,6 +742,10 @@ PrefabInstance:
     - target: {fileID: 7033696335014532716, guid: 46fbe251d9e13d64aa7a8d1b05ea2ce3, type: 3}
       propertyPath: m_Name
       value: Blood
+      objectReference: {fileID: 0}
+    - target: {fileID: 7033696335014532716, guid: 46fbe251d9e13d64aa7a8d1b05ea2ce3, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7033696335014532716, guid: 46fbe251d9e13d64aa7a8d1b05ea2ce3, type: 3}
       propertyPath: m_IsActive

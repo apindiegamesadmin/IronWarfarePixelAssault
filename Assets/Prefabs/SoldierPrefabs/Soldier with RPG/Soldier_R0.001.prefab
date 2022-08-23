@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4172191966798831566}
   - component: {fileID: 4172191966798831552}
   - component: {fileID: 4172191966798831567}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 4172191967650788165}
   - component: {fileID: 4172191967650788167}
   - component: {fileID: 4172191967650788166}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Filler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -170,7 +170,7 @@ GameObject:
   - component: {fileID: 4172191967849915427}
   - component: {fileID: 4172191967849915429}
   - component: {fileID: 4172191967849915428}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -244,7 +244,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8115143423172984098}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -277,7 +277,7 @@ GameObject:
   - component: {fileID: 4172191967725510779}
   - component: {fileID: 4172191968403641453}
   - component: {fileID: 4172191968403641451}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: Soldier_R0.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -360,7 +360,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4172191968564891736}
   - component: {fileID: 4172191968564891687}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -450,7 +450,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6647378865933791199}
   - component: {fileID: 5629355932264807790}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: Bleeding
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -535,7 +535,7 @@ GameObject:
   - component: {fileID: 8115143423172984102}
   - component: {fileID: 8115143423172984152}
   - component: {fileID: 8115143423172984103}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: Soldier_Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -684,6 +684,10 @@ PrefabInstance:
     - target: {fileID: 7033696335014532716, guid: 46fbe251d9e13d64aa7a8d1b05ea2ce3, type: 3}
       propertyPath: m_Name
       value: Blood
+      objectReference: {fileID: 0}
+    - target: {fileID: 7033696335014532716, guid: 46fbe251d9e13d64aa7a8d1b05ea2ce3, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7033696335014532716, guid: 46fbe251d9e13d64aa7a8d1b05ea2ce3, type: 3}
       propertyPath: m_IsActive

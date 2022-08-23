@@ -31,16 +31,10 @@ public class TutorialManager : MonoBehaviour
         playerTank.transform.GetComponent<BulletController>().tutorial = true;
         playerTank.transform.GetComponent<HealthPackControl>().tutorial = true;
         playerTank.transform.GetComponent<ShieldController>().tutorial = true;
-
-        //enemyAIStatic = GameObject.FindGameObjectWithTag("StaticEnemy").GetComponent<DefaultEnemyAI>();//Get staic enemy reference
+        
         enemyAIStatic.canShoot = false;//Disable Shoot Function Of Enemy
-        //enemyAIPatrol = GameObject.FindGameObjectWithTag("PatrolEnemy").GetComponent<DefaultEnemyAI>();//Get patrol enemy reference
         enemyAIPatrol.canShoot = false;
 
-       //bossBattle = GameObject.FindGameObjectWithTag("Boss").GetComponent<AIDetector>();//Get Boss Trigger Reference
-
-
-        //dialogueUI = GameObject.FindGameObjectWithTag("Dialogue");//Get Dialogue UI reference
         dialogueManager = dialogueUI.GetComponent<DialogueManager>();
     }
     

@@ -9,12 +9,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1479636594395524712, guid: 780ba07d5deebe845b1223ab8793165c, type: 3}
       propertyPath: m_Name
-      value: Big Explosion
+      value: Big Explosion Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1479636594395524713, guid: 780ba07d5deebe845b1223ab8793165c, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 22100000, guid: 6f53c49642066f14995258b3c1cb4c52, type: 2}
+    - target: {fileID: 1479636594395524713, guid: 780ba07d5deebe845b1223ab8793165c, type: 3}
+      propertyPath: m_UpdateMode
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1479636594395524718, guid: 780ba07d5deebe845b1223ab8793165c, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 0
