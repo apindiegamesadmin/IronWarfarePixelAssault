@@ -135,9 +135,9 @@ public class RPG_Soldier : MonoBehaviour
         }
 
 
-
         if (slider.value <= 0)
         {
+            dead = true;
             healthBar.SetActive(false);
             m_Ani.Play("Soldier_RPG_die1");
             if (blood != null)
@@ -146,12 +146,7 @@ public class RPG_Soldier : MonoBehaviour
                 Destroy(blood, 1f);//Delay Before Destroying Blood
             }
             Destroy(gameObject, destroy / 2.5f);
-
-
         }
-
-
-
     }
 
 
@@ -159,18 +154,26 @@ public class RPG_Soldier : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+        if (dead)
+            return;
+
         if (collision.transform.tag == "Player")
         {
+            dead = true;
             healthBar.SetActive(true);
             m_Ani.Play("Soldier_RPG_die2");
 
             slider.value = 0.0f;
         }
 
+        else if (collision.transform.tag == "MachineGunBullet")
+        {
+            healthBar.SetActive(true);
+            slider.value = slider.value - 0.5f;
+        }
+
         if (collision.transform.tag == "Bullet")
         {
-            //healthBar.SetActive(true);
-            //slider.value = slider.value - 0.5f;
             dead = true;
             m_Ani.Play("Soldier_RPG_diehard");
             GetComponent<BodyPartsSpawner>().SpawnBodyParts(collision.GetComponent<Bullet>().direction, collision.transform.position);
