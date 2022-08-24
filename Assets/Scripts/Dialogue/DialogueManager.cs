@@ -11,9 +11,11 @@ public class DialogueManager : MonoBehaviour
 
     Queue<string> _sentences;
     Animator animator;
+    PauseMenu pauseMenu;
 
     private void Awake()
     {
+        pauseMenu = FindObjectOfType<PauseMenu>();
         animator = GetComponent<Animator>();
         _sentences = new Queue<string>();
         nextButton.SetActive(false);
@@ -31,6 +33,7 @@ public class DialogueManager : MonoBehaviour
     /// 
     public void StartDialogue(Dialogue dialogue)
     {
+        pauseMenu.isGamePaused = true;
         Time.timeScale = 0;
         nextButton.SetActive(false);
         _sentences.Clear();
@@ -100,6 +103,7 @@ public class DialogueManager : MonoBehaviour
     /// </summary>
     public void EndSentence()
     {
+        pauseMenu.isGamePaused = false;
         Time.timeScale = 1;
         this.gameObject.SetActive(false);
     }

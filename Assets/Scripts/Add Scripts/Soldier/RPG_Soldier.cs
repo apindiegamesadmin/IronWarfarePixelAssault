@@ -160,7 +160,7 @@ public class RPG_Soldier : MonoBehaviour
         if (collision.transform.tag == "Player")
         {
             dead = true;
-            healthBar.SetActive(true);
+            healthBar.SetActive(false);
             m_Ani.Play("Soldier_RPG_die2");
 
             slider.value = 0.0f;
@@ -175,6 +175,7 @@ public class RPG_Soldier : MonoBehaviour
         if (collision.transform.tag == "Bullet")
         {
             dead = true;
+            healthBar.SetActive(false);
             m_Ani.Play("Soldier_RPG_diehard");
             GetComponent<BodyPartsSpawner>().SpawnBodyParts(collision.GetComponent<Bullet>().direction, collision.transform.position);
             Destroy(gameObject, destroy / 2.5f);

@@ -63,4 +63,10 @@ public class TutorialBossBattle : MonoBehaviour
             }
         }
     }
+
+    public void MissionCompleted()
+    {
+        UnlockMissions missionUnlock = FindObjectOfType<UnlockMissions>();
+        missionUnlock.UnlockMission();
+    }
 }

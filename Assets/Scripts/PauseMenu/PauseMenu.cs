@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] GameObject _pauseMenu;
-    public static bool isGamePaused = false;
+    public bool isGamePaused = false;
 
     [SerializeField]
     private GameObject gameUiPanel;
@@ -22,16 +22,9 @@ public class PauseMenu : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(Input.GetKeyDown(KeyCode.Escape) && !isGamePaused)
         {
-            if(isGamePaused)
-            {
-                Resume();
-            }
-            else
-            {
-                Pause();
-            }
+            Pause();
         }
     }
 

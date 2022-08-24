@@ -129,6 +129,7 @@ public class MachineGun_Soldier : MonoBehaviour
 
         if (slider.value <= 0)
         {
+            dead = true;
             healthBar.SetActive(false);
             m_Ani.Play("Soldier_Machine_die2");
             if (blood != null)
@@ -146,7 +147,8 @@ public class MachineGun_Soldier : MonoBehaviour
             return;
         if (collision.transform.tag == "Player")
         {
-            healthBar.SetActive(true);
+            dead = true;
+            healthBar.SetActive(false);
             m_Ani.Play("Soldier_Machine_die2");
 
             slider.value = 0.0f;
@@ -159,6 +161,7 @@ public class MachineGun_Soldier : MonoBehaviour
         else if (collision.transform.tag == "Bullet")
         {
             dead = true;
+            healthBar.SetActive(false);
             m_Ani.Play("Soldier_Machine_diehard");
             GetComponent<BodyPartsSpawner>().SpawnBodyParts(collision.GetComponent<Bullet>().direction,collision.transform.position);
             Destroy(gameObject, destroy / 2.5f);

@@ -8,7 +8,7 @@ public class PlayerTankController : MonoBehaviour
     [SerializeField] Color heartColor;
     Transform heartHolder;
     Image[] hearts;
-    void Start()
+    void Awake()
     {
         heartHolder = GameObject.FindGameObjectWithTag("Heart").transform;//Get the reference of heart holder
         hearts = heartHolder.GetComponentsInChildren<Image>();//Get image component of hearts
