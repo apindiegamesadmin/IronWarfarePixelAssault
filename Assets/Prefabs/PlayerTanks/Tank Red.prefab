@@ -170,7 +170,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: c380ccd0a4d6fde40be730ed934eb86b, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -338,6 +338,7 @@ GameObject:
   - component: {fileID: 7370843865946624880}
   - component: {fileID: 7370843865946624883}
   - component: {fileID: 7370843865946624882}
+  - component: {fileID: 7370843866233173148}
   m_Layer: 11
   m_Name: Tank Red
   m_TagString: Untagged
@@ -397,6 +398,7 @@ MonoBehaviour:
   tutorialManager: {fileID: 0}
   gameUI: {fileID: 0}
   blocks: {fileID: 0}
+  dialogueManager: {fileID: 0}
 --- !u!114 &7370843865946624882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -427,6 +429,20 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &7370843866233173148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7370843865946624892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dec495b7266d3f47b0f29942130119b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heartColor: {r: 0.9058824, g: 0.29803923, b: 0.23529413, a: 1}
+  missionFailUI: {fileID: 0}
 --- !u!1 &7370843866004326747
 GameObject:
   m_ObjectHideFlags: 0
@@ -948,7 +964,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1205,6 +1221,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 1708910985741806688, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
+      propertyPath: m_UpdateMode
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2255378431375417881, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -1251,12 +1271,32 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3847974792894885825, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
       propertyPath: MaxHealth
-      value: 15000
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 3847974792894885825, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
+      propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3847974792894885825, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
+      propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3847974792894885825, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
       propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 7370843867587291253}
+    - target: {fileID: 3847974792894885825, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
+      propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 7370843866233173148}
+    - target: {fileID: 3847974792894885825, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
+      propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3847974792894885825, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
+      propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: CheckPlayerLife
+      objectReference: {fileID: 0}
     - target: {fileID: 3847974792894885825, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
       propertyPath: OnHealthChange.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1264,6 +1304,14 @@ PrefabInstance:
     - target: {fileID: 3847974792894885825, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
       propertyPath: OnHealthChange.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: set_value
+      objectReference: {fileID: 0}
+    - target: {fileID: 3847974792894885825, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
+      propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: PlayerTankController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3847974792894885825, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
+      propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4085664113103295127, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
       propertyPath: m_Sprite
@@ -1458,9 +1506,9 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7370843866978775693}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 703e7c41a4e107742a84bce288db2e89, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
