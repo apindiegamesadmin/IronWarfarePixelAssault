@@ -8,6 +8,7 @@ public class EngineAudio : MonoBehaviour
 
     public float minVloume = 0.05f, maxVolume = 0.1f;
     public float volumeIncrease = 0.01f;
+
     [SerializeField]
     private float currentVolume;
 
