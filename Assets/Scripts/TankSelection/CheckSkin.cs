@@ -8,27 +8,26 @@ public class CheckSkin : MonoBehaviour
     public GameObject TankBlue;
     public GameObject TankSand;
 
+
     private void Awake()
     {
-        int index = TankSelectionManager.skinIndex;
+        TankBlue.SetActive(false);
+        TankRed.SetActive(false);
+        TankSand.SetActive(false);
 
-        if (index == 0)
+        int index = PlayerPrefs.GetInt("TankIndex", 0);
+
+        switch (index)
         {
-            TankBlue.SetActive(true);
-            TankRed.SetActive(false);
-            TankSand.SetActive(false);
-        }
-        else if (index == 1)
-        {
-            TankBlue.SetActive(false);
-            TankRed.SetActive(true);
-            TankSand.SetActive(false);
-        }
-        else if (index == 2)
-        {
-            TankBlue.SetActive(false);
-            TankRed.SetActive(false);
-            TankSand.SetActive(true);
+            case 0:
+                TankBlue.SetActive(true);
+                break;
+            case 1:
+                TankRed.SetActive(true);
+                break;
+            case 2:
+                TankSand.SetActive(true);
+                break;
         }
     }
 }
