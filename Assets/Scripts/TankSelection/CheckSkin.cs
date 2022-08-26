@@ -15,7 +15,7 @@ public class CheckSkin : MonoBehaviour
         TankRed.SetActive(false);
         TankSand.SetActive(false);
 
-        int index = PlayerPrefs.GetInt("TankIndex", 0);
+        int index = TankSelectionManager.tankIndex;
 
         switch (index)
         {
