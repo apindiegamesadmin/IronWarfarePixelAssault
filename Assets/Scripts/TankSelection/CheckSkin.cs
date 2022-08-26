@@ -27,8 +27,8 @@ public class CheckSkin : MonoBehaviour
         else if (index == 2)
         {
             TankBlue.SetActive(false);
-            TankRed.SetActive(true);
-            TankSand.SetActive(false);
+            TankRed.SetActive(false);
+            TankSand.SetActive(true);
         }
     }
 }
