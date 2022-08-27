@@ -15,12 +15,13 @@ public class BulletController : MonoBehaviour
     public bool tutorial;
     public bool isHomingMissleActive = false;
 
-
-    public GameObject tripleShootIcon;
+    PowerUpIconManager iconManager;
 
 
     void Awake()
     {
+        iconManager = FindObjectOfType<PowerUpIconManager>();
+
         if (turret == null)
             turret = GetComponentInChildren<Turret>();
 
@@ -29,45 +30,30 @@ public class BulletController : MonoBehaviour
 
         objectPool = GetComponentInChildren<ObjectPool>();
 
-        tripleShootIcon.SetActive(false);
-
     }
 
 
 
     void Update()
     {
-        if (turret.turretBarrels.Count == 1)
-        {
-            tripleShootIcon.SetActive(false);
-        }
-
 
         if (damageUp)
         {
-            tripleShootIcon.SetActive(true);
             skillTimer += Time.deltaTime;
 
             if (skillTimer > duration)
             {
                 damageUp = false;
                 skillTimer = 0;
-            }
-        }
+                iconManager.HideIcon(0);
 
-        if (!damageUp)
-        {
-            turret.turretData = turretDatas[0];
-            foreach (Transform barrel in barrels)
-            {
-                turret.turretBarrels.Remove(barrel);
+                turret.turretData = turretDatas[0];
+                foreach (Transform barrel in barrels)
+                {
+                    turret.turretBarrels.Remove(barrel);
+                }
+                turret.bulletPoolCount = 1;
             }
-            turret.bulletPoolCount = 1;
-        }
-
-        if (damageUp && skillTimer > 0.5)
-        {
-            turret.turretData = turretDatas[1];
         }
 
         if (isHomingMissleActive)
@@ -92,6 +78,8 @@ public class BulletController : MonoBehaviour
         {
             Destroy(collision.transform.gameObject);
             damageUp = true;
+            iconManager.ShowIcon(0);
+            turret.turretData = turretDatas[1];
 
             foreach (Transform barrel in barrels)
             {

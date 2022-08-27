@@ -22,6 +22,9 @@ public class TankSelectionManager : MonoBehaviour
         if (firstTime)
         {
             OnFirstTime.Invoke();
+
+            borders[1].SetActive(true);// Default Red Tank
+            tankIndex = 1;
         }
     }
 
