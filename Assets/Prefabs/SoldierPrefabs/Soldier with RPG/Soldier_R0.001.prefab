@@ -279,7 +279,7 @@ GameObject:
   - component: {fileID: 4172191968403641451}
   m_Layer: 12
   m_Name: Soldier_R0.001
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class Bullet : MonoBehaviour
 {
     public BulletData bulletData;
+    [SerializeField] string targetTag;
 
     private Vector2 startPosition;
     private float conquaredDistance = 0;
@@ -44,13 +45,16 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        OnHit?.Invoke();
-        var damagable = collision.GetComponent<Damagable>();
-        if (damagable != null)
+        if(collision.transform.tag == targetTag)
         {
-            damagable.Hit(bulletData.damage);
-        }
+            OnHit?.Invoke();
+            var damagable = collision.GetComponent<Damagable>();
+            if (damagable != null)
+            {
+                damagable.Hit(bulletData.damage);
+            }
 
-        DisableObject();
+            DisableObject();
+        }
     }
 }

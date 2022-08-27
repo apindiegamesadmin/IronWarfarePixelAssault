@@ -208,6 +208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletData: {fileID: 11400000, guid: a8efbdff35c683b4b9f0ba3c3235aa25, type: 2}
+  targetTag: Enemy
   OnHit:
     m_PersistentCalls:
       m_Calls:

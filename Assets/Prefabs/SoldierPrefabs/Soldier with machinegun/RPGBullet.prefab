@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 7079112486673792758}
   m_Layer: 6
   m_Name: RPGBullet
-  m_TagString: Bullet
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -208,6 +208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletData: {fileID: 11400000, guid: 0e345e567a5a742089ecce543c2aa013, type: 2}
+  targetTag: Player
   OnHit:
     m_PersistentCalls:
       m_Calls:

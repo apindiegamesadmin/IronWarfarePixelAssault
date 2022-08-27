@@ -1402,6 +1402,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 7497f190c1575d545ae6b75d45dd93a6, type: 3}
     - target: {fileID: 8560743577678458599, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
+      propertyPath: turretData
+      value: 
+      objectReference: {fileID: 11400000, guid: be8afe87de3006f47aa844bee9f71251, type: 2}
+    - target: {fileID: 8560743577678458599, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
       propertyPath: OnReloading.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 3588520232218789624}
