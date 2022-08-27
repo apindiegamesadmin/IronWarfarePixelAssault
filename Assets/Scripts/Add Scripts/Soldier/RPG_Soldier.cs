@@ -42,10 +42,12 @@ public class RPG_Soldier : MonoBehaviour
     private ObjectPool bulletPool;
 
     bool dead;
+    ScoreManager scoreManager;
 
     private void Awake()
     {
         bulletPool = GetComponent<ObjectPool>();
+        scoreManager = transform.GetComponent<ScoreManager>();
     }
 
     void Start()
@@ -103,7 +105,7 @@ public class RPG_Soldier : MonoBehaviour
 
         m_Ani.SetBool("idle", away);
         m_Ani.SetBool("walk", found);
-       
+
 
 
 
@@ -111,7 +113,7 @@ public class RPG_Soldier : MonoBehaviour
         if (shoot)
         {
             timer = timer + Time.deltaTime;
-            if (timer >=1f)
+            if (timer >= 1f)
             {
                 timer = 0;
                 m_Ani.SetBool("shoot", shoot);
@@ -138,6 +140,7 @@ public class RPG_Soldier : MonoBehaviour
         if (slider.value <= 0)
         {
             dead = true;
+            scoreManager.Score("RPGSoldier");
             healthBar.SetActive(false);
             m_Ani.Play("Soldier_RPG_die1");
             if (blood != null)
@@ -160,6 +163,7 @@ public class RPG_Soldier : MonoBehaviour
         if (collision.transform.tag == "Player")
         {
             dead = true;
+            scoreManager.Score("RPGSoldier");
             healthBar.SetActive(false);
             m_Ani.Play("Soldier_RPG_die2");
 
