@@ -6,37 +6,71 @@ using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
-    public int health;
-    public int playerScore = 0;
-    public Damagable damagable;
-    public string PLAYERSCORE;
-    public TextMeshProUGUI scoreText;
+    public static int playerScore = 0;
+    TextMeshProUGUI scoreText;
 
     private void Awake()
     {
-        damagable = GetComponent<Damagable>();
+        scoreText = GameObject.FindWithTag("ScoreText").GetComponent<TextMeshProUGUI>();
     }
 
     void Start()
     {
-        scoreText.text = playerScore.ToString();
-        health = damagable.Health;
-        playerScore = PlayerPrefs.GetInt(PLAYERSCORE, 0);
+        if (!PlayerPrefs.HasKey("PlayerScore"))
+        {
+            playerScore = 0;
+        }
+        else
+        {
+            scoreText.text = playerScore.ToString();
+            playerScore = PlayerPrefs.GetInt("PlayerScore", 0);
+        }
     }
 
-    void Update()
+    public void Score(string tag)
     {
-        // if (health <= 0)
-        // {
-        //     Score();
-        //     Debug.Log("Score plus one");
-        // }
+        switch (tag)
+        {
+            case ("MachineGunSoldier"):
+                playerScore += 5;
+                break;
+
+            case ("RPGSoldier"):
+                playerScore += 6;
+                break;
+
+            case ("SmallTank"):
+                playerScore += 10;
+                break;
+
+            case ("MediumTank"):
+                playerScore += 15;
+                break;
+
+            case ("LargeTank"):
+                playerScore += 20;
+                break;
+
+            case ("Boss"):
+                playerScore += 100;
+                break;
+        }
+
+        scoreText.text = playerScore.ToString();
+        SaveScore();
     }
 
-    public void Score()
+    public static void SaveScore()
     {
-        playerScore += 1;
-        scoreText.text = playerScore.ToString();
-        PlayerPrefs.SetInt(PLAYERSCORE, playerScore);
+        PlayerPrefs.SetInt("PlayerScore", playerScore);
     }
 }
+
+/*
+Machine Gun Soldier - 5
+RPG Soldier         - 6
+Small Tank          - 10
+Medium Tank         - 15
+Large Tank          - 20
+Boss                - 100
+*/

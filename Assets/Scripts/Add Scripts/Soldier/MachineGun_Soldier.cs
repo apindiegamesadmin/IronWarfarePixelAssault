@@ -40,12 +40,14 @@ public class MachineGun_Soldier : MonoBehaviour
     private ObjectPool bulletPool;
 
     bool dead;
+    ScoreManager scoreManager;
 
     private bool[] isFalse = new bool[5];
 
     private void Awake()
     {
         bulletPool = GetComponent<ObjectPool>();
+        scoreManager = transform.GetComponent<ScoreManager>();
     }
 
     void Start()
@@ -65,7 +67,7 @@ public class MachineGun_Soldier : MonoBehaviour
         if (dead)
             return;
 
-        if(target.gameObject.activeInHierarchy)
+        if (target.gameObject.activeInHierarchy)
         {
             checkDistacne = Vector2.Distance(target.transform.position, transform.position); // check the ditance between Player and Enemy
         }
@@ -130,6 +132,7 @@ public class MachineGun_Soldier : MonoBehaviour
         if (slider.value <= 0)
         {
             dead = true;
+            scoreManager.Score("MachineGunSoldier");
             healthBar.SetActive(false);
             m_Ani.Play("Soldier_Machine_die2");
             if (blood != null)
@@ -148,12 +151,13 @@ public class MachineGun_Soldier : MonoBehaviour
         if (collision.transform.tag == "Player")
         {
             dead = true;
+            scoreManager.Score("MachineGunSoldier");
             healthBar.SetActive(false);
             m_Ani.Play("Soldier_Machine_die2");
 
             slider.value = 0.0f;
         }
-        else if(collision.transform.tag == "MachineGunBullet")
+        else if (collision.transform.tag == "MachineGunBullet")
         {
             healthBar.SetActive(true);
             slider.value = slider.value - 0.5f;
@@ -163,7 +167,7 @@ public class MachineGun_Soldier : MonoBehaviour
             dead = true;
             healthBar.SetActive(false);
             m_Ani.Play("Soldier_Machine_diehard");
-            GetComponent<BodyPartsSpawner>().SpawnBodyParts(collision.GetComponent<Bullet>().direction,collision.transform.position);
+            GetComponent<BodyPartsSpawner>().SpawnBodyParts(collision.GetComponent<Bullet>().direction, collision.transform.position);
             Destroy(gameObject, destroy / 2.5f);
         }
     }

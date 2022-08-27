@@ -188,6 +188,7 @@ GameObject:
   - component: {fileID: 1270300021066236584}
   - component: {fileID: 7057568731150553389}
   - component: {fileID: 2141190777}
+  - component: {fileID: 1262973722}
   m_Layer: 12
   m_Name: GunSoldier
   m_TagString: Untagged
@@ -316,6 +317,20 @@ MonoBehaviour:
   - {fileID: 1659007633200338752, guid: b3d4d3b6a02e39b46bc79b7386db3e05, type: 3}
   - {fileID: 3556060073319245538, guid: 255b7937fe4cd6e429966bb12f4cde3f, type: 3}
   - {fileID: 7413836672536420769, guid: 6a02241b12dcdfd439a5348b229ccbfd, type: 3}
+--- !u!114 &1262973722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1270300021066236590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e151f32d74f797443b22c6a59eddb060, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damagable: {fileID: 0}
+  scoreText: {fileID: 0}
 --- !u!1 &1270300021586293478
 GameObject:
   m_ObjectHideFlags: 0
