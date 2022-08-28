@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class RPG_Soldier : MonoBehaviour
@@ -18,6 +19,8 @@ public class RPG_Soldier : MonoBehaviour
 
     public BulletData BulletData;
     public Damagable damagable;
+
+    [SerializeField] UnityEvent OnDead;
 
     private Animator m_Ani;
 
@@ -139,8 +142,9 @@ public class RPG_Soldier : MonoBehaviour
 
         if (slider.value <= 0)
         {
+            OnDead.Invoke();
+
             dead = true;
-            scoreManager.Score("RPGSoldier");
             healthBar.SetActive(false);
             m_Ani.Play("Soldier_RPG_die1");
             if (blood != null)
@@ -162,8 +166,8 @@ public class RPG_Soldier : MonoBehaviour
 
         if (collision.transform.tag == "Player")
         {
+            OnDead.Invoke();
             dead = true;
-            scoreManager.Score("RPGSoldier");
             healthBar.SetActive(false);
             m_Ani.Play("Soldier_RPG_die2");
 
@@ -178,6 +182,7 @@ public class RPG_Soldier : MonoBehaviour
 
         if (collision.transform.tag == "Bullet")
         {
+            OnDead.Invoke();
             dead = true;
             healthBar.SetActive(false);
             m_Ani.Play("Soldier_RPG_diehard");

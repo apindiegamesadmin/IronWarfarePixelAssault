@@ -54,99 +54,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 3328
   <TargetVisible>k__BackingField: 0
---- !u!1 &724173363
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 724173364}
-  m_Layer: 7
-  m_Name: Left Barrel
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &724173364
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 724173363}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.211, y: 0.229, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8560743577678458593}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &819242090
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 819242091}
-  m_Layer: 7
-  m_Name: Right Barrel
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &819242091
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 819242090}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.211, y: 0.229, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8560743577678458593}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1085334624
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1085334625}
-  m_Layer: 7
-  m_Name: MidBarrel
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1085334625
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1085334624}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.229, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8560743577678458593}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &121023839740446754
 GameObject:
   m_ObjectHideFlags: 0
@@ -773,9 +680,6 @@ Transform:
   - {fileID: 8560743576263957383}
   - {fileID: 7132763118394398753}
   - {fileID: 6556346762048492807}
-  - {fileID: 724173364}
-  - {fileID: 819242091}
-  - {fileID: 1085334625}
   m_Father: {fileID: 8560743576310662441}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
@@ -1134,7 +1038,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 480b5b6be680b924aadb1f8b39f8fb93, type: 2}
   duration: 10
   tutorial: 0
-  speedUp_Icon: {fileID: 0}
 --- !u!114 &2006124065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1147,20 +1050,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07a7b335b6f824254b6b3ae12e920dfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turret: {fileID: 0}
   turretData: {fileID: 11400000, guid: 6c1b01c512c9b3d45b3f703fb137186d, type: 2}
   turretDatas:
   - {fileID: 11400000, guid: 6c1b01c512c9b3d45b3f703fb137186d, type: 2}
   - {fileID: 11400000, guid: 466685be16369fe46b275221e6674a5f, type: 2}
   barrels:
-  - {fileID: 724173364}
-  - {fileID: 819242091}
-  - {fileID: 1085334625}
-  skillTimer: 0
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  duration: 10
   damageUp: 0
   tutorial: 0
   isHomingMissleActive: 0
-  tripleShootIcon: {fileID: 0}
 --- !u!114 &2006124070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1174,7 +1075,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hpPoint: 50
-  playerDamagable: {fileID: 0}
   tutorial: 0
 --- !u!114 &2006124075
 MonoBehaviour:
@@ -1191,8 +1091,6 @@ MonoBehaviour:
   duration: 10
   shieldPoint: 50
   shieldPrefab: {fileID: 3821952939118282041, guid: 2d79617a347cc4a438e7336558c1c024, type: 3}
-  playerDamagable: {fileID: 0}
-  shieldIcon: {fileID: 0}
   tutorial: 0
 --- !u!1 &8560743578095920766
 GameObject:

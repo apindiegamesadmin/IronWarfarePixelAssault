@@ -607,7 +607,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5545509583890138715, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}
       propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5545509583890138715, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}
       propertyPath: OnHealthChange.m_PersistentCalls.m_Calls.Array.size
@@ -648,7 +648,7 @@ PrefabInstance:
     - target: {fileID: 5545509583890138715, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}
       propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 4912979561081706681}
     - target: {fileID: 5545509583890138715, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}
       propertyPath: OnHit.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -675,7 +675,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5545509583890138715, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}
       propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
-      value: 
+      value: AddScore
       objectReference: {fileID: 0}
     - target: {fileID: 5545509583890138715, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}
       propertyPath: OnHealthChange.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -711,7 +711,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5545509583890138715, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}
       propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
-      value: DestroyUtil, Assembly-CSharp
+      value: ScoreHandler, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5545509583890138715, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}
       propertyPath: OnHit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
@@ -735,7 +735,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5545509583890138715, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}
       propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: 
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5545509583890138715, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}
       propertyPath: OnHealthChange.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -748,6 +748,10 @@ PrefabInstance:
     - target: {fileID: 7846211843126272732, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}
       propertyPath: m_SortingLayerID
       value: 646852589
+      objectReference: {fileID: 0}
+    - target: {fileID: 8120302167068265029, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}
+      propertyPath: score
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8337485291296061351, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}
       propertyPath: m_IsActive
@@ -804,5 +808,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8345610d78f69f743a6a4900575c8f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4912979561081706681 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8120302167068265029, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}
+  m_PrefabInstance: {fileID: 3791876049721611004}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1ab0dfdadd12294f843570defc81f78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

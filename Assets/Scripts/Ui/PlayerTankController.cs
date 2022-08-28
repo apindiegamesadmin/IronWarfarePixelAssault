@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class PlayerTankController : MonoBehaviour
 {
     [SerializeField] Color heartColor;
-    [SerializeField] GameObject missionFailUI;
+    [SerializeField] UnityEvent OnDead;
     Damagable damagable;
     Transform heartHolder;
     int lifeCount = 3;
@@ -30,7 +31,7 @@ public class PlayerTankController : MonoBehaviour
     {
         if(lifeCount < 0)
         {
-            missionFailUI.SetActive(true);// show mission fail UI
+            OnDead.Invoke();
         }
         else
         {

@@ -7,15 +7,11 @@ using UnityEngine.UI;
 
 public class TankSelectionManager : MonoBehaviour
 {
-    [SerializeField]UnityEvent OnFirstTime;
+    [SerializeField] UnityEvent OnFirstTime;
+    [SerializeField] UnityEvent OnNotFirstTime;
     [SerializeField] GameObject[] borders;
     public static int tankIndex;
     public static bool firstTime = true;
-
-    void Start()
-    {
-        CheckTank();
-    }
 
     public void CheckTank()
     {
@@ -25,6 +21,10 @@ public class TankSelectionManager : MonoBehaviour
 
             borders[1].SetActive(true);// Default Red Tank
             tankIndex = 1;
+        }
+        else
+        {
+            OnNotFirstTime.Invoke();
         }
     }
 
@@ -47,5 +47,6 @@ public class TankSelectionManager : MonoBehaviour
     public void ConfirmTank()
     {
         firstTime = false;
+        OnNotFirstTime.Invoke();
     }
 }

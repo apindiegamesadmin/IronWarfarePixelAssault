@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TutorialBossBattle : MonoBehaviour
 {
+    [SerializeField] UnityEvent OnDead;
     [SerializeField] TankController bossTankController;
     [SerializeField] PatrolPath bossPath;
     Damagable bossDamagable;
@@ -68,5 +70,6 @@ public class TutorialBossBattle : MonoBehaviour
     {
         UnlockMissions missionUnlock = FindObjectOfType<UnlockMissions>();
         missionUnlock.UnlockMission();
+        OnDead.Invoke();
     }
 }

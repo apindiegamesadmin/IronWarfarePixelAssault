@@ -1557,6 +1557,10 @@ PrefabInstance:
       propertyPath: OnHealthChange.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 8120302167068265029, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}
+      propertyPath: score
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 8760446005466674180, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}
       propertyPath: viewRadius
       value: 2.5

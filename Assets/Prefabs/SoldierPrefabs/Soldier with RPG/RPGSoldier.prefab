@@ -280,7 +280,7 @@ GameObject:
   - component: {fileID: -8345835460128550897}
   - component: {fileID: 1270300023018740656}
   - component: {fileID: 1270300023018740660}
-  - component: {fileID: 1270300023018740670}
+  - component: {fileID: -1259823819633578786}
   m_Layer: 12
   m_Name: RPGSoldier
   m_TagString: Enemy
@@ -379,6 +379,21 @@ MonoBehaviour:
   barrel: {fileID: 8115143423172984098}
   BulletData: {fileID: 11400000, guid: 0e345e567a5a742089ecce543c2aa013, type: 2}
   damagable: {fileID: 0}
+  OnDead:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -1259823819633578786}
+        m_TargetAssemblyTypeName: ScoreHandler, Assembly-CSharp
+        m_MethodName: AddScore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   healthBar: {fileID: 4172191966798831565}
   slider: {fileID: 4172191968564891687}
   away: 0
@@ -408,7 +423,7 @@ MonoBehaviour:
   - {fileID: 1659007633200338752, guid: b3d4d3b6a02e39b46bc79b7386db3e05, type: 3}
   - {fileID: 3556060073319245538, guid: 255b7937fe4cd6e429966bb12f4cde3f, type: 3}
   - {fileID: 7413836672536420769, guid: 6a02241b12dcdfd439a5348b229ccbfd, type: 3}
---- !u!114 &1270300023018740670
+--- !u!114 &-1259823819633578786
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -417,11 +432,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4172191968403641450}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e151f32d74f797443b22c6a59eddb060, type: 3}
+  m_Script: {fileID: 11500000, guid: a1ab0dfdadd12294f843570defc81f78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damagable: {fileID: 0}
-  scoreText: {fileID: 0}
+  score: 6
 --- !u!1 &4172191968564891686
 GameObject:
   m_ObjectHideFlags: 0

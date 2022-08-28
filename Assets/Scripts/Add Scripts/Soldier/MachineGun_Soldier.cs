@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class MachineGun_Soldier : MonoBehaviour
@@ -16,6 +17,8 @@ public class MachineGun_Soldier : MonoBehaviour
 
     public BulletData BulletData;
     public Damagable damagable;
+
+    [SerializeField] UnityEvent OnDead;
 
     private Animator m_Ani;
 
@@ -131,8 +134,9 @@ public class MachineGun_Soldier : MonoBehaviour
 
         if (slider.value <= 0)
         {
+            OnDead.Invoke();
+
             dead = true;
-            scoreManager.Score("MachineGunSoldier");
             healthBar.SetActive(false);
             m_Ani.Play("Soldier_Machine_die2");
             if (blood != null)
@@ -150,8 +154,8 @@ public class MachineGun_Soldier : MonoBehaviour
             return;
         if (collision.transform.tag == "Player")
         {
+            OnDead.Invoke();
             dead = true;
-            scoreManager.Score("MachineGunSoldier");
             healthBar.SetActive(false);
             m_Ani.Play("Soldier_Machine_die2");
 
@@ -164,6 +168,7 @@ public class MachineGun_Soldier : MonoBehaviour
         }
         else if (collision.transform.tag == "Bullet")
         {
+            OnDead.Invoke();
             dead = true;
             healthBar.SetActive(false);
             m_Ani.Play("Soldier_Machine_diehard");
