@@ -252,6 +252,9 @@ MonoBehaviour:
   barrel: {fileID: 6402252440077233126}
   BulletData: {fileID: 11400000, guid: 786e6d615c455204a8f78f3c33d99b97, type: 2}
   damagable: {fileID: 0}
+  OnDead:
+    m_PersistentCalls:
+      m_Calls: []
   healthBar: {fileID: 1270300022670657801}
   slider: {fileID: 1270300021030422243}
   health: 0

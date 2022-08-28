@@ -6,14 +6,34 @@ using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
-    public static int playerScore = 0;
-    [SerializeField]TextMeshProUGUI scoreText;
+    public enum type { Soldier, Tank };
 
-    public void UpdateScore(int index)
+    public int playerScore;
+    public int soldierCount;
+    public int tankCount;
+
+    [SerializeField] TextMeshProUGUI scoreText;
+
+    public void UpdateScore(int index,int typeIndex)
     {
         playerScore += index;
         scoreText.text = playerScore.ToString();
+
+        switch ((type)typeIndex)
+        {
+            case (type.Soldier):
+                soldierCount++;
+                break;
+            case (type.Tank):
+                tankCount++;
+                break;
+        }
     }
+
+    /*public void ShowFinalScore()
+    {
+        finalScoreText.text = playerScore.ToString();
+    }*/
 }
 
 /*

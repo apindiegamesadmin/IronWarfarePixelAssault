@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ScoreHandler : MonoBehaviour
 {
+    [SerializeField] int typeIndex;
     [SerializeField] int score;
 
     ScoreManager scoreManager;
@@ -14,6 +15,6 @@ public class ScoreHandler : MonoBehaviour
 
     public void AddScore()
     {
-        scoreManager.UpdateScore(score);
+        scoreManager.UpdateScore(score,typeIndex);
     }
 }
