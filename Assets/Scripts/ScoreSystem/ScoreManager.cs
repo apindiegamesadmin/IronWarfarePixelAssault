@@ -6,7 +6,7 @@ using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
-    public enum type { Soldier, Tank };
+    public enum type { None,Soldier, Tank };
 
     public int playerScore;
     public int soldierCount;
@@ -21,6 +21,8 @@ public class ScoreManager : MonoBehaviour
 
         switch ((type)typeIndex)
         {
+            case (type.None):
+                break;
             case (type.Soldier):
                 soldierCount++;
                 break;

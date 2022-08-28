@@ -1561,6 +1561,10 @@ PrefabInstance:
       propertyPath: score
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 8120302167068265029, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}
+      propertyPath: typeIndex
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8760446005466674180, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}
       propertyPath: viewRadius
       value: 2.5

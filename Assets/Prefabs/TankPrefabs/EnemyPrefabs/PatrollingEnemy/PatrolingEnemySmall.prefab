@@ -119,6 +119,10 @@ PrefabInstance:
       propertyPath: score
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3071362650311944551, guid: 1bc84e9af9a0a6d47bd8effb1f57bb82, type: 3}
+      propertyPath: typeIndex
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3786640475977030955, guid: 1bc84e9af9a0a6d47bd8effb1f57bb82, type: 3}
       propertyPath: m_IsActive
       value: 0

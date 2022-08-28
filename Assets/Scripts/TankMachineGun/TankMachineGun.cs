@@ -36,6 +36,13 @@ public class TankMachineGun : MonoBehaviour
         bulletPool.Initialize(turretData.bulletPrefab, bulletPoolCount);
     }
 
+    public void ResetMachineGun()
+    {
+        fire = false;
+        animator.SetBool("IsShooting", false);
+        machineGunSFX.Stop();
+    }
+
     void Update()
     {
         if (!canShoot)
