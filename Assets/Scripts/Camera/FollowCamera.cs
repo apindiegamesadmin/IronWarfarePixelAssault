@@ -10,7 +10,6 @@ public class FollowCamera : MonoBehaviour
     void Awake()
     {
         cinemachineCamera = GetComponent<CinemachineVirtualCamera>();
-        //ChangeTarget();
     }
 
     public void ChangeTarget()

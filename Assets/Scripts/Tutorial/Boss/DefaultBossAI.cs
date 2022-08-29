@@ -23,7 +23,6 @@ public class DefaultBossAI : MonoBehaviour
         if (detector.TargetVisible)// Shoot and move
         {
             shootBehaviour.PerformAction(tank, detector);
-            patrolBehaviour.PerformAction(tank, detector);
         }
         else
         {

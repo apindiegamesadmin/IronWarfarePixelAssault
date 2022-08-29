@@ -45,16 +45,15 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.transform.tag == targetTag)
+        OnHit?.Invoke();
+        if (collision.transform.tag == targetTag)
         {
-            OnHit?.Invoke();
             var damagable = collision.GetComponent<Damagable>();
             if (damagable != null)
             {
                 damagable.Hit(bulletData.damage);
             }
-
-            DisableObject();
         }
+        DisableObject();
     }
 }

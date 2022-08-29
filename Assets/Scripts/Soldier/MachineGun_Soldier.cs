@@ -56,6 +56,7 @@ public class MachineGun_Soldier : MonoBehaviour
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
+        Debug.Log(target);
         bulletPool.Initialize(turretData.bulletPrefab, bulletPoolCount);
 
         health = slider.maxValue;
