@@ -6,7 +6,7 @@ public class MachineGun_Soldier : MonoBehaviour
 {
     public float checkDistacne;
     private Rigidbody2D m_body;
-    public Transform target;
+    Transform target;
     public float speed;
     private float destroy = 4.0f;
     private float combatRange = 5.0f;

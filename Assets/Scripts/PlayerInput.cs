@@ -11,6 +11,8 @@ public class PlayerInput : MonoBehaviour
     private Camera mainCamera;
 
     public UnityEvent OnShoot = new UnityEvent();
+    public UnityEvent OnMachineGunShoot = new UnityEvent();
+    public UnityEvent OnMachineGunStopShoot = new UnityEvent();
     public UnityEvent<Vector2> OnMoveBody = new UnityEvent<Vector2>();
     public UnityEvent<Vector2> OnMoveTurret = new UnityEvent<Vector2>();
 
@@ -28,6 +30,7 @@ public class PlayerInput : MonoBehaviour
         GetBodyMovement();
         GetTurretMovement();
         GetShootingInput();
+        MachineGunShootingInput();
     }
 
     private void GetShootingInput()
@@ -36,6 +39,18 @@ public class PlayerInput : MonoBehaviour
         if (Input.GetMouseButton(0) && !EventSystem.current.IsPointerOverGameObject())
         {
             StartCoroutine(delayShoot());
+        }
+    }
+
+    void MachineGunShootingInput()
+    {
+        if (Input.GetMouseButtonDown(1) && !EventSystem.current.IsPointerOverGameObject())
+        {
+            OnMachineGunShoot.Invoke();
+        }
+        else if (Input.GetMouseButtonUp(1) && !EventSystem.current.IsPointerOverGameObject())
+        {
+            OnMachineGunStopShoot.Invoke();
         }
     }
 

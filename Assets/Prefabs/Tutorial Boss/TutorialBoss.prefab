@@ -2075,7 +2075,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2307663452146078621}
-  - component: {fileID: 2307663452146078608}
+  - component: {fileID: 3467564452820206247}
   - component: {fileID: 2307663452146078609}
   - component: {fileID: 2307663452146078622}
   - component: {fileID: 2307663452146078623}
@@ -2106,7 +2106,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2307663452146078608
+--- !u!114 &3467564452820206247
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2115,15 +2115,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2307663452146078618}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 041d2a85c55f9b443b38c2952c403cca, type: 3}
+  m_Script: {fileID: 11500000, guid: 58c07a26a64add842bf1ef22290c6f7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   shootBehaviour: {fileID: 2307663452146078609}
   patrolBehaviour: {fileID: 2307663452146078623}
-  tank: {fileID: 3411743322256827893}
+  tank: {fileID: 0}
   detector: {fileID: 0}
-  canShoot: 1
-  boss: 1
 --- !u!114 &2307663452146078609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2903,17 +2901,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0bc658918ec47e84ca169e9a57f29aba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &3411743322256827893 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1107469718816753059, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}
-  m_PrefabInstance: {fileID: 2307663451612176470}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8345610d78f69f743a6a4900575c8f60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &3411743322256827894 stripped

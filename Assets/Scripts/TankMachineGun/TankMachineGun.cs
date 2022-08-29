@@ -36,31 +36,10 @@ public class TankMachineGun : MonoBehaviour
         bulletPool.Initialize(turretData.bulletPrefab, bulletPoolCount);
     }
 
-    public void ResetMachineGun()
-    {
-        fire = false;
-        animator.SetBool("IsShooting", false);
-        machineGunSFX.Stop();
-    }
-
     void Update()
     {
         if (!canShoot)
             return;
-
-        if (Input.GetMouseButtonDown(1))
-        {
-            fire = true;
-            animator.SetBool("IsShooting", true);
-            machineGunSFX.Play();
-        }
-
-        else if (Input.GetMouseButtonUp(1))
-        {
-            fire = false;
-            animator.SetBool("IsShooting", false);
-            machineGunSFX.Stop();
-        }
 
         if (fire)
         {
@@ -87,5 +66,19 @@ public class TankMachineGun : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void StartShooting()
+    {
+        fire = true;
+        animator.SetBool("IsShooting", true);
+        machineGunSFX.Play();
+    }
+
+    public void StopShooting()
+    {
+        fire = false;
+        animator.SetBool("IsShooting", false);
+        machineGunSFX.Stop();
     }
 }
