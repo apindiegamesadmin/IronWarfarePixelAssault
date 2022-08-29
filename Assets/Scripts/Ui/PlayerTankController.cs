@@ -29,18 +29,15 @@ public class PlayerTankController : MonoBehaviour
 
     public void CheckPlayerLife()
     {
-        if(lifeCount < 0)
-        {
-            OnDead.Invoke();
-        }
-        else
+        if(lifeCount > 0)
         {
             StartCoroutine(DelaySpawn()); // Spawn and play animation after 1 sec
 
             lifeCount--; // Reduce life
+            Debug.Log(lifeCount);
             for (int i = 0; i < 3; i++)
             {
-                if(i <= lifeCount - 1)
+                if (i <= lifeCount - 1)
                 {
                     heartHolder.GetChild(i).gameObject.SetActive(true); // Enable remaining hearts
                 }
@@ -49,6 +46,10 @@ public class PlayerTankController : MonoBehaviour
                     heartHolder.GetChild(i).gameObject.SetActive(false); // Disable last active heart
                 }
             }
+        }
+        else
+        {
+            OnDead.Invoke();
         }
     }
 

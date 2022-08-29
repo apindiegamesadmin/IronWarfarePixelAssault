@@ -8,8 +8,15 @@ public class CheckSkin : MonoBehaviour
     public GameObject TankBlue;
     public GameObject TankSand;
 
+    FollowCamera followCamera;
+
 
     private void Awake()
+    {
+        followCamera = FindObjectOfType<FollowCamera>();
+    }
+
+    private void Start()
     {
         TankBlue.SetActive(false);
         TankRed.SetActive(false);
@@ -29,5 +36,7 @@ public class CheckSkin : MonoBehaviour
                 TankSand.SetActive(true);
                 break;
         }
+
+        followCamera.ChangeTarget();
     }
 }

@@ -10,6 +10,11 @@ public class FollowCamera : MonoBehaviour
     void Awake()
     {
         cinemachineCamera = GetComponent<CinemachineVirtualCamera>();
+        //ChangeTarget();
+    }
+
+    public void ChangeTarget()
+    {
         cinemachineCamera.Follow = GameObject.FindGameObjectWithTag("Player").transform;
         cinemachineCamera.LookAt = GameObject.FindGameObjectWithTag("Player").transform;
     }
