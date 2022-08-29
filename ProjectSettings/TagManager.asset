@@ -11,7 +11,6 @@ TagManager:
   - HealthPack
   - Shield
   - Enemy
-  - HomingMissle
   - Trigger
   - TutorialBossTrigger
   - Dialogue
@@ -20,6 +19,10 @@ TagManager:
   - Boss
   - MachineGunBullet
   - Heart
+  - MissionFail
+  - HealthBar
+  - ScoreText
+  - HomingMissile
   layers:
   - Default
   - TransparentFX
