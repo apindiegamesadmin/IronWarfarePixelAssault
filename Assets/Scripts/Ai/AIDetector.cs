@@ -12,7 +12,7 @@ public class AIDetector : MonoBehaviour
     private float viewRadius = 11;
 
     [SerializeField] Vector2 boxSize;
-    [SerializeField] Transform targetAngle;
+    //[SerializeField] Transform targetAngle;
 
     [SerializeField]
     private float detectionCheckDelay = 0.1f;
@@ -85,7 +85,7 @@ public class AIDetector : MonoBehaviour
                 }
                 break;
             case shape.box:
-                Collider2D collision1 = Physics2D.OverlapBox(transform.position, boxSize, targetAngle.eulerAngles.z);
+                Collider2D collision1 = Physics2D.OverlapBox(transform.position, boxSize, 0);
 
                 if (collision1 != null)
                 {
@@ -113,8 +113,8 @@ public class AIDetector : MonoBehaviour
                 break;
             case shape.box:
                 Gizmos.color = Color.red;
-                //Matrix4x4 rotationMatrix = Matrix4x4.TRS(transform.position, transform.rotation, transform.lossyScale);
-                //Gizmos.matrix = rotationMatrix;
+                Matrix4x4 rotationMatrix = Matrix4x4.TRS(transform.position, transform.rotation, transform.lossyScale);
+                Gizmos.matrix = rotationMatrix;
                 Gizmos.DrawWireCube(transform.position, boxSize);
                 break;
         }
