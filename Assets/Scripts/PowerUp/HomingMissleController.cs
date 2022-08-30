@@ -4,48 +4,34 @@ using UnityEngine;
 
 public class HomingMissleController : MonoBehaviour
 {
-    public BulletData bulletData;
-    public Turret turret;
-    public TurretData turretData;
-    public Transform[] barrels;
-    private bool _isHomingMissleActive = false;
+    Turret _turrent;
+    [SerializeField] ObjectPool _objectPool;
+    [SerializeField] TurretData _turretData;
+    [SerializeField] GameObject bullet;
+    float timer, duration = 5f;
 
     private void Awake()
     {
-        if (turret == null)
+        _turrent = GetComponentInChildren<Turret>();
+        // _objectPool = GetComponentInChildren<ObjectPool>();
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.transform.tag == "HomingMissile")
         {
-            turret = GetComponentInChildren<Turret>();
-        }
-        if (turretData == null)
-        {
-            turretData = GetComponentInChildren<TurretData>();
+            Destroy(collision.transform.gameObject);
+            _turrent.turretData = _turretData;
+            _objectPool.Initialize(_turrent.turretData.bulletPrefab, 3);
         }
     }
 
     void Update()
     {
-        if (_isHomingMissleActive)
+        timer += Time.deltaTime;
+        if (timer >= duration)
         {
-            Debug.Log("Homing Missle is active...");
-            TriggerHomingMissle();
-        }
-        else
-        {
-            Debug.Log("Homing Missle is not active");
-        }
-    }
 
-    public void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.transform.tag == "HomingMissle")
-        {
-            Destroy(other.gameObject);
-            _isHomingMissleActive = true;
         }
-    }
-
-    void TriggerHomingMissle()
-    {
-        Debug.Log("blah blah");
     }
 }

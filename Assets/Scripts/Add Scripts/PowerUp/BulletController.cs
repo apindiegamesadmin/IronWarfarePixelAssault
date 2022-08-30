@@ -13,7 +13,8 @@ public class BulletController : MonoBehaviour
     float skillTimer;
     public bool damageUp;
     public bool tutorial;
-    public bool isHomingMissleActive = false;
+    float timer;
+    bool isHomingMissileActive;
 
     PowerUpIconManager iconManager;
 
@@ -28,7 +29,7 @@ public class BulletController : MonoBehaviour
         if (turretDatas == null || turretDatas.Length == 0)
             turretDatas = GetComponentsInChildren<TurretData>();
 
-        objectPool = GetComponentInChildren<ObjectPool>();
+        objectPool = GetComponentInChildren<Turret>().transform.GetComponent<ObjectPool>();
 
     }
 
@@ -56,23 +57,22 @@ public class BulletController : MonoBehaviour
             }
         }
 
-        if (isHomingMissleActive)
+        if (isHomingMissileActive)
         {
-            turret.turretData = turretDatas[2];
+            timer += Time.deltaTime;
+
+            if (timer >= duration)
+            {
+                isHomingMissileActive = false;
+                turret.turretData = turretDatas[0];
+                objectPool.Initialize(turretDatas[0].bulletPrefab, 3);
+                turret.bulletPoolCount = 1;
+            }
         }
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.transform.tag == "HomingMissle")
-        {
-            Destroy(collision.transform.gameObject);
-            turret.turretData = turretDatas[2];
-
-            isHomingMissleActive = true;
-            // damageUp = false;
-            Debug.Log("Homing missile is active");
-        }
 
         if (collision.transform.tag == "DamageUp")
         {
@@ -95,7 +95,13 @@ public class BulletController : MonoBehaviour
             }
         }
 
-
+        if (collision.transform.tag == "HomingMissile")
+        {
+            Destroy(collision.transform.gameObject);
+            isHomingMissileActive = true;
+            turret.turretData = turretDatas[2];
+            objectPool.Initialize(turret.turretData.bulletPrefab, 3);
+        }
     }
 
 }
