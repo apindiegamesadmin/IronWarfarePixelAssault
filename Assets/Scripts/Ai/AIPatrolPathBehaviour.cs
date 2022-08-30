@@ -66,4 +66,9 @@ public class AIPatrolPathBehaviour : AIBehaviour
             isWaiting = false;
         }
     }
+
+    public override void StopAction(TankController tank, AIDetector detector)
+    {
+
+    }
 }

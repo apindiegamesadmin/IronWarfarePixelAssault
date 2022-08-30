@@ -70,15 +70,24 @@ public class TankMachineGun : MonoBehaviour
 
     public void StartShooting()
     {
+        if (!canShoot)
+            return;
+
         fire = true;
         animator.SetBool("IsShooting", true);
-        machineGunSFX.Play();
+        if(machineGunSFX != null)
+        {
+            machineGunSFX.Play();
+        }
     }
 
     public void StopShooting()
     {
         fire = false;
         animator.SetBool("IsShooting", false);
-        machineGunSFX.Stop();
+        if (machineGunSFX != null)
+        {
+            machineGunSFX.Stop();
+        }
     }
 }

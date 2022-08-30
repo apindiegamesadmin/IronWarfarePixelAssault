@@ -35,4 +35,9 @@ public class AIPatrolStaticBehaviour : AIBehaviour
             }
         }
     }
+
+    public override void StopAction(TankController tank, AIDetector detector)
+    {
+
+    }
 }

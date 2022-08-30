@@ -17,6 +17,11 @@ public class AiShootBehaviour : AIBehaviour
         tank.HandleTurretMovement(detector.Target.position);
     }
 
+    public override void StopAction(TankController tank, AIDetector detector)
+    {
+
+    }
+
     private bool TargetInFOV(TankController tank, AIDetector detector)
     {
         foreach(AimTurret turrent in tank.aimTurret)
