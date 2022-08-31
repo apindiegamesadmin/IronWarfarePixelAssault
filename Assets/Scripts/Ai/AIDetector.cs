@@ -7,7 +7,7 @@ public class AIDetector : MonoBehaviour
     public enum shape { circle, box };
     public shape detectorShape;
 
-    [Range(1, 15)]
+    [Range(0.5f, 15)]
     [SerializeField]
     private float viewRadius = 11;
 
@@ -21,6 +21,7 @@ public class AIDetector : MonoBehaviour
     private LayerMask playerLayerMask;
     [SerializeField]
     private LayerMask visibilityLayer;
+    Vector2 raycastPos;
 
     [field: SerializeField]
     public bool TargetVisible { get; private set; }
@@ -47,7 +48,7 @@ public class AIDetector : MonoBehaviour
 
     private bool CheckTargetVisible()
     {
-        var result = Physics2D.Raycast(transform.position, Target.position - transform.position, viewRadius, visibilityLayer);
+        var result = Physics2D.Raycast(transform.parent.position, Target.position - transform.parent.position, viewRadius, visibilityLayer);
         if (result.collider != null)
         {
             return (playerLayerMask & (1 << result.collider.gameObject.layer)) != 0;
@@ -84,7 +85,7 @@ public class AIDetector : MonoBehaviour
                 }
                 break;
             case shape.box:
-                Collider2D collision1 = Physics2D.OverlapBox(transform.position, boxSize, 0, playerLayerMask);
+                Collider2D collision1 = Physics2D.OverlapBox(transform.position, boxSize, 0, playerLayerMask , 0, 1);
 
                 if (collision1 != null)
                 {
@@ -114,6 +115,7 @@ public class AIDetector : MonoBehaviour
                 Gizmos.color = Color.red;
                 Gizmos.matrix = transform.localToWorldMatrix;
                 Gizmos.DrawWireCube(Vector2.zero, boxSize);
+
                 transform.GetChild(0).localScale = boxSize;
                 break;
         }

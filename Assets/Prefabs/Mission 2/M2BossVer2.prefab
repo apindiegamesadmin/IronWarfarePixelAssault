@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 43295613}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: gun_point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 128408953}
   - component: {fileID: 128408954}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: 'MGMuzzleFlash '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ GameObject:
   m_Component:
   - component: {fileID: 367323253}
   - component: {fileID: 367323254}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: machine_gun_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -215,7 +215,7 @@ GameObject:
   - component: {fileID: 489782697}
   - component: {fileID: 489782696}
   - component: {fileID: 489782695}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: Machine Guns
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -451,7 +451,7 @@ GameObject:
   m_Component:
   - component: {fileID: 790927230}
   - component: {fileID: 790927231}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: machine_gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -540,7 +540,7 @@ GameObject:
   - component: {fileID: 820267159}
   - component: {fileID: 820267158}
   - component: {fileID: 820267157}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: Machine Guns (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -680,7 +680,7 @@ GameObject:
   m_Component:
   - component: {fileID: 865714128}
   - component: {fileID: 865714129}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: 'MGMuzzleFlash '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -764,7 +764,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1013867683}
   - component: {fileID: 1013867684}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: machine_gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -865,9 +865,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1284476953}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.0129983425, z: 0}
-  m_LocalScale: {x: 1.5219929, y: 3.0347383, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: -0.0109, y: -0.0034, z: 0}
+  m_LocalScale: {x: 1.2, y: 2, z: 0}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 5365635995877312768}
   m_RootOrder: 0
@@ -913,7 +913,7 @@ SpriteRenderer:
   m_SortingLayerID: 1769476287
   m_SortingLayer: 7
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   m_Color: {r: 1, g: 0.038330976, b: 0, a: 0.18431373}
   m_FlipX: 0
   m_FlipY: 0
@@ -934,7 +934,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1515923396}
   - component: {fileID: 1515923397}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: MGMuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1017,7 +1017,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1739255150}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: gun_point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1048,7 +1048,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1745098838}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: gun_point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1080,7 +1080,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2037300481}
   - component: {fileID: 2037300482}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: machine_gun_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1165,7 +1165,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2040064928}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: gun_point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1197,7 +1197,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2089622758}
   - component: {fileID: 2089622759}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: MGMuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1295,7 +1295,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1484654395540957547}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.69, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1328,7 +1328,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2838610205514186799}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.22, z: 0}
+  m_LocalPosition: {x: 0, y: 1.08, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1349,13 +1349,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectorShape: 1
-  viewRadius: 3.5
-  boxSize: {x: 1.5, y: 3}
+  viewRadius: 1
+  boxSize: {x: 1.2, y: 2}
   detectionCheckDelay: 0.1
   target: {fileID: 0}
   playerLayerMask:
     serializedVersion: 2
-    m_Bits: 2176
+    m_Bits: 2048
   visibilityLayer:
     serializedVersion: 2
     m_Bits: 2688
@@ -2185,6 +2185,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 0.0022630692
       objectReference: {fileID: 0}
+    - target: {fileID: 1107469718816753058, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}
+      propertyPath: m_Mass
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 1107469718816753071, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}
       propertyPath: m_Name
       value: EnemyTank
@@ -2383,7 +2387,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8760446005466674180, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}
       propertyPath: playerLayerMask.m_Bits
-      value: 2176
+      value: 2048
       objectReference: {fileID: 0}
     - target: {fileID: 8760446005466674180, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}
       propertyPath: visibilityLayer.m_Bits

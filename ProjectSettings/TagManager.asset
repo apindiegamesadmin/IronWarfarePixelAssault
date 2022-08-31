@@ -23,6 +23,7 @@ TagManager:
   - HealthBar
   - ScoreText
   - HomingMissile
+  - HomingMissle
   layers:
   - Default
   - TransparentFX

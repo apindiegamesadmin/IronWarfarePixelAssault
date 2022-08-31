@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3730728306830655374}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Mid Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1512706937782740271}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Right Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7370843865687796914}
   - component: {fileID: 7370843865687796913}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: machine_gun_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 7370843865802872409}
   - component: {fileID: 7370843865802872414}
   - component: {fileID: 7370843865802872412}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Machine Guns
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -397,9 +397,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7370843865946624893}
-  - component: {fileID: 7370843865946624880}
-  - component: {fileID: 7370843865946624883}
-  - component: {fileID: 7370843865946624882}
   - component: {fileID: 7370843866233173148}
   m_Layer: 11
   m_Name: Tank Red
@@ -407,7 +404,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7370843865946624893
 Transform:
   m_ObjectHideFlags: 0
@@ -424,73 +421,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!320 &7370843865946624880
-PlayableDirector:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7370843865946624892}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: f2d6e6c1f1744f549b053895f134fadd, type: 2}
-  m_InitialState: 0
-  m_WrapMode: 2
-  m_DirectorUpdateMode: 2
-  m_InitialTime: 0
-  m_SceneBindings:
-  - key: {fileID: -8921095154581047623, guid: f2d6e6c1f1744f549b053895f134fadd, type: 2}
-    value: {fileID: 7370843866978775687}
-  - key: {fileID: 7300764941843153736, guid: f2d6e6c1f1744f549b053895f134fadd, type: 2}
-    value: {fileID: 7370843865946624882}
-  m_ExposedReferences:
-    m_References: []
---- !u!114 &7370843865946624883
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7370843865946624892}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3452ea26f4a02bc4f93e6c33e182e5d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tutorialManager: {fileID: 0}
-  gameUI: {fileID: 0}
-  blocks: {fileID: 0}
-  dialogueManager: {fileID: 0}
---- !u!114 &7370843865946624882
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7370843865946624892}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Events:
-    m_Signals:
-    - {fileID: 11400000, guid: 1b618c51b2162924e92530ceec4bc2fa, type: 2}
-    m_Events:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 7370843865946624883}
-          m_TargetAssemblyTypeName: TutorialCutSceneManager, Assembly-CSharp
-          m_MethodName: EndTutorialCutScene
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!114 &7370843866233173148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -506,7 +436,19 @@ MonoBehaviour:
   heartColor: {r: 0.9058824, g: 0.29803923, b: 0.23529413, a: 1}
   OnDead:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &7370843866004326747
 GameObject:
   m_ObjectHideFlags: 0
@@ -516,7 +458,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7370843866004326744}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: gun_point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -548,7 +490,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7370843866134287201}
   - component: {fileID: 7370843866134287206}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: MGMuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -632,7 +574,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7370843866177648228}
   - component: {fileID: 7370843866177648539}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: machine_gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -718,7 +660,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7370843866252865792}
   - component: {fileID: 7370843866252865793}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: 'MGMuzzleFlash '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -874,7 +816,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7370843867227163384}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: gun_point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1028,7 +970,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1201,7 +1143,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4363828800759662951}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Left Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1232,7 +1174,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 548887964, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 548887964, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
       propertyPath: m_IsActive
@@ -1340,11 +1282,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 121023839740446754, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 731810238400634429, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 731810238400634429, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
       propertyPath: m_IsActive
@@ -1352,7 +1294,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1293520769407504955, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1295432014015768200, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1372,7 +1314,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2255378431375417881, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 3090277003799634371, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
       propertyPath: m_LocalScale.x
@@ -1417,6 +1359,10 @@ PrefabInstance:
     - target: {fileID: 3847974792894885825, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
       propertyPath: MaxHealth
       value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 3847974792894885825, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
+      propertyPath: OnHit.m_PersistentCalls.m_Calls.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3847974792894885825, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
       propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.size
@@ -1488,7 +1434,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 5e5896e9caf9b8d4089921f941523004, type: 3}
     - target: {fileID: 4801179336923059211, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5454130392275990461, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
       propertyPath: m_Layer
@@ -1552,15 +1498,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8560743576263957382, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8560743576310662440, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8560743577678458592, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8560743577678458598, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
       propertyPath: m_Sprite
@@ -1580,7 +1526,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8560743578084633653, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8560743578084633653, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
       propertyPath: m_TagString
@@ -1640,7 +1586,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 6de6eb88bb0d3c9449a8c432c8173abf, type: 3}
     - target: {fileID: 8560743578095920766, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8755589153073276994, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
       propertyPath: m_Layer

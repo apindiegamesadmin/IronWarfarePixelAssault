@@ -15,6 +15,7 @@ public class MachineBossShootBehaviour : AIBehaviour
             tankMachineGuns = tank.GetComponentsInChildren<TankMachineGun>();
             foreach(TankMachineGun machineGun in tankMachineGuns)
             {
+                machineGun.canShoot = true;
                 machineGun.StartShooting();
             }
         }
@@ -25,6 +26,7 @@ public class MachineBossShootBehaviour : AIBehaviour
         tankMachineGuns = tank.GetComponentsInChildren<TankMachineGun>();
         foreach (TankMachineGun machineGun in tankMachineGuns)
         {
+            machineGun.canShoot = false;
             machineGun.StopShooting();
         }
     }
