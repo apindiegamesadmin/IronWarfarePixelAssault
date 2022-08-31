@@ -2163,7 +2163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   patrolPath: {fileID: 2307663451010681118}
-  arriveDistance: 1
+  arriveDistance: 0.5
   waitTime: 0.5
   isWaiting: 0
   currentPatrolTarget: {x: 0, y: 0}

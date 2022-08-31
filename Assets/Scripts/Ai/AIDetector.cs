@@ -4,9 +4,16 @@ using UnityEngine;
 
 public class AIDetector : MonoBehaviour
 {
+    public enum shape { circle, box };
+    public shape detectorShape;
+
     [Range(1, 15)]
     [SerializeField]
     private float viewRadius = 11;
+
+    [SerializeField] Vector2 boxSize;
+    //[SerializeField] Transform targetAngle;
+
     [SerializeField]
     private float detectionCheckDelay = 0.1f;
     [SerializeField]
@@ -67,10 +74,24 @@ public class AIDetector : MonoBehaviour
 
     private void CheckIfPlayerInRange()
     {
-        Collider2D collision = Physics2D.OverlapCircle(transform.position, viewRadius, playerLayerMask);
-        if (collision != null)
+        switch (detectorShape)
         {
-            Target = collision.transform;
+            case shape.circle:
+                Collider2D collision = Physics2D.OverlapCircle(transform.position, viewRadius, playerLayerMask);
+
+                if (collision != null)
+                {
+                    Target = collision.transform;
+                }
+                break;
+            case shape.box:
+                Collider2D collision1 = Physics2D.OverlapBox(transform.position, boxSize, 0);
+
+                if (collision1 != null)
+                {
+                    Target = collision1.transform;
+                }
+                break;
         }
     }
 
@@ -84,7 +105,19 @@ public class AIDetector : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(transform.position, viewRadius);
+        switch (detectorShape)
+        {
+            case shape.circle:
+                Gizmos.color = Color.blue;
+                Gizmos.DrawWireSphere(transform.position, viewRadius);
+                break;
+            case shape.box:
+                Gizmos.color = Color.red;
+                Matrix4x4 rotationMatrix = Matrix4x4.TRS(transform.position, transform.rotation, transform.lossyScale);
+                Gizmos.matrix = rotationMatrix;
+                Gizmos.DrawWireCube(transform.position, boxSize);
+                break;
+        }
+
     }
 }

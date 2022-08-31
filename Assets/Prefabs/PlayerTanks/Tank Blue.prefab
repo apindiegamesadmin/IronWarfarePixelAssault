@@ -1330,6 +1330,10 @@ PrefabInstance:
       propertyPath: barrels.Array.data[2]
       value: 
       objectReference: {fileID: 1572400546579295833}
+    - target: {fileID: 2006124065, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
+      propertyPath: turretDatas.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: bbb160ae8a3534545af84a5dbdbe076a, type: 2}
     - target: {fileID: 2006124075, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
       propertyPath: shieldIcon
       value: 

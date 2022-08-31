@@ -804,7 +804,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2c0a1cba25f6884e82e5e788e1b92e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  patrolPoints: []
+  patrolPoints:
+  - {fileID: 0}
+  - {fileID: 0}
   pointsColor: {r: 0, g: 0, b: 1, a: 0.21176471}
   pointSize: 0.18
   lineColor: {r: 1, g: 0, b: 1, a: 1}
@@ -923,7 +925,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootBehaviour: {fileID: 4253117533519673650}
-  patrolBehaviour: {fileID: 4253117533519673652}
+  patrolBehaviour: {fileID: 4253117533519673653}
   tank: {fileID: 0}
   detector: {fileID: 0}
 --- !u!114 &4253117533519673650
