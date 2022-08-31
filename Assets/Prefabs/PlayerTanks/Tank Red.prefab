@@ -398,6 +398,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7370843865946624893}
   - component: {fileID: 7370843866233173148}
+  - component: {fileID: 7370843866233173151}
+  - component: {fileID: 7370843866233173150}
   m_Layer: 11
   m_Name: Tank Red
   m_TagString: Untagged
@@ -449,6 +451,47 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!114 &7370843866233173151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7370843865946624892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3452ea26f4a02bc4f93e6c33e182e5d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tutorialManager: {fileID: 0}
+  gameUI: {fileID: 0}
+  blocks: {fileID: 0}
+  dialogueManager: {fileID: 0}
+--- !u!320 &7370843866233173150
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7370843865946624892}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: f2d6e6c1f1744f549b053895f134fadd, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 2
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: -8921095154581047623, guid: f2d6e6c1f1744f549b053895f134fadd, type: 2}
+    value: {fileID: 7370843866978775687}
+  - key: {fileID: 7300764941843153736, guid: f2d6e6c1f1744f549b053895f134fadd, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 5756695644895440308, guid: 63ffb6694b7d8a044a27c822beb2d442, type: 2}
+    value: {fileID: 7370843866978775687}
+  - key: {fileID: -6481617893408847021, guid: 63ffb6694b7d8a044a27c822beb2d442, type: 2}
+    value: {fileID: 0}
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &7370843866004326747
 GameObject:
   m_ObjectHideFlags: 0
@@ -1358,7 +1401,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3847974792894885825, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
       propertyPath: MaxHealth
-      value: 150
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 3847974792894885825, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
       propertyPath: OnHit.m_PersistentCalls.m_Calls.Array.size
@@ -1625,7 +1668,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7370843866978775693}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 703e7c41a4e107742a84bce288db2e89, type: 2}
   m_CullingMode: 0

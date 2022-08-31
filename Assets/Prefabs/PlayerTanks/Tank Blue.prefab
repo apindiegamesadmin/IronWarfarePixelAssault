@@ -512,6 +512,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3588520231570830122}
   - component: {fileID: 3588520230743015219}
+  - component: {fileID: 3588520230743015222}
+  - component: {fileID: 3588520230743015221}
   m_Layer: 11
   m_Name: Tank Blue
   m_TagString: Untagged
@@ -563,6 +565,47 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!114 &3588520230743015222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3588520231570830118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3452ea26f4a02bc4f93e6c33e182e5d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tutorialManager: {fileID: 0}
+  gameUI: {fileID: 0}
+  blocks: {fileID: 0}
+  dialogueManager: {fileID: 0}
+--- !u!320 &3588520230743015221
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3588520231570830118}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: f2d6e6c1f1744f549b053895f134fadd, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 2
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: -8921095154581047623, guid: f2d6e6c1f1744f549b053895f134fadd, type: 2}
+    value: {fileID: 3588520231933685448}
+  - key: {fileID: 7300764941843153736, guid: f2d6e6c1f1744f549b053895f134fadd, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 5756695644895440308, guid: 63ffb6694b7d8a044a27c822beb2d442, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -6481617893408847021, guid: 63ffb6694b7d8a044a27c822beb2d442, type: 2}
+    value: {fileID: 0}
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &3588520231592829182
 GameObject:
   m_ObjectHideFlags: 0
@@ -663,7 +706,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToPool: {fileID: 0}
-  poolSize: 10
+  poolSize: 20
   spawnedObjectsParent: {fileID: 0}
   alwaysDestroy: 0
 --- !u!95 &3588520231791718431
@@ -1358,7 +1401,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3847974792894885825, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
       propertyPath: MaxHealth
-      value: 150
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 3847974792894885825, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
       propertyPath: OnHit.m_PersistentCalls.m_Calls.Array.size
@@ -1508,6 +1551,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 8560743576310662441, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8560743576310662441, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8560743577678458592, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
       propertyPath: m_Layer
       value: 11
@@ -1627,7 +1678,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5116408920587715312}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 703e7c41a4e107742a84bce288db2e89, type: 2}
   m_CullingMode: 0
