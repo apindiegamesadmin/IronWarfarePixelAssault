@@ -529,12 +529,14 @@ MonoBehaviour:
   - conversation:
     - Character: 1
       sentences:
-      - I'will teach you how to play the game
-      - Now, press W, A, S, and D to drive the tank. See if you can move around without
-        hitting any obstacles
+      - Welcome to the testing grounds of Iron Warfare Pixel Warfare! My name is
+        General Ajex and I'm here to guide you through the fundamentals of progressing
+        through hell.
+      - Alright? Good! Now, see if you can figure out the controls to drive the tank.
+        Try moving around without hitting any obstacles.
     - Character: 0
       sentences:
-      - Ok
+      - Ok["Placeholder"]
   - conversation:
     - Character: 1
       sentences:
@@ -542,41 +544,50 @@ MonoBehaviour:
   - conversation:
     - Character: 1
       sentences:
-      - "So this is a \u201CPLACEHOLDER\u201D medium tank. You can approach it to
-        destroy it by shooting it with your main cannon. Press mouse 0 (or the left
-        button on your mouse) to fire your main cannon"
+      - "So this is a \"Grizzly\" medium tank. You can approach to destroy it by
+        shooting with your main cannon. Press mouse 0 (or the left button on your
+        mouse) to fire your main cannon.\r"
     - Character: 0
       sentences:
-      - Ok
+      - Ok["Placeholder"]
   - conversation:
     - Character: 1
       sentences:
-      - Good! Now, hold down space to fire your machine gun at incoming enemy infantry.
-        It is much quicker to switch to your secondary instead of reloading, *winks*.
+      - "Good! Now, hold down the other mouse button to fire your machine gun at
+        enemy infantry. It's faster to switch to your secondary instead of reloading,
+        *winks*.\r"
   - conversation:
     - Character: 1
       sentences:
-      - This is a speed power up
+      - This is a "Speed Power Up". See what it does to your tank.
   - conversation:
     - Character: 1
       sentences:
-      - This is a bullet power up
+      - This is a "Bullet Power Up". Use it wisely to destroy your enemies.
   - conversation:
     - Character: 1
       sentences:
-      - This is a shield power up
+      - This is a "Shield Power Up". Use it wisely to deflect attacks from your enemies.
   - conversation:
     - Character: 1
       sentences:
-      - This is a health pack
+      - "This is a \"Health Pack\". One of the ways to survive in this war is to
+        stay alive. \r\n"
   - conversation:
     - Character: 1
       sentences:
-      - Let the killing frenzy go wild!
+      - "Now that you have learnt the basics, your mission is to make your way to
+        the randevous point located at the \"South\" of the map. \r\n"
   - conversation:
+    - Character: 1
+      sentences:
+      - Your new mission is to "Kill the enemy boss tank". Give it hell!
+    - Character: 0
+      sentences:
+      - Ok["Placeholder"]
     - Character: 2
       sentences:
-      - You can't beat me
+      - You can't defeat me ["Placeholder"]
   currentDialogue:
     conversation: []
   nextButton: {fileID: 7913306268028568607}
