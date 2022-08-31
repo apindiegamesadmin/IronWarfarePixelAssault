@@ -866,7 +866,7 @@ Transform:
   m_GameObject: {fileID: 1284476953}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.0109, y: -0.0034, z: 0}
-  m_LocalScale: {x: 1.2, y: 2, z: 0}
+  m_LocalScale: {x: 1.2, y: 2.5, z: 0}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 5365635995877312768}
@@ -1328,7 +1328,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2838610205514186799}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.08, z: 0}
+  m_LocalPosition: {x: 0, y: 1.05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1350,7 +1350,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   detectorShape: 1
   viewRadius: 1
-  boxSize: {x: 1.2, y: 2}
+  boxSize: {x: 1.2, y: 2.5}
   detectionCheckDelay: 0.1
   target: {fileID: 0}
   playerLayerMask:
@@ -1415,7 +1415,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootBehaviour: {fileID: 3540198322423738724}
   machineShootBehaviour: {fileID: 2771747299834250081}
-  patrolBehaviour: {fileID: 3540198322423738722}
+  patrolBehaviour: {fileID: 3540198322423738723}
   tank: {fileID: 0}
   mainCannonDetector: {fileID: 5238272013137944475}
   machineGunDetector: {fileID: 689921246759474962}
