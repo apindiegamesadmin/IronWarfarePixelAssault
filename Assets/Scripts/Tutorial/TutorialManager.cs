@@ -21,14 +21,6 @@ public class TutorialManager : MonoBehaviour
     DialogueManager dialogueManager;
     void Awake()
     {
-        enemyAIStatic.canShoot = false;//Disable Shoot Function Of Enemy
-        enemyAIPatrol.canShoot = false;
-
-        dialogueManager = dialogueUI.GetComponent<DialogueManager>();
-    }
-
-    private void Start()
-    {
         playerTank = GameObject.FindGameObjectWithTag("Player").GetComponent<TankController>();
 
         playerTank.canShoot = false;//Disable Shoot Function Of Player
@@ -39,6 +31,16 @@ public class TutorialManager : MonoBehaviour
         playerTank.transform.GetComponent<BulletController>().tutorial = true;
         playerTank.transform.GetComponent<HealthPackControl>().tutorial = true;
         playerTank.transform.GetComponent<ShieldController>().tutorial = true;
+
+        enemyAIStatic.canShoot = false;//Disable Shoot Function Of Enemy
+        enemyAIPatrol.canShoot = false;
+
+        dialogueManager = dialogueUI.GetComponent<DialogueManager>();
+    }
+
+    private void Start()
+    {
+
     }
 
     void Update()

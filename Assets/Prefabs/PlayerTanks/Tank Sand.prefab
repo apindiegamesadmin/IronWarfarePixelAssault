@@ -627,6 +627,7 @@ GameObject:
   - component: {fileID: 631498336066182750}
   - component: {fileID: 631498336066182753}
   - component: {fileID: 631498336066182752}
+  - component: {fileID: 8476346813329441172}
   m_Layer: 11
   m_Name: Tank Sand
   m_TagString: Untagged
@@ -712,13 +713,43 @@ PlayableDirector:
   - key: {fileID: -8921095154581047623, guid: f2d6e6c1f1744f549b053895f134fadd, type: 2}
     value: {fileID: 631498336343610145}
   - key: {fileID: 7300764941843153736, guid: f2d6e6c1f1744f549b053895f134fadd, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 8476346813329441172}
   - key: {fileID: 5756695644895440308, guid: 63ffb6694b7d8a044a27c822beb2d442, type: 2}
     value: {fileID: 0}
   - key: {fileID: -6481617893408847021, guid: 63ffb6694b7d8a044a27c822beb2d442, type: 2}
     value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
+--- !u!114 &8476346813329441172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 631498337155348266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 1b618c51b2162924e92530ceec4bc2fa, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 631498336066182753}
+          m_TargetAssemblyTypeName: TutorialCutSceneManager, Assembly-CSharp
+          m_MethodName: EndTutorialCutScene
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &631498337309373600
 GameObject:
   m_ObjectHideFlags: 0
@@ -1139,7 +1170,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3602300449542069557}
   m_LocalRotation: {x: 0, y: 0, z: -0.13052624, w: 0.9914449}
-  m_LocalPosition: {x: 0.165, y: 0.314, z: 0}
+  m_LocalPosition: {x: 0.211, y: 0.401, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1170,7 +1201,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7510853643251133717}
   m_LocalRotation: {x: 0, y: 0, z: 0.13052616, w: 0.9914449}
-  m_LocalPosition: {x: -0.165, y: 0.314, z: 0}
+  m_LocalPosition: {x: -0.211, y: 0.401, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1201,7 +1232,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8421055351097066674}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.314, z: 0}
+  m_LocalPosition: {x: -0, y: 0.364, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1426,7 +1457,7 @@ PrefabInstance:
     - target: {fileID: 3847974792894885825, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
       propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 631498336066182750}
     - target: {fileID: 3847974792894885825, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
       propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.data[4].m_Target
       value: 

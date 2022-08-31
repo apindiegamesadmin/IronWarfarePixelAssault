@@ -55,7 +55,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6681719545898957478}
   m_LocalRotation: {x: 0, y: 0, z: -0.13052624, w: 0.9914449}
-  m_LocalPosition: {x: 0.165, y: 0.314, z: 0}
+  m_LocalPosition: {x: 0.209, y: 0.372, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -400,13 +400,14 @@ GameObject:
   - component: {fileID: 7370843866233173148}
   - component: {fileID: 7370843866233173151}
   - component: {fileID: 7370843866233173150}
+  - component: {fileID: 4564386094911360010}
   m_Layer: 11
   m_Name: Tank Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7370843865946624893
 Transform:
   m_ObjectHideFlags: 0
@@ -485,13 +486,43 @@ PlayableDirector:
   - key: {fileID: -8921095154581047623, guid: f2d6e6c1f1744f549b053895f134fadd, type: 2}
     value: {fileID: 7370843866978775687}
   - key: {fileID: 7300764941843153736, guid: f2d6e6c1f1744f549b053895f134fadd, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 4564386094911360010}
   - key: {fileID: 5756695644895440308, guid: 63ffb6694b7d8a044a27c822beb2d442, type: 2}
     value: {fileID: 7370843866978775687}
   - key: {fileID: -6481617893408847021, guid: 63ffb6694b7d8a044a27c822beb2d442, type: 2}
     value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
+--- !u!114 &4564386094911360010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7370843865946624892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 1b618c51b2162924e92530ceec4bc2fa, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7370843866233173151}
+          m_TargetAssemblyTypeName: TutorialCutSceneManager, Assembly-CSharp
+          m_MethodName: EndTutorialCutScene
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &7370843866004326747
 GameObject:
   m_ObjectHideFlags: 0
@@ -1013,7 +1044,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1201,7 +1232,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7451859377515791245}
   m_LocalRotation: {x: 0, y: 0, z: 0.13052616, w: 0.9914449}
-  m_LocalPosition: {x: -0.165, y: 0.314, z: 0}
+  m_LocalPosition: {x: -0.209, y: 0.372, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

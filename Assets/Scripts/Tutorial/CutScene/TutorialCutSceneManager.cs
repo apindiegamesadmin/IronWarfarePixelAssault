@@ -18,17 +18,32 @@ public class TutorialCutSceneManager : MonoBehaviour
 
         Time.timeScale = 0;
         gameUI.SetActive(false);
-        tutorialManager.SetActive(false);
-        blocks.SetActive(false);
+        if(tutorialManager != null)
+        {
+            tutorialManager.SetActive(false);
+        }
+        if(blocks != null)
+        {
+            blocks.SetActive(false);
+        }
         director.Play();
     }
     public void EndTutorialCutScene()
     {
         Time.timeScale = 1;
         gameUI.SetActive(true);
-        dialogueManager.StartDialogue(dialogueManager.dialogue[0]);
-        tutorialManager.SetActive(true);
-        blocks.SetActive(true);
+        if(dialogueManager != null)
+        {
+            dialogueManager.StartDialogue(dialogueManager.dialogue[0]);
+        }
+        if (tutorialManager != null)
+        {
+            tutorialManager.SetActive(true);
+        }
+        if (blocks != null)
+        {
+            blocks.SetActive(true);
+        }
         director.Stop();
     }
 }

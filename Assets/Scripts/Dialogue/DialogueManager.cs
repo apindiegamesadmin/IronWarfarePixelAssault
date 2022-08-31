@@ -12,6 +12,7 @@ public class DialogueManager : MonoBehaviour
     Queue<string> _sentences;
     Animator animator;
     PauseMenu pauseMenu;
+    TankMachineGun playerMachineGun;
 
     private void Awake()
     {
@@ -19,11 +20,12 @@ public class DialogueManager : MonoBehaviour
         animator = GetComponent<Animator>();
         _sentences = new Queue<string>();
         nextButton.SetActive(false);
+        playerMachineGun = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<TankMachineGun>();
     }
 
     void Start()
     {
-
+        
     }
 
     /// <summary>
@@ -34,6 +36,7 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(Dialogue dialogue)
     {
         pauseMenu.isGamePaused = true;
+        playerMachineGun.StopShooting();
         Time.timeScale = 0;
         nextButton.SetActive(false);
         _sentences.Clear();
