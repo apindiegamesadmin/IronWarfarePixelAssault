@@ -65,8 +65,7 @@ public class BulletController : MonoBehaviour
             {
                 isHomingMissileActive = false;
                 turret.turretData = turretDatas[0];
-                objectPool.Initialize(turretDatas[0].bulletPrefab, 3);
-                turret.bulletPoolCount = 1;
+                objectPool.Initialize(turretDatas[0].bulletPrefab, 10);
             }
         }
     }
@@ -100,7 +99,7 @@ public class BulletController : MonoBehaviour
             Destroy(collision.transform.gameObject);
             isHomingMissileActive = true;
             turret.turretData = turretDatas[2];
-            objectPool.Initialize(turret.turretData.bulletPrefab, 3);
+            objectPool.Initialize(turret.turretData.bulletPrefab, 10);
         }
     }
 
