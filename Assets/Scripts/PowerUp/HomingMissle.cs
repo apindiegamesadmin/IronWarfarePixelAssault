@@ -70,7 +70,6 @@ public class HomingMissle : MonoBehaviour
         }
         else
         {
-            _startPosition = transform.position;
             _rb.velocity = transform.up * this.bulletData.speed;
         }
     }
@@ -82,9 +81,9 @@ public class HomingMissle : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider2D)
     {
-        OnHit?.Invoke();
         if (collider2D.transform.tag == TARGET_TAG)
         {
+            OnHit?.Invoke();
             var damagable = collider2D.GetComponent<Damagable>();
             if (damagable != null)
             {
