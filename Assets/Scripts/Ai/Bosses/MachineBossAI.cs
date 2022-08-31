@@ -21,10 +21,18 @@ public class MachineBossAI : MonoBehaviour
 
     private void Update()
     {
-        if (mainCannonDetector.TargetVisible)// Shoot and move
+        if (mainCannonDetector.TargetVisible)// Check if main cannon detector's target is visible
         {
             shootBehaviour.PerformAction(tank, mainCannonDetector);
-            machineShootBehaviour.PerformAction(tank, machineGunDetector);
+
+            if (machineGunDetector.TargetVisible) // Check if machine gun detector's target is visible
+            {
+                machineShootBehaviour.PerformAction(tank, machineGunDetector);
+            }
+            else
+            {
+                machineShootBehaviour.StopAction(tank, machineGunDetector);
+            }
         }
         else
         {

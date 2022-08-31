@@ -17,11 +17,7 @@ public class MachineBossShootBehaviour : AIBehaviour
             {
                 machineGun.StartShooting();
             }
-            //tank.HandleMoveBody(Vector2.zero);
-            //tank.HandleShoot();
         }
-
-        //tank.HandleTurretMovement(detector.Target.position);
     }
 
     public override void StopAction(TankController tank, AIDetector detector)
