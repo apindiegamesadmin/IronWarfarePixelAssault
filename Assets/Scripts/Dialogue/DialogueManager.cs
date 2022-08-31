@@ -1,11 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
+    [SerializeField] Image leftCharacter;
+    [SerializeField] Image rightCharacter;
+
+    [SerializeField] Sprite[] characters;
+
     public Dialogue[] dialogue;
+    public Dialogue currentDialogue;
     [SerializeField] GameObject nextButton;
     public TextMeshProUGUI conversationTMPro;
 
@@ -13,6 +20,8 @@ public class DialogueManager : MonoBehaviour
     Animator animator;
     PauseMenu pauseMenu;
     TankMachineGun playerMachineGun;
+
+    int conversationIndex = 0;
 
     private void Awake()
     {
@@ -28,13 +37,24 @@ public class DialogueManager : MonoBehaviour
         
     }
 
-    /// <summary>
-    /// To start show the dialogue or sentences to the player
-    /// </summary>
-    /// <param name="dialogue"></param>
-    /// 
     public void StartDialogue(Dialogue dialogue)
     {
+        switch (dialogue.conversation[conversationIndex].Character)
+        {
+            case Conversation.character.TankCommander:
+                animator.SetTrigger("Left_Start");
+                leftCharacter.sprite = characters[0];
+                break;
+            case Conversation.character.Narrator:
+                animator.SetTrigger("Right_Start");
+                rightCharacter.sprite = characters[1];
+                break;
+            case Conversation.character.Villain:
+                animator.SetTrigger("Right_Start");
+                rightCharacter.sprite = characters[2];
+                break;
+        }
+
         pauseMenu.isGamePaused = true;
         playerMachineGun.StopShooting();
         Time.timeScale = 0;
@@ -42,11 +62,12 @@ public class DialogueManager : MonoBehaviour
         _sentences.Clear();
 
         // To Enqueue the dialogue sentences from dialogue class to this.sentences array
-        foreach (string sentence in dialogue.sentences)
+        foreach (string sentence in dialogue.conversation[conversationIndex].sentences)
         {
             _sentences.Enqueue(sentence);
         }
 
+        currentDialogue = dialogue;
         DisplayNextSentence();
     }
 
@@ -58,8 +79,17 @@ public class DialogueManager : MonoBehaviour
         nextButton.SetActive(false);
         if (_sentences.Count == 0)
         {
-            StopAllCoroutines();
-            StartCoroutine(CloseDialogue());
+            conversationIndex++;
+            if (conversationIndex + 1 > currentDialogue.conversation.Length)
+            {
+                conversationIndex = 0;
+                StopAllCoroutines();
+                StartCoroutine(CloseDialogue());
+            }
+            else
+            {
+                StartCoroutine(ChangeCharacter());
+            }
             return;
         }
 
@@ -77,7 +107,7 @@ public class DialogueManager : MonoBehaviour
     {
         conversationTMPro.text = "";
 
-        yield return new WaitForSecondsRealtime(0.3f);
+        yield return new WaitForSecondsRealtime(0.4f);
 
         foreach(char letter in sentence.ToCharArray())
         {
@@ -92,10 +122,18 @@ public class DialogueManager : MonoBehaviour
     /// </summary>
     /// <returns></returns>
     /// 
+
+    IEnumerator ChangeCharacter()
+    {
+        animator.SetTrigger("End");
+        yield return new WaitForSecondsRealtime(0.3f);
+        StartDialogue(currentDialogue);
+    }
+
     IEnumerator CloseDialogue()
     {
-        animator.Play("Dialogue_Close");
-        yield return new WaitForSecondsRealtime(0.4f);
+        animator.SetTrigger("End");
+        yield return new WaitForSecondsRealtime(0.3f);
         EndSentence();
     }
 
