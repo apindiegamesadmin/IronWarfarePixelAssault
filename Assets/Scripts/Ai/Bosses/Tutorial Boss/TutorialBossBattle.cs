@@ -71,5 +71,6 @@ public class TutorialBossBattle : MonoBehaviour
         UnlockMissions missionUnlock = FindObjectOfType<UnlockMissions>();
         missionUnlock.UnlockMission();
         OnDead.Invoke();
+        Time.timeScale = 0;
     }
 }

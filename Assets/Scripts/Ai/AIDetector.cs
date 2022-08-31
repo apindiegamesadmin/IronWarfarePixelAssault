@@ -85,7 +85,7 @@ public class AIDetector : MonoBehaviour
                 }
                 break;
             case shape.box:
-                Collider2D collision1 = Physics2D.OverlapBox(transform.position, boxSize, 0, playerLayerMask , 0, 1);
+                Collider2D collision1 = Physics2D.OverlapBox(transform.position, boxSize, 0, playerLayerMask);
 
                 if (collision1 != null)
                 {
