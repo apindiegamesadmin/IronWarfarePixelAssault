@@ -42,6 +42,9 @@ public class PlayerInput : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Get player's input for firing machine gun
+    /// </summary>
     void MachineGunShootingInput()
     {
         if (Input.GetMouseButtonDown(1) && !EventSystem.current.IsPointerOverGameObject())
