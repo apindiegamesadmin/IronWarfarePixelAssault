@@ -46,6 +46,9 @@ public class Turret : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Functionality for shooting
+    /// </summary>
     public void Shoot()
     {
         if (canShoot)
