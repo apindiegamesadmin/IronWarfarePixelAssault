@@ -13,6 +13,10 @@ public class RPG_Soldier : MonoBehaviour
     private float destroy = 4.0f;
     private float combatRange = 5.0f;
     private float timer;
+
+    public AudioClip death;
+    public AudioSource audioSource;
+
     //public Rigidbody2D bullet;
     public GameObject blood;//Blood Object Reference
     public Transform barrel;
@@ -62,16 +66,17 @@ public class RPG_Soldier : MonoBehaviour
         healthBar.SetActive(false);
         m_body = GetComponent<Rigidbody2D>();
         m_Ani = GetComponentInChildren<Animator>();
-
-
-
+        audioSource = GetComponent<AudioSource>();
     }
 
 
     void Update()
     {
         if (dead)
+        {
+            //audioSource.PlayOneShot(death);
             return;
+        }
 
         if (target.gameObject.activeInHierarchy)
         {
@@ -108,9 +113,6 @@ public class RPG_Soldier : MonoBehaviour
 
         m_Ani.SetBool("idle", away);
         m_Ani.SetBool("walk", found);
-
-
-
 
 
         if (shoot)
