@@ -373,7 +373,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkDistacne: 0
-  target: {fileID: 0}
   speed: 0.25
   blood: {fileID: 6375460937167327172}
   barrel: {fileID: 8115143423172984098}

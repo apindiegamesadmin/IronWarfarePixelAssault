@@ -5,7 +5,16 @@ using UnityEngine;
 [System.Serializable]
 public class Dialogue 
 {
-    // To store dialogue sentences as a string array
-    [TextArea(3,10)]
+    public Conversation[] conversation;
+}
+
+[System.Serializable]
+public class Conversation
+{
+    public enum character { TankCommander, Narrator, Villain };
+
+    public character Character;
+
+    [TextArea(3, 10)]
     public string[] sentences;
 }
