@@ -72,5 +72,6 @@ public class TutorialBossBattle : MonoBehaviour
         missionUnlock.UnlockMission();
         OnDead.Invoke();
         Time.timeScale = 0;
+        playerTank.GetComponentInChildren<TankMachineGun>().StopShooting();
     }
 }

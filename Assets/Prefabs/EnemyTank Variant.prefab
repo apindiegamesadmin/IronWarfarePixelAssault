@@ -13,11 +13,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 548887966, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
       propertyPath: playerLayerMask.m_Bits
-      value: 2176
+      value: 2048
       objectReference: {fileID: 0}
     - target: {fileID: 548887966, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
       propertyPath: visibilityLayer.m_Bits
-      value: 6656
+      value: 2560
       objectReference: {fileID: 0}
     - target: {fileID: 724173363, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
       propertyPath: m_Layer
@@ -239,6 +239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1ab0dfdadd12294f843570defc81f78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  typeIndex: 0
   score: 0
 --- !u!114 &8760446005949230815 stripped
 MonoBehaviour:

@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 6765290963820123762}
   - component: {fileID: 6765290963820123761}
   - component: {fileID: 5772515904265770164}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bulletGreen1
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -208,12 +208,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7210cdce884fdaf40925a18ad8acd59e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rb: {fileID: 6765290963820123762}
   bulletData: {fileID: 11400000, guid: cd62c17b01a84c44fb9eb05a3b071307, type: 2}
+  targetTag: Enemy
+  direction: {x: 0, y: 0}
   target: {fileID: 0}
   range: 5
-  enemyDamagable: {fileID: 0}
-  TARGET_TAG: Enemy
   OnHit:
     m_PersistentCalls:
       m_Calls:
@@ -253,7 +252,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adff3ccd2798b89428552ed16a66ff48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  detectorShape: 0
   viewRadius: 3
+  boxSize: {x: 0, y: 0}
   detectionCheckDelay: 0
   target: {fileID: 0}
   playerLayerMask:

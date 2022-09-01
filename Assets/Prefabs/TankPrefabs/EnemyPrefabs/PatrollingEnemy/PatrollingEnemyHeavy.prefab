@@ -1013,11 +1013,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2575475115464202022, guid: 1bc84e9af9a0a6d47bd8effb1f57bb82, type: 3}
       propertyPath: playerLayerMask.m_Bits
-      value: 2176
+      value: 2048
       objectReference: {fileID: 0}
     - target: {fileID: 2575475115464202022, guid: 1bc84e9af9a0a6d47bd8effb1f57bb82, type: 3}
       propertyPath: visibilityLayer.m_Bits
-      value: 2688
+      value: 2560
       objectReference: {fileID: 0}
     - target: {fileID: 3071362650311944551, guid: 1bc84e9af9a0a6d47bd8effb1f57bb82, type: 3}
       propertyPath: score

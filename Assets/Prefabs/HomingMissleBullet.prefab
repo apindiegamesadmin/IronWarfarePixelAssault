@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 9105954965143730027}
   - component: {fileID: 9105954965143730028}
   - component: {fileID: 9105954965143730029}
-  - component: {fileID: 2841214352498148676}
   - component: {fileID: 4633623976247012328}
   m_Layer: 7
   m_Name: HomingMissleBullet
@@ -135,23 +134,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.0625, y: 0.15625}
   m_EdgeRadius: 0
---- !u!114 &2841214352498148676
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9105954965143730031}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41bb4471a211fa443a157d24cd4d7ec0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletData: {fileID: 11400000, guid: cd62c17b01a84c44fb9eb05a3b071307, type: 2}
-  OnHit:
-    m_PersistentCalls:
-      m_Calls: []
-  direction: {x: 0, y: 0}
 --- !u!114 &4633623976247012328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,7 +146,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7210cdce884fdaf40925a18ad8acd59e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rb: {fileID: 9105954965143730028}
   bulletData: {fileID: 11400000, guid: cd62c17b01a84c44fb9eb05a3b071307, type: 2}
+  targetTag: 
   target: {fileID: 0}
-  turretData: {fileID: 0}
+  range: 0
+  enemyDamagable: {fileID: 0}
+  OnHit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

@@ -17,6 +17,10 @@ public class ScreenSwitcher : MonoBehaviour
 
     public void LoadSceneIndex(int index)
     {
+        if(Time.timeScale == 0)
+        {
+            Time.timeScale = 1;
+        }
         StartCoroutine(FakeLoadingScreen(index));
     }
 }

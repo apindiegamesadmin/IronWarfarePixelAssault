@@ -14,8 +14,8 @@ public class RPG_Soldier : MonoBehaviour
     private float combatRange = 5.0f;
     private float timer;
 
-    public AudioClip death;
-    public AudioSource audioSource;
+    //public AudioClip death;
+    //public AudioSource audioSource;
 
     //public Rigidbody2D bullet;
     public GameObject blood;//Blood Object Reference
@@ -66,7 +66,7 @@ public class RPG_Soldier : MonoBehaviour
         healthBar.SetActive(false);
         m_body = GetComponent<Rigidbody2D>();
         m_Ani = GetComponentInChildren<Animator>();
-        audioSource = GetComponent<AudioSource>();
+        //audioSource = GetComponent<AudioSource>();
     }
 
 
@@ -132,14 +132,14 @@ public class RPG_Soldier : MonoBehaviour
 
             }
         }
-        playerHealth = target.GetComponentInChildren<Damagable>().Health;
+        /*playerHealth = target.GetComponentInChildren<Damagable>().Health;
 
         if (playerHealth < 0)
         {
             timer = 0; shoot = false;
             m_Ani.SetBool("shoot", false);
             m_Ani.SetBool("idle", true);
-        }
+        }*/
 
 
         if (slider.value <= 0)

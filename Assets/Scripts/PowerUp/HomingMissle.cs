@@ -3,16 +3,18 @@ using UnityEngine.Events;
 
 public class HomingMissle : MonoBehaviour
 {
-    public Rigidbody2D _rb;
-    private float _rotateSpeed = 360f;
-    private float _speed = 5f;
     public BulletData bulletData;
-    private Vector2 _startPosition;
-    private float _timer = 0f;
-    public Transform target;
+    [SerializeField] string targetTag;
+
+    private Vector2 startPosition;
+    private float conquaredDistance = 0;
+    private Rigidbody2D rb2d;
+    public Vector2 direction;
+
+    private float _rotateSpeed = 360f;
+    [SerializeField] Transform target;
     [SerializeField] float range;
-    public Damagable enemyDamagable;
-    [SerializeField] string TARGET_TAG;
+    Damagable enemyDamagable;
 
     public UnityEvent OnHit = new UnityEvent();
 
@@ -21,76 +23,68 @@ public class HomingMissle : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        enemyDamagable = GameObject.FindWithTag("Enemy").GetComponent<Damagable>();
-        target = GameObject.FindGameObjectWithTag("Enemy").transform;
-        _aiDetector = transform.GetComponent<AIDetector>();
+        rb2d = GetComponent<Rigidbody2D>();
+        _aiDetector = GetComponent<AIDetector>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        TriggerHomingMissle();
-        _timer += Time.deltaTime;
-        if (_timer >= 5.0f)
+        conquaredDistance = Vector2.Distance(transform.position, startPosition);
+        if (conquaredDistance >= bulletData.maxDistance)
         {
-            _timer = 0f;
-            DisableGameObject();
+            DisableObject();
         }
-
+        else
+        {
+            TriggerHomingMissle();
+        }
     }
 
     public void TriggerHomingMissle()
     {
-        // Collider2D[] colliderArray = Physics2D.OverlapCircleAll(transform.position, range);
-
-        // foreach (Collider2D collider in colliderArray)
-        // {
-        //     Debug.Log(collider.transform.name);
-        //     if (collider.transform.tag == "Enemy")
-        //     {
-        //         enemyDamagable = collider.GetComponent<Damagable>();
-        //         target = collider.transform;
-        //         Vector2 direction = (Vector2)target.transform.position - _rb.position;
-        //         direction.Normalize();
-        //         float rotateAmount = Vector3.Cross(direction, transform.up).z;
-        //         _rb.angularVelocity = -rotateAmount * _rotateSpeed;
-        //         _rb.velocity = transform.up * _speed;
-        //     }
-        // }
 
         if (_aiDetector.TargetVisible)
         {
             enemyDamagable = _aiDetector.Target.GetComponent<Damagable>();
             target = _aiDetector.Target.transform;
-            Vector2 direction = (Vector2)target.transform.position - _rb.position;
+            Vector2 direction = (Vector2)target.transform.position - rb2d.position;
             direction.Normalize();
             float rotateAmount = Vector3.Cross(direction, transform.up).z;
-            _rb.angularVelocity = -rotateAmount * _rotateSpeed;
-            _rb.velocity = transform.up * _speed;
+            rb2d.angularVelocity = -rotateAmount * _rotateSpeed;
+            rb2d.velocity = transform.up * bulletData.speed;
         }
         else
         {
-            _rb.velocity = transform.up * this.bulletData.speed;
+            rb2d.velocity = transform.up * this.bulletData.speed;
         }
     }
 
-    public void DisableGameObject()
+    public void Initialize(BulletData bulletData)
     {
-        Destroy(this.gameObject);
+        this.bulletData = bulletData;
+        startPosition = transform.position;
+        rb2d.velocity = transform.up * this.bulletData.speed;
     }
 
-    private void OnTriggerEnter2D(Collider2D collider2D)
+    private void DisableObject()
     {
-        if (collider2D.transform.tag == TARGET_TAG)
+        rb2d.velocity = Vector2.zero;
+        gameObject.SetActive(false);
+        //Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        OnHit?.Invoke();
+        if (collision.transform.tag == targetTag)
         {
-            OnHit?.Invoke();
-            var damagable = collider2D.GetComponent<Damagable>();
+            var damagable = collision.GetComponent<Damagable>();
             if (damagable != null)
             {
                 damagable.Hit(bulletData.damage);
             }
         }
-        DisableGameObject();
+        DisableObject();
     }
 
     // To draw Gizmoz lines in scene view

@@ -63,8 +63,15 @@ public class Turret : MonoBehaviour
                 GameObject bullet = bulletPool.CreateObject();
                 bullet.transform.position = barrel.position;
                 bullet.transform.localRotation = barrel.rotation;
-                bullet.GetComponent<Bullet>().Initialize(turretData.bulletData);
-                bullet.GetComponent<Bullet>().direction = barrel.up;
+                if(bullet.GetComponent<Bullet>() != null)
+                {
+                    bullet.GetComponent<Bullet>().Initialize(turretData.bulletData);
+                    bullet.GetComponent<Bullet>().direction = barrel.up;
+                }
+                else if (bullet.GetComponent<HomingMissle>() != null)
+                {
+                    bullet.GetComponent<HomingMissle>().Initialize(turretData.bulletData);
+                }
 
                 foreach (var collider in tankColliders)
                 {

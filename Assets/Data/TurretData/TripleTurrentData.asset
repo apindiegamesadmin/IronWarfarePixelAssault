@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: TripleTurrentData
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 5149417576530530994, guid: 57692aa8d599337419b68c1017b3880f, type: 3}
-  reloadDelay: 0.3
+  reloadDelay: 1
   bulletData: {fileID: 11400000, guid: e453e59cc083dd44f8824d5bda3c2dbc, type: 2}
