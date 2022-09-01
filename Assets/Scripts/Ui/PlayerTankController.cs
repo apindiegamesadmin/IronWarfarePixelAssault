@@ -29,7 +29,7 @@ public class PlayerTankController : MonoBehaviour
 
     public void CheckPlayerLife()
     {
-        if(lifeCount > 0)
+        if(lifeCount >= 0)
         {
             StartCoroutine(DelaySpawn()); // Spawn and play animation after 1 sec
 
@@ -49,6 +49,7 @@ public class PlayerTankController : MonoBehaviour
         }
         else
         {
+            Time.timeScale = 0;
             OnDead.Invoke();
         }
     }

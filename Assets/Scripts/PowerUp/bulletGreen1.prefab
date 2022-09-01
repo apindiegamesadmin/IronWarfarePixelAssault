@@ -1,5 +1,61 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2710172164860451293
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3808121528325713078}
+  - component: {fileID: 3028993571063060614}
+  m_Layer: 7
+  m_Name: AIDetector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3808121528325713078
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2710172164860451293}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6765290963820123773}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3028993571063060614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2710172164860451293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adff3ccd2798b89428552ed16a66ff48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectorShape: 0
+  viewRadius: 2
+  boxSize: {x: 0, y: 0}
+  detectionCheckDelay: 0.1
+  target: {fileID: 0}
+  playerLayerMask:
+    serializedVersion: 2
+    m_Bits: 4096
+  visibilityLayer:
+    serializedVersion: 2
+    m_Bits: 4608
+  <TargetVisible>k__BackingField: 0
 --- !u!1 &3123693176630382043
 GameObject:
   m_ObjectHideFlags: 0
@@ -73,10 +129,9 @@ GameObject:
   - component: {fileID: 6765290963820123763}
   - component: {fileID: 6765290963820123762}
   - component: {fileID: 6765290963820123761}
-  - component: {fileID: 5772515904265770164}
   m_Layer: 7
   m_Name: bulletGreen1
-  m_TagString: Bullet
+  m_TagString: HomingMissle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,6 +149,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3871026834239682943}
+  - {fileID: 3808121528325713078}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -212,7 +268,6 @@ MonoBehaviour:
   targetTag: Enemy
   direction: {x: 0, y: 0}
   target: {fileID: 0}
-  range: 5
   OnHit:
     m_PersistentCalls:
       m_Calls:
@@ -240,27 +295,3 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &5772515904265770164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6765290963820123760}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: adff3ccd2798b89428552ed16a66ff48, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  detectorShape: 0
-  viewRadius: 3
-  boxSize: {x: 0, y: 0}
-  detectionCheckDelay: 0
-  target: {fileID: 0}
-  playerLayerMask:
-    serializedVersion: 2
-    m_Bits: 4096
-  visibilityLayer:
-    serializedVersion: 2
-    m_Bits: 4608
-  <TargetVisible>k__BackingField: 0

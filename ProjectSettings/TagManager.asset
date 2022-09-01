@@ -22,7 +22,6 @@ TagManager:
   - MissionFail
   - HealthBar
   - ScoreText
-  - HomingMissile
   - HomingMissle
   layers:
   - Default

@@ -10,12 +10,19 @@ public class TutorialCutSceneManager : MonoBehaviour
     [SerializeField] GameObject blocks;
     [SerializeField] DialogueManager dialogueManager;
 
+    GameObject player;
     PlayableDirector director;
 
+
+    private void Awake()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
     private void Start()
     {
         director = GetComponent<PlayableDirector>();
 
+        player.GetComponentInChildren<TankMachineGun>().canShoot = false;
         Time.timeScale = 0;
         gameUI.SetActive(false);
         if(tutorialManager != null)
@@ -30,6 +37,7 @@ public class TutorialCutSceneManager : MonoBehaviour
     }
     public void EndTutorialCutScene()
     {
+        player.GetComponentInChildren<TankMachineGun>().canShoot = true;
         Time.timeScale = 1;
         gameUI.SetActive(true);
         if(dialogueManager != null)

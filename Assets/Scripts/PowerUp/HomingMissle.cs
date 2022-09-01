@@ -12,9 +12,6 @@ public class HomingMissle : MonoBehaviour
     public Vector2 direction;
 
     private float _rotateSpeed = 360f;
-    [SerializeField] Transform target;
-    [SerializeField] float range;
-    Damagable enemyDamagable;
 
     public UnityEvent OnHit = new UnityEvent();
 
@@ -24,19 +21,24 @@ public class HomingMissle : MonoBehaviour
     void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        _aiDetector = GetComponent<AIDetector>();
+        _aiDetector = GetComponentInChildren<AIDetector>();
     }
 
     private void Update()
     {
+        if (_aiDetector.TargetVisible)
+        {
+            Vector2 direction = (Vector2)_aiDetector.Target.transform.position - rb2d.position;
+            direction.Normalize();
+            float rotateAmount = Vector3.Cross(direction, transform.up).z;
+            rb2d.angularVelocity = -rotateAmount * _rotateSpeed;
+            rb2d.velocity = transform.up * bulletData.speed;
+        }
+
         conquaredDistance = Vector2.Distance(transform.position, startPosition);
         if (conquaredDistance >= bulletData.maxDistance)
         {
             DisableObject();
-        }
-        else
-        {
-            TriggerHomingMissle();
         }
     }
 
@@ -45,18 +47,16 @@ public class HomingMissle : MonoBehaviour
 
         if (_aiDetector.TargetVisible)
         {
-            enemyDamagable = _aiDetector.Target.GetComponent<Damagable>();
-            target = _aiDetector.Target.transform;
-            Vector2 direction = (Vector2)target.transform.position - rb2d.position;
+            Vector2 direction = (Vector2)_aiDetector.Target.transform.position - rb2d.position;
             direction.Normalize();
             float rotateAmount = Vector3.Cross(direction, transform.up).z;
             rb2d.angularVelocity = -rotateAmount * _rotateSpeed;
             rb2d.velocity = transform.up * bulletData.speed;
         }
-        else
+        /*else
         {
             rb2d.velocity = transform.up * this.bulletData.speed;
-        }
+        }*/
     }
 
     public void Initialize(BulletData bulletData)
@@ -85,12 +85,5 @@ public class HomingMissle : MonoBehaviour
             }
         }
         DisableObject();
-    }
-
-    // To draw Gizmoz lines in scene view
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position, range);
     }
 }
