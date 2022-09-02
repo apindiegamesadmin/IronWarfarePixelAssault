@@ -35,9 +35,29 @@ public class TutorialCutSceneManager : MonoBehaviour
         }
         director.Play();
     }
-    public void EndTutorialCutScene()
+
+    public void EndMission2CutScene()
     {
         player.GetComponentInChildren<TankMachineGun>().canShoot = true;
+        Time.timeScale = 1;
+        gameUI.SetActive(true);
+        if (dialogueManager != null)
+        {
+            dialogueManager.StartDialogue(dialogueManager.dialogue[0]);
+        }
+        if (tutorialManager != null)
+        {
+            tutorialManager.SetActive(true);
+        }
+        if (blocks != null)
+        {
+            blocks.SetActive(true);
+        }
+        director.Stop();
+    }
+
+    public void EndTutorialCutScene()
+    {
         Time.timeScale = 1;
         gameUI.SetActive(true);
         if(dialogueManager != null)

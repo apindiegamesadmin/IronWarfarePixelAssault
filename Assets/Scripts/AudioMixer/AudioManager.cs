@@ -31,7 +31,10 @@ public class AudioManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
 
+    private void Start()
+    {
         backgroundMusic.clip = mainBgMusic;
         backgroundMusic.Play();
 

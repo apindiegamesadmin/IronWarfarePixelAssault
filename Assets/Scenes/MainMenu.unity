@@ -6614,6 +6614,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 167310554}
   m_CullTransparentMesh: 1
+--- !u!114 &180579133 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8531659517392768095, guid: bd5f83b046752f547924b7898c0e13ac, type: 3}
+  m_PrefabInstance: {fileID: 8531659515936769486}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bebfcb125d33864ab730e7a16a7668b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &181810564
 GameObject:
   m_ObjectHideFlags: 0
@@ -29451,7 +29462,7 @@ GameObject:
   - component: {fileID: 595054441}
   - component: {fileID: 595054444}
   m_Layer: 5
-  m_Name: Confirm
+  m_Name: Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29534,7 +29545,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1577982086}
+      - m_Target: {fileID: 180579133}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: ChangeBackgroundMusic
         m_Mode: 1
@@ -64470,17 +64481,6 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!114 &1577982086 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8531659517392768095, guid: bd5f83b046752f547924b7898c0e13ac, type: 3}
-  m_PrefabInstance: {fileID: 8531659515936769486}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bebfcb125d33864ab730e7a16a7668b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1583591885
 GameObject:
   m_ObjectHideFlags: 0

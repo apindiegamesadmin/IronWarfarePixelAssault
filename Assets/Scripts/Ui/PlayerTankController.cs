@@ -34,7 +34,6 @@ public class PlayerTankController : MonoBehaviour
             StartCoroutine(DelaySpawn()); // Spawn and play animation after 1 sec
 
             lifeCount--; // Reduce life
-            Debug.Log(lifeCount);
             for (int i = 0; i < 3; i++)
             {
                 if (i <= lifeCount - 1)
