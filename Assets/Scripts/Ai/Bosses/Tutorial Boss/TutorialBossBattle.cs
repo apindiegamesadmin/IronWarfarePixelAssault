@@ -53,6 +53,14 @@ public class TutorialBossBattle : MonoBehaviour
                 bossTankController.turrets.RemoveAt(3);// Only main cannon and front guns active, Remove other guns
             }
         }
+        else
+        {
+            int length = bossTankController.turrets.Count;
+            for (int i = 1; i < length; i++)
+            {
+                bossTankController.turrets.RemoveAt(1);// Only main cannon active, Remove other guns
+            }
+        }
     }
 
     public void NextBoss()
