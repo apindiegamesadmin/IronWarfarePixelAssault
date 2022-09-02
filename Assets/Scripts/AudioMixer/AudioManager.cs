@@ -36,9 +36,6 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        backgroundMusic.clip = mainBgMusic;
-        backgroundMusic.Play();
-
         LoadVolume();
     }
 
@@ -53,7 +50,13 @@ public class AudioManager : MonoBehaviour
         _mixer.SetFloat(VolumeSettings.SFX_VOLUME, Mathf.Log10(sfxVolumueFloat) * 20);
     }
 
-    public void ChangeBackgroundMusic()
+    public void PlayMainMenuBGSound()
+    {
+        backgroundMusic.clip = mainBgMusic;
+        backgroundMusic.Play();
+    }
+
+    /*public void ChangeBackgroundMusic()
     {
         // if (SceneManager.GetActiveScene().buildIndex == 0)
         // {
@@ -66,12 +69,20 @@ public class AudioManager : MonoBehaviour
         //     backgroundMusic.Play();
         // }
 
-        StartCoroutine(WaitBackgroundMusic());
+        //StartCoroutine(WaitBackgroundMusic());
+    }*/
+
+    public void PlayMission2BGSound()
+    {
+        //StartCoroutine(DelayLevel2Music());
+        backgroundMusic.clip = mission2BgMusic;
+        backgroundMusic.Play();
     }
 
-    public void LoadLevel2Music()
+    public void PlayMission1BGSound()
     {
-        StartCoroutine(DelayLevel2Music());
+        backgroundMusic.clip = mission1BgMusic;
+        backgroundMusic.Play();
     }
 
     IEnumerator WaitBackgroundMusic()

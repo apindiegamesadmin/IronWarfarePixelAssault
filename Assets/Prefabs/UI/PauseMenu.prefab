@@ -245,6 +245,7 @@ GameObject:
   - component: {fileID: 309330702872750766}
   - component: {fileID: 309330702872750767}
   - component: {fileID: 309330702872750764}
+  - component: {fileID: 3101929166352918756}
   m_Layer: 5
   m_Name: MainMenu
   m_TagString: Untagged
@@ -367,6 +368,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3101929166352918756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 309330702872750674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.29803923}
+  m_EffectDistance: {x: 1, y: -7}
+  m_UseGraphicAlpha: 1
 --- !u!1 &309330703140309560
 GameObject:
   m_ObjectHideFlags: 0
@@ -649,6 +665,7 @@ GameObject:
   - component: {fileID: 309330703807041816}
   - component: {fileID: 309330703807041817}
   - component: {fileID: 309330703807041822}
+  - component: {fileID: 920191810697986610}
   m_Layer: 5
   m_Name: Restart
   m_TagString: Untagged
@@ -771,6 +788,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &920191810697986610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 309330703807041820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.29803923}
+  m_EffectDistance: {x: 1, y: -7}
+  m_UseGraphicAlpha: 1
 --- !u!1 &309330704053270837
 GameObject:
   m_ObjectHideFlags: 0
@@ -863,6 +895,7 @@ GameObject:
   - component: {fileID: 309330704069817765}
   - component: {fileID: 309330704069817770}
   - component: {fileID: 309330704069817771}
+  - component: {fileID: 3690294204643083009}
   m_Layer: 5
   m_Name: Resume
   m_TagString: Untagged
@@ -985,6 +1018,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!114 &3690294204643083009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 309330704069817769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.29803923}
+  m_EffectDistance: {x: 1, y: -7}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1941684956339000695
 GameObject:
   m_ObjectHideFlags: 0
