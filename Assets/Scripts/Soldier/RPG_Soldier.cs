@@ -93,7 +93,7 @@ public class RPG_Soldier : MonoBehaviour
         if (checkDistacne <= combatRange)
         {
             away = false; found = true; shoot = false;
-            speed = 1.0f;
+            speed = 0.8f;
             lookDir = target.transform.position - transform.position;///////
             float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;////////////Look Target Position
             m_body.rotation = angle;///////////////////////////////////////////////////
