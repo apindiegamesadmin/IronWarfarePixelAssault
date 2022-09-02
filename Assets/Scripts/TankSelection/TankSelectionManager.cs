@@ -17,10 +17,11 @@ public class TankSelectionManager : MonoBehaviour
     {
         if (firstTime)
         {
-            OnFirstTime.Invoke();
 
             borders[1].SetActive(true);// Default Red Tank
             tankIndex = 1;
+
+            OnFirstTime.Invoke();
         }
         else
         {
@@ -47,6 +48,7 @@ public class TankSelectionManager : MonoBehaviour
     public void ConfirmTank()
     {
         firstTime = false;
+        PlayerPrefs.SetInt("TankIndex", tankIndex);
         OnNotFirstTime.Invoke();
     }
 }

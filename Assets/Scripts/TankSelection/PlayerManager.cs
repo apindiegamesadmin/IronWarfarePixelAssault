@@ -19,7 +19,7 @@ public class PlayerManager : MonoBehaviour
         TankRed.SetActive(false);
         TankSand.SetActive(false);
 
-        int index = TankSelectionManager.tankIndex;
+        int index = PlayerPrefs.GetInt("TankIndex");
 
         switch (index)
         {

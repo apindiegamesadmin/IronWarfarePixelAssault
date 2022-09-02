@@ -8,12 +8,14 @@ public class CursorHelper : MonoBehaviour
 
     public void Awake()
     {
-        Cursor.SetCursor(cursorArrow, Vector2.zero, CursorMode.ForceSoftware);
+        //Cursor.SetCursor(cursorArrow, Vector2.zero, CursorMode.ForceSoftware);
+        cursorSet(cursorArrow);
     }
 
-    // Update is called once per frame
-    void Update()
+    void cursorSet(Texture2D tex)
     {
-
+        CursorMode mode = CursorMode.ForceSoftware;
+        Vector2 hotSpot = new Vector2(tex.width / 2, tex.height / 2);
+        Cursor.SetCursor(tex, hotSpot, mode);
     }
 }
