@@ -79204,5 +79204,9 @@ PrefabInstance:
       propertyPath: mission1BgMusic
       value: 
       objectReference: {fileID: 8300000, guid: 3b5d3595af6c38844918ed831c45a60a, type: 3}
+    - target: {fileID: 8531659517392768095, guid: bd5f83b046752f547924b7898c0e13ac, type: 3}
+      propertyPath: mission2BgMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 89286814088c24943afb341defe5e2e6, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd5f83b046752f547924b7898c0e13ac, type: 3}

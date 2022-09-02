@@ -5,9 +5,9 @@ using UnityEngine;
 public class Minimap : MonoBehaviour
 {
     Transform player;
-    Vector3 pos;
+    //Vector3 pos;
 
-    void Awake()
+    void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         // transform.position = new Vector3(-12.1417198f, -13.2733755f, 0.110948563f);

@@ -13,6 +13,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioSource backgroundMusic;
     [SerializeField] AudioClip mainBgMusic;
     [SerializeField] AudioClip mission1BgMusic;
+    [SerializeField] AudioClip mission2BgMusic;
 
 
     public const string MASTER_VOLUME_KEY = "MasterVolumeKey";
@@ -68,10 +69,22 @@ public class AudioManager : MonoBehaviour
         StartCoroutine(WaitBackgroundMusic());
     }
 
+    public void LoadLevel2Music()
+    {
+        StartCoroutine(DelayLevel2Music());
+    }
+
     IEnumerator WaitBackgroundMusic()
     {
         yield return new WaitForSeconds(2);
         backgroundMusic.clip = mission1BgMusic;
+        backgroundMusic.Play();
+    }
+
+    IEnumerator DelayLevel2Music()
+    {
+        yield return new WaitForSeconds(2);
+        backgroundMusic.clip = mission2BgMusic;
         backgroundMusic.Play();
     }
 }
