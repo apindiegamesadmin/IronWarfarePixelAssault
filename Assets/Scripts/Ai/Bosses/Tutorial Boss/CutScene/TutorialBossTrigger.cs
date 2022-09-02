@@ -8,6 +8,14 @@ public class TutorialBossTrigger : MonoBehaviour
     PlayableDirector director;
     [SerializeField] GameObject gameUI;
     [SerializeField] GameObject blocks;
+    [SerializeField] GameObject dialogue;
+    DialogueManager dialogueManager;
+
+    private void Awake()
+    {
+        dialogueManager = FindObjectOfType<DialogueManager>();
+    }
+
     void Start()
     {
         director = GetComponentInParent<PlayableDirector>();
@@ -17,12 +25,10 @@ public class TutorialBossTrigger : MonoBehaviour
     {
         if (director != null)
         {
-            Debug.Log("Playing Cut Scene");
             gameUI.SetActive(false);
             blocks.SetActive(false);
             Time.timeScale = 0;
             director.Play();
-            //Destroy(this.gameObject);
         }
     }
 
@@ -30,11 +36,15 @@ public class TutorialBossTrigger : MonoBehaviour
     {
         if (director != null)
         {
-            Debug.Log("Ending Cut Scene");
             gameUI.SetActive(true);
             blocks.SetActive(true);
             Time.timeScale = 1;
             director.Stop();
+            if(dialogue != null)
+            {
+                dialogue.SetActive(true);
+                dialogueManager.StartDialogue(dialogueManager.dialogue[10]);
+            }
             Destroy(this.gameObject);
         }
     }

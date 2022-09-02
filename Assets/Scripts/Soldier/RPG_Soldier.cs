@@ -154,6 +154,7 @@ public class RPG_Soldier : MonoBehaviour
                 blood.SetActive(true);//Spawn Blood Animation
                 Destroy(blood, 1f);//Delay Before Destroying Blood
             }
+            this.GetComponent<Collider2D>().enabled = false;
             Destroy(gameObject, destroy / 2.5f);
         }
     }
@@ -172,8 +173,10 @@ public class RPG_Soldier : MonoBehaviour
             dead = true;
             healthBar.SetActive(false);
             m_Ani.Play("Soldier_RPG_die2");
+            this.GetComponent<Collider2D>().enabled = false;
 
             slider.value = 0.0f;
+            Destroy(gameObject, destroy / 2.5f);
         }
 
         else if (collision.transform.tag == "MachineGunBullet")
@@ -188,6 +191,7 @@ public class RPG_Soldier : MonoBehaviour
             dead = true;
             healthBar.SetActive(false);
             m_Ani.Play("Soldier_RPG_diehard");
+            this.GetComponent<Collider2D>().enabled = false;
             GetComponent<BodyPartsSpawner>().SpawnBodyParts(collision.GetComponent<Bullet>().direction, collision.transform.position);
             Destroy(gameObject, destroy / 2.5f);
         }

@@ -145,6 +145,7 @@ public class MachineGun_Soldier : MonoBehaviour
                 blood.SetActive(true);//Spawn Blood Animation
                 Destroy(blood, 1f);//Delay Before Destroying Blood
             }
+            this.GetComponent<Collider2D>().enabled = false;
             Destroy(gameObject, destroy / 2.5f);
         }
     }
@@ -159,7 +160,8 @@ public class MachineGun_Soldier : MonoBehaviour
             dead = true;
             healthBar.SetActive(false);
             m_Ani.Play("Soldier_Machine_die2");
-
+            this.GetComponent<Collider2D>().enabled = false;
+            Destroy(gameObject, destroy / 2.5f);
             slider.value = 0.0f;
         }
         else if (collision.transform.tag == "MachineGunBullet")
@@ -173,6 +175,7 @@ public class MachineGun_Soldier : MonoBehaviour
             dead = true;
             healthBar.SetActive(false);
             m_Ani.Play("Soldier_Machine_diehard");
+            this.GetComponent<Collider2D>().enabled = false;
             GetComponent<BodyPartsSpawner>().SpawnBodyParts(collision.GetComponent<Bullet>().direction, collision.transform.position);
             Destroy(gameObject, destroy / 2.5f);
         }
