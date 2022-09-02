@@ -55,23 +55,17 @@ public class AudioManager : MonoBehaviour
 
     public void ChangeBackgroundMusic()
     {
-        // if (SceneManager.GetActiveScene().buildIndex == 0)
-        // {
-        //     backgroundMusic.clip = mainBgMusic;
-        //     backgroundMusic.Play();
-        // }
-        // else if (SceneManager.GetActiveScene().buildIndex == 1)
-        // {
-        //     backgroundMusic.clip = mission1BgMusic;
-        //     backgroundMusic.Play();
-        // }
-
         StartCoroutine(WaitBackgroundMusic());
     }
 
     public void LoadLevel2Music()
     {
         StartCoroutine(DelayLevel2Music());
+    }
+
+    public void LoadMainMenuBgMusic()
+    {
+        StartCoroutine(DelayMainMenuBgMusic());
     }
 
     IEnumerator WaitBackgroundMusic()
@@ -85,6 +79,13 @@ public class AudioManager : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         backgroundMusic.clip = mission2BgMusic;
+        backgroundMusic.Play();
+    }
+
+    IEnumerator DelayMainMenuBgMusic()
+    {
+        yield return new WaitForSeconds(2);
+        backgroundMusic.clip = mainBgMusic;
         backgroundMusic.Play();
     }
 }
