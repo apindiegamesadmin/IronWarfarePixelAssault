@@ -59,5 +59,8 @@ public class PlayerTankController : MonoBehaviour
         damagable.Health = damagable.MaxHealth;
         transform.GetChild(0).gameObject.SetActive(true);   // Enable player and
         animator.SetTrigger("Flick");        // play flicker animation
+        transform.GetComponentInChildren<Damagable>().enabled = false;
+        yield return new WaitForSeconds(6);
+        transform.GetComponentInChildren<Damagable>().enabled = true;
     }
 }
