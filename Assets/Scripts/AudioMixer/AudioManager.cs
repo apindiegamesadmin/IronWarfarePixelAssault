@@ -2,12 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
 
     [SerializeField] AudioMixer _mixer;
+
+    [SerializeField] AudioSource backgroundMusic;
+    [SerializeField] AudioClip mainBgMusic;
+    [SerializeField] AudioClip mission1BgMusic;
+
 
     public const string MASTER_VOLUME_KEY = "MasterVolumeKey";
     public const string MUSIC_VOLUME_KEY = "MusicVolumeKey";
@@ -26,6 +32,9 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
         }
 
+        backgroundMusic.clip = mainBgMusic;
+        backgroundMusic.Play();
+
         LoadVolume();
     }
 
@@ -38,5 +47,28 @@ public class AudioManager : MonoBehaviour
         _mixer.SetFloat(VolumeSettings.MASTER_VOLUME, Mathf.Log10(masterVolumueFloat) * 20);
         _mixer.SetFloat(VolumeSettings.MUSIC_VOLUME, Mathf.Log10(musicVolumueFloat) * 20);
         _mixer.SetFloat(VolumeSettings.SFX_VOLUME, Mathf.Log10(sfxVolumueFloat) * 20);
+    }
+
+    public void ChangeBackgroundMusic()
+    {
+        // if (SceneManager.GetActiveScene().buildIndex == 0)
+        // {
+        //     backgroundMusic.clip = mainBgMusic;
+        //     backgroundMusic.Play();
+        // }
+        // else if (SceneManager.GetActiveScene().buildIndex == 1)
+        // {
+        //     backgroundMusic.clip = mission1BgMusic;
+        //     backgroundMusic.Play();
+        // }
+
+        StartCoroutine(WaitBackgroundMusic());
+    }
+
+    IEnumerator WaitBackgroundMusic()
+    {
+        yield return new WaitForSeconds(2);
+        backgroundMusic.clip = mission1BgMusic;
+        backgroundMusic.Play();
     }
 }
