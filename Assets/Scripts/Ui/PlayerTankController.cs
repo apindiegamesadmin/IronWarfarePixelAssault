@@ -10,7 +10,7 @@ public class PlayerTankController : MonoBehaviour
     [SerializeField] UnityEvent OnDead;
     Damagable damagable;
     Transform heartHolder;
-    int lifeCount = 3;
+    int lifeCount = 2;
 
     Image[] hearts;
     Animator animator;
@@ -29,25 +29,28 @@ public class PlayerTankController : MonoBehaviour
 
     public void CheckPlayerLife()
     {
-        if(lifeCount >= 0)
+        if(lifeCount >= 1)
         {
             StartCoroutine(DelaySpawn()); // Spawn and play animation after 1 sec
 
+            Debug.Log(lifeCount);
             lifeCount--; // Reduce life
             for (int i = 0; i < 3; i++)
             {
-                if (i <= lifeCount - 1)
+                if (i > lifeCount)
                 {
-                    heartHolder.GetChild(i).gameObject.SetActive(true); // Enable remaining hearts
+                    heartHolder.GetChild(i).gameObject.SetActive(false); // Disable last active heart
                 }
                 else
                 {
-                    heartHolder.GetChild(i).gameObject.SetActive(false); // Disable last active heart
+                    heartHolder.GetChild(i).gameObject.SetActive(true); // Enable remaining hearts
                 }
             }
         }
         else
         {
+            heartHolder.GetChild(0).gameObject.SetActive(false); // Disable last active heart
+
             Time.timeScale = 0;
             OnDead.Invoke();
         }
@@ -55,12 +58,12 @@ public class PlayerTankController : MonoBehaviour
 
     IEnumerator DelaySpawn()
     {
-        yield return new WaitForSeconds(1);
         damagable.Health = damagable.MaxHealth;
+        yield return new WaitForSeconds(1);
         transform.GetChild(0).gameObject.SetActive(true);   // Enable player and
         animator.SetTrigger("Flick");        // play flicker animation
-        transform.GetComponentInChildren<Damagable>().enabled = false;
+        damagable.enabled = false;
         yield return new WaitForSeconds(6);
-        transform.GetComponentInChildren<Damagable>().enabled = true;
+        damagable.enabled = true;
     }
 }

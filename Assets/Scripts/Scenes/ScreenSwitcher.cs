@@ -23,4 +23,13 @@ public class ScreenSwitcher : MonoBehaviour
         }
         StartCoroutine(FakeLoadingScreen(index));
     }
+
+    public void RestartScene()
+    {
+        if (Time.timeScale == 0)
+        {
+            Time.timeScale = 1;
+        }
+        StartCoroutine(FakeLoadingScreen(SceneManager.GetActiveScene().buildIndex));
+    }
 }
