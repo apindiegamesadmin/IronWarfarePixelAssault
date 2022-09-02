@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bc658918ec47e84ca169e9a57f29aba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectPrefab: {fileID: 1479636594395524712, guid: 780ba07d5deebe845b1223ab8793165c, type: 3}
+  objectPrefab: {fileID: 1479636594395524712, guid: 0e66901dbd2062c4992c3dc76a90ce2d, type: 3}
   radius: 0.15
 --- !u!114 &4550683538356761710
 MonoBehaviour:
