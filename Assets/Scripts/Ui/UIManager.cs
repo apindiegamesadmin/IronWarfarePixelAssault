@@ -32,4 +32,9 @@ public class UIManager : MonoBehaviour
     {
         Application.OpenURL(url);//URL for Website
     }
+
+    public void ExitFromGame()
+    {
+        Application.Quit();
+    }
 }
