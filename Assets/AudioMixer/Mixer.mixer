@@ -34,7 +34,7 @@ AudioMixerController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Main
+  m_Name: Mixer
   m_OutputGroup: {fileID: 0}
   m_MasterGroup: {fileID: 24300002}
   m_Snapshots:
@@ -46,6 +46,10 @@ AudioMixerController:
   m_ExposedParameters:
   - guid: 281d16f585076054b8f9ddde017cedc2
     name: MasterVolume
+  - guid: 00918761ed355e94a9d8acefbd14b226
+    name: MusicVolume
+  - guid: dcd41234af8a2864d9373a06869e75e1
+    name: SFXVolume
   m_AudioMixerGroupViews:
   - guids:
     - fa47b76a5bde3954fb7cf3d82932b909
@@ -135,6 +139,6 @@ AudioMixerGroupController:
   m_Effects:
   - {fileID: -5786940200566698301}
   m_UserColorIndex: 0
-  m_Mute: 0
+  m_Mute: 1
   m_Solo: 0
   m_BypassEffects: 0

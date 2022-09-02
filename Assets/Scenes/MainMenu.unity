@@ -24219,6 +24219,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 799862395}
+        m_TargetAssemblyTypeName: VolumeSettings, Assembly-CSharp
+        m_MethodName: SaveVolumeSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &553638321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36825,6 +36837,7 @@ GameObject:
   - component: {fileID: 799862393}
   - component: {fileID: 799862392}
   - component: {fileID: 799862394}
+  - component: {fileID: 799862395}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -36844,9 +36857,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 2072968196}
-  - {fileID: 1126103517}
   - {fileID: 1118392408}
+  - {fileID: 1126103517}
+  - {fileID: 2072968196}
   - {fileID: 569943231}
   m_Father: {fileID: 212278733}
   m_RootOrder: 0
@@ -36909,6 +36922,22 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.29803923}
   m_EffectDistance: {x: 1, y: -20}
   m_UseGraphicAlpha: 1
+--- !u!114 &799862395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799862390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 840ca03606900d7459db705e4647e03b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioMixer: {fileID: 24100000, guid: 4426e9bfb0d1a134189f9ddb2c959b08, type: 2}
+  _masterSlider: {fileID: 1793302556}
+  _musicSlider: {fileID: 1752082331}
+  _sfxSlider: {fileID: 848568201}
 --- !u!1 &804588876
 GameObject:
   m_ObjectHideFlags: 0
@@ -37447,7 +37476,7 @@ MonoBehaviour:
   m_FillRect: {fileID: 1889497494}
   m_HandleRect: {fileID: 1500511831}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
   m_Value: 1
@@ -49459,7 +49488,7 @@ RectTransform:
   - {fileID: 1544561688}
   - {fileID: 1793302554}
   m_Father: {fileID: 799862391}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -59076,6 +59105,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1496893840}
   - component: {fileID: 1496893839}
+  - component: {fileID: 1496893841}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -59194,6 +59224,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1496893841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1496893838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bebfcb125d33864ab730e7a16a7668b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mixer: {fileID: 24100000, guid: 4426e9bfb0d1a134189f9ddb2c959b08, type: 2}
 --- !u!1 &1500511830
 GameObject:
   m_ObjectHideFlags: 0
@@ -70953,10 +70996,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a9002e6851a3a544ab39273f810ab20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _slider: {fileID: 1752082331}
-  _audioMixer: {fileID: 24100000, guid: 4426e9bfb0d1a134189f9ddb2c959b08, type: 2}
-  _volumeParameter: MasterVolume
-  _multiplier: 30
 --- !u!1 &1790080386
 GameObject:
   m_ObjectHideFlags: 0
@@ -71184,10 +71223,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a9002e6851a3a544ab39273f810ab20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _slider: {fileID: 1793302556}
-  _audioMixer: {fileID: 24100000, guid: 4426e9bfb0d1a134189f9ddb2c959b08, type: 2}
-  _volumeParameter: MasterVolume
-  _multiplier: 30
 --- !u!114 &1793302556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78216,7 +78251,7 @@ RectTransform:
   - {fileID: 1589821956}
   - {fileID: 848568200}
   m_Father: {fileID: 799862391}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
