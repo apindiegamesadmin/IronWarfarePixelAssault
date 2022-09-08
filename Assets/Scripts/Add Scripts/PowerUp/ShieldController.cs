@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ShieldController : MonoBehaviour
 {
+    PowerupSound _powerupSound;
     [SerializeField] int duration;
     [SerializeField] int shieldPoint;
     [SerializeField] GameObject shieldPrefab;
@@ -19,6 +20,7 @@ public class ShieldController : MonoBehaviour
     void Awake()
     {
         iconManager = FindObjectOfType<PowerUpIconManager>();
+        _powerupSound = GameObject.Find("PowerupSound").GetComponent<PowerupSound>();
         playerDamagable = GetComponent<Damagable>();
     }
 
@@ -59,6 +61,7 @@ public class ShieldController : MonoBehaviour
     {
         if (collision.transform.tag == "Shield")
         {
+            _powerupSound.PlayShieldPowerupClip();
             if (!shield)
             {
                 ShieldPlayer();

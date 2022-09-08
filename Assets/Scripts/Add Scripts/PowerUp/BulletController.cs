@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
+    PowerupSound _powerupSound;
     Turret turret;
     ObjectPool objectPool;
     public TurretData turretData;
@@ -22,6 +23,7 @@ public class BulletController : MonoBehaviour
     void Awake()
     {
         iconManager = FindObjectOfType<PowerUpIconManager>();
+        _powerupSound = GameObject.Find("PowerupSound").GetComponent<PowerupSound>();
 
         if (turret == null)
             turret = GetComponentInChildren<Turret>();
@@ -75,6 +77,7 @@ public class BulletController : MonoBehaviour
 
         if (collision.transform.tag == "DamageUp")
         {
+            _powerupSound.PlayBulletPowerupClip();
             Destroy(collision.transform.gameObject);
             damageUp = true;
             iconManager.ShowIcon(0);
@@ -96,6 +99,7 @@ public class BulletController : MonoBehaviour
 
         if (collision.transform.tag == "HomingMissile")
         {
+            _powerupSound.PlayHomingMissileClip();
             Destroy(collision.transform.gameObject);
             isHomingMissileActive = true;
             turret.turretData = turretDatas[2];

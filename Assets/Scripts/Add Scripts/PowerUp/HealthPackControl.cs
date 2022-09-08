@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class HealthPackControl : MonoBehaviour
 {
+    PowerupSound _powerupSound;
     [SerializeField] int hpPoint;
     Damagable playerDamagable;
     public bool tutorial;
+
+    void Awake()
+    {
+        _powerupSound = GameObject.Find("PowerupSound").GetComponent<PowerupSound>();
+    }
+
     void Start()
     {
         playerDamagable = GetComponent<Damagable>();
     }
 
-    
+
     void HealPlayer()
     {
         playerDamagable.Heal(hpPoint);
@@ -28,6 +35,7 @@ public class HealthPackControl : MonoBehaviour
 
         if (collision.transform.tag == "HealthPack")
         {
+            _powerupSound.PlayHealthClip();
             HealPlayer();
             Destroy(collision.transform.gameObject);
         }
