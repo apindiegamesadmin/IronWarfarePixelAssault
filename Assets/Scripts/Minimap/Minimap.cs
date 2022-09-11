@@ -6,13 +6,18 @@ public class Minimap : MonoBehaviour
 {
     Transform point;
     Transform _player;
-    Transform _target;
-    float minimapSize = 5f;
+    public Transform _target;
+    float _minimapSize = 5f;
+    public GameObject redDot;
+    public GameObject yellowDot;
+    bool isFirstTime = true;
+    bool isAgain = true;
 
     void Awake()
     {
-        _target = GameObject.FindGameObjectWithTag("Enemy").transform;
+        // _target = GameObject.FindGameObjectWithTag("Enemy").transform;
         _player = GameObject.FindGameObjectWithTag("Player").transform;
+        redDot.SetActive(false);
     }
 
     public void LateUpdate()
@@ -21,24 +26,51 @@ public class Minimap : MonoBehaviour
         newPosition.z = transform.position.z;
         transform.position = newPosition;
 
-        // Center of Minimap
-        Vector2 _centerPosition = transform.localPosition;
+        float distanceBetweenPlayerAndTarget = Vector2.Distance(_player.position, _target.position);
 
-        // Distance from the gameobject to minimap
-        float distance = Vector2.Distance(_target.position, _centerPosition);
-
-        // If the Distance is less than MinimapSize, it is within the Minimap view and we don't need to do anything
-        // But if the Distance is greater than the MinimapSize, then do this
-        if (distance > minimapSize)
+        if (_target != null)
         {
-            // Target - Minimap
-            Vector2 fromOriginToObject = (Vector2)_target.position - _centerPosition;
-
-            // Multiply by MinimapSize and Divide by Distance
-            fromOriginToObject *= minimapSize / distance;
-
-            // Minimap + above calculation
-            transform.position = _centerPosition + fromOriginToObject;
+            if (distanceBetweenPlayerAndTarget > _minimapSize)
+            {
+                Debug.Log("The target is off the screen.");
+                if (isFirstTime)
+                {
+                    isFirstTime = false;
+                    // To spawn a red dot in minimap
+                    Vector2 centerPosition = transform.localPosition;
+                    Vector2 spawnPosition = new Vector2(centerPosition.x + 5, transform.position.y);
+                    Instantiate(yellowDot, spawnPosition, Quaternion.identity);
+                }
+                else { redDot.SetActive(true); }
+            }
+            else
+            {
+                Debug.Log("The target is near to player");
+                redDot.SetActive(false);
+            }
         }
+        else
+        {
+            Debug.Log("The target is dead.");
+            redDot.SetActive(false);
+        }
+
+        // Calculate the angle between player and enemy
+        // Vector2 direction = _target.position - _player.position;
+
+        // float angle = Vector2.Angle(Vector2.right, direction);
+
+        // Debug.Log("The angle between x and the enemy is " + angle);
+
+        // // To spawn a red dot in minimap
+        // Vector2 centerPosition = transform.localPosition;
+        // Vector2 spawnPosition = new Vector2(centerPosition.x + 5, transform.position.y);
+        // Instantiate(yellowDot, spawnPosition, Quaternion.identity);
+
+        float xPosition = _target.position.x - _player.position.x;
+        float yPosition = _target.position.y - _player.position.y;
+
+        float angle = Mathf.Atan2(yPosition, xPosition) * Mathf.Rad2Deg;
+        Debug.Log("The angle between x and the enemy is " + angle);
     }
 }
