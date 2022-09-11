@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -5510698591690764818}
   - component: {fileID: 6717904353802773307}
   - component: {fileID: 3730527432797930472}
+  - component: {fileID: -8707726323630623162}
   m_Layer: 11
   m_Name: 'Bag '
   m_TagString: Untagged
@@ -227,3 +228,33 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!60 &-8707726323630623162
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8053709391600892966}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.24, y: 0.09}
+    newSize: {x: 0.24, y: 0.09}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.099999994, y: 0.044999998}
+      - {x: -0.12, y: 0.015}
+      - {x: -0.12, y: -0.044999998}
+      - {x: 0.12, y: -0.044999998}
+      - {x: 0.12, y: 0.044999998}
