@@ -147,6 +147,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f956a77426667774d8eb991ad51ceca8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  crateSprites:
+  - {fileID: 21300000, guid: 15eee155516e5904e897c405ccff7b65, type: 3}
+  - {fileID: 21300000, guid: 4f5fa9e55d9fe5b40867dd56954f2299, type: 3}
+  - {fileID: 21300000, guid: 098ec7e31f15ba643aacf0ccee70dfd5, type: 3}
+  randomXValue: 1
+  randomForceValue: 10000
 --- !u!114 &1721687568348145776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,6 +166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   randomXValue: 0.2
+  randomForceValue: 100
   bodyPartsPrefabs:
   - {fileID: 3365380814768511662, guid: 95ffa6104c6422048ad102086e0b9e35, type: 3}
   - {fileID: 8601120944016162046, guid: d787f543d9308454c8523639f3fc947b, type: 3}
