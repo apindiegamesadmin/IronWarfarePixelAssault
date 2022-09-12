@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3945466911512706438}
   - component: {fileID: 9138550134635105179}
   - component: {fileID: 5468828483065590584}
+  - component: {fileID: -2985640436701612406}
   m_Layer: 0
   m_Name: Snow3
   m_TagString: Untagged
@@ -106,3 +107,34 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!60 &-2985640436701612406
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8453757553523661277}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.16071428, y: 0.17857143}
+    newSize: {x: 0.16071428, y: 0.17857143}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.08035715, y: 0.08928572}
+      - {x: -0.08035715, y: -0.071428575}
+      - {x: -0.0625, y: -0.08928572}
+      - {x: 0.0625, y: -0.08928572}
+      - {x: 0.08035715, y: -0.071428575}
+      - {x: 0.08035715, y: 0.08928572}
