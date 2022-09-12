@@ -38,7 +38,7 @@ TagManager:
   - Player
   - Enemy
   - Items
-  - 
+  - Minimap
   - 
   - 
   - 
@@ -89,4 +89,7 @@ TagManager:
     locked: 0
   - name: UI
     uniqueID: 1585582841
+    locked: 0
+  - name: Minimap
+    uniqueID: 3878097797
     locked: 0
