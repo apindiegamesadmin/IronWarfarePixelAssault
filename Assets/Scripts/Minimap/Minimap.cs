@@ -9,7 +9,6 @@ public class Minimap : MonoBehaviour
     float _minimapSize = 5f;
     public GameObject redDot;
     public GameObject yellowDot;
-    bool isFirstTime = true;
 
     void Awake()
     {
