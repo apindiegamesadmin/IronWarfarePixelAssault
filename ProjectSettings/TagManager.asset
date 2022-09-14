@@ -23,6 +23,7 @@ TagManager:
   - HealthBar
   - ScoreText
   - HomingMissle
+  - HomingMissile
   layers:
   - Default
   - TransparentFX
@@ -60,6 +61,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Water
+    uniqueID: 2374708601
+    locked: 0
   - name: Ground
     uniqueID: 1617767819
     locked: 0
@@ -69,11 +73,11 @@ TagManager:
   - name: Obstacles
     uniqueID: 1743009269
     locked: 0
-  - name: Enemy
-    uniqueID: 772340489
-    locked: 0
   - name: Player
     uniqueID: 2251879423
+    locked: 0
+  - name: Enemy
+    uniqueID: 772340489
     locked: 0
   - name: Item
     uniqueID: 3250547105

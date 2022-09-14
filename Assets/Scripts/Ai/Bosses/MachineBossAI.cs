@@ -15,7 +15,7 @@ public class MachineBossAI : MonoBehaviour
 
     private void Awake()
     {
-        mainCannonDetector = GetComponentInChildren<AIDetector>();
+        //mainCannonDetector = GetComponentInChildren<AIDetector>();
         tank = GetComponentInChildren<TankController>();
     }
 
