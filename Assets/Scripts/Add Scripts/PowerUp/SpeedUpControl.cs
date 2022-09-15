@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class SpeedUpControl : MonoBehaviour
 {
 
-   
-    public TankMover tankmovement;  
+    PowerupSound _powerupSound;
+    public TankMover tankmovement;
     public TankMovementData movementData;
     public TankMovementData[] tankMovementDatas;
     public float duration = 10f;
@@ -17,10 +17,11 @@ public class SpeedUpControl : MonoBehaviour
 
     PowerUpIconManager iconManager;
 
-   
+
     void Awake()
     {
         iconManager = FindObjectOfType<PowerUpIconManager>();
+        _powerupSound = GameObject.Find("PowerupSound").GetComponent<PowerupSound>();
 
         if (tankmovement == null)
             tankmovement = GetComponentInChildren<TankMover>();
@@ -29,7 +30,7 @@ public class SpeedUpControl : MonoBehaviour
         if (tankMovementDatas == null || tankMovementDatas.Length == 0)
             tankMovementDatas = GetComponents<TankMovementData>();
     }
-  
+
 
     void Update()
     {
@@ -43,7 +44,7 @@ public class SpeedUpControl : MonoBehaviour
                 tankmovement.movementData = tankMovementDatas[0];
                 timer = 0;
             }
-        }  
+        }
     }
 
 
@@ -54,10 +55,11 @@ public class SpeedUpControl : MonoBehaviour
 
 
 
-     void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.transform.tag == "SpeedUp")
+        if (collision.transform.tag == "SpeedUp")
         {
+            _powerupSound.PlaySpeedUpClip();
             Destroy(collision.transform.gameObject);
 
             speedUp = true;
