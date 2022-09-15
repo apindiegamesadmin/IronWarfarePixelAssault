@@ -5,6 +5,7 @@ using UnityEngine;
 public class StayInside : MonoBehaviour
 {
     Transform tank;
+    GameObject[] enemies;
     public Transform MinimapCam;
     public float MinimapSize;
     Vector3 TempV3;
@@ -14,6 +15,7 @@ public class StayInside : MonoBehaviour
 
     private void Awake()
     {
+        enemies = GameObject.FindGameObjectsWithTag("Enemy");
         tank = transform.parent.transform;
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
