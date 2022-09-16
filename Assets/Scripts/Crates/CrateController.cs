@@ -21,9 +21,13 @@ public class CrateController : MonoBehaviour
 
     private void Start()
     {
-        int index = Random.Range(0, crateSprites.Length);
-        spriteRenderer.sprite = crateSprites[index];
-        int randomIndex = Random.Range(0, 4);
+        if(crateSprites.Length > 0)
+        {
+            int index = Random.Range(0, crateSprites.Length);// Randomize sprite
+            spriteRenderer.sprite = crateSprites[index];
+        }
+
+        int randomIndex = Random.Range(0, 4);// Randomize rotation
         switch (randomIndex)
         {
             case 0:

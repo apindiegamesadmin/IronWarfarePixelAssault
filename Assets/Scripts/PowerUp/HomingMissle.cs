@@ -28,11 +28,16 @@ public class HomingMissle : MonoBehaviour
     {
         if (_aiDetector.TargetVisible)
         {
+            //transform.position = Vector2.MoveTowards(transform.position, _aiDetector.Target.position, 10 * Time.deltaTime);
             Vector2 direction = (Vector2)_aiDetector.Target.transform.position - rb2d.position;
             direction.Normalize();
             float rotateAmount = Vector3.Cross(direction, transform.up).z;
             rb2d.angularVelocity = -rotateAmount * _rotateSpeed;
             rb2d.velocity = transform.up * bulletData.speed;
+        }
+        else
+        {
+            rb2d.velocity = transform.up * this.bulletData.speed;
         }
 
         conquaredDistance = Vector2.Distance(transform.position, startPosition);
@@ -42,34 +47,19 @@ public class HomingMissle : MonoBehaviour
         }
     }
 
-    public void TriggerHomingMissle()
-    {
-
-        if (_aiDetector.TargetVisible)
-        {
-            Vector2 direction = (Vector2)_aiDetector.Target.transform.position - rb2d.position;
-            direction.Normalize();
-            float rotateAmount = Vector3.Cross(direction, transform.up).z;
-            rb2d.angularVelocity = -rotateAmount * _rotateSpeed;
-            rb2d.velocity = transform.up * bulletData.speed;
-        }
-        /*else
-        {
-            rb2d.velocity = transform.up * this.bulletData.speed;
-        }*/
-    }
-
     public void Initialize(BulletData bulletData)
     {
         this.bulletData = bulletData;
         startPosition = transform.position;
         rb2d.velocity = transform.up * this.bulletData.speed;
+        _aiDetector.Detection();
     }
 
     private void DisableObject()
     {
         rb2d.velocity = Vector2.zero;
         gameObject.SetActive(false);
+        //_aiDetector.Target = null;
         //Destroy(gameObject);
     }
 
