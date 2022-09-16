@@ -40,6 +40,11 @@ public class AIDetector : MonoBehaviour
         StartCoroutine(DetectionCoroutine());
     }
 
+    public void Detection()
+    {
+        StartCoroutine(DetectionCoroutine());
+    }
+
     private void Update()
     {
         if (Target != null)
