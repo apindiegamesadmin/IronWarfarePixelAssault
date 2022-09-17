@@ -6,7 +6,6 @@ public class StayInside : MonoBehaviour
 {
     #region Variable
     Transform tank;
-    PointController pointController;
     public Transform MinimapCam;
     public float MinimapSize;
     Vector3 TempV3;
@@ -16,8 +15,7 @@ public class StayInside : MonoBehaviour
 
     private void Awake()
     {
-        pointController = GetComponent<PointController>();
-        tank = pointController.enemy.transform.parent.transform;
+        tank = transform.parent.transform;
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
