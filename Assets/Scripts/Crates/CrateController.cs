@@ -52,6 +52,11 @@ public class CrateController : MonoBehaviour
             partsSpawner.SpawnBodyParts(collision.GetComponent<Bullet>().direction, collision.transform.position);
             Destroy(this.gameObject);
         }
+        else if(collision.tag == "HomingMissile")
+        {
+            partsSpawner.SpawnBodyParts(collision.GetComponent<HomingMissle>().direction, collision.transform.position);
+            Destroy(this.gameObject);
+        }
         else if(collision.tag == "MachineGunBullet")
         {
             AddForce(collision.GetComponent<Bullet>().direction, collision.transform.position);

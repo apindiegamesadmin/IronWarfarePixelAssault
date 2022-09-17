@@ -71,6 +71,7 @@ public class Turret : MonoBehaviour
                 else if (bullet.GetComponent<HomingMissle>() != null)
                 {
                     bullet.GetComponent<HomingMissle>().Initialize(turretData.bulletData);
+                    bullet.GetComponent<HomingMissle>().direction = barrel.up;
                 }
 
                 foreach (var collider in tankColliders)

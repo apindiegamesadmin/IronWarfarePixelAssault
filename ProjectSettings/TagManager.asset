@@ -22,8 +22,8 @@ TagManager:
   - MissionFail
   - HealthBar
   - ScoreText
-  - HomingMissle
   - HomingMissile
+  - MiniMap
   layers:
   - Default
   - TransparentFX
@@ -73,11 +73,11 @@ TagManager:
   - name: Obstacles
     uniqueID: 1743009269
     locked: 0
-  - name: Player
-    uniqueID: 2251879423
-    locked: 0
   - name: Enemy
     uniqueID: 772340489
+    locked: 0
+  - name: Player
+    uniqueID: 2251879423
     locked: 0
   - name: Item
     uniqueID: 3250547105
