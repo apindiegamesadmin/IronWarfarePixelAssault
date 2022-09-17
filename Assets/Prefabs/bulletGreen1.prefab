@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 6765290963820123761}
   m_Layer: 7
   m_Name: bulletGreen1
-  m_TagString: HomingMissle
+  m_TagString: HomingMissile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
