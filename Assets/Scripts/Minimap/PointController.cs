@@ -5,23 +5,27 @@ using UnityEngine;
 
 public class PointController : MonoBehaviour
 {
-    Damagable damagable;
-    Transform player;
-    public GameObject[] enemies;
-    public float[] distanceBetweenPlayerAndEnemies;
-    bool targetChanged = true;
+    [SerializeField] GameObject staticEnemies;
+    [SerializeField] GameObject patrolEnemies;
+    [SerializeField] GameObject redotPrefab;
+    public List<GameObject> enemies;
+
     public GameObject enemy;
+    Transform player;
     float nearestEnemyDistance;
-    public int enemyCounter = 0;
 
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
-
-        enemies = GameObject.FindGameObjectsWithTag("Enemy");
-
-        distanceBetweenPlayerAndEnemies = new float[enemies.Length];
+        foreach (Transform enemy in staticEnemies.transform)
+        {
+            enemies.Add(enemy.GetChild(0).gameObject);
+        }
+        foreach (Transform enemy in patrolEnemies.transform)
+        {
+            enemies.Add(enemy.GetChild(0).gameObject);
+        }
     }
 
     private void Start()
@@ -29,41 +33,29 @@ public class PointController : MonoBehaviour
         FindNearestEnemy();
     }
 
-    void Update()
+    public void ChangeTarget(GameObject currentEnemy)
     {
-        // Before enemy dead, change another target
-        if (damagable.Health <= (damagable.Health) / 2)
-        {
-            ChangeTarget();
-        }
+        enemies.Remove(currentEnemy);
+        FindNearestEnemy();
     }
 
     // To find the nearest enemy from player
     public void FindNearestEnemy()
     {
-        for (int i = 0; i <= enemies.Length; i++)
-        {
-            distanceBetweenPlayerAndEnemies[i] = Vector2.Distance(player.position, enemies[i].transform.position);
-            nearestEnemyDistance = float.MaxValue;
+        nearestEnemyDistance = float.MaxValue;
 
-            if (distanceBetweenPlayerAndEnemies[i] < nearestEnemyDistance)
+        for (int i = 0; i < enemies.Count; i++)
+        {
+            float distance = Vector2.Distance(player.position, enemies[i].transform.position);
+
+            if (nearestEnemyDistance > distance)
             {
-                nearestEnemyDistance = distanceBetweenPlayerAndEnemies[i];
-                enemy = enemies[i];
+                nearestEnemyDistance = distance;
+                enemy = enemies[i].gameObject;
             }
         }
-        damagable = enemy.GetComponent<Damagable>();
-        gameObject.transform.parent = enemy.transform;
-    }
 
-    // Afteh the target enemy is dead, change the target to another enemy
-    public void ChangeTarget()
-    {
-        if (targetChanged)
-        {
-            enemy = enemies[++enemyCounter];
-            targetChanged = false;
-            FindNearestEnemy();
-        }
+        GameObject redDot = Instantiate(redotPrefab, transform.position, Quaternion.identity);
+        redDot.transform.SetParent(enemy.transform);
     }
 }
