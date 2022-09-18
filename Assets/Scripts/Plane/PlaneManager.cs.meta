@@ -3,7 +3,10 @@ guid: 72eb3a66c692eef40bcab3da060b8bd0
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - planePrefab: {instanceID: 0}
+  - audioSource: {instanceID: 0}
+  - planeSound: {fileID: 8300000, guid: 19174088b6d0d0c48bc4f153c0850d82, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
