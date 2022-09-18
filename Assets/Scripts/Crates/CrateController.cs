@@ -11,17 +11,19 @@ public class CrateController : MonoBehaviour
     BodyPartsSpawner partsSpawner;
     SpriteRenderer spriteRenderer;
     Rigidbody2D rb;
+    CrateSound crateSound;
 
     void Awake()
     {
         partsSpawner = GetComponent<BodyPartsSpawner>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
+        crateSound = GameObject.Find("CrateSound").GetComponent<CrateSound>();
     }
 
     private void Start()
     {
-        if(crateSprites.Length > 0)
+        if (crateSprites.Length > 0)
         {
             int index = Random.Range(0, crateSprites.Length);// Randomize sprite
             spriteRenderer.sprite = crateSprites[index];
@@ -47,19 +49,22 @@ public class CrateController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Bullet")
+        if (collision.tag == "Bullet")
         {
             partsSpawner.SpawnBodyParts(collision.GetComponent<Bullet>().direction, collision.transform.position);
+            crateSound.PlayCrateSound();
             Destroy(this.gameObject);
         }
-        else if(collision.tag == "HomingMissile")
+        else if (collision.tag == "HomingMissile")
         {
             partsSpawner.SpawnBodyParts(collision.GetComponent<HomingMissle>().direction, collision.transform.position);
+            crateSound.PlayCrateSound();
             Destroy(this.gameObject);
         }
-        else if(collision.tag == "MachineGunBullet")
+        else if (collision.tag == "MachineGunBullet")
         {
             AddForce(collision.GetComponent<Bullet>().direction, collision.transform.position);
+            crateSound.PlayCrateSound();
             //StartCoroutine(StopSimulate());
         }
         else
