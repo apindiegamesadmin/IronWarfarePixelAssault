@@ -14,4 +14,22 @@ public class Water : MonoBehaviour
             collider.GetComponentInChildren<Damagable>().Health -= damage;
         }
     }
+
+    public void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            Debug.Log("Damage to player");
+            other.GetComponentInChildren<Damagable>().Health -= damage;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.transform.tag == "Player")
+        {
+            Debug.Log("on collision");
+            other.gameObject.GetComponentInChildren<Damagable>().Health -= damage;
+        }
+    }
 }
