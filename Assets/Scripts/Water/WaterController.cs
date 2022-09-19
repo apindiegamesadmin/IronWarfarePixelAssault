@@ -5,20 +5,18 @@ using UnityEngine;
 public class WaterController : MonoBehaviour
 {
     Damagable damagable;
-    [SerializeField] int damage = 10;
+    [SerializeField] int damage = 1;
 
     private void Awake()
     {
-        damagable = transform.GetComponent<Damagable>();
+        damagable = GetComponent<Damagable>();
     }
 
-    private void OnTriggerEnter2D(Collider2D collider2D)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log("on trigger enter");
-        if (collider2D.transform.tag == "Water")
+        if(collision.tag == "Water")
         {
-            Debug.Log("Damage to player");
-            damagable.Health -= damage;
+            damagable.Hit(damage);
         }
     }
 }
