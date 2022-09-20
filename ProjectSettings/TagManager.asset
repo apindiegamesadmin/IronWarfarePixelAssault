@@ -26,6 +26,7 @@ TagManager:
   - MiniMap
   - Water
   - HomingMissilePowerUp
+  - HomingMissle
   layers:
   - Default
   - TransparentFX
@@ -83,6 +84,12 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 2251879423
+    locked: 0
+  - name: Smoke
+    uniqueID: 219850095
+    locked: 0
+  - name: Plane
+    uniqueID: 2693327675
     locked: 0
   - name: Item
     uniqueID: 3250547105

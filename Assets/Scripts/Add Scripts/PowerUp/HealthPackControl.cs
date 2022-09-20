@@ -35,7 +35,7 @@ public class HealthPackControl : MonoBehaviour
 
         if (collision.transform.tag == "HealthPack")
         {
-            _powerupSound.PlayHealthClip();
+            //_powerupSound.PlayHealthClip();
             HealPlayer();
             Destroy(collision.transform.gameObject);
         }
