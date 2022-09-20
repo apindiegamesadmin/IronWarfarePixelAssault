@@ -42,8 +42,8 @@ TagManager:
   - Enemy
   - Items
   - Minimap
-  - 
-  - 
+  - Bridge
+  - Plane
   - 
   - 
   - 
@@ -63,20 +63,23 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Water
-    uniqueID: 2374708601
-    locked: 0
   - name: Ground
     uniqueID: 1617767819
     locked: 0
   - name: Detail_Bottom
     uniqueID: 99907677
     locked: 0
+  - name: Water
+    uniqueID: 2374708601
+    locked: 0
   - name: Obstacles
     uniqueID: 1743009269
     locked: 0
   - name: Enemy
     uniqueID: 772340489
+    locked: 0
+  - name: Bridge
+    uniqueID: 2398859583
     locked: 0
   - name: Player
     uniqueID: 2251879423

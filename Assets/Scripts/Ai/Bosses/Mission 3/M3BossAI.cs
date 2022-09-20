@@ -5,28 +5,51 @@ using UnityEngine;
 public class M3BossAI : MonoBehaviour
 {
     [SerializeField]
-    private AIBehaviour machineShootBehaviour, patrolBehaviour;
+    private AIBehaviour shootBehaviour, machineShootBehaviour, patrolBehaviour;
 
     [SerializeField]
     private TankController tank;
     [SerializeField]
+    public AIDetector mainCannonDetector;
     public AIDetector machineGunDetector;
-    public bool flying;
+    PatrolPath patrolPath;
+    List<Transform> path;
 
     private void Awake()
     {
+        mainCannonDetector = GetComponentInChildren<AIDetector>();
         tank = GetComponentInChildren<TankController>();
+        patrolPath = GetComponentInChildren<PatrolPath>();
+        path = patrolPath.patrolPoints;
     }
 
     private void Update()
     {
-        if (machineGunDetector.TargetVisible && !flying) // Check if machine gun detector's target is visible
+        if (mainCannonDetector.TargetVisible)// Check if main cannon detector's target is visible
         {
-            machineShootBehaviour.PerformAction(tank, machineGunDetector);
+            //shootBehaviour.PerformAction(tank, mainCannonDetector);
+            patrolPath.patrolPoints = new List<Transform>();
+            for (int i = 0; i < 2; i++)
+            {
+                patrolPath.patrolPoints.Add(mainCannonDetector.Target.transform);
+            }
+            patrolBehaviour.PerformAction(tank, mainCannonDetector);
+
+            if (machineGunDetector.TargetVisible) // Check if machine gun detector's target is visible
+            {
+                machineShootBehaviour.PerformAction(tank, machineGunDetector);
+            }
+            else
+            {
+                machineShootBehaviour.StopAction(tank, machineGunDetector);
+            }
         }
         else
         {
+            patrolPath.patrolPoints = path;
+            patrolBehaviour.PerformAction(tank, mainCannonDetector);
             machineShootBehaviour.StopAction(tank, machineGunDetector);
         }
     }
 }
+
