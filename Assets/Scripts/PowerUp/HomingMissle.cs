@@ -28,12 +28,19 @@ public class HomingMissle : MonoBehaviour
     {
         if (_aiDetector.TargetVisible)
         {
-            //transform.position = Vector2.MoveTowards(transform.position, _aiDetector.Target.position, 10 * Time.deltaTime);
-            Vector2 direction = (Vector2)_aiDetector.Target.transform.position - rb2d.position;
+            float AngleRad = Mathf.Atan2(_aiDetector.Target.position.y - transform.position.y, _aiDetector.Target.position.x - transform.position.x);
+            // Get Angle in Degrees
+            float AngleDeg = (180 / Mathf.PI) * AngleRad;
+            // Rotate Object
+            this.transform.rotation = Quaternion.Euler(0, 0, AngleDeg);
+
+            transform.position = Vector2.MoveTowards(transform.position, _aiDetector.Target.position, 10 * Time.deltaTime);
+
+            /*Vector2 direction = (Vector2)_aiDetector.Target.transform.position - rb2d.position;
             direction.Normalize();
             float rotateAmount = Vector3.Cross(direction, transform.up).z;
-            rb2d.angularVelocity = -rotateAmount * _rotateSpeed;
-            rb2d.velocity = transform.up * bulletData.speed;
+            rb2d.angularVelocity = -rotateAmount * _rotateSpeed;*/
+            //rb2d.velocity = transform.up * bulletData.speed;
         }
         else
         {
@@ -59,8 +66,6 @@ public class HomingMissle : MonoBehaviour
     {
         rb2d.velocity = Vector2.zero;
         gameObject.SetActive(false);
-        //_aiDetector.Target = null;
-        //Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

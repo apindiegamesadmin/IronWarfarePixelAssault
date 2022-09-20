@@ -24,8 +24,8 @@ TagManager:
   - ScoreText
   - HomingMissile
   - MiniMap
-  - HomingMissle
   - Water
+  - HomingMissilePowerUp
   layers:
   - Default
   - TransparentFX

@@ -11,7 +11,7 @@ public class HealthPackControl : MonoBehaviour
 
     void Awake()
     {
-        _powerupSound = GameObject.Find("PowerupSound").GetComponent<PowerupSound>();
+        //_powerupSound = GameObject.Find("PowerupSound").GetComponent<PowerupSound>();
     }
 
     void Start()

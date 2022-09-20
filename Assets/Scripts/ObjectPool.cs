@@ -70,6 +70,19 @@ public class ObjectPool : MonoBehaviour
         }
     }
 
+    public void DestroyBullets()
+    {
+        foreach (var item in objectPool)
+        {
+            if (item == null)
+                continue;
+            else if (item.activeSelf == false || alwaysDestroy)
+                Destroy(item);
+            else
+                item.GetComponent<DestroyIfDisabled>().SelfDestructionEnabled = true;
+        }
+    }
+
     private void OnDestroy()
     {
         foreach (var item in objectPool)

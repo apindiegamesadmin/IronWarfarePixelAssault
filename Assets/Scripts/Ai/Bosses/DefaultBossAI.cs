@@ -11,6 +11,8 @@ public class DefaultBossAI : MonoBehaviour
     private TankController tank;
     [SerializeField]
     public AIDetector detector;
+    public bool followPlayer = true;
+    public bool stopOnShoot = true;
     PatrolPath patrolPath;
     List<Transform> path;
 
@@ -27,12 +29,20 @@ public class DefaultBossAI : MonoBehaviour
         if (detector.TargetVisible)// Shoot and move
         {
             shootBehaviour.PerformAction(tank, detector);
-            patrolPath.patrolPoints = new List<Transform>();
-            for (int i = 0; i < 2; i++)
+            if (followPlayer)
             {
-                patrolPath.patrolPoints.Add(detector.Target.transform);
+                patrolPath.patrolPoints = new List<Transform>();
+                for (int i = 0; i < 2; i++)
+                {
+                    patrolPath.patrolPoints.Add(detector.Target.transform);
+                }
+                patrolBehaviour.PerformAction(tank, detector);
             }
-            patrolBehaviour.PerformAction(tank, detector);
+            if (!stopOnShoot)
+            {
+                patrolPath.patrolPoints = path;
+                patrolBehaviour.PerformAction(tank, detector);
+            }
         }
         else
         {

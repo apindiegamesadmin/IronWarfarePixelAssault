@@ -20,7 +20,7 @@ public class Objective : MonoBehaviour
         else
         {
             Debug.Log("found");
-            Debug.Log(pointController.dmg);
+            //Debug.Log(pointController.dmg);
         }
     }
 
