@@ -24,8 +24,9 @@ TagManager:
   - ScoreText
   - HomingMissile
   - MiniMap
-  - HomingMissle
   - Water
+  - HomingMissilePowerUp
+  - HomingMissle
   layers:
   - Default
   - TransparentFX
@@ -42,8 +43,8 @@ TagManager:
   - Enemy
   - Items
   - Minimap
-  - 
-  - 
+  - Bridge
+  - Plane
   - 
   - 
   - 
@@ -63,14 +64,14 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Water
-    uniqueID: 2374708601
-    locked: 0
   - name: Ground
     uniqueID: 1617767819
     locked: 0
   - name: Detail_Bottom
     uniqueID: 99907677
+    locked: 0
+  - name: Water
+    uniqueID: 2374708601
     locked: 0
   - name: Obstacles
     uniqueID: 1743009269
@@ -78,8 +79,17 @@ TagManager:
   - name: Enemy
     uniqueID: 772340489
     locked: 0
+  - name: Bridge
+    uniqueID: 2398859583
+    locked: 0
   - name: Player
     uniqueID: 2251879423
+    locked: 0
+  - name: Smoke
+    uniqueID: 219850095
+    locked: 0
+  - name: Plane
+    uniqueID: 2693327675
     locked: 0
   - name: Item
     uniqueID: 3250547105

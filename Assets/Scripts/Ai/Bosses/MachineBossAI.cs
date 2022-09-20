@@ -12,11 +12,15 @@ public class MachineBossAI : MonoBehaviour
     [SerializeField]
     public AIDetector mainCannonDetector;
     public AIDetector machineGunDetector;
+    PatrolPath patrolPath;
+    List<Transform> path;
 
     private void Awake()
     {
-        //mainCannonDetector = GetComponentInChildren<AIDetector>();
+        mainCannonDetector = GetComponentInChildren<AIDetector>();
         tank = GetComponentInChildren<TankController>();
+        patrolPath = GetComponentInChildren<PatrolPath>();
+        path = patrolPath.patrolPoints;
     }
 
     private void Update()
@@ -24,6 +28,12 @@ public class MachineBossAI : MonoBehaviour
         if (mainCannonDetector.TargetVisible)// Check if main cannon detector's target is visible
         {
             shootBehaviour.PerformAction(tank, mainCannonDetector);
+            patrolPath.patrolPoints = new List<Transform>();
+            for (int i = 0; i < 2; i++)
+            {
+                patrolPath.patrolPoints.Add(mainCannonDetector.Target.transform);
+            }
+            patrolBehaviour.PerformAction(tank, mainCannonDetector);
 
             if (machineGunDetector.TargetVisible) // Check if machine gun detector's target is visible
             {
@@ -36,6 +46,7 @@ public class MachineBossAI : MonoBehaviour
         }
         else
         {
+            patrolPath.patrolPoints = path;
             patrolBehaviour.PerformAction(tank, mainCannonDetector);
             machineShootBehaviour.StopAction(tank, machineGunDetector);
         }

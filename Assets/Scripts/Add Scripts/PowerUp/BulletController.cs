@@ -7,14 +7,12 @@ public class BulletController : MonoBehaviour
     PowerupSound _powerupSound;
     Turret turret;
     ObjectPool objectPool;
-    public TurretData turretData;
     public TurretData[] turretDatas;
     public Transform[] barrels;
     public float duration = 10f;
     float skillTimer;
     public bool damageUp;
     public bool tutorial;
-    float timer;
     bool isHomingMissileActive;
 
     PowerUpIconManager iconManager;
@@ -23,13 +21,10 @@ public class BulletController : MonoBehaviour
     void Awake()
     {
         iconManager = FindObjectOfType<PowerUpIconManager>();
-        _powerupSound = GameObject.Find("PowerupSound").GetComponent<PowerupSound>();
+        //_powerupSound = GameObject.Find("PowerupSound").GetComponent<PowerupSound>();
 
         if (turret == null)
             turret = GetComponentInChildren<Turret>();
-
-        if (turretDatas == null || turretDatas.Length == 0)
-            turretDatas = GetComponentsInChildren<TurretData>();
 
         objectPool = GetComponentInChildren<Turret>().transform.GetComponent<ObjectPool>();
 
@@ -61,13 +56,19 @@ public class BulletController : MonoBehaviour
 
         if (isHomingMissileActive)
         {
-            timer += Time.deltaTime;
+            skillTimer += Time.deltaTime;
 
-            if (timer >= duration)
+            if (skillTimer >= duration)
             {
                 isHomingMissileActive = false;
+                skillTimer = 0;
                 turret.turretData = turretDatas[0];
-                objectPool.Initialize(turretDatas[0].bulletPrefab, 10);
+                foreach (Transform barrel in barrels)
+                {
+                    turret.turretBarrels.Remove(barrel);
+                }
+
+                objectPool.Initialize(turretDatas[0].bulletPrefab, 1);
             }
         }
     }
@@ -77,7 +78,7 @@ public class BulletController : MonoBehaviour
 
         if (collision.transform.tag == "DamageUp")
         {
-            _powerupSound.PlayBulletPowerupClip();
+            //_powerupSound.PlayBulletPowerupClip();
             Destroy(collision.transform.gameObject);
             damageUp = true;
             iconManager.ShowIcon(0);
@@ -96,13 +97,19 @@ public class BulletController : MonoBehaviour
                 FindObjectOfType<TutorialManager>().completeStep = true;
             }
         }
-
-        if (collision.transform.tag == "HomingMissile")
+        else if (collision.transform.tag == "HomingMissilePowerUp")
         {
-            _powerupSound.PlayHomingMissileClip();
+            Debug.Log("Homing Missile Power Up");
+
+            //_powerupSound.PlayHomingMissileClip();
             Destroy(collision.transform.gameObject);
             isHomingMissileActive = true;
+            //iconManager.ShowIcon(0);
             turret.turretData = turretDatas[2];
+            foreach (Transform barrel in barrels)
+            {
+                turret.turretBarrels.Add(barrel);
+            }
             objectPool.Initialize(turret.turretData.bulletPrefab, 10);
         }
     }

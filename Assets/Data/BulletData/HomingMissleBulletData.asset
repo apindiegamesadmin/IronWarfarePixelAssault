@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76a646b08abc8c346aa05416b99365a1, type: 3}
   m_Name: HomingMissleBulletData
   m_EditorClassIdentifier: 
-  speed: 10
-  damage: 20
+  speed: 1
+  damage: 5
   maxDistance: 10
