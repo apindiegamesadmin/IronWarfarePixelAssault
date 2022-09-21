@@ -11,7 +11,7 @@ public class HealthPackControl : MonoBehaviour
 
     void Awake()
     {
-        //_powerupSound = GameObject.Find("PowerupSound").GetComponent<PowerupSound>();
+        _powerupSound = GameObject.Find("PowerupSound").GetComponent<PowerupSound>();
     }
 
     void Start()
@@ -35,7 +35,7 @@ public class HealthPackControl : MonoBehaviour
 
         if (collision.transform.tag == "HealthPack")
         {
-            //_powerupSound.PlayHealthClip();
+            _powerupSound.PlayHealthClip();
             HealPlayer();
             Destroy(collision.transform.gameObject);
         }

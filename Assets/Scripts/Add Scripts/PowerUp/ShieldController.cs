@@ -20,7 +20,7 @@ public class ShieldController : MonoBehaviour
     void Awake()
     {
         iconManager = FindObjectOfType<PowerUpIconManager>();
-        //_powerupSound = GameObject.Find("PowerupSound").GetComponent<PowerupSound>();
+        _powerupSound = GameObject.Find("PowerupSound").GetComponent<PowerupSound>();
         playerDamagable = GetComponent<Damagable>();
     }
 

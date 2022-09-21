@@ -9,6 +9,7 @@ public class PointController : MonoBehaviour
     [SerializeField] GameObject patrolEnemies;
     [SerializeField] GameObject redotPrefab;
     public List<GameObject> enemies;
+    public int tankID;
 
     public GameObject enemy;
     Transform player;
@@ -52,6 +53,18 @@ public class PointController : MonoBehaviour
             {
                 nearestEnemyDistance = distance;
                 enemy = enemies[i].gameObject;
+                if (enemy == staticEnemies)
+                {
+                    tankID = 0;
+                }
+                else if (enemy == patrolEnemies)
+                {
+                    tankID = 1;
+                }
+                else
+                {
+                    tankID = 2;
+                }
             }
         }
 
