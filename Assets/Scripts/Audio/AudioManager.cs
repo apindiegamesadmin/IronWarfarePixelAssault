@@ -20,8 +20,12 @@ public class AudioManager : MonoBehaviour
     public const string MUSIC_VOLUME_KEY = "MusicVolumeKey";
     public const string SFX_VOLUME_KEY = "SFXVolumeKey";
 
+    Player player;
+
     void Awake()
     {
+        player = FindObjectOfType<Player>();
+
         if (instance == null)
         {
             instance = this;
@@ -41,9 +45,9 @@ public class AudioManager : MonoBehaviour
 
     void LoadVolume()
     {
-        float masterVolumueFloat = PlayerPrefs.GetFloat(MASTER_VOLUME_KEY, 1f);
-        float musicVolumueFloat = PlayerPrefs.GetFloat(MUSIC_VOLUME_KEY, 1f);
-        float sfxVolumueFloat = PlayerPrefs.GetFloat(SFX_VOLUME_KEY, 1f);
+        float masterVolumueFloat = player.master;
+        float musicVolumueFloat = player.music;
+        float sfxVolumueFloat = player.sound;
 
         _mixer.SetFloat(VolumeSettings.MASTER_VOLUME, Mathf.Log10(masterVolumueFloat) * 20);
         _mixer.SetFloat(VolumeSettings.MUSIC_VOLUME, Mathf.Log10(musicVolumueFloat) * 20);

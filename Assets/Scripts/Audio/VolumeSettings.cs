@@ -13,15 +13,19 @@ public class VolumeSettings : MonoBehaviour
     public const string MUSIC_VOLUME = "MusicVolume";
     public const string SFX_VOLUME = "SFXVolume";
 
+    Player player;
+
     void Awake()
     {
+        player = FindObjectOfType<Player>();
+
         _masterSlider.onValueChanged.AddListener(SetMasterVolume);
         _musicSlider.onValueChanged.AddListener(SetMusicVolume);
         _sfxSlider.onValueChanged.AddListener(SetSFXVolume);
 
-        _masterSlider.value = PlayerPrefs.GetFloat(AudioManager.MASTER_VOLUME_KEY, 1f);
-        _musicSlider.value = PlayerPrefs.GetFloat(AudioManager.MUSIC_VOLUME_KEY, 1f);
-        _sfxSlider.value = PlayerPrefs.GetFloat(AudioManager.SFX_VOLUME_KEY, 1f);
+        _masterSlider.value = player.master;
+        _musicSlider.value = player.music;
+        _sfxSlider.value = player.sound;
     }
 
     void SetMasterVolume(float value)
@@ -42,18 +46,8 @@ public class VolumeSettings : MonoBehaviour
 
     private void OnDisable()
     {
-        PlayerPrefs.SetFloat(AudioManager.MASTER_VOLUME_KEY, _masterSlider.value);
-        PlayerPrefs.SetFloat(AudioManager.MUSIC_VOLUME_KEY, _musicSlider.value);
-        PlayerPrefs.SetFloat(AudioManager.SFX_VOLUME_KEY, _sfxSlider.value);
+        player.master = _masterSlider.value;
+        player.music = _musicSlider.value;
+        player.sound = _sfxSlider.value;
     }
-
-
-
-    // public void SaveVolumeSettings()
-    // {
-    //     PlayerPrefs.SetFloat(MASTER_VOLUME_KEY, _masterSlider.value);
-    //     PlayerPrefs.SetFloat(MUSIC_VOLUME_KEY, _musicSlider.value);
-    //     PlayerPrefs.SetFloat(SFX_VOLUME_KEY, _sfxSlider.value);
-    // }
-
 }
