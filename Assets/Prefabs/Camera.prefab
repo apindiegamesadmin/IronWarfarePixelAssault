@@ -398,7 +398,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6049833995134174178}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.14172, y: -13.82, z: 0.11094856}
+  m_LocalPosition: {x: 22.969475, y: -20.650806, z: 0.11094856}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -650,10 +650,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 44, y: 117}
-      - {x: -18.5, y: 117}
-      - {x: -18.5, y: -14.5}
-      - {x: 44, y: -14.5}
+    - - {x: 29, y: 141}
+      - {x: -54, y: 141}
+      - {x: -54, y: -20}
+      - {x: 29, y: -20}
 --- !u!1 &6049833996501274779
 GameObject:
   m_ObjectHideFlags: 0
@@ -664,6 +664,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6049833996501274778}
   - component: {fileID: 6049833996501274781}
+  - component: {fileID: 1180094168}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -698,6 +699,19 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6049833996501274779}
   m_Enabled: 1
+--- !u!114 &1180094168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6049833996501274779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f258a485922c8914d9a7f3e488e493ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadingScreen: {fileID: 0}
 --- !u!1 &6049833996641133173
 GameObject:
   m_ObjectHideFlags: 0
@@ -726,7 +740,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6049833996641133173}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 22.969475, y: -15.120808, z: 0.11094856}
+  m_LocalPosition: {x: 22.969473, y: -18.020807, z: 0.11094856}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -764,7 +778,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 81911
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
