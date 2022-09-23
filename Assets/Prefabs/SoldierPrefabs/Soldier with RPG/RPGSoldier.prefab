@@ -1,5 +1,61 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1476484978722252762
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6914476313307885280}
+  - component: {fileID: 8551887016522268822}
+  m_Layer: 12
+  m_Name: AiDetector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6914476313307885280
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1476484978722252762}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4172191967725510779}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8551887016522268822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1476484978722252762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adff3ccd2798b89428552ed16a66ff48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectorShape: 0
+  viewRadius: 5
+  boxSize: {x: 0, y: 0}
+  detectionCheckDelay: 0.1
+  target: {fileID: 0}
+  playerLayerMask:
+    serializedVersion: 2
+    m_Bits: 2048
+  visibilityLayer:
+    serializedVersion: 2
+    m_Bits: 2560
+  <TargetVisible>k__BackingField: 0
 --- !u!1 &4172191966798831565
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,6 +361,7 @@ Transform:
   - {fileID: 8115143423172984102}
   - {fileID: 4172191966798831566}
   - {fileID: 2488889215003921986}
+  - {fileID: 6914476313307885280}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -426,6 +483,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fe8a5dc32e554b4abc413f96042707a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  randomXValue: 1
+  randomForceValue: 100
   bodyPartsPrefabs:
   - {fileID: 3751531424598165166, guid: 215ea31b5f3103d4aad0df0138248c56, type: 3}
   - {fileID: 856296980736843613, guid: 8549b1df0c54802428dfa045d6687379, type: 3}
@@ -838,7 +897,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 772340489
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 816bba14195afc5488d9e9beae5907dd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

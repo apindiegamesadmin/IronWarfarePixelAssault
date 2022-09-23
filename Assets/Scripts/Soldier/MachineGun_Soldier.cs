@@ -8,7 +8,6 @@ public class MachineGun_Soldier : MonoBehaviour
     private Rigidbody2D m_body;
     Transform target;
     public float speed;
-    private float destroy = 4.0f;
     private float combatRange = 5.0f;
     private float timer;
     //public Rigidbody2D bullet;
@@ -43,14 +42,12 @@ public class MachineGun_Soldier : MonoBehaviour
     private ObjectPool bulletPool;
 
     bool dead;
-    ScoreManager scoreManager;
-
-    private bool[] isFalse = new bool[5];
+    AIDetector aiDetector;
 
     private void Awake()
     {
         bulletPool = GetComponent<ObjectPool>();
-        scoreManager = transform.GetComponent<ScoreManager>();
+        aiDetector = GetComponentInChildren<AIDetector>();
     }
 
     void Start()
@@ -71,65 +68,74 @@ public class MachineGun_Soldier : MonoBehaviour
         if (dead)
             return;
 
-        if (target.gameObject.activeInHierarchy)
+        if (aiDetector.TargetVisible)
         {
+            target = aiDetector.Target;
             checkDistacne = Vector2.Distance(target.transform.position, transform.position); // check the ditance between Player and Enemy
-        }
 
-
-        if (checkDistacne > combatRange)
-        {
-            away = true; found = false; shoot = false;
-            speed = 0.0f;
-        }
-
-        if (checkDistacne <= combatRange)
-        {
-            away = false; found = true; shoot = false;
-            speed = 0.8f;
-            lookDir = target.transform.position - transform.position;///////
-            float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;////////////Look Target Position
-            m_body.rotation = angle;///////////////////////////////////////////////////
-            lookDir.Normalize();//////////////////////////////////////////////////////
-
-            m_body.MovePosition(transform.position + (lookDir * speed * Time.deltaTime));
-            movement = lookDir;
-
-        }
-
-        if (checkDistacne <= combatRange / 2)
-        {
-            speed = 0.0f;
-            m_body.MovePosition(transform.position + (lookDir * speed * Time.deltaTime));
-            away = false; found = false; shoot = true;
-        }
-
-        m_Ani.SetBool("idle", away);
-        m_Ani.SetBool("walk", found);
-        m_Ani.SetBool("shoot", shoot);
-
-        if (shoot)
-        {
-            timer = timer + Time.deltaTime;
-            if (timer >= 0.2f)
+            if (checkDistacne > combatRange)
             {
-                timer = 0;
-                var hit = Physics2D.Raycast(barrel.position, barrel.up);
+                away = true; found = false; shoot = false;
+                speed = 0.0f;
+            }
 
-                GameObject bullet = bulletPool.CreateObject();
-                bullet.transform.position = barrel.position;
-                bullet.transform.localRotation = barrel.rotation;
-                bullet.GetComponent<Bullet>().Initialize(BulletData);
-                bullet.GetComponent<Bullet>().direction = barrel.up;
+            if (checkDistacne <= combatRange)
+            {
+                away = false; found = true; shoot = false;
+                speed = 0.8f;
+                lookDir = target.transform.position - transform.position;
+                float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;//Look Target Position
+                m_body.rotation = angle;
+                lookDir.Normalize();
+
+                m_body.MovePosition(transform.position + (lookDir * speed * Time.deltaTime));
+
+            }
+
+            if (checkDistacne <= combatRange / 2)
+            {
+                speed = 0.0f;
+                m_body.MovePosition(transform.position + (lookDir * speed * Time.deltaTime));
+                away = false; found = false; shoot = true;
+            }
+
+            m_Ani.SetBool("idle", away);
+            m_Ani.SetBool("walk", found);
+            m_Ani.SetBool("shoot", shoot);
+
+            if (shoot)
+            {
+                timer = timer + Time.deltaTime;
+                if (timer >= 0.2f)
+                {
+                    timer = 0;
+                    var hit = Physics2D.Raycast(barrel.position, barrel.up);
+
+                    GameObject bullet = bulletPool.CreateObject();
+                    bullet.transform.position = barrel.position;
+                    bullet.transform.localRotation = barrel.rotation;
+                    bullet.GetComponent<Bullet>().Initialize(BulletData);
+                    bullet.GetComponent<Bullet>().direction = barrel.up;
+                }
+            }
+            playerHealth = target.GetComponentInChildren<Damagable>().Health;
+
+            if (playerHealth < 0)
+            {
+                timer = 0; shoot = false;
+                m_Ani.SetBool("shoot", false);
+                m_Ani.SetBool("idle", true);
             }
         }
-        playerHealth = target.GetComponentInChildren<Damagable>().Health;
-
-        if (playerHealth < 0)
+        else
         {
-            timer = 0; shoot = false;
-            m_Ani.SetBool("shoot", false);
-            m_Ani.SetBool("idle", true);
+            timer = 0;
+            away = true;
+            found = false;
+            shoot = false;
+            m_Ani.SetBool("idle", away);
+            m_Ani.SetBool("walk", found);
+            m_Ani.SetBool("shoot", shoot);
         }
 
 
@@ -146,7 +152,7 @@ public class MachineGun_Soldier : MonoBehaviour
                 Destroy(blood, 1f);//Delay Before Destroying Blood
             }
             this.GetComponent<Collider2D>().enabled = false;
-            Destroy(gameObject, destroy / 2.5f);
+            Destroy(gameObject, 2.5f);
         }
     }
 
@@ -161,7 +167,7 @@ public class MachineGun_Soldier : MonoBehaviour
             healthBar.SetActive(false);
             m_Ani.Play("Soldier_Machine_die2");
             this.GetComponent<Collider2D>().enabled = false;
-            Destroy(gameObject, destroy / 2.5f);
+            Destroy(gameObject, 2.5f);
             slider.value = 0.0f;
         }
         else if (collision.transform.tag == "MachineGunBullet")
@@ -177,7 +183,7 @@ public class MachineGun_Soldier : MonoBehaviour
             m_Ani.Play("Soldier_Machine_diehard");
             this.GetComponent<Collider2D>().enabled = false;
             GetComponent<BodyPartsSpawner>().SpawnBodyParts(collision.GetComponent<Bullet>().direction, collision.transform.position);
-            Destroy(gameObject, destroy / 2.5f);
+            Destroy(gameObject, 2.5f);
         }
     }
 }
