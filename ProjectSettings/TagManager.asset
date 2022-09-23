@@ -88,9 +88,6 @@ TagManager:
   - name: Smoke
     uniqueID: 219850095
     locked: 0
-  - name: Plane
-    uniqueID: 2693327675
-    locked: 0
   - name: Item
     uniqueID: 3250547105
     locked: 0
@@ -102,6 +99,9 @@ TagManager:
     locked: 0
   - name: Detail_Top
     uniqueID: 1250980913
+    locked: 0
+  - name: Plane
+    uniqueID: 2693327675
     locked: 0
   - name: UI
     uniqueID: 1585582841
