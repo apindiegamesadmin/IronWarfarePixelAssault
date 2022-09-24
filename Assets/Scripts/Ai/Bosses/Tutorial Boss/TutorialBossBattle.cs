@@ -15,11 +15,7 @@ public class TutorialBossBattle : MonoBehaviour
     private void Awake()
     {
         bossDamagable = bossTankController.GetComponent<Damagable>();
-        /*playerTank = GameObject.FindGameObjectWithTag("Player").transform;
-        for (int i = 0; i < 2; i++)
-        {
-            bossPath.patrolPoints.Add(playerTank);
-        }*/
+        playerTank = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     void Start()
