@@ -7027,11 +7027,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sound: 0
   music: 0
+  master: 0
   tankIndex: 0
   firstTime: 0
   playerData:
     sound: 0
     music: 0
+    master: 0
     tankIndex: 0
     firstTime: 0
 --- !u!4 &207870639

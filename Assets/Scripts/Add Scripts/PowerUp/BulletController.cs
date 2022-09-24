@@ -21,7 +21,7 @@ public class BulletController : MonoBehaviour
     void Awake()
     {
         iconManager = FindObjectOfType<PowerUpIconManager>();
-        _powerupSound = GameObject.Find("PowerupSound").GetComponent<PowerupSound>();
+        _powerupSound = FindObjectOfType<PowerupSound>();
 
         if (turret == null)
             turret = GetComponentInChildren<Turret>();

@@ -25,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7755019690392913500}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -141,7 +141,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8003ed4fc43d520478dd8138180048ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthClip: {fileID: 0}
-  bulletPowerupClip: {fileID: 8300000, guid: 2c4620c0c4c49a641b6da8c96b37ef95, type: 3}
-  shieldPowerupClip: {fileID: 0}
-  homingMissileClip: {fileID: 0}
+  healthClip: {fileID: 8300000, guid: bfd7d9433b5565e44bbb3dca81b1a87a, type: 3}
+  bulletPowerupClip: {fileID: 8300000, guid: ecc2256a239a29f40b43e26a026c021e, type: 3}
+  shieldPowerupClip: {fileID: 8300000, guid: fc1453d878b735e4299108463d6a8ac9, type: 3}
+  homingMissileClip: {fileID: 8300000, guid: 85dcb7374b1663f45bcb1372cab87f74, type: 3}
+  speedPowerUpClip: {fileID: 8300000, guid: 138fa77f592fc4749b95c0b831a58747, type: 3}

@@ -21,7 +21,7 @@ public class SpeedUpControl : MonoBehaviour
     void Awake()
     {
         iconManager = FindObjectOfType<PowerUpIconManager>();
-        _powerupSound = GameObject.Find("PowerupSound").GetComponent<PowerupSound>();
+        _powerupSound = FindObjectOfType<PowerupSound>();
 
         if (tankmovement == null)
             tankmovement = GetComponentInChildren<TankMover>();

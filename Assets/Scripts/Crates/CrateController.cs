@@ -18,7 +18,7 @@ public class CrateController : MonoBehaviour
         partsSpawner = GetComponent<BodyPartsSpawner>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
-        crateSound = GameObject.Find("CrateSound").GetComponent<CrateSound>();
+        crateSound = FindObjectOfType<CrateSound>();
     }
 
     private void Start()
