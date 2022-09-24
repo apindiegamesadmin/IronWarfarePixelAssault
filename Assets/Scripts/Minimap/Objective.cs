@@ -2,34 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Rendering;
 
 public class Objective : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI objectiveText;
+    TextMeshProUGUI objectiveText;
 
-    PointController pointController;
-    int id;
+    [SerializeField] string[] objectives;
 
     private void Awake()
     {
-        objectiveText.text = "Destroy the enemies tanks:";
-        pointController = FindObjectOfType<PointController>();
-        id = pointController.tankID;
+        objectiveText = GetComponent<TextMeshProUGUI>();
+        objectiveText.text = "";
     }
 
-    private void Update()
+    public void ShowObjective(int index)
     {
-        if (id == 0)
-        {
-            objectiveText.text = "Destroy the static enemy!";
-        }
-        else if (id == 1)
-        {
-            objectiveText.text = "Destroy the patrol enemy!";
-        }
-        else
-        {
-            objectiveText.text = "Go & Destroy the enemy boss!";
-        }
+        objectiveText.text = objectives[index];
+    }
+
+    public void RemoveObjective()
+    {
+        objectiveText.text = "";
     }
 }

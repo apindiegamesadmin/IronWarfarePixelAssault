@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class UnlockMissions : MonoBehaviour
 {
     public int nextMission;
+    Player player;
 
     private static UnlockMissions instance = null;
     public static UnlockMissions Instance
@@ -15,7 +16,7 @@ public class UnlockMissions : MonoBehaviour
 
     private void Start()
     {
-        nextMission = PlayerPrefs.GetInt("MissionIndex", 0);
+        nextMission = player.missionIndex;
     }
 
     private void Awake()
@@ -30,6 +31,8 @@ public class UnlockMissions : MonoBehaviour
             instance = this;
         }
         DontDestroyOnLoad(this.gameObject);
+
+        player = FindObjectOfType<Player>();
     }
 
     public void UnlockMission() // Call this at the end of each level
@@ -38,7 +41,8 @@ public class UnlockMissions : MonoBehaviour
         {
             // Increase CurrentMission index, New Mission unlocked!!!
             nextMission++;
-            PlayerPrefs.SetInt("MissionIndex" , nextMission);
+            player.missionIndex = nextMission;
+            player.SavePlayerData();
         }
     }
 }

@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     public float master;
     public int tankIndex;
     public bool firstTime;
+    public int missionIndex;
 
     public PlayerData playerData;
     private static Player instance = null;
@@ -52,6 +53,7 @@ public class Player : MonoBehaviour
             master = playerData.master;
             tankIndex = playerData.tankIndex;
             firstTime = playerData.firstTime;
+            missionIndex = playerData.missionIndex;
         }
         else
         {
@@ -60,6 +62,7 @@ public class Player : MonoBehaviour
             master = 1;
             tankIndex = 1;
             firstTime = true;
+            missionIndex = 0;
             SavePlayerData();
         }
     }

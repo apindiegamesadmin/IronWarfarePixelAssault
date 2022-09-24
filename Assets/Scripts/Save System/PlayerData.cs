@@ -11,6 +11,7 @@ public class PlayerData
     public float master;
     public int tankIndex;
     public bool firstTime;
+    public int missionIndex;
 
     public PlayerData (Player player)
     {
@@ -19,5 +20,6 @@ public class PlayerData
         master = player.master;
         tankIndex = player.tankIndex;
         firstTime = player.firstTime;
+        missionIndex = player.missionIndex;
     }
 }
