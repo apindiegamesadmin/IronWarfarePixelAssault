@@ -24,6 +24,8 @@ public class Player : MonoBehaviour
 
     void Awake()
     {
+        LoadPlayerData();
+
         if (instance != null && instance != this)
         {
             Destroy(this.gameObject);
@@ -34,8 +36,6 @@ public class Player : MonoBehaviour
             instance = this;
         }
         DontDestroyOnLoad(this.gameObject);
-
-        LoadPlayerData();
     }
 
     public void SavePlayerData()

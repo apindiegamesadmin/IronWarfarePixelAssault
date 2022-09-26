@@ -7,7 +7,7 @@ public class Minimap : MonoBehaviour
     Transform player;
     Transform target;
 
-    void Awake()
+    void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
