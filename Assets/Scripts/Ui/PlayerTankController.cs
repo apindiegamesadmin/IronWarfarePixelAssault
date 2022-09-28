@@ -56,6 +56,31 @@ public class PlayerTankController : MonoBehaviour
         }
     }
 
+    public bool CanIncreasePlayerLife()
+    {
+        if(lifeCount < 2)
+        {
+            Debug.Log(lifeCount);
+            lifeCount++;
+            for (int i = 0; i < 3; i++)
+            {
+                if (i > lifeCount)
+                {
+                    heartHolder.GetChild(i).gameObject.SetActive(false); // Disable last active heart
+                }
+                else
+                {
+                    heartHolder.GetChild(i).gameObject.SetActive(true); // Enable remaining hearts
+                }
+            }
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     IEnumerator DelaySpawn()
     {
         damagable.Health = damagable.MaxHealth;

@@ -8,10 +8,12 @@ public class HealthPackControl : MonoBehaviour
     [SerializeField] int hpPoint;
     Damagable playerDamagable;
     public bool tutorial;
+    PlayerTankController playerTankController;
 
     void Awake()
     {
         _powerupSound = FindObjectOfType<PowerupSound>();
+        playerTankController = GetComponentInParent<PlayerTankController>();
     }
 
     void Start()
@@ -22,7 +24,26 @@ public class HealthPackControl : MonoBehaviour
 
     void HealPlayer()
     {
-        playerDamagable.Heal(hpPoint);
+        if(hpPoint + playerDamagable.Health > playerDamagable.MaxHealth)
+        {
+            if (playerTankController.CanIncreasePlayerLife())
+            {
+                int healPoint = (hpPoint + playerDamagable.Health) - playerDamagable.MaxHealth;
+                playerDamagable.Health = healPoint;
+
+                Debug.Log("Heart Increased");
+                Debug.Log("Heal Points is " + healPoint);
+            }
+            else
+            {
+                playerDamagable.Heal(hpPoint);
+            }
+        }
+        else
+        {
+            playerDamagable.Heal(hpPoint);
+        }
+
         if (tutorial)
         {
             tutorial = false;
