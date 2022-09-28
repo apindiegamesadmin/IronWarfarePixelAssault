@@ -28,7 +28,7 @@ public class ShieldController : MonoBehaviour
     {
         if (shield)
         {
-            if (Time.time > skillTimer)
+            if (Time.time > skillTimer || playerDamagable.shieldPoint <= 0)
             {
                 Destroy(shieldObj);
                 iconManager.HideIcon(2);
