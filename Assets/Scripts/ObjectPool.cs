@@ -23,8 +23,11 @@ public class ObjectPool : MonoBehaviour
 
     public void Initialize(GameObject objectToPool, int poolSize = 10)
     {
+        DestroyBullets();
+
         this.objectToPool = objectToPool;
         this.poolSize = poolSize;
+        this.objectPool.Clear();
 
     }
 

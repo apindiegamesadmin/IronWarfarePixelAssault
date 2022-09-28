@@ -62,13 +62,15 @@ public class BulletController : MonoBehaviour
             {
                 isHomingMissileActive = false;
                 skillTimer = 0;
+                iconManager.HideIcon(3);
+
                 turret.turretData = turretDatas[0];
                 foreach (Transform barrel in barrels)
                 {
                     turret.turretBarrels.Remove(barrel);
                 }
 
-                objectPool.Initialize(turretDatas[0].bulletPrefab, 1);
+                objectPool.Initialize(turret.turretData.bulletPrefab, 1);
             }
         }
     }
@@ -99,17 +101,16 @@ public class BulletController : MonoBehaviour
         }
         else if (collision.transform.tag == "HomingMissilePowerUp")
         {
-            Debug.Log("Homing Missile Power Up");
-
-            //_powerupSound.PlayHomingMissileClip();
+            _powerupSound.PlayHomingMissileClip();
             Destroy(collision.transform.gameObject);
             isHomingMissileActive = true;
-            //iconManager.ShowIcon(0);
+            iconManager.ShowIcon(3);
             turret.turretData = turretDatas[2];
             foreach (Transform barrel in barrels)
             {
                 turret.turretBarrels.Add(barrel);
             }
+
             objectPool.Initialize(turret.turretData.bulletPrefab, 10);
         }
     }

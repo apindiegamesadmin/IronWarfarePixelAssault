@@ -51,6 +51,7 @@ MonoBehaviour:
   - {fileID: 7381821783379089991, guid: 15951b030a170ed4781d978cdef93ef3, type: 3}
   - {fileID: 8895264861689223047, guid: 66599f21f34131043b7d62abcec841c9, type: 3}
   - {fileID: 2835698020627125629, guid: 4cc667630a00ff943b51265915840b8b, type: 3}
+  - {fileID: 3687532938600111971, guid: 4e6b4feede8bfad44aa3899139f4b79f, type: 3}
   speed: 1
 --- !u!1 &2269330844365790136
 GameObject:
@@ -124,7 +125,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1250980913
-  m_SortingLayer: 9
+  m_SortingLayer: 12
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 2dfd1cf5a34697f4b88fb6247acfac2a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -208,7 +209,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1250980913
-  m_SortingLayer: 9
+  m_SortingLayer: 12
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 2dfd1cf5a34697f4b88fb6247acfac2a, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 0.34901962}
