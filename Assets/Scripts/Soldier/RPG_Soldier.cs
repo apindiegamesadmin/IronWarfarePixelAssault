@@ -200,15 +200,15 @@ public class RPG_Soldier : MonoBehaviour
             Destroy(gameObject, destroy / 2.5f);
         }
 
-        else if (collision.transform.tag == "HoimingMissile")
+        else if (collision.transform.tag == "HomingMissile")
         {
             OnDead.Invoke();
             dead = true;
             healthBar.SetActive(false);
-            m_Ani.Play("Soldier_Machine_diehard");
+            m_Ani.Play("Soldier_RPG_diehard");
             this.GetComponent<Collider2D>().enabled = false;
             GetComponent<BodyPartsSpawner>().SpawnBodyParts(collision.GetComponent<HomingMissle>().direction, collision.transform.position);
-            Destroy(gameObject, 2.5f);
+            Destroy(gameObject, destroy / 2.5f);
         }
     }
 

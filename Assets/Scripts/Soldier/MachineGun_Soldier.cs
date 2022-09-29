@@ -184,7 +184,7 @@ public class MachineGun_Soldier : MonoBehaviour
             GetComponent<BodyPartsSpawner>().SpawnBodyParts(collision.GetComponent<Bullet>().direction, collision.transform.position);
             Destroy(gameObject, 2.5f);
         }
-        else if (collision.transform.tag == "HoimingMissile")
+        else if (collision.transform.tag == "HomingMissile")
         {
             OnDead.Invoke();
             dead = true;

@@ -16,26 +16,31 @@ public class PowerupSound : MonoBehaviour
     // Update is called once per frame
     public void PlayHealthClip()
     {
+        _audioSource.volume = 0.34f;
         _audioSource.PlayOneShot(healthClip);
     }
 
     public void PlayBulletPowerupClip()
     {
+        _audioSource.volume = 0.34f;
         _audioSource.PlayOneShot(bulletPowerupClip);
     }
 
     public void PlayShieldPowerupClip()
     {
+        _audioSource.volume = 0.28f;
         _audioSource.PlayOneShot(shieldPowerupClip);
     }
 
     public void PlayHomingMissileClip()
     {
+        _audioSource.volume = 0.34f;
         _audioSource.PlayOneShot(homingMissileClip);
     }
 
     public void PlaySpeedUpClip()
     {
+        _audioSource.volume = 0.28f;
         _audioSource.PlayOneShot(speedPowerUpClip);
     }
 }
