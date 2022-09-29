@@ -23,7 +23,9 @@ public class TutorialCutSceneManager : MonoBehaviour
         director = GetComponent<PlayableDirector>();
 
         player.GetComponentInChildren<TankMachineGun>().canShoot = false;
-        Time.timeScale = 0;
+        player.GetComponent<TankController>().canShoot = false;
+        player.GetComponent<TankController>().canMove = false;
+        //Time.timeScale = 0;
         gameUI.SetActive(false);
         if(tutorialManager != null)
         {
@@ -39,7 +41,9 @@ public class TutorialCutSceneManager : MonoBehaviour
     public void EndMission2CutScene()
     {
         player.GetComponentInChildren<TankMachineGun>().canShoot = true;
-        Time.timeScale = 1;
+        player.GetComponent<TankController>().canShoot = true;
+        player.GetComponent<TankController>().canMove = true;
+        //Time.timeScale = 1;
         gameUI.SetActive(true);
         if (dialogueManager != null)
         {
@@ -58,7 +62,8 @@ public class TutorialCutSceneManager : MonoBehaviour
 
     public void EndTutorialCutScene()
     {
-        Time.timeScale = 1;
+        player.GetComponent<TankController>().canMove = true;
+        //Time.timeScale = 1;
         gameUI.SetActive(true);
         if(dialogueManager != null)
         {

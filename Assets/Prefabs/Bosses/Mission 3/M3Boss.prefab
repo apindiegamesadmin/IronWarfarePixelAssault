@@ -221,15 +221,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 247546889}
-  m_LocalRotation: {x: 0, y: 0, z: -0.43178666, w: 0.9019758}
-  m_LocalPosition: {x: -0.38, y: -0.027, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.88801026, w: 0.45982367}
+  m_LocalPosition: {x: -0.443, y: -0.027, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1349774914}
   m_Father: {fileID: 6142168640142313538}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -51.162}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 125.249}
 --- !u!114 &247546891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3348,6 +3348,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: c858fbc83ccf49341bb02889a150ae75, type: 3}
+    - target: {fileID: 1107469718807039974, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1107469718807039974, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}
       propertyPath: m_SortingLayer
       value: 13

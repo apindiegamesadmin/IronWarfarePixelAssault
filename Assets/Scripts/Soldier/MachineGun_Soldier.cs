@@ -184,6 +184,16 @@ public class MachineGun_Soldier : MonoBehaviour
             GetComponent<BodyPartsSpawner>().SpawnBodyParts(collision.GetComponent<Bullet>().direction, collision.transform.position);
             Destroy(gameObject, 2.5f);
         }
+        else if (collision.transform.tag == "HoimingMissile")
+        {
+            OnDead.Invoke();
+            dead = true;
+            healthBar.SetActive(false);
+            m_Ani.Play("Soldier_Machine_diehard");
+            this.GetComponent<Collider2D>().enabled = false;
+            GetComponent<BodyPartsSpawner>().SpawnBodyParts(collision.GetComponent<HomingMissle>().direction, collision.transform.position);
+            Destroy(gameObject, 2.5f);
+        }
     }
 }
 
