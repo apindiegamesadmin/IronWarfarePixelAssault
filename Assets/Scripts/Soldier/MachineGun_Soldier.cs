@@ -117,7 +117,7 @@ public class MachineGun_Soldier : MonoBehaviour
                     bullet.GetComponent<Bullet>().direction = barrel.up;
                 }
             }
-            playerHealth = target.GetComponentInChildren<Damagable>().Health;
+            playerHealth = target.GetComponent<Damagable>().Health;
 
             if (playerHealth < 0)
             {
