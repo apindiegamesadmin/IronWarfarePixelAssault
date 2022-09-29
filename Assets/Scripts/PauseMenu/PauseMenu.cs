@@ -10,12 +10,16 @@ public class PauseMenu : MonoBehaviour
     public bool isGamePaused = false;
 
     [SerializeField]
+    GameObject settingPanel;
+
+    [SerializeField]
     private GameObject gameUiPanel;
 
     UIManager uiManager;
 
     private void Start()
     {
+        settingPanel.SetActive(false);
         gameUiPanel.SetActive(true);
         uiManager = FindObjectOfType<UIManager>();
     }
@@ -54,5 +58,16 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1.0f;
         SceneManager.LoadScene(0);
+    }
+
+    public void Setting()
+    {
+        Time.timeScale = 1.0f;
+        uiManager.PopUp(settingPanel);
+    }
+
+    public void Back()
+    {
+        uiManager.PopDown(settingPanel);
     }
 }
