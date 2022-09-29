@@ -1,25 +1,30 @@
 using System.Collections;
+using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
+    public List<GameObject> popUps;
 
     public void PopDown(GameObject pop)
     {
         pop.GetComponent<Animator>().Play("Pop_Down");
-        StartCoroutine(DelayPopDown(pop));//Disable Object After Animation End
+        StartCoroutine(DelayPopDown(popUps.Last()));
     }
 
     IEnumerator DelayPopDown(GameObject pop)
     {
-        yield return new WaitForSeconds(0.26f);//Delay
+        yield return new WaitForSecondsRealtime(0.26f);//Delay
         pop.SetActive(false);//Disable Object
+        popUps.Remove(pop);
     }
 
     public void PopUp(GameObject pop)
     {
-        StartCoroutine(DelayPopBack(pop));//Disable Object After Animation End
+        popUps.Add(pop);
+        popUps.Last().SetActive(true);
+        //StartCoroutine(DelayPopBack(pop));//Disable Object After Animation End
     }
 
     IEnumerator DelayPopBack(GameObject pop)
