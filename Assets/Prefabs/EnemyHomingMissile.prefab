@@ -137,9 +137,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1769476287
-  m_SortingLayer: 11
+  m_SortingLayer: 10
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d059c194b2b762d48a8e2c6efd3c9595, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 55e338e949d37be4aa67cda443dcd454, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -164,7 +164,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletData: {fileID: 11400000, guid: cd62c17b01a84c44fb9eb05a3b071307, type: 2}
   targetTag: Player
-  speed: 2
   direction: {x: 0, y: 0}
   OnHit:
     m_PersistentCalls:
@@ -210,7 +209,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.0625, y: 0.15625}
+    oldSize: {x: 0.0625, y: 0.21875}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

@@ -57807,7 +57807,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b86ec888be6ef4b469e2509acd17d240, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cursorArrow: {fileID: 2800000, guid: 8ea795c067613354898068091ffc7130, type: 3}
+  cursorArrow: {fileID: 2800000, guid: 2e71a8202d3b4a3448ec85ced5a40265, type: 3}
 --- !u!1 &1396866906
 GameObject:
   m_ObjectHideFlags: 0
