@@ -49,5 +49,7 @@ public class VolumeSettings : MonoBehaviour
         player.master = _masterSlider.value;
         player.music = _musicSlider.value;
         player.sound = _sfxSlider.value;
+
+        player.SavePlayerData();
     }
 }
