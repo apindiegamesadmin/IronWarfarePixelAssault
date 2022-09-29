@@ -9,6 +9,7 @@ public class HomingMissle : MonoBehaviour
     private Vector2 startPosition;
     private float conquaredDistance = 0;
     private Rigidbody2D rb2d;
+    Vector2 previousPosition;
     public Vector2 direction;
 
     private float _rotateSpeed = 360f;
@@ -51,6 +52,15 @@ public class HomingMissle : MonoBehaviour
         if (conquaredDistance >= bulletData.maxDistance)
         {
             DisableObject();
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if ((Vector2)transform.position != previousPosition)
+        {
+            direction = ((Vector2)transform.position - previousPosition).normalized;
+            previousPosition = transform.position;
         }
     }
 
