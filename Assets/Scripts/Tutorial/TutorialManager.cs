@@ -51,6 +51,7 @@ public class TutorialManager : MonoBehaviour
         if (count < 3 && FindObjectOfType<TutorialManager>().tutorialIndex == 0)
         {
             objective.ShowObjective(0); // show objective
+            objective.UpdateObjectivePointer(0);
 
             if (Input.GetKeyDown(KeyCode.W))//Check if the player moved in all directions
             {
@@ -140,6 +141,7 @@ public class TutorialManager : MonoBehaviour
         else if (tutorialIndex == 1 && completeStep)// Step 2 A(Main Cannon)
         {
             objective.ShowObjective(1); // show objective
+            objective.UpdateObjectivePointer(1);
 
             dialogueUI.SetActive(true);
             dialogueManager.StartDialogue(dialogueManager.dialogue[1]);// Show Completion Dialogue
@@ -148,6 +150,7 @@ public class TutorialManager : MonoBehaviour
         else if(tutorialIndex == 2 && completeStep)// Step 2 B(Machine Gun)
         {
             objective.ShowObjective(1); // show objective
+            objective.UpdateObjectivePointer(2);
 
             dialogueUI.SetActive(true);
             dialogueManager.StartDialogue(dialogueManager.dialogue[1]);// Show Completion Dialogue
@@ -156,6 +159,7 @@ public class TutorialManager : MonoBehaviour
         else if(tutorialIndex == 3 && completeStep)// Step 3 A Speed Power Up
         {
             objective.ShowObjective(1); // show objective
+            objective.UpdateObjectivePointer(3);
 
             dialogueUI.SetActive(true);
             dialogueManager.StartDialogue(dialogueManager.dialogue[1]);// Show Completion Dialogue
@@ -164,6 +168,7 @@ public class TutorialManager : MonoBehaviour
         else if(tutorialIndex == 4 && completeStep)// Step 3 B Bullet Power Up
         {
             objective.ShowObjective(1); // show objective
+            objective.UpdateObjectivePointer(4);
 
             dialogueUI.SetActive(true);
             dialogueManager.StartDialogue(dialogueManager.dialogue[1]);// Show Completion Dialogue
@@ -172,6 +177,7 @@ public class TutorialManager : MonoBehaviour
         else if (tutorialIndex == 5 && completeStep)// Step 3 C Shield Power Up
         {
             objective.ShowObjective(1); // show objective
+            objective.UpdateObjectivePointer(5);
 
             dialogueUI.SetActive(true);
             dialogueManager.StartDialogue(dialogueManager.dialogue[1]);// Show Completion Dialogue
@@ -180,6 +186,7 @@ public class TutorialManager : MonoBehaviour
         else if(tutorialIndex == 6 && completeStep)// Step 4 Health Pack
         {
             objective.ShowObjective(8); // show objective
+            objective.UpdateObjectivePointer(6);
 
             planeManager.SetActive(true); // Start Spawning Planes
             planeManager.GetComponent<PlaneManager>().ResetTimeToSpawn();// Reset the spawn time

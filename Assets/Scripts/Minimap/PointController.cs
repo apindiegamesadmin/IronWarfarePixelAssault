@@ -17,30 +17,30 @@ public class PointController : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
-        foreach (Transform enemy in staticEnemies.transform)
+        /*foreach (Transform enemy in staticEnemies.transform)
         {
             enemies.Add(enemy.GetChild(0).gameObject);
         }
         foreach (Transform enemy in patrolEnemies.transform)
         {
             enemies.Add(enemy.GetChild(0).gameObject);
-        }
+        }*/
     }
 
     private void Start()
     {
-        FindNearestEnemy();
+        //FindNearestEnemy();
     }
 
     private void FixedUpdate()
     {
-        FindNearestEnemy();
+        //FindNearestEnemy();
     }
 
     public void ChangeTarget(GameObject currentEnemy)
     {
-        enemies.Remove(currentEnemy);
-        FindNearestEnemy();
+        //enemies.Remove(currentEnemy);
+        //FindNearestEnemy();
     }
 
     // To find the nearest enemy from player
