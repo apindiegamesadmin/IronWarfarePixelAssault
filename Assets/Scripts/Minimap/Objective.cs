@@ -7,6 +7,8 @@ using UnityEngine.Rendering;
 public class Objective : MonoBehaviour
 {
     TextMeshProUGUI objectiveText;
+    [SerializeField] Transform[] objectivePoints;
+    [SerializeField] StayInside objectivePointer;
 
     [SerializeField] string[] objectives;
 
@@ -19,6 +21,11 @@ public class Objective : MonoBehaviour
     public void ShowObjective(int index)
     {
         objectiveText.text = objectives[index];
+    }
+
+    public void UpdateObjectivePointer(int i)
+    {
+        objectivePointer.tank = objectivePoints[i];
     }
 
     public void RemoveObjective()

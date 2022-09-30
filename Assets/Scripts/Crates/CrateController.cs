@@ -67,7 +67,7 @@ public class CrateController : MonoBehaviour
         }
         else
         {
-            Debug.Log(collision.name);
+            //Debug.Log(collision.name);
             //StartCoroutine(StopSimulate());
         }
     }
