@@ -954,7 +954,7 @@ PrefabInstance:
     - target: {fileID: 1646958841755428217, guid: 1bc84e9af9a0a6d47bd8effb1f57bb82, type: 3}
       propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.data[4].m_Target
       value: 
-      objectReference: {fileID: 1012644106202794256}
+      objectReference: {fileID: 0}
     - target: {fileID: 1646958841755428217, guid: 1bc84e9af9a0a6d47bd8effb1f57bb82, type: 3}
       propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.data[4].m_CallState
       value: 2
@@ -1144,23 +1144,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6156475760662613905, guid: 1bc84e9af9a0a6d47bd8effb1f57bb82, type: 3}
   m_PrefabInstance: {fileID: 5763731046665684879}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1913133520482181378 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6156475758695786125, guid: 1bc84e9af9a0a6d47bd8effb1f57bb82, type: 3}
-  m_PrefabInstance: {fileID: 5763731046665684879}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1012644106202794256
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1913133520482181378}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65e3ee59203c8864fa0420a2d5e19cc3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1913133520482181389 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6156475758695786114, guid: 1bc84e9af9a0a6d47bd8effb1f57bb82, type: 3}
@@ -1259,6 +1242,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2142800569983593905, guid: 8fee8767d3a2fa44bb2ddf39eb5afccc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2142800569983593906, guid: 8fee8767d3a2fa44bb2ddf39eb5afccc, type: 3}
+      propertyPath: stayInideMap
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2142800569983593906, guid: 8fee8767d3a2fa44bb2ddf39eb5afccc, type: 3}

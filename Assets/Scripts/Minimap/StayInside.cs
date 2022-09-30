@@ -8,7 +8,7 @@ public class StayInside : MonoBehaviour
     public Transform tank;
     Transform MinimapCam;
     public float MinimapSize;
-    public bool stayInideMap = true;
+    public bool stayInideMap = false;
     Vector3 TempV3;
     Transform player;
 
