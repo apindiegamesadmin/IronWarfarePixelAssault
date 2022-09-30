@@ -7,12 +7,11 @@ public class PointController : MonoBehaviour
 {
     [SerializeField] GameObject staticEnemies;
     [SerializeField] GameObject patrolEnemies;
-    [SerializeField] GameObject redotPrefab;
+    [SerializeField] GameObject redot;
     public List<GameObject> enemies;
 
     public GameObject enemy;
     Transform player;
-    float nearestEnemyDistance;
 
     private void Awake()
     {
@@ -33,6 +32,11 @@ public class PointController : MonoBehaviour
         FindNearestEnemy();
     }
 
+    private void FixedUpdate()
+    {
+        FindNearestEnemy();
+    }
+
     public void ChangeTarget(GameObject currentEnemy)
     {
         enemies.Remove(currentEnemy);
@@ -42,7 +46,7 @@ public class PointController : MonoBehaviour
     // To find the nearest enemy from player
     public void FindNearestEnemy()
     {
-        nearestEnemyDistance = float.MaxValue;
+        float nearestEnemyDistance = float.MaxValue;
 
         for (int i = 0; i < enemies.Count; i++)
         {
@@ -55,7 +59,8 @@ public class PointController : MonoBehaviour
             }
         }
 
-        GameObject redDot = Instantiate(redotPrefab, transform.position, Quaternion.identity);
-        redDot.transform.SetParent(enemy.transform);
+        redot.GetComponent<StayInside>().tank = enemy.transform;
+        /*GameObject redDot = Instantiate(redotPrefab, transform.position, Quaternion.identity);
+        redDot.transform.SetParent(enemy.transform);*/
     }
 }
