@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     public float sound;
     public float music;
     public float master;
+    public int screenIndex;
     public int tankIndex;
     public bool firstTime;
     public int missionIndex;
@@ -51,6 +52,7 @@ public class Player : MonoBehaviour
             sound = playerData.sound;
             music = playerData.music;
             master = playerData.master;
+            screenIndex = playerData.screenIndex;
             tankIndex = playerData.tankIndex;
             firstTime = playerData.firstTime;
             missionIndex = playerData.missionIndex;
@@ -60,6 +62,7 @@ public class Player : MonoBehaviour
             sound = 1;
             music = 1;
             master = 1;
+            screenIndex = 0;
             tankIndex = 1;
             firstTime = true;
             missionIndex = 0;

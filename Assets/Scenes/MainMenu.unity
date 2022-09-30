@@ -6363,17 +6363,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 167310554}
   m_CullTransparentMesh: 1
---- !u!114 &180579133 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8531659517392768095, guid: bd5f83b046752f547924b7898c0e13ac, type: 3}
-  m_PrefabInstance: {fileID: 8531659515936769486}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bebfcb125d33864ab730e7a16a7668b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &181810564
 GameObject:
   m_ObjectHideFlags: 0
@@ -7082,6 +7071,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 314940243}
   m_CullTransparentMesh: 1
+--- !u!114 &350125963 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 251378682964585734, guid: dc9c39cd5a9e2f6439d3be71bf905300, type: 3}
+  m_PrefabInstance: {fileID: 5315976410405900841}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9807fb14d721b894d9782cf2d11f85c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &375803304
 GameObject:
   m_ObjectHideFlags: 0
@@ -12797,13 +12797,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 94923632}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 31503514}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: PopUp
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 94923632}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
@@ -12811,7 +12811,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 31503514}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: PopDown
+        m_MethodName: PopDownObject
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 669002139}
@@ -28661,18 +28661,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 180579133}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: ChangeBackgroundMusic
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &595054442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30003,13 +29991,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 557874129}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 31503514}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: PopUp
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 557874129}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
@@ -30017,7 +30005,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 31503514}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: PopDown
+        m_MethodName: PopDownObject
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 669002139}
@@ -30322,7 +30310,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 31503514}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: PopUp
+        m_MethodName: PopUpObject
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 669002139}
@@ -48950,7 +48938,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 31503514}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: PopUp
+        m_MethodName: PopUpObject
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 669002139}
@@ -49295,13 +49283,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 181853562}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 31503514}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: PopUp
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 181853562}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
@@ -49309,7 +49297,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 31503514}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: PopDown
+        m_MethodName: PopDownObject
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 669002139}
@@ -49888,7 +49876,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 31503514}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: PopUp
+        m_MethodName: PopUpObject
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 669002139}
@@ -50315,13 +50303,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 212278732}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 31503514}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: PopUp
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 212278732}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -50717,7 +50705,6 @@ GameObject:
   - component: {fileID: 1336549659}
   - component: {fileID: 1336549662}
   - component: {fileID: 1336549661}
-  - component: {fileID: 1336549660}
   - component: {fileID: 1336549663}
   m_Layer: 5
   m_Name: Logo
@@ -50746,62 +50733,6 @@ RectTransform:
   m_AnchoredPosition: {x: -20, y: -8}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1336549660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1336549658}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1336549661}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: URLHandler, Assembly-CSharp
-        m_MethodName: OpenUrl
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: https://apindiegames.com/
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1336549661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56340,13 +56271,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2000077300}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 31503514}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: PopUp
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 2000077300}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -62035,13 +61966,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1605958005}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 31503514}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: PopUp
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1605958005}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -68293,7 +68224,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 31503514}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: PopUp
+        m_MethodName: PopUpObject
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 669002139}
@@ -68517,7 +68448,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 31503514}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: PopDown
+        m_MethodName: PopDownObject
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 669002139}
@@ -69177,13 +69108,13 @@ MonoBehaviour:
           m_StringArgument: Mission_1_Open
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1715756839}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 31503514}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: PopUp
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1715756839}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
@@ -69191,7 +69122,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 31503514}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: PopDown
+        m_MethodName: PopDownObject
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 669002139}
@@ -75067,6 +74998,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 31503514}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: PopDown
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2000077300}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 813143182}
         m_TargetAssemblyTypeName: UISoundManager, Assembly-CSharp
         m_MethodName: PlayClickSound
@@ -75846,7 +75789,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 31503514}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: PopUp
+        m_MethodName: PopUpObject
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 669002139}
@@ -76116,6 +76059,34 @@ PrefabInstance:
     - target: {fileID: 5315976409248822540, guid: dc9c39cd5a9e2f6439d3be71bf905300, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5315976409248822543, guid: dc9c39cd5a9e2f6439d3be71bf905300, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5315976409248822543, guid: dc9c39cd5a9e2f6439d3be71bf905300, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5315976409248822543, guid: dc9c39cd5a9e2f6439d3be71bf905300, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 350125963}
+    - target: {fileID: 5315976409248822543, guid: dc9c39cd5a9e2f6439d3be71bf905300, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5315976409248822543, guid: dc9c39cd5a9e2f6439d3be71bf905300, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnDropDownValueChanged
+      objectReference: {fileID: 0}
+    - target: {fileID: 5315976409248822543, guid: dc9c39cd5a9e2f6439d3be71bf905300, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ScreenManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5315976409248822543, guid: dc9c39cd5a9e2f6439d3be71bf905300, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5315976409311412229, guid: dc9c39cd5a9e2f6439d3be71bf905300, type: 3}
       propertyPath: m_AnchorMax.x

@@ -13,6 +13,18 @@ public class UIManager : MonoBehaviour
         StartCoroutine(DelayPopDown(popUps.Last()));
     }
 
+    public void PopDownObject(GameObject pop)
+    {
+        pop.GetComponent<Animator>().Play("Pop_Down");
+        StartCoroutine(DelayPopDownObject(pop));
+    }
+
+    IEnumerator DelayPopDownObject(GameObject pop)
+    {
+        yield return new WaitForSecondsRealtime(0.26f);//Delay
+        pop.SetActive(false);//Disable Object
+    }
+
     IEnumerator DelayPopDown(GameObject pop)
     {
         yield return new WaitForSecondsRealtime(0.26f);//Delay
@@ -24,12 +36,10 @@ public class UIManager : MonoBehaviour
     {
         popUps.Add(pop);
         popUps.Last().SetActive(true);
-        //StartCoroutine(DelayPopBack(pop));//Disable Object After Animation End
     }
 
-    IEnumerator DelayPopBack(GameObject pop)
+    public void PopUpObject(GameObject pop)
     {
-        yield return new WaitForSeconds(0.4f);//Delay
         pop.SetActive(true);
     }
 
