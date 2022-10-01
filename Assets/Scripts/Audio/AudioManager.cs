@@ -18,6 +18,12 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioClip mission4BgMusic;
     [SerializeField] AudioClip mission5BgMusic;
 
+    [SerializeField] AudioClip mission1BossFightBgMusic;
+    [SerializeField] AudioClip mission2BossFightBgMusic;
+    [SerializeField] AudioClip mission3BossFightBgMusic;
+    [SerializeField] AudioClip mission4BossFightBgMusic;
+    [SerializeField] AudioClip mission5BossFightBgMusic;
+
 
     public const string MASTER_VOLUME_KEY = "MasterVolumeKey";
     public const string MUSIC_VOLUME_KEY = "MusicVolumeKey";
@@ -110,6 +116,38 @@ public class AudioManager : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         backgroundMusic.clip = mission2BgMusic;
+        backgroundMusic.Play();
+    }
+
+    // Boss fight background music field
+    public void PlayMission1BossFightSound()
+    {
+        backgroundMusic.clip = mission1BossFightBgMusic;
+        backgroundMusic.Play();
+        backgroundMusic.volume = 1f;
+    }
+
+    public void PlayMission2BossFightSound()
+    {
+        backgroundMusic.clip = mission2BossFightBgMusic;
+        backgroundMusic.Play();
+    }
+
+    public void PlayMission3BossFightSound()
+    {
+        backgroundMusic.clip = mission3BossFightBgMusic;
+        backgroundMusic.Play();
+    }
+
+    public void PlayMission4BossFightSound()
+    {
+        backgroundMusic.clip = mission4BossFightBgMusic;
+        backgroundMusic.Play();
+    }
+
+    public void PlayMission5BossFightSound()
+    {
+        backgroundMusic.clip = mission5BossFightBgMusic;
         backgroundMusic.Play();
     }
 }

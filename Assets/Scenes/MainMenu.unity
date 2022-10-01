@@ -76228,5 +76228,21 @@ PrefabInstance:
       propertyPath: mission5BgMusic
       value: 
       objectReference: {fileID: 8300000, guid: 607e6a257cb2f9f4b9a49d6c56e494de, type: 3}
+    - target: {fileID: 8531659517392768095, guid: bd5f83b046752f547924b7898c0e13ac, type: 3}
+      propertyPath: mission1BossFightBgMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: cfc29d6662353e94e9361c0978d0ec49, type: 3}
+    - target: {fileID: 8531659517392768095, guid: bd5f83b046752f547924b7898c0e13ac, type: 3}
+      propertyPath: mission2BossFightBgMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: a9edeb29467174f49b4560dc1a972fb0, type: 3}
+    - target: {fileID: 8531659517392768095, guid: bd5f83b046752f547924b7898c0e13ac, type: 3}
+      propertyPath: mission3BossFightBgMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 916d404a967279749b8767cdcb10aaca, type: 3}
+    - target: {fileID: 8531659517392768095, guid: bd5f83b046752f547924b7898c0e13ac, type: 3}
+      propertyPath: mission4BossFightBgMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 002971ce1f468fc489bee0f6b2d5caea, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd5f83b046752f547924b7898c0e13ac, type: 3}

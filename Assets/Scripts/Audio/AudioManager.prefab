@@ -178,3 +178,11 @@ MonoBehaviour:
   mainBgMusic: {fileID: 0}
   mission1BgMusic: {fileID: 0}
   mission2BgMusic: {fileID: 0}
+  mission3BgMusic: {fileID: 0}
+  mission4BgMusic: {fileID: 0}
+  mission5BgMusic: {fileID: 0}
+  mission1BossFightBgMusic: {fileID: 0}
+  mission2BossFightBgMusic: {fileID: 0}
+  mission3BossFightBgMusic: {fileID: 0}
+  mission4BossFightBgMusic: {fileID: 0}
+  mission5BossFightBgMusic: {fileID: 0}
