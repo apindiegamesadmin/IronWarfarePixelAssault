@@ -14,6 +14,9 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioClip mainBgMusic;
     [SerializeField] AudioClip mission1BgMusic;
     [SerializeField] AudioClip mission2BgMusic;
+    [SerializeField] AudioClip mission3BgMusic;
+    [SerializeField] AudioClip mission4BgMusic;
+    [SerializeField] AudioClip mission5BgMusic;
 
 
     public const string MASTER_VOLUME_KEY = "MasterVolumeKey";
@@ -71,6 +74,27 @@ public class AudioManager : MonoBehaviour
     public void PlayMission2BGSound()
     {
         backgroundMusic.clip = mission2BgMusic;
+        backgroundMusic.Play();
+        backgroundMusic.volume = 0.6f;
+    }
+
+    public void PlayMission3BGSound()
+    {
+        backgroundMusic.clip = mission3BgMusic;
+        backgroundMusic.Play();
+        backgroundMusic.volume = 0.6f;
+    }
+
+    public void PlayMission4BGSound()
+    {
+        backgroundMusic.clip = mission4BgMusic;
+        backgroundMusic.Play();
+        backgroundMusic.volume = 0.6f;
+    }
+
+    public void PlayMission5BGSound()
+    {
+        backgroundMusic.clip = mission5BgMusic;
         backgroundMusic.Play();
         backgroundMusic.volume = 0.6f;
     }

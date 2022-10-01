@@ -49,7 +49,7 @@ MonoBehaviour:
   timeBetweenWaves: 30
   planePrefab: {fileID: 5874743688684894899, guid: 04cb468abf8135246a18b2e14d421160, type: 3}
   audioSource: {fileID: 1805695607}
-  planeSound: {fileID: 8300000, guid: 19174088b6d0d0c48bc4f153c0850d82, type: 3}
+  planeSound: {fileID: 8300000, guid: 4774849e78abdfe48aeb0d41ffd6aa9d, type: 3}
 --- !u!82 &1805695607
 AudioSource:
   m_ObjectHideFlags: 0
