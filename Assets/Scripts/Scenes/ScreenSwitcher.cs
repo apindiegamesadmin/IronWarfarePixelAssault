@@ -31,14 +31,14 @@ public class ScreenSwitcher : MonoBehaviour
         loadingScreen.SetActive(true);//Enable Fake Loading Screen
         yield return new WaitForSeconds(2f);//Delay Before LoadScene
         SceneManager.LoadScene(sceneIndex);
+        if (Time.timeScale == 0)
+        {
+            Time.timeScale = 1;
+        }
     }
 
     public void LoadSceneIndex(int index)
     {
-        if(Time.timeScale == 0)
-        {
-            Time.timeScale = 1;
-        }
         StartCoroutine(FakeLoadingScreen(index));
     }
 

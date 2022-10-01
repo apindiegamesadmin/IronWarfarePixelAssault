@@ -787,6 +787,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2142800569983593906, guid: 8fee8767d3a2fa44bb2ddf39eb5afccc, type: 3}
+      propertyPath: stayInideMap
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2142800569983593906, guid: 8fee8767d3a2fa44bb2ddf39eb5afccc, type: 3}
       propertyPath: stayInsideMap
       value: 0
       objectReference: {fileID: 0}

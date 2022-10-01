@@ -76,7 +76,7 @@ public class TutorialBossBattle : MonoBehaviour
 
     IEnumerator DelayBeforeMissionComplete()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSecondsRealtime(1);
         OnDead.Invoke();
     }
 }
