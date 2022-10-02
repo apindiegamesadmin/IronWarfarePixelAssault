@@ -23,6 +23,15 @@ public class ScreenSwitcher : MonoBehaviour
             case 2:
                 audioManager.PlayMission2BGSound();
                 break;
+            case 3:
+                audioManager.PlayMission3BGSound();
+                break;
+            case 4:
+                audioManager.PlayMission4BGSound();
+                break;
+            case 5:
+                audioManager.PlayMission5BGSound();
+                break;
         }
     }
 
