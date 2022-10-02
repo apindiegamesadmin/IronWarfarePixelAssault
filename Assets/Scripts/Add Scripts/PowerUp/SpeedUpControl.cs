@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class SpeedUpControl : MonoBehaviour
 {
-
     PowerupSound _powerupSound;
     public TankMover tankmovement;
     public TankMovementData movementData;
@@ -16,7 +15,6 @@ public class SpeedUpControl : MonoBehaviour
     public bool tutorial;
 
     PowerUpIconManager iconManager;
-
 
     void Awake()
     {
@@ -46,14 +44,6 @@ public class SpeedUpControl : MonoBehaviour
             }
         }
     }
-
-
-
-
-
-
-
-
 
     void OnTriggerEnter2D(Collider2D collision)
     {

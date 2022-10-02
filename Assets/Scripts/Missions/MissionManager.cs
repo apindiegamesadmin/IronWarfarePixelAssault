@@ -17,7 +17,7 @@ public class MissionManager : MonoBehaviour
 
     void Start()
     {
-        currentMission = FindObjectOfType<UnlockMissions>().nextMission;
+        currentMission = UnlockMissions.instance.nextMission;
         missionCheck();
     }
 

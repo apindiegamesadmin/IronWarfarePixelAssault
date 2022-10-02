@@ -66,8 +66,7 @@ public class TutorialBossBattle : MonoBehaviour
 
     public void MissionCompleted()
     {
-        UnlockMissions missionUnlock = FindObjectOfType<UnlockMissions>();
-        missionUnlock.UnlockMission();
+        UnlockMissions.instance.UnlockMission();
         Time.timeScale = 0;
         playerTank.GetComponentInChildren<TankMachineGun>().StopShooting();
 

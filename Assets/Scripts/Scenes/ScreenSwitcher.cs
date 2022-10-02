@@ -7,30 +7,28 @@ using UnityEngine.SceneManagement;
 public class ScreenSwitcher : MonoBehaviour
 {
     public GameObject loadingScreen;
-    AudioManager audioManager;
 
     private void Awake()
     {
-        audioManager = FindObjectOfType<AudioManager>();
         switch (SceneManager.GetActiveScene().buildIndex)
         {
             case 0:
-                audioManager.PlayMainMenuBGSound();
+                AudioManager.instance.PlayMainMenuBGSound();
                 break;
             case 1:
-                audioManager.PlayMission1BGSound();
+                AudioManager.instance.PlayMission1BGSound();
                 break;
             case 2:
-                audioManager.PlayMission2BGSound();
+                AudioManager.instance.PlayMission2BGSound();
                 break;
             case 3:
-                audioManager.PlayMission3BGSound();
+                AudioManager.instance.PlayMission3BGSound();
                 break;
             case 4:
-                audioManager.PlayMission4BGSound();
+                AudioManager.instance.PlayMission4BGSound();
                 break;
             case 5:
-                audioManager.PlayMission5BGSound();
+                AudioManager.instance.PlayMission5BGSound();
                 break;
         }
     }

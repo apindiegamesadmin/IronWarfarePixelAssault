@@ -7,12 +7,7 @@ public class UnlockMissions : MonoBehaviour
 {
     public int nextMission;
     Player player;
-
-    private static UnlockMissions instance = null;
-    public static UnlockMissions Instance
-    {
-        get { return instance; }
-    }
+    public static UnlockMissions instance { get; private set; }
 
     private void Start()
     {
