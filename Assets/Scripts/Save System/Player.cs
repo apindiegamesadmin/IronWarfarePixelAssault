@@ -17,11 +17,11 @@ public class Player : MonoBehaviour
     public int missionIndex;
 
     public PlayerData playerData;
-    private static Player instance = null;
-    public static Player Instance
+    public static Player instance { get; private set; }
+    /*public static Player Instance
     {
         get { return instance; }
-    }
+    }*/
 
     void Awake()
     {

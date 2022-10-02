@@ -11,16 +11,10 @@ public class TankSelectionManager : MonoBehaviour
     [SerializeField] UnityEvent OnNotFirstTime;
     [SerializeField] GameObject[] borders;
     public static int tankIndex;
-    Player player;
-
-    private void Awake()
-    {
-        player = FindObjectOfType<Player>();
-    }
 
     public void CheckTank()
     {
-        if (player.firstTime)
+        if (Player.instance.firstTime)
         {
             borders[1].SetActive(true);// Default Red Tank
             tankIndex = 1;
@@ -51,10 +45,9 @@ public class TankSelectionManager : MonoBehaviour
 
     public void ConfirmTank()
     {
-        player.firstTime = false;
-        player.tankIndex = tankIndex;
-        PlayerPrefs.SetInt("TankIndex", tankIndex);
-        player.SavePlayerData(); // Save player data
+        Player.instance.firstTime = false;
+        Player.instance.tankIndex = tankIndex;
+        Player.instance.SavePlayerData(); // Save player data
         OnNotFirstTime.Invoke();
     }
 }
