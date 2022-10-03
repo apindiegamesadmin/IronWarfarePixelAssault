@@ -6,14 +6,16 @@ using TMPro;
 public class ScreenManager : MonoBehaviour
 {
     TMP_Dropdown dropDown;
+    Player player;
     private void Awake()
     {
         dropDown = GetComponent<TMP_Dropdown>();
+        player = FindObjectOfType<Player>();
     }
 
     private void Start()
     {
-        switch (Player.instance.screenIndex)
+        switch (player.screenIndex)
         {
             case 0:
                 dropDown.value = 0;
@@ -39,7 +41,7 @@ public class ScreenManager : MonoBehaviour
 
     private void OnDisable()
     {
-        Player.instance.screenIndex = dropDown.value;
-        Player.instance.SavePlayerData();
+        player.screenIndex = dropDown.value;
+        player.SavePlayerData();
     }
 }

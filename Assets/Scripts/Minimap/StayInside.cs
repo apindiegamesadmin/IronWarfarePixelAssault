@@ -16,7 +16,10 @@ public class StayInside : MonoBehaviour
 
     private void Awake()
     {
-        MinimapCam = GameObject.FindGameObjectWithTag("MiniMap").transform;
+        if (stayInideMap)
+        {
+            MinimapCam = GameObject.FindGameObjectWithTag("MiniMap").transform;
+        }
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 

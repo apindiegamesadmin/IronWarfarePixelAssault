@@ -62,6 +62,7 @@ public class TutorialCutSceneManager : MonoBehaviour
 
     public void EndTutorialCutScene()
     {
+        Debug.Log(Time.timeScale);
         player.GetComponent<TankController>().canMove = true;
         //Time.timeScale = 1;
         gameUI.SetActive(true);

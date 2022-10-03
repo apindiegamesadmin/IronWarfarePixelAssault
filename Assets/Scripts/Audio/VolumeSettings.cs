@@ -13,16 +13,19 @@ public class VolumeSettings : MonoBehaviour
     public const string MUSIC_VOLUME = "MusicVolume";
     public const string SFX_VOLUME = "SFXVolume";
 
+    Player player;
+
 
     void Awake()
     {
+        player = FindObjectOfType<Player>();
         _masterSlider.onValueChanged.AddListener(SetMasterVolume);
         _musicSlider.onValueChanged.AddListener(SetMusicVolume);
         _sfxSlider.onValueChanged.AddListener(SetSFXVolume);
 
-        _masterSlider.value = Player.instance.master;
-        _musicSlider.value = Player.instance.music;
-        _sfxSlider.value = Player.instance.sound;
+        _masterSlider.value = player.master;
+        _musicSlider.value = player.music;
+        _sfxSlider.value = player.sound;
     }
 
     void SetMasterVolume(float value)
@@ -43,10 +46,10 @@ public class VolumeSettings : MonoBehaviour
 
     private void OnDisable()
     {
-        Player.instance.master = _masterSlider.value;
-        Player.instance.music = _musicSlider.value;
-        Player.instance.sound = _sfxSlider.value;
+        player.master = _masterSlider.value;
+        player.music = _musicSlider.value;
+        player.sound = _sfxSlider.value;
 
-        Player.instance.SavePlayerData();
+        player.SavePlayerData();
     }
 }

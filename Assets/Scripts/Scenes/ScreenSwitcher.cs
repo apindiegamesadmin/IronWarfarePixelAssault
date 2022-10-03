@@ -36,7 +36,7 @@ public class ScreenSwitcher : MonoBehaviour
     IEnumerator FakeLoadingScreen(int sceneIndex)
     {
         loadingScreen.SetActive(true);//Enable Fake Loading Screen
-        yield return new WaitForSeconds(2f);//Delay Before LoadScene
+        yield return new WaitForSecondsRealtime(2f);//Delay Before LoadScene
         SceneManager.LoadScene(sceneIndex);
         if (Time.timeScale == 0)
         {

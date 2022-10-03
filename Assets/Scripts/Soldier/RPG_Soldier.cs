@@ -59,7 +59,7 @@ public class RPG_Soldier : MonoBehaviour
 
     void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Player").transform;
+        //target = GameObject.FindGameObjectWithTag("Player").transform;
 
         bulletPool.Initialize(turretData.bulletPrefab, bulletPoolCount);
         //health = slider.maxValue;
@@ -75,7 +75,7 @@ public class RPG_Soldier : MonoBehaviour
         if (dead)
             return;
 
-        if (aiDetector.TargetVisible)
+        if (aiDetector.TargetVisible && gameObject.activeInHierarchy)
         {
             target = aiDetector.Target;
             checkDistacne = Vector2.Distance(target.transform.position, transform.position); // check the ditance between Player and Enemy
