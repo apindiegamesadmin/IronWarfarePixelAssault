@@ -47,7 +47,7 @@ public class TutorialCutSceneManager : MonoBehaviour
         gameUI.SetActive(true);
         if (dialogueManager != null)
         {
-            dialogueManager.StartDialogue(dialogueManager.dialogue[0]);
+            dialogueManager.gameObject.SetActive(false);
         }
         if (tutorialManager != null)
         {
