@@ -945,15 +945,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1107469718807039973, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1107469718807039973, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1107469718807039973, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1107469718807039973, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}
       propertyPath: m_ConstrainProportionsScale
