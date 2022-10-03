@@ -465,7 +465,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 772340489
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 32e7825dceef2fc429933bf7b276d821, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -928,6 +928,8 @@ MonoBehaviour:
   patrolBehaviour: {fileID: 4253117533519673653}
   tank: {fileID: 0}
   detector: {fileID: 0}
+  followPlayer: 1
+  stopOnShoot: 1
 --- !u!114 &4253117533519673650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1112,7 +1114,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 772340489
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 32e7825dceef2fc429933bf7b276d821, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1404,7 +1406,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 646852589
-  m_SortingLayer: 8
+  m_SortingLayer: 11
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1599,7 +1601,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 646852589
-  m_SortingLayer: 8
+  m_SortingLayer: 11
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1705,7 +1707,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: ab56719cbbd4ad448b7b1d514cd4d2d3, type: 3}
     - target: {fileID: 1107469718418671484, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}
       propertyPath: m_SortingLayer
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1107469718418671484, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}
       propertyPath: m_SortingOrder
@@ -1725,7 +1727,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: fd9ff5ab5f827b141ac0ccf917da6b80, type: 3}
     - target: {fileID: 1107469718807039974, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}
       propertyPath: m_SortingLayer
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1107469718807039974, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}
       propertyPath: m_SortingLayerID
@@ -1977,7 +1979,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7846211843126272732, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}
       propertyPath: m_SortingLayer
-      value: 8
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7846211843126272732, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}
       propertyPath: m_SortingLayerID
@@ -2001,11 +2003,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8760446005466674180, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}
       propertyPath: playerLayerMask.m_Bits
-      value: 2176
+      value: 2048
       objectReference: {fileID: 0}
     - target: {fileID: 8760446005466674180, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}
       propertyPath: visibilityLayer.m_Bits
-      value: 2688
+      value: 2560
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1107469716883483828, guid: cdd2ab92ad12da6469c39a8d64c0cc18, type: 3}

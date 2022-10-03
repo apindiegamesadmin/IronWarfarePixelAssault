@@ -9,11 +9,13 @@ public class DialogueTrigger : MonoBehaviour
     GameObject dialogue;
     AIDetector detector;
     DialogueManager dialogueManager;
+    Objective objective;
     void Awake()
     {
         dialogue = GameObject.FindGameObjectWithTag("Dialogue");
-        detector = GetComponent<AIDetector>();
+        detector = GetComponentInChildren<AIDetector>();
         dialogueManager = dialogue.GetComponent<DialogueManager>();
+        objective = FindObjectOfType<Objective>();
     }
 
     void Update()
@@ -22,7 +24,9 @@ public class DialogueTrigger : MonoBehaviour
         {
             dialogue.SetActive(true);
             dialogueManager.StartDialogue(dialogueManager.dialogue[index]);
-            Destroy(this.transform.parent.gameObject);
+            objective.ShowObjective(index);
+            objective.UpdateObjectivePointer(index);
+            Destroy(this.transform.gameObject);
         }
     }
 }
