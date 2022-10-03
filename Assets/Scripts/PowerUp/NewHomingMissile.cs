@@ -23,19 +23,21 @@ public class NewHomingMissile : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
     }
 
+    private void Start()
+    {
+        FindClosestEnemy();
+    }
+
     private void Update()
     {
         if(enemy == null)
         {
-            enemy = FindClosestEnemy();
-        }
-        if(enemy != null)
-        {
-            MoveTowardsEnemy();
+            //enemy = FindClosestEnemy();
+            rb2d.velocity = transform.up * bulletData.speed;
         }
         else
         {
-            rb2d.velocity = transform.up * bulletData.speed;
+            MoveTowardsEnemy();
         }
 
         conquaredDistance = Vector2.Distance(transform.position, startPosition);
@@ -74,7 +76,14 @@ public class NewHomingMissile : MonoBehaviour
                     distance = curDistance;
                 }
             }
-            return closest;
+            if(distance > 5.0f)
+            {
+                return null;
+            }
+            else
+            {
+                return closest;
+            }
         }
         catch
         {
