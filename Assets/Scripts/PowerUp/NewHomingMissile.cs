@@ -17,25 +17,24 @@ public class NewHomingMissile : MonoBehaviour
     public UnityEvent OnHit = new UnityEvent();
 
     private Rigidbody2D rb2d;
+    bool outOfRange;
 
     private void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
     }
 
-    private void Start()
-    {
-        FindClosestEnemy();
-    }
-
     private void Update()
     {
-        if(enemy == null)
+        if(enemy == null && !outOfRange)
         {
-            //enemy = FindClosestEnemy();
+            enemy = FindClosestEnemy();
+        }
+        else if (enemy == null && outOfRange)
+        {
             rb2d.velocity = transform.up * bulletData.speed;
         }
-        else
+        else if(enemy != null)
         {
             MoveTowardsEnemy();
         }
@@ -76,12 +75,14 @@ public class NewHomingMissile : MonoBehaviour
                     distance = curDistance;
                 }
             }
-            if(distance > 5.0f)
+            if(distance > 10.0f)
             {
+                outOfRange = true;
                 return null;
             }
             else
             {
+                outOfRange = false;
                 return closest;
             }
         }
@@ -101,6 +102,7 @@ public class NewHomingMissile : MonoBehaviour
     private void DisableObject()
     {
         rb2d.velocity = Vector2.zero;
+        outOfRange = false;
         gameObject.SetActive(false);
     }
 
