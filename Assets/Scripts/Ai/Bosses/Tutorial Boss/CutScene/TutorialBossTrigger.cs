@@ -11,14 +11,10 @@ public class TutorialBossTrigger : MonoBehaviour
     [SerializeField] GameObject blocks;
     [SerializeField] GameObject dialogue;
     DialogueManager dialogueManager;
-    AudioManager audioManager;
-    int sceneID;
 
     private void Awake()
     {
         dialogueManager = FindObjectOfType<DialogueManager>();
-        audioManager = FindObjectOfType<AudioManager>();
-        sceneID = SceneManager.GetActiveScene().buildIndex;
     }
 
     void Start()
@@ -32,9 +28,9 @@ public class TutorialBossTrigger : MonoBehaviour
         {
             gameUI.SetActive(false);
             blocks.SetActive(false);
+            CheckBossFightBGMusic();
             Time.timeScale = 0;
             director.Play();
-            CheckBossFightBGMusic();
         }
     }
 
@@ -57,26 +53,26 @@ public class TutorialBossTrigger : MonoBehaviour
 
     private void CheckBossFightBGMusic()
     {
-        switch (sceneID)
+        switch (SceneManager.GetActiveScene().buildIndex)
         {
             case 1:
-                audioManager.PlayMission1BossFightSound();
+                AudioManager.instance.PlayMission1BossFightSound();
                 break;
 
             case 2:
-                audioManager.PlayMission1BossFightSound();
+                AudioManager.instance.PlayMission2BossFightSound();
                 break;
 
             case 3:
-                audioManager.PlayMission3BossFightSound();
+                AudioManager.instance.PlayMission3BossFightSound();
                 break;
 
             case 4:
-                audioManager.PlayMission4BossFightSound();
+                AudioManager.instance.PlayMission4BossFightSound();
                 break;
 
             case 5:
-                audioManager.PlayMission5BossFightSound();
+                AudioManager.instance.PlayMission5BossFightSound();
                 break;
         }
     }
