@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
-    PowerupSound _powerupSound;
+    PowerupSound powerupSound;
     Turret turret;
     ObjectPool objectPool;
     public TurretData[] turretDatas;
     public Transform[] barrels;
+    public TurretData turretDataTest;     // for testing ***
     public float duration = 10f;
     float skillTimer;
     public bool damageUp;
@@ -21,7 +22,7 @@ public class BulletController : MonoBehaviour
     void Awake()
     {
         iconManager = FindObjectOfType<PowerUpIconManager>();
-        _powerupSound = FindObjectOfType<PowerupSound>();
+        powerupSound = FindObjectOfType<PowerupSound>();
 
         if (turret == null)
             turret = GetComponentInChildren<Turret>();
@@ -65,6 +66,8 @@ public class BulletController : MonoBehaviour
                 iconManager.HideIcon(3);
 
                 turret.turretData = turretDatas[0];
+                // turret.turretData = turretDataTest;     // for testing ***
+                // turret.bulletPoolCount = 1;             // for testing ***
                 foreach (Transform barrel in barrels)
                 {
                     turret.turretBarrels.Remove(barrel);
@@ -80,7 +83,7 @@ public class BulletController : MonoBehaviour
 
         if (collision.transform.tag == "DamageUp")
         {
-            _powerupSound.PlayBulletPowerupClip();
+            powerupSound.PlayBulletPowerupClip();
             Destroy(collision.transform.gameObject);
             damageUp = true;
             iconManager.ShowIcon(0);
@@ -101,7 +104,7 @@ public class BulletController : MonoBehaviour
         }
         else if (collision.transform.tag == "HomingMissilePowerUp")
         {
-            _powerupSound.PlayHomingMissileClip();
+            powerupSound.PlayHomingMissileClip();
             Destroy(collision.transform.gameObject);
             isHomingMissileActive = true;
             iconManager.ShowIcon(3);
