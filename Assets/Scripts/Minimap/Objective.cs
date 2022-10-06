@@ -25,7 +25,10 @@ public class Objective : MonoBehaviour
 
     public void UpdateObjectivePointer(int i)
     {
-        objectivePointer.tank = objectivePoints[i];
+        if(objectivePoints[i] != null)
+        {
+            objectivePointer.tank = objectivePoints[i];
+        }
     }
 
     public void RemoveObjective()
