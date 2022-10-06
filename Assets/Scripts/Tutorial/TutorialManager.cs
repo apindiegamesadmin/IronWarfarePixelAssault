@@ -121,6 +121,7 @@ public class TutorialManager : MonoBehaviour
             if (!step7)
             {
                 objective.ShowObjective(9); // show objective
+                objective.UpdateObjectivePointer(7);
 
                 dialogueUI.SetActive(true);
                 dialogueManager.StartDialogue(dialogueManager.dialogue[9]);//Show appropiate dialogue
