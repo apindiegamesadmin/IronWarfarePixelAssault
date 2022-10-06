@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -7047937247121238660}
   - component: {fileID: 2301750657243466605}
   - component: {fileID: 3546042571116834190}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Arm Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 772340489
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 1
   m_Sprite: {fileID: 792822844, guid: edd7e1b9be7b5aa4084a7991a3248dd9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
