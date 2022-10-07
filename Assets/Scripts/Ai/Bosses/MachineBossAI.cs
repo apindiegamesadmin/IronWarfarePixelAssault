@@ -34,20 +34,19 @@ public class MachineBossAI : MonoBehaviour
                 patrolPath.patrolPoints.Add(mainCannonDetector.Target.transform);
             }
             patrolBehaviour.PerformAction(tank, mainCannonDetector);
-
-            if (machineGunDetector.TargetVisible) // Check if machine gun detector's target is visible
-            {
-                machineShootBehaviour.PerformAction(tank, machineGunDetector);
-            }
-            else
-            {
-                machineShootBehaviour.StopAction(tank, machineGunDetector);
-            }
         }
         else
         {
             patrolPath.patrolPoints = path;
             patrolBehaviour.PerformAction(tank, mainCannonDetector);
+        }
+
+        if (machineGunDetector.TargetVisible) // Check if machine gun detector's target is visible
+        {
+            machineShootBehaviour.PerformAction(tank, machineGunDetector);
+        }
+        else
+        {
             machineShootBehaviour.StopAction(tank, machineGunDetector);
         }
     }

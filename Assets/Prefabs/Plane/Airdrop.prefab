@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2269330844017260892}
   - component: {fileID: 2269330844017260893}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: Airdrop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64,7 +64,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2269330844365790137}
   - component: {fileID: 2269330844365790138}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: Parachute
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,8 +125,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1250980913
-  m_SortingLayer: 12
+  m_SortingLayerID: -1601639621
+  m_SortingLayer: 13
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 2dfd1cf5a34697f4b88fb6247acfac2a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -149,7 +149,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6122050011539142057}
   - component: {fileID: 4365046665285858403}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -209,8 +209,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1250980913
-  m_SortingLayer: 12
+  m_SortingLayerID: -1601639621
+  m_SortingLayer: 13
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 2dfd1cf5a34697f4b88fb6247acfac2a, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 0.34901962}
