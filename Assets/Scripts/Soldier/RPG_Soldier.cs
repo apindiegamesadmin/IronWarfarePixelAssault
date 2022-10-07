@@ -207,7 +207,7 @@ public class RPG_Soldier : MonoBehaviour
             healthBar.SetActive(false);
             m_Ani.Play("Soldier_RPG_diehard");
             this.GetComponent<Collider2D>().enabled = false;
-            GetComponent<BodyPartsSpawner>().SpawnBodyParts(collision.GetComponent<NewHomingMissile>().direction, collision.transform.position);
+            GetComponent<BodyPartsSpawner>().SpawnBodyParts(collision.GetComponent<HomingMissle>().direction, collision.transform.position);
             Destroy(gameObject, destroy / 2.5f);
         }
     }

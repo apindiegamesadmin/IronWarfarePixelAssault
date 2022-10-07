@@ -4882,7 +4882,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8127140895066869147}
   - component: {fileID: 8127140895066869148}
-  - component: {fileID: 8127140895066869149}
+  - component: {fileID: 6511379004853137283}
   - component: {fileID: 8127140895066869146}
   - component: {fileID: 8127140895066869145}
   m_Layer: 7
@@ -4962,7 +4962,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8127140895066869149
+--- !u!114 &6511379004853137283
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4971,11 +4971,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 8127140895066869150}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d08023f220e5d2499d0f7ce3ea17d44, type: 3}
+  m_Script: {fileID: 11500000, guid: 7210cdce884fdaf40925a18ad8acd59e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  frequency: 20
+  magnitude: 0.5
   bulletData: {fileID: 11400000, guid: cd62c17b01a84c44fb9eb05a3b071307, type: 2}
   targetTag: Enemy
+  duration: 4
   direction: {x: 0, y: 0}
   OnHit:
     m_PersistentCalls:
@@ -5067,7 +5070,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8127140896063637920
 Transform:
   m_ObjectHideFlags: 0
@@ -5098,7 +5101,7 @@ MonoBehaviour:
   detectorShape: 0
   viewRadius: 2
   boxSize: {x: 0, y: 0}
-  detectionCheckDelay: 0
+  detectionCheckDelay: 0.01
   target: {fileID: 0}
   playerLayerMask:
     serializedVersion: 2

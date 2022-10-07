@@ -8,10 +8,11 @@ public class BulletController : MonoBehaviour
     Turret turret;
     ObjectPool objectPool;
     public TurretData[] turretDatas;
+    public Transform barrel;
     public Transform[] barrels;
-    public Transform barrel_1;
+    /*public Transform barrel_1;
     public Transform barrel_2;
-    public Transform barrel_3;
+    public Transform barrel_3;*/
     public float duration = 10f;
     float skillTimer;
     public bool damageUp;
@@ -46,14 +47,12 @@ public class BulletController : MonoBehaviour
                 iconManager.HideIcon(0);
 
                 turret.turretData = turretDatas[0];
-                // foreach (Transform barrel in barrels)
-                // {
-                //     turret.turretBarrels.Remove(barrel);
-                // }
+                turret.turretBarrels.Clear();
+                turret.turretBarrels.Add(barrel);
 
-                turret.turretBarrels.Remove(barrel_1);
+                /*turret.turretBarrels.Remove(barrel_1);
                 turret.turretBarrels.Remove(barrel_2);
-                turret.turretBarrels.Remove(barrel_3);
+                turret.turretBarrels.Remove(barrel_3);*/
 
                 turret.bulletPoolCount = 1;
             }
@@ -70,10 +69,8 @@ public class BulletController : MonoBehaviour
                 iconManager.HideIcon(3);
 
                 turret.turretData = turretDatas[0];
-                foreach (Transform barrel in barrels)
-                {
-                    turret.turretBarrels.Remove(barrel);
-                }
+                turret.turretBarrels.Clear();
+                turret.turretBarrels.Add(barrel);
 
                 objectPool.Initialize(turret.turretData.bulletPrefab, 1);
             }
@@ -91,16 +88,17 @@ public class BulletController : MonoBehaviour
             iconManager.ShowIcon(0);
             turret.turretData = turretDatas[1];
 
-            // foreach (Transform barrel in barrels)
-            // {
-            //     turret.turretBarrels.Add(barrel);
-            // }
+            turret.turretBarrels.Clear();
+            foreach (Transform barrel in barrels)
+            {
+                 turret.turretBarrels.Add(barrel);
+            }
 
-            //*************************************
+            /*
             turret.turretBarrels.Add(barrel_1);
             turret.turretBarrels.Add(barrel_2);
             turret.turretBarrels.Add(barrel_3);
-            //*************************************
+            */
 
             turret.bulletPoolCount = 3;
 
@@ -117,6 +115,7 @@ public class BulletController : MonoBehaviour
             isHomingMissileActive = true;
             iconManager.ShowIcon(3);
             turret.turretData = turretDatas[2];
+            turret.turretBarrels.Clear();
             foreach (Transform barrel in barrels)
             {
                 turret.turretBarrels.Add(barrel);
