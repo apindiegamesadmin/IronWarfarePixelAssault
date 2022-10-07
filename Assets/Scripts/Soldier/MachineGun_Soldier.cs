@@ -144,7 +144,16 @@ public class MachineGun_Soldier : MonoBehaviour
 
             dead = true;
             healthBar.SetActive(false);
-            m_Ani.Play("Soldier_Machine_die2");
+            int rand = Random.Range(0, 2);
+            switch (rand)
+            {
+                case 0:
+                    m_Ani.Play("Soldier_Machine_die1");
+                    break;
+                case 1:
+                    m_Ani.Play("Soldier_Machine_die2");
+                    break;
+            }
             if (blood != null)
             {
                 blood.SetActive(true);//Spawn Blood Animation
@@ -155,21 +164,52 @@ public class MachineGun_Soldier : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (dead)
-            return;
-        if (collision.transform.tag == "Player")
+        var damagable = collision.GetComponent<Damagable>();
+        if (collision.transform.tag == "Player" || (collision.transform.tag == "Enemy" && damagable != null))
         {
             OnDead.Invoke();
             dead = true;
             healthBar.SetActive(false);
-            m_Ani.Play("Soldier_Machine_die2");
+            int rand = Random.Range(0, 2);
+            switch (rand)
+            {
+                case 0:
+                    m_Ani.Play("Soldier_Machine_die1");
+                    break;
+                case 1:
+                    m_Ani.Play("Soldier_Machine_die2");
+                    break;
+            }
             this.GetComponent<Collider2D>().enabled = false;
             Destroy(gameObject, 2.5f);
-            slider.value = 0.0f;
         }
-        else if (collision.transform.tag == "MachineGunBullet")
+    }
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (dead)
+            return;
+        /*if (collision.transform.tag == "Player")
+        {
+            OnDead.Invoke();
+            dead = true;
+            healthBar.SetActive(false);
+            int rand = Random.Range(0, 2);
+            switch (rand)
+            {
+                case 0:
+                    m_Ani.Play("Soldier_Machine_die1");
+                    break;
+                case 1:
+                    m_Ani.Play("Soldier_Machine_die2");
+                    break;
+            }
+            this.GetComponent<Collider2D>().enabled = false;
+            Destroy(gameObject, 2.5f);
+        }*/
+        if (collision.transform.tag == "MachineGunBullet")
         {
             healthBar.SetActive(true);
             slider.value = slider.value - 0.5f;
@@ -179,7 +219,22 @@ public class MachineGun_Soldier : MonoBehaviour
             OnDead.Invoke();
             dead = true;
             healthBar.SetActive(false);
-            m_Ani.Play("Soldier_Machine_diehard");
+            int rand = Random.Range(0, 4);
+            switch (rand)
+            {
+                case 0:
+                    m_Ani.Play("Soldier_Machine_diehard");
+                    break;
+                case 1:
+                    m_Ani.Play("Soldier_Machine_diehard1");
+                    break;
+                case 2:
+                    m_Ani.Play("Soldier_Machine_diehard2");
+                    break;
+                case 3:
+                    m_Ani.Play("Soldier_Machine_diehard3");
+                    break;
+            }
             this.GetComponent<Collider2D>().enabled = false;
             GetComponent<BodyPartsSpawner>().SpawnBodyParts(collision.GetComponent<Bullet>().direction, collision.transform.position);
             Destroy(gameObject, 2.5f);
@@ -189,7 +244,22 @@ public class MachineGun_Soldier : MonoBehaviour
             OnDead.Invoke();
             dead = true;
             healthBar.SetActive(false);
-            m_Ani.Play("Soldier_Machine_diehard");
+            int rand = Random.Range(0, 4);
+            switch (rand)
+            {
+                case 0:
+                    m_Ani.Play("Soldier_Machine_diehard");
+                    break;
+                case 1:
+                    m_Ani.Play("Soldier_Machine_diehard1");
+                    break;
+                case 2:
+                    m_Ani.Play("Soldier_Machine_diehard2");
+                    break;
+                case 3:
+                    m_Ani.Play("Soldier_Machine_diehard3");
+                    break;
+            }
             this.GetComponent<Collider2D>().enabled = false;
             GetComponent<BodyPartsSpawner>().SpawnBodyParts(collision.GetComponent<HomingMissle>().direction, collision.transform.position);
             Destroy(gameObject, 2.5f);

@@ -9,8 +9,6 @@ public class StayInside : MonoBehaviour
     Transform MinimapCam;
     public float MinimapSize;
     public bool stayInideMap = false;
-    Vector3 TempV3;
-    Transform player;
 
     #endregion
 
@@ -20,19 +18,11 @@ public class StayInside : MonoBehaviour
         {
             MinimapCam = GameObject.FindGameObjectWithTag("MiniMap").transform;
         }
-        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     private void Start()
     {
         tank = transform.parent.transform;
-    }
-
-    void Update()
-    {
-        //TempV3 = transform.parent.transform.position;
-        //TempV3.y = transform.position.y;
-        //transform.position = TempV3;
     }
 
     void LateUpdate()

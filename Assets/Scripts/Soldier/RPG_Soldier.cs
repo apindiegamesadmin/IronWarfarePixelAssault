@@ -152,7 +152,16 @@ public class RPG_Soldier : MonoBehaviour
 
             dead = true;
             healthBar.SetActive(false);
-            m_Ani.Play("Soldier_RPG_die1");
+            int rand = Random.Range(0, 2);
+            switch (rand)
+            {
+                case 0:
+                    m_Ani.Play("Soldier_RPG_die1");
+                    break;
+                case 1:
+                    m_Ani.Play("Soldier_RPG_die2");
+                    break;
+            }
             if (blood != null)
             {
                 blood.SetActive(true);//Spawn Blood Animation
@@ -163,7 +172,28 @@ public class RPG_Soldier : MonoBehaviour
         }
     }
 
-
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        var damagable = collision.GetComponent<Damagable>();
+        if (collision.transform.tag == "Player" || (collision.transform.tag == "Enemy" && damagable != null))
+        {
+            OnDead.Invoke();
+            dead = true;
+            healthBar.SetActive(false);
+            int rand = Random.Range(0, 2);
+            switch (rand)
+            {
+                case 0:
+                    m_Ani.Play("Soldier_RPG_die1");
+                    break;
+                case 1:
+                    m_Ani.Play("Soldier_RPG_die2");
+                    break;
+            }
+            this.GetComponent<Collider2D>().enabled = false;
+            Destroy(gameObject, 2.5f);
+        }
+    }
 
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -176,7 +206,16 @@ public class RPG_Soldier : MonoBehaviour
             OnDead.Invoke();
             dead = true;
             healthBar.SetActive(false);
-            m_Ani.Play("Soldier_RPG_die2");
+            int rand = Random.Range(0, 2);
+            switch (rand)
+            {
+                case 0:
+                    m_Ani.Play("Soldier_RPG_die1");
+                    break;
+                case 1:
+                    m_Ani.Play("Soldier_RPG_die2");
+                    break;
+            }
             this.GetComponent<Collider2D>().enabled = false;
 
             slider.value = 0.0f;
