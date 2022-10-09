@@ -24,25 +24,27 @@ public class HealthPackControl : MonoBehaviour
 
     void HealPlayer()
     {
-        if(hpPoint + playerDamagable.Health > playerDamagable.MaxHealth)
-        {
-            if (playerTankController.CanIncreasePlayerLife())
-            {
-                int healPoint = (hpPoint + playerDamagable.Health) - playerDamagable.MaxHealth;
-                playerDamagable.Health = healPoint;
+        // if(hpPoint + playerDamagable.Health > playerDamagable.MaxHealth)
+        // {
+        //     if (playerTankController.CanIncreasePlayerLife())
+        //     {
+        //         int healPoint = (hpPoint + playerDamagable.Health) - playerDamagable.MaxHealth;
+        //         playerDamagable.Health = healPoint;
 
-                Debug.Log("Heart Increased");
-                Debug.Log("Heal Points is " + healPoint);
-            }
-            else
-            {
-                playerDamagable.Heal(hpPoint);
-            }
-        }
-        else
-        {
-            playerDamagable.Heal(hpPoint);
-        }
+        //         Debug.Log("Heart Increased");
+        //         Debug.Log("Heal Points is " + healPoint);
+        //     }
+        //     else
+        //     {
+        //         playerDamagable.Heal(hpPoint);
+        //     }
+        // }
+        // else
+        // {
+        //     playerDamagable.Heal(hpPoint);
+        // }
+
+        playerDamagable.Heal(hpPoint);
 
         if (tutorial)
         {

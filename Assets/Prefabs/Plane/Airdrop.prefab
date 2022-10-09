@@ -53,6 +53,7 @@ MonoBehaviour:
   - {fileID: 8895264861689223047, guid: 66599f21f34131043b7d62abcec841c9, type: 3}
   - {fileID: 2835698020627125629, guid: 4cc667630a00ff943b51265915840b8b, type: 3}
   - {fileID: 3687532938600111971, guid: 4e6b4feede8bfad44aa3899139f4b79f, type: 3}
+  - {fileID: 7338015064056930050, guid: e247a15d57f5a5f449cd76ebc34c4d94, type: 3}
   speed: 1
 --- !u!1 &2269330844365790136
 GameObject:
