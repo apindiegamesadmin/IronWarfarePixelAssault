@@ -168,6 +168,8 @@ public class RPG_Soldier : MonoBehaviour
                 Destroy(blood, 1f);//Delay Before Destroying Blood
             }
             this.GetComponent<Collider2D>().enabled = false;
+            this.gameObject.tag = "Untagged";
+            this.gameObject.layer = 0;
             Destroy(gameObject, destroy / 2.5f);
         }
     }
@@ -191,6 +193,8 @@ public class RPG_Soldier : MonoBehaviour
                     break;
             }
             this.GetComponent<Collider2D>().enabled = false;
+            this.gameObject.tag = "Untagged";
+            this.gameObject.layer = 0;
             Destroy(gameObject, 2.5f);
         }
     }
@@ -201,28 +205,7 @@ public class RPG_Soldier : MonoBehaviour
         if (dead)
             return;
 
-        if (collision.transform.tag == "Player")
-        {
-            OnDead.Invoke();
-            dead = true;
-            healthBar.SetActive(false);
-            int rand = Random.Range(0, 2);
-            switch (rand)
-            {
-                case 0:
-                    m_Ani.Play("Soldier_RPG_die1");
-                    break;
-                case 1:
-                    m_Ani.Play("Soldier_RPG_die2");
-                    break;
-            }
-            this.GetComponent<Collider2D>().enabled = false;
-
-            slider.value = 0.0f;
-            Destroy(gameObject, destroy / 2.5f);
-        }
-
-        else if (collision.transform.tag == "MachineGunBullet")
+        if (collision.transform.tag == "MachineGunBullet")
         {
             healthBar.SetActive(true);
             slider.value = slider.value - 0.5f;
@@ -235,6 +218,8 @@ public class RPG_Soldier : MonoBehaviour
             healthBar.SetActive(false);
             m_Ani.Play("Soldier_RPG_diehard");
             this.GetComponent<Collider2D>().enabled = false;
+            this.gameObject.tag = "Untagged";
+            this.gameObject.layer = 0;
             GetComponent<BodyPartsSpawner>().SpawnBodyParts(collision.GetComponent<Bullet>().direction, collision.transform.position);
             Destroy(gameObject, destroy / 2.5f);
         }
@@ -246,6 +231,8 @@ public class RPG_Soldier : MonoBehaviour
             healthBar.SetActive(false);
             m_Ani.Play("Soldier_RPG_diehard");
             this.GetComponent<Collider2D>().enabled = false;
+            this.gameObject.tag = "Untagged";
+            this.gameObject.layer = 0;
             GetComponent<BodyPartsSpawner>().SpawnBodyParts(collision.GetComponent<HomingMissle>().direction, collision.transform.position);
             Destroy(gameObject, destroy / 2.5f);
         }

@@ -11,7 +11,6 @@ public static class SaveSystem
         {
 
             Directory.CreateDirectory(SAVE_FOLDER);
-            Debug.Log(SAVE_FOLDER);
         }
     }
     public static void SavePlayerData(Player player)
@@ -19,8 +18,6 @@ public static class SaveSystem
         Init();
         BinaryFormatter formatter = new BinaryFormatter();
         string path = SAVE_FOLDER + "/player.dat";
-        Debug.Log("Saved Data");
-        Debug.Log(path);
         FileStream stream = new FileStream(path, FileMode.Create);
 
         PlayerData data = new PlayerData(player);
@@ -35,8 +32,6 @@ public static class SaveSystem
 
         if (File.Exists(path))
         {
-            Debug.Log("Loaded Data");
-            Debug.Log(path);
             BinaryFormatter formatter = new BinaryFormatter();
             FileStream stream = new FileStream(path,FileMode.Open);
 

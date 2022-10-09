@@ -160,6 +160,8 @@ public class MachineGun_Soldier : MonoBehaviour
                 Destroy(blood, 1f);//Delay Before Destroying Blood
             }
             this.GetComponent<Collider2D>().enabled = false;
+            this.gameObject.tag = "Untagged";
+            this.gameObject.layer = 0;
             Destroy(gameObject, 2.5f);
         }
     }
@@ -184,6 +186,8 @@ public class MachineGun_Soldier : MonoBehaviour
                     break;
             }
             this.GetComponent<Collider2D>().enabled = false;
+            this.gameObject.tag = "Untagged";
+            this.gameObject.layer = 0;
             Destroy(gameObject, 2.5f);
         }
     }
@@ -236,6 +240,8 @@ public class MachineGun_Soldier : MonoBehaviour
                     break;
             }
             this.GetComponent<Collider2D>().enabled = false;
+            this.gameObject.tag = "Untagged";
+            this.gameObject.layer = 0;
             GetComponent<BodyPartsSpawner>().SpawnBodyParts(collision.GetComponent<Bullet>().direction, collision.transform.position);
             Destroy(gameObject, 2.5f);
         }
@@ -261,6 +267,8 @@ public class MachineGun_Soldier : MonoBehaviour
                     break;
             }
             this.GetComponent<Collider2D>().enabled = false;
+            this.gameObject.tag = "Untagged";
+            this.gameObject.layer = 0;
             GetComponent<BodyPartsSpawner>().SpawnBodyParts(collision.GetComponent<HomingMissle>().direction, collision.transform.position);
             Destroy(gameObject, 2.5f);
         }
