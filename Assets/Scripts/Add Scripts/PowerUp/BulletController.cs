@@ -54,7 +54,7 @@ public class BulletController : MonoBehaviour
                 turret.turretBarrels.Remove(barrel_2);
                 turret.turretBarrels.Remove(barrel_3);*/
 
-                turret.bulletPoolCount = 1;
+                turret.bulletPoolCount = 3;
             }
         }
 
@@ -72,7 +72,7 @@ public class BulletController : MonoBehaviour
                 turret.turretBarrels.Clear();
                 turret.turretBarrels.Add(barrel);
 
-                objectPool.Initialize(turret.turretData.bulletPrefab, 1);
+                objectPool.Initialize(turret.turretData.bulletPrefab, 3);
             }
         }
     }
