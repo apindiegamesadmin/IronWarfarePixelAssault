@@ -32,7 +32,7 @@ public class UnlockMissions : MonoBehaviour
 
     public void UnlockMission() // Call this at the end of each level
     {
-        if (SceneManager.GetActiveScene().buildIndex > nextMission) // Check if the next mission is already unlocked or not
+        if (SceneManager.GetActiveScene().buildIndex > nextMission && SceneManager.GetActiveScene().buildIndex < 5) // Check if the next mission is already unlocked or not
         {
             // Increase CurrentMission index, New Mission unlocked!!!
             nextMission++;

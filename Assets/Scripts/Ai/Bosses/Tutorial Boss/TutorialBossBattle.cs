@@ -15,11 +15,12 @@ public class TutorialBossBattle : MonoBehaviour
     private void Awake()
     {
         bossDamagable = bossTankController.GetComponent<Damagable>();
-        playerTank = GameObject.FindGameObjectWithTag("Player").transform;
+
     }
 
     void Start()
     {
+        playerTank = GameObject.FindGameObjectWithTag("Player").transform;
         int length = bossTankController.turrets.Count;
         for (int i = 1; i < length; i++)
         {
@@ -67,8 +68,8 @@ public class TutorialBossBattle : MonoBehaviour
     public void MissionCompleted()
     {
         UnlockMissions.instance.UnlockMission();
-        Time.timeScale = 0;
         playerTank.GetComponentInChildren<TankMachineGun>().StopShooting();
+        Time.timeScale = 0;
 
         StartCoroutine(DelayBeforeMissionComplete());
     }
