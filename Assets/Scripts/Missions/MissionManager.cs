@@ -23,7 +23,7 @@ public class MissionManager : MonoBehaviour
         }
         foreach (GameObject ui in UnLockedUIs)
         {
-            ui.SetActive(true);
+            ui.SetActive(false);
         }
         for (int i = 0; i < currentMission + 1; i++)
         {
