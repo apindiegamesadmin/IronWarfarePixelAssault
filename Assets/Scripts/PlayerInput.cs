@@ -15,6 +15,7 @@ public class PlayerInput : MonoBehaviour
     public UnityEvent OnMachineGunStopShoot = new UnityEvent();
     public UnityEvent<Vector2> OnMoveBody = new UnityEvent<Vector2>();
     public UnityEvent<Vector2> OnMoveTurret = new UnityEvent<Vector2>();
+    public Joystick joystick;
 
     private void Awake()
     {
@@ -71,7 +72,12 @@ public class PlayerInput : MonoBehaviour
 
     private void GetBodyMovement()
     {
-        Vector2 movementVector = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        // Vector2 movementVector = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+
+        float horizontalMove = joystick.Horizontal;
+        float verticalMove = joystick.Vertical;
+
+        Vector2 movementVector = new Vector2(horizontalMove, verticalMove);
         OnMoveBody?.Invoke(movementVector.normalized);
     }
 

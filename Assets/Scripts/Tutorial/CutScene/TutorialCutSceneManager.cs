@@ -27,11 +27,11 @@ public class TutorialCutSceneManager : MonoBehaviour
         player.GetComponent<TankController>().canMove = false;
         //Time.timeScale = 0;
         gameUI.SetActive(false);
-        if(tutorialManager != null)
+        if (tutorialManager != null)
         {
             tutorialManager.SetActive(false);
         }
-        if(blocks != null)
+        if (blocks != null)
         {
             blocks.SetActive(false);
         }
@@ -62,11 +62,10 @@ public class TutorialCutSceneManager : MonoBehaviour
 
     public void EndTutorialCutScene()
     {
-        Debug.Log(Time.timeScale);
         player.GetComponent<TankController>().canMove = true;
         //Time.timeScale = 1;
         gameUI.SetActive(true);
-        if(dialogueManager != null)
+        if (dialogueManager != null)
         {
             dialogueManager.StartDialogue(dialogueManager.dialogue[0]);
         }
