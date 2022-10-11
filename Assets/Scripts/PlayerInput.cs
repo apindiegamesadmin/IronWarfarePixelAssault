@@ -15,7 +15,10 @@ public class PlayerInput : MonoBehaviour
     public UnityEvent OnMachineGunStopShoot = new UnityEvent();
     public UnityEvent<Vector2> OnMoveBody = new UnityEvent<Vector2>();
     public UnityEvent<Vector2> OnMoveTurret = new UnityEvent<Vector2>();
-    public Joystick joystick;
+    public Joystick movementJoystick;
+    // public Joystick turretJoystick;
+
+
 
     private void Awake()
     {
@@ -29,32 +32,48 @@ public class PlayerInput : MonoBehaviour
     {
         GetBodyMovement();
         GetTurretMovement();
-        GetShootingInput();
-        MachineGunShootingInput();
+        // GetShootingInput();
+        // MachineGunShootingInput();
     }
 
-    private void GetShootingInput()
+    public void GetShootingInput()
     {
         //Changed to Getmousebutton 0 instead to backup the fix
-        if (Input.GetMouseButton(0) && !EventSystem.current.IsPointerOverGameObject())
-        {
-            StartCoroutine(delayShoot());
-        }
+        // if (Input.GetMouseButton(0) && !EventSystem.current.IsPointerOverGameObject())
+        // {
+        //     StartCoroutine(delayShoot());
+        // }
+
+        StartCoroutine(delayShoot());
     }
 
     /// <summary>
     /// Get player's input for firing machine gun
     /// </summary>
-    void MachineGunShootingInput()
+    // public void MachineGunShootingInput()
+    // {
+    //     if (Input.GetMouseButtonDown(1) && !EventSystem.current.IsPointerOverGameObject())
+    //     {
+    //         OnMachineGunShoot.Invoke();
+    //     }
+    //     else if (Input.GetMouseButtonUp(1) && !EventSystem.current.IsPointerOverGameObject())
+    //     {
+    //         OnMachineGunStopShoot.Invoke();
+    //     }
+    // }
+
+    // To shoot with machine gun when pressing the button
+    public void MachineGunShootingInput()
     {
-        if (Input.GetMouseButtonDown(1) && !EventSystem.current.IsPointerOverGameObject())
-        {
-            OnMachineGunShoot.Invoke();
-        }
-        else if (Input.GetMouseButtonUp(1) && !EventSystem.current.IsPointerOverGameObject())
-        {
-            OnMachineGunStopShoot.Invoke();
-        }
+        OnMachineGunShoot.Invoke();
+    }
+
+    /// <summary>
+    /// To stop shooting with machine gun when the player release the button
+    /// </summary>
+    public void MachineGunShootingOutput()
+    {
+        OnMachineGunStopShoot.Invoke();
     }
 
     private void GetTurretMovement()
@@ -62,7 +81,7 @@ public class PlayerInput : MonoBehaviour
         OnMoveTurret?.Invoke(GetMousePositon());
     }
 
-    private Vector2 GetMousePositon()
+    public Vector2 GetMousePositon()
     {
         Vector3 mousePosition = Input.mousePosition;
         mousePosition.z = mainCamera.nearClipPlane;
@@ -74,8 +93,8 @@ public class PlayerInput : MonoBehaviour
     {
         // Vector2 movementVector = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
-        float horizontalMove = joystick.Horizontal;
-        float verticalMove = joystick.Vertical;
+        float horizontalMove = movementJoystick.Horizontal;
+        float verticalMove = movementJoystick.Vertical;
 
         Vector2 movementVector = new Vector2(horizontalMove, verticalMove);
         OnMoveBody?.Invoke(movementVector.normalized);
