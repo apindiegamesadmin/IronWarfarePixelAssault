@@ -16,9 +16,8 @@ public class PlayerInput : MonoBehaviour
     public UnityEvent<Vector2> OnMoveBody = new UnityEvent<Vector2>();
     public UnityEvent<Vector2> OnMoveTurret = new UnityEvent<Vector2>();
     public Joystick movementJoystick;
-    // public Joystick turretJoystick;
-
-
+    public Joystick aimJoystick;
+    public float rotationSpeed = 360f;
 
     private void Awake()
     {
@@ -31,6 +30,7 @@ public class PlayerInput : MonoBehaviour
     void Update()
     {
         GetBodyMovement();
+        // GetJoystickMovement();
         GetTurretMovement();
         // GetShootingInput();
         // MachineGunShootingInput();
@@ -78,7 +78,7 @@ public class PlayerInput : MonoBehaviour
 
     private void GetTurretMovement()
     {
-        OnMoveTurret?.Invoke(GetMousePositon());
+        OnMoveTurret?.Invoke(GetJoystickDirection());
     }
 
     public Vector2 GetMousePositon()
@@ -93,10 +93,11 @@ public class PlayerInput : MonoBehaviour
     {
         // Vector2 movementVector = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
-        float horizontalMove = movementJoystick.Horizontal;
-        float verticalMove = movementJoystick.Vertical;
+        // float horizontalMove = movementJoystick.Horizontal;
+        // float verticalMove = movementJoystick.Vertical;
 
-        Vector2 movementVector = new Vector2(horizontalMove, verticalMove);
+        // Vector2 movementVector = new Vector2(horizontalMove, verticalMove);
+        Vector2 movementVector = movementJoystick.Direction;
         OnMoveBody?.Invoke(movementVector.normalized);
     }
 
@@ -106,4 +107,27 @@ public class PlayerInput : MonoBehaviour
         yield return new WaitForSeconds(.13f);
         OnShoot?.Invoke();
     }
+
+    /// <summary>
+    /// To get joystick direction to aim the turret
+    /// </summary>
+    public Vector2 GetJoystickDirection()
+    {
+        Vector2 joystickDirection = aimJoystick.Direction * rotationSpeed;
+
+        if (aimJoystick.CheckDistance() > 40f)
+        {
+            StartCoroutine(delayShoot());
+        }
+
+        return joystickDirection;
+    }
+
+    // void GetJoystickMovement()
+    // {
+    //     moveVelocity = new Vector2(movementJoystick.Horizontal, movementJoystick.Vertical);
+    //     Vector2 moveInput = new Vector2(moveVelocity.x, moveVelocity.y);
+    //     Vector2 moveDirection = moveInput.normalized * moveSpeed;
+
+    // }
 }

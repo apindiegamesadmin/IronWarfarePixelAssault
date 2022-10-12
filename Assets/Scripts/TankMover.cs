@@ -12,7 +12,7 @@ public class TankMover : MonoBehaviour
 
     private Vector2 movementVector;
     private float currentSpeed = 0;
-    private float currentForewardDirection = 1;
+    private float currentForwardDirection = 1;
 
     public UnityEvent<float> OnSpeedChange = new UnityEvent<float>();
 
@@ -28,17 +28,17 @@ public class TankMover : MonoBehaviour
         OnSpeedChange?.Invoke(this.movementVector.magnitude);
         if (movementVector.y > 0)
         {
-            if (currentForewardDirection == -1)
+            if (currentForwardDirection == -1)
                 currentSpeed = 0;
-            currentForewardDirection = 1;
-        }  
+            currentForwardDirection = 1;
+        }
         else if (movementVector.y < 0)
         {
-            if (currentForewardDirection == 1)
+            if (currentForwardDirection == 1)
                 currentSpeed = 0;
-            currentForewardDirection = -1;
+            currentForwardDirection = -1;
         }
-            
+
     }
 
     private void CalculateSpeed(Vector2 movementVector)
@@ -56,7 +56,7 @@ public class TankMover : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb2d.velocity = (Vector2)transform.up * currentSpeed * currentForewardDirection * Time.fixedDeltaTime;
+        rb2d.velocity = (Vector2)transform.up * currentSpeed * currentForwardDirection * Time.fixedDeltaTime;
         rb2d.MoveRotation(transform.rotation * Quaternion.Euler(0, 0, -movementVector.x * movementData.rotationSpeed * Time.fixedDeltaTime));
     }
 }

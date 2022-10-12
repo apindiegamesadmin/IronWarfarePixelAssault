@@ -5,17 +5,32 @@ using UnityEngine;
 public class ShootingController : MonoBehaviour
 {
     PlayerInput playerInput;
-    public Joystick joystick;
+    Vector2 aimVelocity;
+    public Joystick aimJoystick;
 
     private void Awake()
     {
         playerInput = FindObjectOfType<PlayerInput>();
     }
 
-    public void MainTurretShoot()
+    private void Update()
     {
-        playerInput.GetShootingInput();
+        // TurretAim();
     }
+
+    // public void MainTurretShoot()
+    // {
+    // TurretAim();
+    // playerInput.GetShootingInput();
+    // }
+
+    // public void TurretAim()
+    // {
+    //     aimVelocity = new Vector2(aimJoystick.Horizontal, aimJoystick.Vertical);
+    //     Vector2 aimInput = new Vector2(aimVelocity.x, aimVelocity.y);
+    //     Vector2 lookAtPoint = (Vector2)transform.position + aimInput;
+    //     transform.LookAt(lookAtPoint);
+    // }
 
     public void MachineGunShoot()
     {

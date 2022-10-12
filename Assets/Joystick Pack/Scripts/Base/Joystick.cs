@@ -76,6 +76,13 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
         handle.anchoredPosition = input * radius * handleRange;
     }
 
+    public float CheckDistance()
+    {
+        float distance = Vector2.Distance(Vector2.zero, handle.GetComponent<RectTransform>().localPosition);
+        Debug.Log("distance = " + distance);
+        return distance;
+    }
+
     protected virtual void HandleInput(float magnitude, Vector2 normalised, Vector2 radius, Camera cam)
     {
         if (magnitude > deadZone)
