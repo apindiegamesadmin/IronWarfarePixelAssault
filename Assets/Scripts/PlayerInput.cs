@@ -81,7 +81,7 @@ public class PlayerInput : MonoBehaviour
         OnMoveTurret?.Invoke(GetJoystickDirection());
     }
 
-    public Vector2 GetMousePositon()
+    private Vector2 GetMousePositon()
     {
         Vector3 mousePosition = Input.mousePosition;
         mousePosition.z = mainCamera.nearClipPlane;
@@ -122,12 +122,4 @@ public class PlayerInput : MonoBehaviour
 
         return joystickDirection;
     }
-
-    // void GetJoystickMovement()
-    // {
-    //     moveVelocity = new Vector2(movementJoystick.Horizontal, movementJoystick.Vertical);
-    //     Vector2 moveInput = new Vector2(moveVelocity.x, moveVelocity.y);
-    //     Vector2 moveDirection = moveInput.normalized * moveSpeed;
-
-    // }
 }

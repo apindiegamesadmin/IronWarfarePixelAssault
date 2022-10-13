@@ -11,6 +11,7 @@ public class TankMover : MonoBehaviour
     public TankMovementData movementData;
 
     private Vector2 movementVector;
+    public Joystick movementJoystick;
     private float currentSpeed = 0;
     private float currentForwardDirection = 1;
 
@@ -58,5 +59,14 @@ public class TankMover : MonoBehaviour
     {
         rb2d.velocity = (Vector2)transform.up * currentSpeed * currentForwardDirection * Time.fixedDeltaTime;
         rb2d.MoveRotation(transform.rotation * Quaternion.Euler(0, 0, -movementVector.x * movementData.rotationSpeed * Time.fixedDeltaTime));
+
+        // // Vector2 movementDirection = movementJoystick.Direction;
+        // float horizontalInput = movementJoystick.Horizontal;
+        // float verticalInput = movementJoystick.Vertical;
+        // Vector2 movementDirection = new Vector2(horizontalInput, verticalInput);
+        // float angle = Mathf.Atan2(verticalInput, horizontalInput) * Mathf.Rad2Deg;
+        // rb2d.velocity = (Vector2)transform.up * currentSpeed * currentForwardDirection * Time.fixedDeltaTime;
+        // // rb2d.MoveRotation(transform.rotation * Quaternion.Euler(0, 0, angle * Time.fixedDeltaTime));
+        // transform.Rotate(0f, 0f, -horizontalInput);
     }
 }
