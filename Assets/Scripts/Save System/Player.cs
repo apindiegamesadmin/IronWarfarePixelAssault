@@ -59,9 +59,9 @@ public class Player : MonoBehaviour
         }
         else
         {
-            sound = 1;
-            music = 1;
-            master = 1;
+            sound = 0.5f;
+            music = 0.5f;
+            master = 0.5f;
             screenIndex = 0;
             tankIndex = 1;
             firstTime = true;
