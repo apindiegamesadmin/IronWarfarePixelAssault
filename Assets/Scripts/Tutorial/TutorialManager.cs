@@ -43,7 +43,8 @@ public class TutorialManager : MonoBehaviour
 
     private void Start()
     {
-
+        objective.ShowObjective(0); // show objective
+        objective.UpdateObjectivePointer(0);
     }
 
     void Update()
