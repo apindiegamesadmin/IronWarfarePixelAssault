@@ -18,7 +18,6 @@ public class PlayerInput : MonoBehaviour
     public Joystick movementJoystick;
     public Joystick aimJoystick;
     public float rotationSpeed = 360f;
-    public AimTurret aimTurret;
 
     private void Awake()
     {
@@ -114,11 +113,13 @@ public class PlayerInput : MonoBehaviour
     /// </summary>
     public Vector2 GetJoystickDirection()
     {
+        Vector2 aimDirection = aimJoystick.Direction * rotationSpeed;
+
         if (aimJoystick.CheckDistance() > 40f)
         {
             StartCoroutine(delayShoot());
         }
 
-        return aimJoystick.Direction * rotationSpeed;
+        return aimDirection;
     }
 }

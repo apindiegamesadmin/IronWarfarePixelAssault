@@ -55,18 +55,9 @@ public class TankMover : MonoBehaviour
         currentSpeed = Mathf.Clamp(currentSpeed, 0, movementData.maxSpeed);
     }
 
-    private void Update()
-    {
-        float horizontalInput = movementJoystick.Horizontal;
-        float verticalInput = movementJoystick.Vertical;
-        float zAxis = Mathf.Atan2(horizontalInput, verticalInput) * Mathf.Rad2Deg;
-        transform.eulerAngles = new Vector3(0, 0, zAxis);
-    }
-
     private void FixedUpdate()
     {
-        // rb2d.velocity = (Vector2)transform.up * currentSpeed * currentForwardDirection * Time.fixedDeltaTime;
-        rb2d.MovePosition(rb2d.position * currentSpeed * Time.deltaTime);
+        rb2d.velocity = (Vector2)transform.up * currentSpeed * currentForwardDirection * Time.fixedDeltaTime;
         rb2d.MoveRotation(transform.rotation * Quaternion.Euler(0, 0, -movementVector.x * movementData.rotationSpeed * Time.fixedDeltaTime));
     }
 }

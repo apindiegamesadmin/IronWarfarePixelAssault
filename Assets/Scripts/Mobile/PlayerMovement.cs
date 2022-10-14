@@ -15,12 +15,13 @@ public class PlayerMovement : MonoBehaviour
     private float currentSpeed = 0;
     private float currentForwardDirection = 1;
     private float rotationSpeed = 3f;
+    Vector2 move;
 
     public UnityEvent<float> OnSpeedChange = new UnityEvent<float>();
 
     private void Awake()
     {
-        rb2d = GetComponentInParent<Rigidbody2D>();
+        rb2d = GetComponent<Rigidbody2D>();
     }
 
     public void Move(Vector2 movementVector)
@@ -56,23 +57,27 @@ public class PlayerMovement : MonoBehaviour
         currentSpeed = Mathf.Clamp(currentSpeed, 0, movementData.maxSpeed);
     }
 
+    private void Update()
+    {
+        move.x = movementJoystick.Horizontal;
+        move.y = movementJoystick.Vertical;
+
+        float hAxis = move.x;
+        float vAxis = move.y;
+        float zAxis = Mathf.Atan2(hAxis, vAxis) * Mathf.Rad2Deg;
+        transform.eulerAngles = new Vector3(0, 0, -zAxis);
+    }
+
     private void FixedUpdate()
     {
         Vector2 movementDirection = movementJoystick.Direction;
         movementDirection.Normalize();
 
-        // transform.Translate(movementDirection * Time.deltaTime);
-        // rb2d.MoveRotation(movementJoystick.Horizontal);
-
-        // if (movementDirection != Vector2.zero)
-        // {
-        //     Quaternion toRotate = Quaternion.LookRotation(Vector3.forward, movementDirection);
-        //     transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotate, rotationSpeed * Time.deltaTime);
-        // }
-
         if (movementJoystick.CheckDistance() > 40f)
         {
             rb2d.velocity = new Vector2(movementJoystick.Horizontal, movementJoystick.Vertical);
+            // rb2d.MovePosition(movementDirection);
+            // rb2d.MovePosition(rb2d.position * Time.fixedDeltaTime);
         }
         else
         {
