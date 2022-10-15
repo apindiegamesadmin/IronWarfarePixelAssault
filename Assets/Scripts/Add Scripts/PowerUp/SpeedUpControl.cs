@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class SpeedUpControl : MonoBehaviour
 {
     PowerupSound _powerupSound;
-    public TankMover tankmovement;
+    // public TankMover tankmovement;
+    public PlayerMovement playerMovement;
     public TankMovementData movementData;
     public TankMovementData[] tankMovementDatas;
     public float duration = 10f;
@@ -21,8 +22,11 @@ public class SpeedUpControl : MonoBehaviour
         iconManager = FindObjectOfType<PowerUpIconManager>();
         _powerupSound = FindObjectOfType<PowerupSound>();
 
-        if (tankmovement == null)
-            tankmovement = GetComponentInChildren<TankMover>();
+        // if (tankmovement == null)
+        //     tankmovement = GetComponentInChildren<TankMover>();
+
+        if (playerMovement == null)
+            playerMovement = GetComponent<PlayerMovement>();
 
 
         if (tankMovementDatas == null || tankMovementDatas.Length == 0)
@@ -39,7 +43,7 @@ public class SpeedUpControl : MonoBehaviour
             {
                 speedUp = false;
                 iconManager.HideIcon(1);
-                tankmovement.movementData = tankMovementDatas[0];
+                playerMovement.movementData = tankMovementDatas[0];
                 timer = 0;
             }
         }
@@ -53,7 +57,7 @@ public class SpeedUpControl : MonoBehaviour
             Destroy(collision.transform.gameObject);
 
             speedUp = true;
-            tankmovement.movementData = tankMovementDatas[1];
+            playerMovement.movementData = tankMovementDatas[1];
             iconManager.ShowIcon(1);
 
             if (tutorial)

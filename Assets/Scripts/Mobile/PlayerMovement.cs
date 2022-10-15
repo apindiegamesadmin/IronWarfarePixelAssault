@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     private float currentSpeed = 0;
     private float currentForwardDirection = 1;
     private float rotationSpeed = 3f;
+    public static bool PointerDown = false;
     Vector2 move;
 
     public UnityEvent<float> OnSpeedChange = new UnityEvent<float>();
@@ -22,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        rb2d.velocity = Vector2.zero;
     }
 
     public void Move(Vector2 movementVector)
@@ -59,6 +61,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        // if (movementJoystick.CheckDistance() > 40f)
+
         move.x = movementJoystick.Horizontal;
         move.y = movementJoystick.Vertical;
 
@@ -66,22 +70,31 @@ public class PlayerMovement : MonoBehaviour
         float vAxis = move.y;
         float zAxis = Mathf.Atan2(hAxis, vAxis) * Mathf.Rad2Deg;
         transform.eulerAngles = new Vector3(0, 0, -zAxis);
+
     }
 
     private void FixedUpdate()
     {
-        Vector2 movementDirection = movementJoystick.Direction;
-        movementDirection.Normalize();
+        // if (movementJoystick.CheckDistance() > 50f)
+        // {
+        //     rb2d.velocity = new Vector2(movementJoystick.Horizontal * movementData.maxSpeed * Time.fixedDeltaTime, movementJoystick.Vertical * movementData.maxSpeed * Time.fixedDeltaTime);
+        // }
+        // else
+        // {
+        //     rb2d.velocity = Vector2.zero;
+        // }
 
-        if (movementJoystick.CheckDistance() > 40f)
-        {
-            rb2d.velocity = new Vector2(movementJoystick.Horizontal, movementJoystick.Vertical);
-            // rb2d.MovePosition(movementDirection);
-            // rb2d.MovePosition(rb2d.position * Time.fixedDeltaTime);
-        }
-        else
+        if (PointerDown)
         {
             rb2d.velocity = Vector2.zero;
         }
+        else
+        {
+            if (movementJoystick.CheckDistance() > 50f)
+            {
+                rb2d.velocity = new Vector2(movementJoystick.Horizontal * movementData.maxSpeed * Time.fixedDeltaTime, movementJoystick.Vertical * movementData.maxSpeed * Time.fixedDeltaTime);
+            }
+        }
+
     }
 }
