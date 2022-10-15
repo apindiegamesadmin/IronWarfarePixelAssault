@@ -79,7 +79,6 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
     public float CheckDistance()
     {
         float distance = Vector2.Distance(Vector2.zero, handle.GetComponent<RectTransform>().localPosition);
-        Debug.Log("distance = " + distance);
         return distance;
     }
 
