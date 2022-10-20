@@ -90,7 +90,11 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            if (movementJoystick.CheckDistance() > 40f)
+            if (movementJoystick.CheckDistance() < 50)
+            {
+                rb2d.velocity = Vector2.zero;
+            }
+            else if (movementJoystick.CheckDistance() > 50f)
             {
                 rb2d.velocity = new Vector2(movementJoystick.Horizontal * movementData.maxSpeed * Time.fixedDeltaTime, movementJoystick.Vertical * movementData.maxSpeed * Time.fixedDeltaTime);
             }
