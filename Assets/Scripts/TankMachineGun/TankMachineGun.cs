@@ -26,7 +26,7 @@ public class TankMachineGun : MonoBehaviour
     private void Awake()
     {
         machineGunSFX = GetComponent<AudioSource>();
-        animator = GetComponent<Animator>();
+        // animator = GetComponent<Animator>();
         tankColliders = GetComponentsInParent<Collider2D>();
         bulletPool = GetComponent<ObjectPool>();
     }
@@ -34,6 +34,7 @@ public class TankMachineGun : MonoBehaviour
     private void Start()
     {
         bulletPool.Initialize(turretData.bulletPrefab, bulletPoolCount);
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -75,7 +76,7 @@ public class TankMachineGun : MonoBehaviour
 
         fire = true;
         animator.SetBool("IsShooting", true);
-        if(machineGunSFX != null)
+        if (machineGunSFX != null)
         {
             machineGunSFX.Play();
         }

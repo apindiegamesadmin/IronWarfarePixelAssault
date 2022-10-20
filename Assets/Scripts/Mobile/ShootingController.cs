@@ -5,8 +5,6 @@ using UnityEngine;
 public class ShootingController : MonoBehaviour
 {
     PlayerInput playerInput;
-    Vector2 aimVelocity;
-    public Joystick aimJoystick;
 
     private void Awake()
     {
@@ -16,10 +14,12 @@ public class ShootingController : MonoBehaviour
     public void MachineGunShoot()
     {
         playerInput.MachineGunShootingInput();
+        Debug.Log("Shooting...");
     }
 
     public void MachineGunStop()
     {
         playerInput.MachineGunShootingOutput();
+        Debug.Log("Shooting stop...");
     }
 }
