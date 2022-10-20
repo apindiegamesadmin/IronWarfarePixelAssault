@@ -14,7 +14,6 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 movementVector;
     private float currentSpeed = 0;
     private float currentForwardDirection = 1;
-    private float rotationSpeed = 3f;
     public static bool PointerDown = false;
     Vector2 move;
 
