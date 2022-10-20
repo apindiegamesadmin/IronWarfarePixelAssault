@@ -6,7 +6,7 @@ public class ShootingController : MonoBehaviour
 {
     PlayerInput playerInput;
 
-    private void Awake()
+    private void Start()
     {
         playerInput = FindObjectOfType<PlayerInput>();
     }
