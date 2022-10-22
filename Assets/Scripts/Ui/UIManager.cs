@@ -10,8 +10,8 @@ public class UIManager : MonoBehaviour
     public void PopDown(GameObject pop)
     {
         pop.GetComponent<Animator>().Play("Pop_Down");
-        // StartCoroutine(DelayPopDown(popUps.Last()));
-        StartCoroutine(DelayPopDown(pop));
+        StartCoroutine(DelayPopDown(popUps.Last()));
+        // StartCoroutine(DelayPopDown(pop));
     }
 
     public void PopDownObject(GameObject pop)
