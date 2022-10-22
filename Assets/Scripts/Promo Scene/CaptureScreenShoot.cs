@@ -9,7 +9,7 @@ public class CaptureScreenShoot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -17,7 +17,7 @@ public class CaptureScreenShoot : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            ScreenCapture.CaptureScreenshot("C:/Users/LENOVO/Pictures/" + screenShootName + index + ".png");
+            ScreenCapture.CaptureScreenshot("D:/Android_Build/ScreenShot/" + screenShootName + index + ".png");
             index++;
         }
     }
