@@ -8,9 +8,12 @@ public class PlayerTankController : MonoBehaviour
 {
     [SerializeField] Color heartColor;
     [SerializeField] UnityEvent OnDead;
+    [SerializeField] UnityEvent OnContinue;
     Damagable damagable;
     Transform heartHolder;
+    bool isFirstTime = false;
     int lifeCount = 2;
+    public Vector3 lastPosition;
 
     Image[] hearts;
     Animator animator;
@@ -29,7 +32,7 @@ public class PlayerTankController : MonoBehaviour
 
     public void CheckPlayerLife()
     {
-        if(lifeCount >= 1)
+        if (lifeCount >= 1)
         {
             StartCoroutine(DelaySpawn()); // Spawn and play animation after 1 sec
 
@@ -53,12 +56,14 @@ public class PlayerTankController : MonoBehaviour
 
             Time.timeScale = 0;
             OnDead.Invoke();
+            // to know the player's last position before dead
+            lastPosition = transform.position;
         }
     }
 
     public bool CanIncreasePlayerLife()
     {
-        if(lifeCount < 2)
+        if (lifeCount < 2)
         {
             Debug.Log(lifeCount);
             lifeCount++;
@@ -90,5 +95,16 @@ public class PlayerTankController : MonoBehaviour
         damagable.enabled = false;
         yield return new WaitForSeconds(6);
         damagable.enabled = true;
+    }
+
+    public void ContinuePlayWithAd()
+    {
+        if (!isFirstTime)
+        {
+            CanIncreasePlayerLife();
+            Time.timeScale = 1f;
+            isFirstTime = true;
+            OnContinue.Invoke();
+        }
     }
 }

@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3428457965172309976
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3428457965172309978}
+  - component: {fileID: 3428457965172309977}
+  m_Layer: 0
+  m_Name: AdManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3428457965172309978
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3428457965172309976}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3428457965172309977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3428457965172309976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b57379eab1254344a59d1e118d85ce2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnLoadedBannerAd:
+    m_PersistentCalls:
+      m_Calls: []
+  OnFailedToLoadBannerAd:
+    m_PersistentCalls:
+      m_Calls: []
+  OnOpenBannerAd:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCloseBannerAd:
+    m_PersistentCalls:
+      m_Calls: []
+  OnLoadedInAd:
+    m_PersistentCalls:
+      m_Calls: []
+  OnFailedToLoadInAd:
+    m_PersistentCalls:
+      m_Calls: []
+  OnOpenInAd:
+    m_PersistentCalls:
+      m_Calls: []
+  OnShowInAd:
+    m_PersistentCalls:
+      m_Calls: []
+  OnFailedToShowInAd:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCloseInAd:
+    m_PersistentCalls:
+      m_Calls: []
+  OnLoadedRewardAd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3428457965172309977}
+        m_TargetAssemblyTypeName: AdManager, Assembly-CSharp
+        m_MethodName: ShowRewardedAd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnFailedToLoadRewardAd:
+    m_PersistentCalls:
+      m_Calls: []
+  OnOpenRewardAd:
+    m_PersistentCalls:
+      m_Calls: []
+  OnFailedToShowRewardAd:
+    m_PersistentCalls:
+      m_Calls: []
+  OnEarnedReward:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCloseRewardAd:
+    m_PersistentCalls:
+      m_Calls: []
+  continueAdButton: {fileID: 0}
