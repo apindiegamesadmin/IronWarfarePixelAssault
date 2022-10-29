@@ -102,6 +102,7 @@ public class PlayerTankController : MonoBehaviour
         if (!isFirstTime)
         {
             CanIncreasePlayerLife();
+            GameObject.Find("ContinueAd").SetActive(isFirstTime);
             Time.timeScale = 1f;
             isFirstTime = true;
             OnContinue.Invoke();

@@ -38,7 +38,7 @@ public class AdManager : MonoBehaviour
 
     public static AdManager instance;
     PlayerTankController playerTankController;
-    public GameObject continueAdButton;
+    // public GameObject continueAdButton;
 
     private void Awake()
     {
@@ -213,7 +213,7 @@ public class AdManager : MonoBehaviour
         {
             StartCoroutine(DelayBeforeEvent(OnCloseRewardAd));
             playerTankController.ContinuePlayWithAd();
-            continueAdButton.SetActive(false);
+            // continueAdButton.SetActive(false);
         };
 
         // Create an empty ad request.
