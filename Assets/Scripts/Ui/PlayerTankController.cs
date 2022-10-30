@@ -89,12 +89,12 @@ public class PlayerTankController : MonoBehaviour
     IEnumerator DelaySpawn()
     {
         damagable.Health = damagable.MaxHealth;
+        damagable.takeNoDamage = true;
         yield return new WaitForSeconds(1);
         transform.GetChild(0).gameObject.SetActive(true);   // Enable player and
         animator.SetTrigger("Flick");        // play flicker animation
-        damagable.enabled = false;
-        yield return new WaitForSeconds(6);
-        damagable.enabled = true;
+        yield return new WaitForSeconds(5);
+        damagable.takeNoDamage = false;
     }
 
     public void ContinuePlayWithAd()
