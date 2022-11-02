@@ -42,7 +42,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 8908408567014031339, guid: 4426e9bfb0d1a134189f9ddb2c959b08, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 9562577ea9092464da07828f040a2826, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -174,15 +174,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mixer: {fileID: 24100000, guid: 4426e9bfb0d1a134189f9ddb2c959b08, type: 2}
-  backgroundMusic: {fileID: 0}
-  mainBgMusic: {fileID: 0}
-  mission1BgMusic: {fileID: 0}
-  mission2BgMusic: {fileID: 0}
-  mission3BgMusic: {fileID: 0}
-  mission4BgMusic: {fileID: 0}
-  mission5BgMusic: {fileID: 0}
-  mission1BossFightBgMusic: {fileID: 0}
-  mission2BossFightBgMusic: {fileID: 0}
-  mission3BossFightBgMusic: {fileID: 0}
-  mission4BossFightBgMusic: {fileID: 0}
-  mission5BossFightBgMusic: {fileID: 0}
+  backgroundMusic: {fileID: 8531659516587128809}
+  mainBgMusic: {fileID: 8300000, guid: 9562577ea9092464da07828f040a2826, type: 3}
+  mission1BgMusic: {fileID: 8300000, guid: 3b5d3595af6c38844918ed831c45a60a, type: 3}
+  mission2BgMusic: {fileID: 8300000, guid: 89286814088c24943afb341defe5e2e6, type: 3}
+  mission3BgMusic: {fileID: 8300000, guid: d13a0ccb245316f46ae3768878883631, type: 3}
+  mission4BgMusic: {fileID: 8300000, guid: d6e3f51b33fc1e646a81aba6e63486f6, type: 3}
+  mission5BgMusic: {fileID: 8300000, guid: 607e6a257cb2f9f4b9a49d6c56e494de, type: 3}
+  mission1BossFightBgMusic: {fileID: 8300000, guid: 6359576f2211d2e4fa1e0858758059a3, type: 3}
+  mission2BossFightBgMusic: {fileID: 8300000, guid: 75839c3829db81744bf7c3f1dce840ee, type: 3}
+  mission3BossFightBgMusic: {fileID: 8300000, guid: 916d404a967279749b8767cdcb10aaca, type: 3}
+  mission4BossFightBgMusic: {fileID: 8300000, guid: 002971ce1f468fc489bee0f6b2d5caea, type: 3}
+  mission5BossFightBgMusic: {fileID: 8300000, guid: 75839c3829db81744bf7c3f1dce840ee, type: 3}

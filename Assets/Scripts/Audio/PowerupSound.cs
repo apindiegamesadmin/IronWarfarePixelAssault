@@ -40,7 +40,7 @@ public class PowerupSound : MonoBehaviour
 
     public void PlaySpeedUpClip()
     {
-        audioSource.volume = 0.28f;
+        audioSource.volume = 0.23f;
         audioSource.PlayOneShot(speedPowerUpClip);
     }
 

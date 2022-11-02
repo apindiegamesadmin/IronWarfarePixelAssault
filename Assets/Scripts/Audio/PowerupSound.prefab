@@ -143,6 +143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthClip: {fileID: 8300000, guid: bfd7d9433b5565e44bbb3dca81b1a87a, type: 3}
   bulletPowerupClip: {fileID: 8300000, guid: ecc2256a239a29f40b43e26a026c021e, type: 3}
-  shieldPowerupClip: {fileID: 8300000, guid: fc1453d878b735e4299108463d6a8ac9, type: 3}
+  shieldPowerupClip: {fileID: 8300000, guid: 934879084a5622c4387a8dd6b398e563, type: 3}
   homingMissileClip: {fileID: 8300000, guid: 85dcb7374b1663f45bcb1372cab87f74, type: 3}
-  speedPowerUpClip: {fileID: 8300000, guid: 138fa77f592fc4749b95c0b831a58747, type: 3}
+  speedPowerUpClip: {fileID: 8300000, guid: fff68e08c5099a040a1de07a059d2d5d, type: 3}
+  lifePowerUpClip: {fileID: 8300000, guid: 00a2ff4f7bd8a19448cfbdcc92255f92, type: 3}

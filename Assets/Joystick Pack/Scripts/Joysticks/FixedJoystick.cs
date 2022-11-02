@@ -5,6 +5,10 @@ using UnityEngine.EventSystems;
 
 public class FixedJoystick : Joystick
 {
+
+    public Vector3 rotation;
+
+
     public override void OnPointerDown(PointerEventData eventData)
     {
         PlayerMovement.PointerDown = false;
