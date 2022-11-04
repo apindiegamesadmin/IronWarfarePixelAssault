@@ -65,11 +65,19 @@ public class PlayerMovement : MonoBehaviour
         move.x = movementJoystick.Horizontal;
         move.y = movementJoystick.Vertical;
 
-        float hAxis = move.x;
-        float vAxis = move.y;
-        float zAxis = Mathf.Atan2(hAxis, vAxis) * Mathf.Rad2Deg;
-        transform.eulerAngles = new Vector3(0, 0, -zAxis);
+        if (move.magnitude < 0.1)
+        {
+            return;
+        }
 
+        // float hAxis = move.x;
+        // float vAxis = move.y;
+        // float zAxis = Mathf.Atan2(hAxis, vAxis) * Mathf.Rad2Deg;
+        // transform.eulerAngles = new Vector3(0, 0, -zAxis);
+
+        // transform.up = move;
+
+        transform.up = Vector2.Lerp(transform.up, move, Time.deltaTime * 5);
     }
 
     private void FixedUpdate()
@@ -95,7 +103,8 @@ public class PlayerMovement : MonoBehaviour
             }
             else if (movementJoystick.CheckDistance() > 50f)
             {
-                rb2d.velocity = new Vector2(movementJoystick.Horizontal * movementData.maxSpeed * Time.fixedDeltaTime, movementJoystick.Vertical * movementData.maxSpeed * Time.fixedDeltaTime);
+                // rb2d.velocity = new Vector2(movementJoystick.Horizontal * movementData.maxSpeed * Time.fixedDeltaTime, movementJoystick.Vertical * movementData.maxSpeed * Time.fixedDeltaTime);
+                rb2d.velocity = transform.up * movementData.maxSpeed * Time.fixedDeltaTime;
             }
         }
 
