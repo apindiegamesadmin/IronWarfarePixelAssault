@@ -46,6 +46,7 @@ public class PowerupSound : MonoBehaviour
 
     public void PlayLifePowerUpClip()
     {
+        audioSource.volume = 0.3f;
         audioSource.PlayOneShot(lifePowerUpClip);
     }
 }

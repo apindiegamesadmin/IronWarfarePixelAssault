@@ -9,14 +9,14 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb2d;
 
     public TankMovementData movementData;
-    public Joystick movementJoystick;
+    public FixedJoystick movementJoystick;
 
     private Vector2 movementVector;
     private float currentSpeed = 0;
     private float currentForwardDirection = 1;
     public static bool PointerDown = false;
     Vector2 move;
-
+    public static float moveSpeed = 1.8f;
     public UnityEvent<float> OnSpeedChange = new UnityEvent<float>();
 
     private void Awake()
@@ -60,8 +60,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        // if (movementJoystick.CheckDistance() > 40f)
-
         move.x = movementJoystick.Horizontal;
         move.y = movementJoystick.Vertical;
 
@@ -70,12 +68,12 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-        // float hAxis = move.x;
-        // float vAxis = move.y;
-        // float zAxis = Mathf.Atan2(hAxis, vAxis) * Mathf.Rad2Deg;
-        // transform.eulerAngles = new Vector3(0, 0, -zAxis);
+        float hAxis = move.x;
+        float vAxis = move.y;
+        float zAxis = Mathf.Atan2(hAxis, vAxis) * Mathf.Rad2Deg;
+        transform.eulerAngles = new Vector3(0, 0, -zAxis);
 
-        // transform.up = move;
+        transform.up = move;
 
         transform.up = Vector2.Lerp(transform.up, move, Time.deltaTime * 5);
     }
@@ -91,6 +89,8 @@ public class PlayerMovement : MonoBehaviour
         //     rb2d.velocity = Vector2.zero;
         // }
 
+        // transform.up = Vector2.Lerp(transform.up, move, Time.deltaTime * 10);
+
         if (PointerDown)
         {
             rb2d.velocity = Vector2.zero;
@@ -103,8 +103,7 @@ public class PlayerMovement : MonoBehaviour
             }
             else if (movementJoystick.CheckDistance() > 50f)
             {
-                // rb2d.velocity = new Vector2(movementJoystick.Horizontal * movementData.maxSpeed * Time.fixedDeltaTime, movementJoystick.Vertical * movementData.maxSpeed * Time.fixedDeltaTime);
-                rb2d.velocity = transform.up * movementData.maxSpeed * Time.fixedDeltaTime;
+                rb2d.MovePosition(rb2d.position + move * moveSpeed * Time.fixedDeltaTime);
             }
         }
 

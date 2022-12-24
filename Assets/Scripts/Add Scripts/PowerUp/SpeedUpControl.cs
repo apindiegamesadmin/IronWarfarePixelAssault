@@ -43,7 +43,8 @@ public class SpeedUpControl : MonoBehaviour
             {
                 speedUp = false;
                 iconManager.HideIcon(1);
-                playerMovement.movementData = tankMovementDatas[0];
+                // playerMovement.movementData = tankMovementDatas[0];
+                PlayerMovement.moveSpeed = 1.8f;
                 timer = 0;
             }
         }
@@ -57,7 +58,8 @@ public class SpeedUpControl : MonoBehaviour
             Destroy(collision.transform.gameObject);
 
             speedUp = true;
-            playerMovement.movementData = tankMovementDatas[1];
+            // playerMovement.movementData = tankMovementDatas[1];
+            PlayerMovement.moveSpeed = 3f;
             iconManager.ShowIcon(1);
 
             if (tutorial)
